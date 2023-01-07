@@ -3,12 +3,12 @@ package model;
 import java.util.Scanner;
 
 public class Data {
-	protected String dia;
-	protected String mes;
-	protected String ano;
-	protected int hora;
-	protected int minuto;
-	protected int segundos;
+	private String dia;
+	private String mes;
+	private String ano;
+	private int hora;
+	private int minuto;
+	private int segundos;
 	
 	//construtor
 	public Data(String dia, String mes, String ano, int hora, int minuto, int segundos) {
