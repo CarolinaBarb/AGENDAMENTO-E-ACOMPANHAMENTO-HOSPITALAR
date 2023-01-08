@@ -10,6 +10,13 @@ public class Usuario {
 		this.email = email;
 		this.senha = senha;
 	}
+	
+	public void Usuario1(String email2, String senha2) {
+		this.email = email2;
+		this.senha = senha2;
+		
+	}
+	
 	public String getEmail() {
 		return email;
 	}
