@@ -1,21 +1,20 @@
 package model;
-import java.util.Scanner.*;
 
 public class Usuario {
-	private String login;
+	private String email;
 	private String senha;
 	
 	
 	
-	public Usuario(String login, String senha) {
-		this.login = login;
+	public Usuario(String email, String senha) {
+		this.email = email;
 		this.senha = senha;
 	}
-	public String getLogin() {
-		return login;
+	public String getEmail() {
+		return email;
 	}
-	public void setLogin(String login) {
-		this.login = login;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getSenha() {
 		return senha;
