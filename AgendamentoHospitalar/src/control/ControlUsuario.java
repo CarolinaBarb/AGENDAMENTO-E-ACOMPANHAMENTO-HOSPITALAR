@@ -4,13 +4,15 @@ import model.*;
 
 public class ControlUsuario {
 
-	public void criarUsuario(String email,String senha) {
+	public String criarUsuario(ControlDados dados, String email, String senha) {
 		Usuario usuario = new Usuario(email, senha);
 		Dados.setUsuario(usuario);
+		return null;
 	}	
 	
-	public void Logar(String email,String senha) {
+	public String logar(ControlDados dados, String email, String senha) {
 		Usuario usuario = new Usuario(email, senha);
 		Dados.setUsuario(usuario);
+		return null;
 	}
 }
