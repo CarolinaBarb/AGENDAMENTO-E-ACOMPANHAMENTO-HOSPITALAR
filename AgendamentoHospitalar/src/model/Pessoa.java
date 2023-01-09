@@ -10,7 +10,7 @@ public class Pessoa {
     private String sexo;
     private Date DataNascimento;
 
-    //construtor
+    //constructor
     public Pessoa(String nome,String email, String senha, String id, String sexo, Date dataNascimento) {
         this.nome = nome;
         this.id = id;

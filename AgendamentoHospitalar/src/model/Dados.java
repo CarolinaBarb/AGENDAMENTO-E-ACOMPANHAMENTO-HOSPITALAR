@@ -1,30 +1,30 @@
 package model;
 
 public class Dados {
-	private Usuario[] usuario = new Usuario[100];
-	private int quantidadeUsuario = 1;
+	private Pessoa[] pessoa = new Pessoa[100];
+	private int quantidadepessoa = 1;
 	
 	public void dados() {
-		usuario[1] = new Usuario("fulano@email.com", "11111");
+		pessoa[1] = new Pessoa("Fulano", "fulano@email.com", "11111", "01", "masculino", null);
 	}
 
-	public Usuario[] getUsuario() {
-		return usuario;
+	public Pessoa[] getpessoa() {
+		return pessoa;
 	}
 
-	public void setUsuario(Usuario[] usuario) {
-		this.usuario = usuario;
+	public void setpessoa(Pessoa[] pessoa) {
+		this.pessoa = pessoa;
 	}
 
-	public int getQuantidadeUsuario() {
-		return quantidadeUsuario;
+	public int getQuantidadepessoa() {
+		return quantidadepessoa;
 	}
 
-	public void setQuantidadeUsuario(int quantidadeUsuario) {
-		this.quantidadeUsuario = quantidadeUsuario;
+	public void setQuantidadepessoa(int quantidadepessoa) {
+		this.quantidadepessoa = quantidadepessoa;
 	}
 
-	public static void setUsuario(Usuario usuario2) {
+	public static void setpessoa(Pessoa pessoa2) {
 	}	
 
 }
