@@ -63,9 +63,14 @@ public class Login implements ActionListener {
 		container.setVisible(true);
 		
 		botao.addActionListener(this);
-		criarConta.addMouseListener(null);
+		criarConta.addActionListener(this);
 
 	}
+	
+	public static void main(String[] args) {
+		new Login(null);
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
