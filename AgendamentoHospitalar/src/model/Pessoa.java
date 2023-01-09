@@ -20,7 +20,21 @@ public class Pessoa {
         this.senha = senha;
     }
 
-    //Getters and Setters
+
+	public Pessoa(String email, String senha) {
+		this.email = email;
+		this.senha = senha;
+	}
+
+
+	public Pessoa(String nome, String email, String senha) {
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+	}
+
+
+	//Getters and Setters
     public String getNome() {
         return nome;
     }

@@ -8,19 +8,19 @@ public class ControlDados {
 		dados.dados();
 	}
 
-	public Usuario[] getUsuario() {
-		return dados.getUsuario();
+	public Pessoa[] getPessoa() {
+		return dados.getpessoa();
 	}
 	
-	public int getQuantidadeUsuario() {
-		return dados.getQuantidadeUsuario();
+	public int getQuantidadePessoa() {
+		return dados.getQuantidadepessoa();
 	}
 	
-	public void setQuantidadeUsuario() {
-		dados.setQuantidadeUsuario(getQuantidadeUsuario());
+	public void setQuantidadePessoa() {
+		dados.setQuantidadepessoa(getQuantidadePessoa());
 	}
 	
-	public void setUsuario() {
-		dados.setUsuario(getUsuario());
+	public void setPessoa() {
+		dados.setpessoa(getPessoa());
 	}
 }
