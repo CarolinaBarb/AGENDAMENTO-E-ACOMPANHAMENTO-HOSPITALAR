@@ -6,4 +6,5 @@
  *
  */
 module AgendamentoHospitalar {
+	requires java.desktop;
 }
