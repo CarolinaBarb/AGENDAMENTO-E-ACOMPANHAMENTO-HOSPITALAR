@@ -14,11 +14,13 @@ public class Cadastro implements ActionListener {
 	private JLabel senhaLabel;
 	private JButton criarConta;
 	private JTextField textField;
+	private final Action action = new SwingAction();
 	
 
 	public Cadastro(ControlDados d){
 		container = new JFrame("Cadastro");
 		criarConta = new JButton("Criar Conta");
+		criarConta.setAction(action);
 		criarConta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -90,5 +92,11 @@ public class Cadastro implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
 	}
 }

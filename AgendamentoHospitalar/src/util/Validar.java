@@ -1,12 +1,12 @@
 package util;
 
 public class Validar {
-	
-	public boolean validaCPF(String CPF) {
-		if(CPF.length() < 11)
+		
+	public boolean validacrm(String crm) {
+		if(crm.length() == 11)
 			return true;
+		else
 		return false;
 	}
 	
-
 }
