@@ -15,9 +15,7 @@ public class Cadastro implements ActionListener {
 	private JButton criarConta;
 	private JTextField textField;
 	
-	/**
-	 * @wbp.parser.entryPoint
-	 */
+
 	public Cadastro(ControlDados d){
 		container = new JFrame("Cadastro");
 		criarConta = new JButton("Criar Conta");
