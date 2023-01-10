@@ -7,6 +7,6 @@ public class Validar {
 			return true;
 		else
 		return false;
-	}
+	}	
 	
 }

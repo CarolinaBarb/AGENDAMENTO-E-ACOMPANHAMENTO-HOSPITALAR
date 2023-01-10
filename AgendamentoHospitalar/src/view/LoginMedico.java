@@ -6,25 +6,24 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import control.*;
 
-public class Cadastro implements ActionListener {
+public class LoginMedico implements ActionListener {
 	private JFrame container;
+	private JButton botao;
 	private JTextField inserirEmail;
 	private JPasswordField inserirSenha;
 	private JLabel emailLabel;
 	private JLabel senhaLabel;
 	private JButton criarConta;
-	private JTextField textField;
-	private final Action action = new SwingAction();
 	
-
-	public Cadastro(ControlDados d){
-		container = new JFrame("Cadastro");
+	public LoginMedico(ControlDados d){
+		container = new JFrame("Login");
+		botao = new JButton("Entrar");
 		criarConta = new JButton("Criar Conta");
-		criarConta.setAction(action);
 		criarConta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		botao.setFont(new Font("Franklin Gothic Book", Font.PLAIN, 12));
 		emailLabel = new JLabel ("Email");
 		emailLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		senhaLabel = new JLabel("Senha");
@@ -34,69 +33,47 @@ public class Cadastro implements ActionListener {
 		inserirSenha = new JPasswordField(25);
 		
 		container.getContentPane().setBackground(new Color(255, 228, 225));
-		container.setTitle("Cadastro");
+		container.setTitle("Login");
 		container.setSize(500, 500);
 		container.setLocation(500, 300);
 		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		container.getContentPane().setLayout(null);
 		
+		botao.setBounds(189,294,120,30);
+		
 		criarConta.setFont(new Font("Arial", Font.BOLD, 14));
 		criarConta.setForeground(new Color(0, 0, 0));
-		criarConta.setBounds(100, 371, 300, 30);
+		criarConta.setBounds(100, 349, 300, 30);
 		
-		inserirEmail.setBounds(100, 238, 300, 30);
+		inserirEmail.setBounds(100, 130, 300, 30);
 		emailLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
-		emailLabel.setBounds(100, 197, 300, 30);
+		emailLabel.setBounds(100, 90, 300, 30);
 		
-		inserirSenha.setBounds(100, 308, 300, 30);
+		inserirSenha.setBounds(100, 210, 300, 30);
 		senhaLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
-		senhaLabel.setBounds(100, 267, 300, 30);
+		senhaLabel.setBounds(100, 170, 300, 30);
 		
 		container.getContentPane().add(emailLabel);
 		container.getContentPane().add(inserirEmail);
 		container.getContentPane().add(senhaLabel);
 		container.getContentPane().add(inserirSenha);
+		container.getContentPane().add(botao);
 		container.getContentPane().add(criarConta);
 		
-		textField = new JTextField(25);
-		textField.setBounds(100, 156, 300, 30);
-		container.getContentPane().add(textField);
-		
-		JLabel lblNomeCompleto = new JLabel("Nome Completo");
-		lblNomeCompleto.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNomeCompleto.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
-		lblNomeCompleto.setBounds(100, 115, 300, 30);
-		container.getContentPane().add(lblNomeCompleto);
-		
-		JLabel lblCadastro = new JLabel("Cadastro");
-		lblCadastro.setBackground(new Color(72, 209, 204));
-		lblCadastro.setForeground(new Color(153, 50, 204));
-		lblCadastro.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCadastro.setFont(new Font("Franklin Gothic Book", Font.BOLD, 20));
-		lblCadastro.setBounds(100, 48, 300, 30);
-		container.getContentPane().add(lblCadastro);
-		
 		container.setVisible(true);
+		
+		botao.addActionListener(this);
 		criarConta.addActionListener(this);
 
 	}
 	
-
-
-	
 	public static void main(String[] args) {
-		new Cadastro(null);
+		new LoginMedico(null);
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
-	}
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
 	}
 }
