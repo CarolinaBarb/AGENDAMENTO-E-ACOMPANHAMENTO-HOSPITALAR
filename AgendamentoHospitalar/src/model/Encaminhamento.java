@@ -16,11 +16,5 @@ public class Encaminhamento {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
-
-	public String EmitirGuia() {
-		return "Encaminhamento [descricao=" + descricao + "]";
-	}
-	
 	
 }

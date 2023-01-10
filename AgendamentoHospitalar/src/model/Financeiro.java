@@ -28,21 +28,7 @@ public class Financeiro {
 		this.tipo = tipo;
 	}
 	
-	//funcao
-	public boolean isConvenio() {
-		System.out.println("Selecione o tipo de pagamento: 1- Convenio /n 2- Particular");
-		String T;
-		Scanner in = new Scanner(System.in);
-		T = in.nextLine();
-		
-		if (getTipo() == T ) {
-			return true;
-		}else {
-			return false;
-		}
-	}
-	
-	
+
 	
 
 }

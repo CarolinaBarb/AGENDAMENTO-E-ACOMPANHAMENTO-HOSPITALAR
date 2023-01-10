@@ -41,16 +41,6 @@ public class Receita {
 			MedicoResp = medicoResp;
 		}
 
-
-		public String EmitirReceita() {
-			Scanner in = new Scanner (System.in);
-			descricao = in.nextLine();
-			return getMedicoResp() + getPacienteAtendi() + "/n" + descricao;
-			
-		}
-		
-		
-
 	}
 
 	

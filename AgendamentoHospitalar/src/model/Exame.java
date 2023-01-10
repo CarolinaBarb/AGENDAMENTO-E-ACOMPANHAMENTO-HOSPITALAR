@@ -23,14 +23,5 @@ public class Exame {
 		this.valor = valor;
 	}
 	
-	//funcoes
-	public double SelecionarValor(double valor) {
-		return valor;
-	}
-	public String obterTipo(String tipo) {
-		return tipo;
-	}
-	
-	
 
 }

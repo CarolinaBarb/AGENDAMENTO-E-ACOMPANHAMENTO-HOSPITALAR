@@ -40,37 +40,5 @@ public class Consulta {
 	public void setIdPaciente(Paciente idPaciente) {
 		this.idPaciente = idPaciente;
 	}
-	//funcoes
-	public void DadosConsulta() {
-		System.out.println("Especialidade: ");
-		Scanner in = new Scanner(System.in);
-		especialidade = in.nextLine();
-		System.out.println("valor: ");
-		valor = in.nextInt();
-	}
-	
-	public boolean VerificarAtestado() {
-		System.out.println("Teve atestado? S/N ");
-		String ch;
-		Scanner in = new Scanner (System.in);
-		ch = in.next();
-		if (ch == "S" || ch ==  "s") {
-			return true;
-		}else {
-			return false;
-		}
-	}
-	
-	public boolean VerificaMedicamento() {
-		System.out.println("teve prescrição de medicamento? S/N");
-		String ch;
-		Scanner in = new Scanner (System.in);
-		ch = in.next();
-		if (ch == "S" || ch ==  "s") {
-			return true;
-		}else {
-			return false;
-		}
-		
-	}
+
 }

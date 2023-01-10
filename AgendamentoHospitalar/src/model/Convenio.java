@@ -38,10 +38,6 @@ public class Convenio extends Financeiro {
 		this.codigo = codigo;
 	}
 	
-	//funcao
-	public void GerarComprovante(String nome, String associados, String codigo, double valor) {
-		System.out.println("nome: "+ nome + "/n" + "associados" + associados + "/n" + "codigo" + codigo + "/n" + "valor" + valor );
-	}
 	
 	
 	

@@ -24,12 +24,5 @@ public class Prontuário {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	//funcao
-	public void GerarProntuario(Date dtconsulta, String descricao){
-		System.out.println("dtconsulta: "+ dtconsulta + "/n" + "descricao" + descricao);
-		
-	}
-	
 
 }

@@ -45,21 +45,5 @@ public class Medico extends Pessoa {
         Convenios_aceitos = convenios_aceitos;
     }
 
-    //funçao
-
-    public void ObterConvenios() {
-        int quantidade = 0;
-        System.out.println("digite a quantidade de convenios: ");
-        Scanner in = new Scanner(System.in);
-        quantidade = in.nextInt();
-
-        for (int i = 0; i <= quantidade; i++) {
-            System.out.println("digite o nome do convenio aceito: ");
-            Convenios_aceitos = in.nextLine();
-            System.out.println(i + Convenios_aceitos);
-        }
-
-
-    }
 
 }
