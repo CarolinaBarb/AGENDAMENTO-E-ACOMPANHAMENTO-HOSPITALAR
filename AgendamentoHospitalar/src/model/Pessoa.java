@@ -2,7 +2,7 @@ package model;
 
 import java.util.*;
 
-public class Pessoa {
+public abstract class Pessoa {
     private String nome;
     private String email;
     private String senha;
@@ -32,7 +32,8 @@ public class Pessoa {
 		this.email = email;
 		this.senha = senha;
 	}
-
+     
+	public abstract int tipoUsuario();
 
 	//Getters and Setters
     public String getNome() {

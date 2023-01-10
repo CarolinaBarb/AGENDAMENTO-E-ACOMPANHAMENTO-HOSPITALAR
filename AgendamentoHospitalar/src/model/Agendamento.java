@@ -7,7 +7,8 @@ public class Agendamento {
 	private Paciente idPaciente;
 	private Exame exame;
 	private Consulta consulta;
-	//contrutores
+	
+	//contructores
 	public Agendamento(Medico idMedico, Paciente idPaciente, Exame exame, Consulta consulta) {
 		super();
 		this.idMedico = idMedico;
@@ -15,6 +16,7 @@ public class Agendamento {
 		this.exame = exame;
 		this.consulta = consulta;
 	}
+	
 	//getters and setters
 	public Medico getIdMedico() {
 		return idMedico;

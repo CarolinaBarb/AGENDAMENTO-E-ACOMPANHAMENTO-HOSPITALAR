@@ -8,7 +8,7 @@ public class Medico extends Pessoa {
     private String especialidade;
     private String Convenios_aceitos;
 
-    //construtor
+    //constructor
 
     public Medico(String nome,String email, String senha, String id, String sexo, Date dataNascimento, String crm, String especialidade,
             String convenios_aceitos) {
@@ -44,6 +44,13 @@ public class Medico extends Pessoa {
     public void setConvenios_aceitos(String convenios_aceitos) {
         Convenios_aceitos = convenios_aceitos;
     }
+
+
+	@Override
+	public int tipoUsuario() {
+		// medico tipo 1
+		return 1;
+	}
 
 
 }

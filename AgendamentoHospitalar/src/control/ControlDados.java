@@ -1,5 +1,6 @@
 package control;
 import model.*;
+import util.Dados;
 
 public class ControlDados {
 	private Dados dados =  new Dados();
