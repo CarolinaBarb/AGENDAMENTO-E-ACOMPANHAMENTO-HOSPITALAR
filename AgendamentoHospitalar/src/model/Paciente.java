@@ -36,4 +36,9 @@ public class Paciente extends Pessoa{
     public void setPeso(double peso) {
         this.peso = peso;
     }
+	@Override
+	public int tipoUsuario() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
