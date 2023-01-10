@@ -4,7 +4,7 @@ import model.*;
 
 public class ControlPessoa {
 
-	public String criarPessoa(ControlDados dados,String nome, String email, String senha) {
+	public String criarConta(ControlDados dados,String nome, String email, String senha) {
 		Pessoa pessoa = new Pessoa(nome, senha, email);
 		Dados.setpessoa(pessoa);
 		return null;
