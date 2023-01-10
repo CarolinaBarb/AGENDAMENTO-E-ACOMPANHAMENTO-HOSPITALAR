@@ -25,4 +25,14 @@ public class ControlMedico {
         	
         	Dados.usuarios.add(medico);
         }
+        
+        public boolean logar(String email,String senha) {
+        	Medico medico = new Medico(email, senha);
+        	if(validar.validaemail(email) == true && validar.validasenha(senha)== true) {
+        		return true;
+        	}else {
+        	}
+        	medico.setMedico(medico);
+        	return Dados.usuarios.add(medico);
+        }
 }

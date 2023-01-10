@@ -19,9 +19,18 @@ public class Medico extends Pessoa {
     }
 
 
-    //getters and setters
+    
 
-    public String getCrm() {
+
+	public Medico(String email, String senha) {
+		super(email, senha);
+	}
+
+
+
+
+
+	public String getCrm() {
         return crm;
     }
 
@@ -50,6 +59,11 @@ public class Medico extends Pessoa {
 	public int tipoUsuario() {
 		// medico tipo 1
 		return 1;
+	}
+
+
+	public void setMedico(Medico medico) {
+		
 	}
 
 
