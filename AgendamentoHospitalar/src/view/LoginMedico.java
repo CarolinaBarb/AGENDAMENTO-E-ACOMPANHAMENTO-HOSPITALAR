@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import control.*;
 
 public class LoginMedico implements ActionListener {
-	private JFrame container;
+	JFrame container;
 	private JButton botao;
 	private JTextField inserirEmail;
 	private JPasswordField inserirSenha;
@@ -67,6 +67,15 @@ public class LoginMedico implements ActionListener {
 
 	}
 	
+
+
+	void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
 	public static void main(String[] args) {
 		new LoginMedico(null);
 	}
@@ -76,4 +85,5 @@ public class LoginMedico implements ActionListener {
 		// TODO Auto-generated method stub
 		
 	}
+
 }

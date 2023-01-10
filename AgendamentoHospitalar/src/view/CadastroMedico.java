@@ -22,9 +22,17 @@ public class CadastroMedico implements ActionListener {
 		criarConta = new JButton("Criar Conta");
 		criarConta.setAction(action);
 		criarConta.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
+				LoginMedico lm = new LoginMedico(null);
+				lm.setVisible(true);
+                this.dispose();	
+			}
+
+			private void dispose() {
 			}
 		});
+		
 		emailLabel = new JLabel ("Email");
 		emailLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		senhaLabel = new JLabel("Senha");
@@ -78,7 +86,7 @@ public class CadastroMedico implements ActionListener {
 		
 		container.setVisible(true);
 		criarConta.addActionListener(this);
-
+		
 	}
 	
 
