@@ -6,8 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import control.*;
 
-public class CadastroMedico implements ActionListener {
-	private JFrame container;
+public class Cadastro implements ActionListener {
+	JFrame container;
 	private JTextField inserirEmail;
 	private JPasswordField inserirSenha;
 	private JLabel emailLabel;
@@ -17,13 +17,13 @@ public class CadastroMedico implements ActionListener {
 	private JTextField txtCadastrar;
 	
 
-	public CadastroMedico(ControlDados d){
+	public Cadastro(ControlDados d){
 		container = new JFrame("Cadastro");
 		criarConta = new JButton("Criar Conta");
 		criarConta.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				LoginMedico lm = new LoginMedico(null);
+				Login lm = new Login(null);
 				lm.setVisible(true);
                 this.dispose();	
 			}
@@ -93,7 +93,7 @@ public class CadastroMedico implements ActionListener {
 
 	
 	public static void main(String[] args) {
-		new CadastroMedico(null);
+		new Cadastro(null);
 	}
 	
 	@Override
