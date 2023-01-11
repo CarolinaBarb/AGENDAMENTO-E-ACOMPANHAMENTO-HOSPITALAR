@@ -14,14 +14,12 @@ public class CadastroMedico implements ActionListener {
 	private JLabel senhaLabel;
 	private JButton criarConta;
 	private JTextField textField;
-	private final Action action = new SwingAction();
 	private JTextField txtCadastrar;
 	
 
 	public CadastroMedico(ControlDados d){
 		container = new JFrame("Cadastro");
 		criarConta = new JButton("Criar Conta");
-		criarConta.setAction(action);
 		criarConta.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -84,11 +82,7 @@ public class CadastroMedico implements ActionListener {
 		lblCadastroMedico.setBounds(100, 48, 300, 30);
 		container.getContentPane().add(lblCadastroMedico);
 		
-		txtCadastrar = new JTextField();
-		txtCadastrar.setText("Cadastrar");
-		txtCadastrar.setBounds(203, 376, 60, 20);
-		container.getContentPane().add(txtCadastrar);
-		txtCadastrar.setColumns(10);
+	
 		
 		container.setVisible(true);
 		criarConta.addActionListener(this);
@@ -107,10 +101,5 @@ public class CadastroMedico implements ActionListener {
 		// TODO Auto-generated method stub
 		
 	}
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
-	}
+	
 }
