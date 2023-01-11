@@ -48,4 +48,9 @@ public class Paciente extends Pessoa{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
+	public void setPaciente(Paciente paciente) {
+		
+	}
 }
