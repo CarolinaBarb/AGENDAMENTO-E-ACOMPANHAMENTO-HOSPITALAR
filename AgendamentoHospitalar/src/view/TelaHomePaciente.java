@@ -67,27 +67,32 @@ public class TelaHomePaciente implements ActionListener {
 		toolBar.setToolTipText("");
 		toolBar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		toolBar.setBackground(new Color(152, 251, 152));
-		toolBar.setBounds(-13, 0, 1131, 69);
+		toolBar.setBounds(0, 0, 1131, 69);
 		
 		markClinic = new JLabel("Mark Clinic");
 		markClinic.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		toolBar.add(markClinic);
 
 		popupMenu = new JPopupMenu();
+		popupMenu.setBorderPainted(false);
 		popupMenu.setBackground(new Color(255, 192, 203));
 		
 		toolBar.add(popupMenu);
 		
 		verReceitas = new JMenuItem("Receitas");
+		verReceitas.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 		popupMenu.add(verReceitas);
 		
 		verAtestados = new JMenuItem("Atestados");
+		verAtestados.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 		popupMenu.add(verAtestados);
 		
 		verEncaminhamentos = new JMenuItem("Encaminhamentos");
+		verEncaminhamentos.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 		popupMenu.add(verEncaminhamentos);
 		
 		logout = new JMenuItem("Sair");
+		logout.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 		popupMenu.add(logout);
 		
 		container.getContentPane().add(marcarconsulta);
