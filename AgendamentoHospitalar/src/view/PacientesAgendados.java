@@ -28,7 +28,7 @@ public class PacientesAgendados extends JFrame {
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Launch the application.k
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
