@@ -69,13 +69,19 @@ public class TelaMedico extends JFrame {
 		btnNewButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 22));
 		btnNewButton.addActionListener(new ActionListener() {
 		
-		public void actionPerformed(ActionEvent e) {	// funcao de eventos,há outras funcoes para casos específicos
-			Object src = e.getSource();                 // pega o valor do evento, qual botao foi apertado
-			if(src == btnNewButton) {                   // para verificar qual botao foi apertado, basta fazer src == nomeDoBotao
-				new PacientesAgendados();                  // cria uma instância da janela de destino
+		public void actionPerformed(ActionEvent e) {	
+			PacientesAgendados pa = new PacientesAgendados();
+			pa.setVisible(true);
+            this.dispose();	             
 			}
+
+		private void dispose() {
+			
 		}
-		});
+		}
+		
+
+		);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Agenda");
