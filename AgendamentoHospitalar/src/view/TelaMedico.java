@@ -15,8 +15,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 
-public class TelaMedico extends JFrame {
+import control.*;
 
+public class TelaMedico extends JFrame {
+	private static ControlDados d = new ControlDados();
 	/**
 	 * Launch the application.
 	 */
@@ -37,6 +39,7 @@ public class TelaMedico extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaMedico() {
+		
 		getContentPane().setBackground(new Color(255, 228, 225));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 926, 529);
@@ -65,8 +68,13 @@ public class TelaMedico extends JFrame {
 		btnNewButton.setBackground(new Color(255, 240, 245));
 		btnNewButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 22));
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		
+		public void actionPerformed(ActionEvent e) {	// funcao de eventos,há outras funcoes para casos específicos
+			Object src = e.getSource();                 // pega o valor do evento, qual botao foi apertado
+			if(src == btnNewButton) {                   // para verificar qual botao foi apertado, basta fazer src == nomeDoBotao
+				//new CadastroMedico(d);                  // cria uma instância da janela de destino
 			}
+		}
 		});
 		panel.add(btnNewButton);
 		
