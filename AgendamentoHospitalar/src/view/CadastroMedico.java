@@ -15,6 +15,7 @@ public class CadastroMedico implements ActionListener {
 	private JButton criarConta;
 	private JTextField textField;
 	private final Action action = new SwingAction();
+	private JTextField txtCadastrar;
 	
 
 	public CadastroMedico(ControlDados d){
@@ -37,7 +38,6 @@ public class CadastroMedico implements ActionListener {
 		emailLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		senhaLabel = new JLabel("Senha");
 		senhaLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		criarConta.setHorizontalAlignment(SwingConstants.CENTER);
 		inserirEmail = new JTextField(25);
 		inserirSenha = new JPasswordField(25);
 		
@@ -50,7 +50,7 @@ public class CadastroMedico implements ActionListener {
 		
 		criarConta.setFont(new Font("Arial", Font.BOLD, 14));
 		criarConta.setForeground(new Color(0, 0, 0));
-		criarConta.setBounds(100, 371, 300, 30);
+		criarConta.setBounds(167, 393, 139, 30);
 		
 		inserirEmail.setBounds(100, 238, 300, 30);
 		emailLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
@@ -83,6 +83,12 @@ public class CadastroMedico implements ActionListener {
 		lblCadastroMedico.setFont(new Font("Franklin Gothic Book", Font.BOLD, 20));
 		lblCadastroMedico.setBounds(100, 48, 300, 30);
 		container.getContentPane().add(lblCadastroMedico);
+		
+		txtCadastrar = new JTextField();
+		txtCadastrar.setText("Cadastrar");
+		txtCadastrar.setBounds(203, 376, 60, 20);
+		container.getContentPane().add(txtCadastrar);
+		txtCadastrar.setColumns(10);
 		
 		container.setVisible(true);
 		criarConta.addActionListener(this);

@@ -17,7 +17,14 @@ public class Paciente extends Pessoa{
         this.peso = peso;
         this.observacao = observacao;
     }
-    //getters and setters
+    
+    
+    public Paciente(String email, String senha) {
+		super(email, senha);
+	}
+
+
+	//getters and setters
     public String getCpf() {
         return cpf;
     }

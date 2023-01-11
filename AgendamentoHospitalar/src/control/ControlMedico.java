@@ -22,7 +22,15 @@ public class ControlMedico {
         		
         	}
         	medico.setNome(nome);
-        	
+            medico.setCrm(crm);
+            medico.setDataNascimento(DataNascimento);
+            medico.setEmail(email);
+            medico.setId(id);
+            medico.setEspecialidade(especialidade);
+            medico.setSenha(senha);
+            medico.setSexo(sexo);
+            medico.setConvenios_aceitos(Convenios_aceitos);
+            
         	Dados.usuarios.add(medico);
         }
         
