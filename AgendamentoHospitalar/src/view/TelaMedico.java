@@ -72,7 +72,7 @@ public class TelaMedico extends JFrame {
 		public void actionPerformed(ActionEvent e) {	// funcao de eventos,há outras funcoes para casos específicos
 			Object src = e.getSource();                 // pega o valor do evento, qual botao foi apertado
 			if(src == btnNewButton) {                   // para verificar qual botao foi apertado, basta fazer src == nomeDoBotao
-				//new CadastroMedico(d);                  // cria uma instância da janela de destino
+				//new CadastroMedico(d); k                 // cria uma instância da janela de destino
 			}
 		}
 		});
