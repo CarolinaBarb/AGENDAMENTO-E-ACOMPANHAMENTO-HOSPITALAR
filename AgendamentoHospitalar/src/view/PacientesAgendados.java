@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import control.ControlDados;
+
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.CardLayout;
@@ -28,7 +31,7 @@ public class PacientesAgendados extends JFrame {
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.k
+	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -45,6 +48,7 @@ public class PacientesAgendados extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param d 
 	 */
 	public PacientesAgendados() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -179,6 +183,7 @@ public class PacientesAgendados extends JFrame {
 		btnNewButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 11));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		btnNewButton.setBounds(0, 34, 187, 82);
