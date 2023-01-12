@@ -99,19 +99,6 @@ public class TelaHomePaciente implements ActionListener {
 		comboBox.add(logout);
 
 		
-		verReceitas = new JMenuItem("Receitas");
-		verReceitas.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-
-		
-		verAtestados = new JMenuItem("Atestados");
-		verAtestados.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-		
-		verEncaminhamentos = new JMenuItem("Encaminhamentos");
-		verEncaminhamentos.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-		
-		logout = new JMenuItem("Sair");
-		logout.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-		
 		container.getContentPane().add(marcarconsulta);
 		container.getContentPane().add(agendamento);
 		container.getContentPane().add(pagamentos);
