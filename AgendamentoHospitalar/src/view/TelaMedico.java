@@ -70,18 +70,16 @@ public class TelaMedico extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 		
 		public void actionPerformed(ActionEvent e) {	
-			PacientesAgendados pa = new PacientesAgendados();
+			MostrarPacientes pa = new MostrarPacientes();
 			pa.setVisible(true);
             this.dispose();	             
 			}
 
-		private void dispose() {
-			
+		private void dispose() {	
 		}
-		}
-		
-
+	}
 		);
+		
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Agenda");

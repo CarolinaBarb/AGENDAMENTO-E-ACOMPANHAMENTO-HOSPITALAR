@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import control.*;
 import model.*
 ;public class Cadastro implements ActionListener {
-	JFrame container;
+	public JFrame container;
 	private JTextField inserirEmail;
 	private JPasswordField inserirSenha;
 	private JLabel emailLabel;
@@ -18,14 +18,14 @@ import model.*
 	private JTextField txtCadastrar;
 	
 
-	public Cadastro(ControlDados d){
+	public Cadastro(){
 		container = new JFrame("Cadastro");
 		criarConta = new JButton("Criar Conta");
 		criarConta.addActionListener(new ActionListener() {
 			
 	ControlPaciente cp = new ControlPaciente();		
 			
-	//boatao cadastrar
+	//botao cadastrar
 			public void actionPerformed(ActionEvent e) {
 				Paciente paciente = new Paciente();
 				
@@ -34,12 +34,11 @@ import model.*
 				paciente.setSenha(inserirSenha.getText());
 				
 				//tentar salvar
-				
 				if(cp.salvar(paciente)) {
 					JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso");
-					Login lm = new Login(null);
-				    lm.setVisible(true);
-                    this.dispose();	
+					//Login lm = new Login(null);
+				    //lm.setVisible(true);
+                    //this.dispose();	
 				}
 		
 				else {
@@ -101,6 +100,23 @@ import model.*
 		lblCadastroMedico.setBounds(100, 48, 300, 30);
 		container.getContentPane().add(lblCadastroMedico);
 		
+		JButton btnVerTodos = new JButton("ver todos");
+		btnVerTodos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MostrarPacientes pa = new MostrarPacientes();
+				pa.setVisible(true);
+	            this.dispose();	
+				
+			}
+
+			private void dispose() {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		btnVerTodos.setBounds(36, 398, 89, 23);
+		container.getContentPane().add(btnVerTodos);
+		
 	
 		
 		container.setVisible(true);
@@ -112,7 +128,7 @@ import model.*
 
 	
 	public static void main(String[] args) {
-		new Cadastro(null);
+		new Cadastro();
 	}
 	
 	@Override
@@ -120,5 +136,4 @@ import model.*
 		// TODO Auto-generated method stub
 		
 	}
-	
 }

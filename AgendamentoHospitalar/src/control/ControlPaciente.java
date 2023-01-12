@@ -27,9 +27,7 @@ public class ControlPaciente {
 	
 		Validar validar = new Validar();
 		
-		
-		
-		
+
         public void cadastrar(String nome, String email, String senha, String id, String sexo, 
         		              Date DataNascimento, String cpf, double altura, double peso, String observacao) {
         	Paciente paciente = new Paciente(email, senha, sexo, nome, id, DataNascimento, cpf, altura, peso, observacao);
