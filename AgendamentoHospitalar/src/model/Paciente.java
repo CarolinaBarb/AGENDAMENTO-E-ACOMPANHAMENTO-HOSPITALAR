@@ -8,7 +8,8 @@ public class Paciente extends Pessoa{
     private double altura;
     private double peso;
     private String observacao;
-    //construtor
+    
+    //full constructor
     public Paciente(String nome,String email, String senha, String id, String sexo, Date dataNascimento, String cpf, double altura, double peso,
             String observacao) {
         super(email, senha, sexo, nome, id, dataNascimento);
@@ -21,6 +22,19 @@ public class Paciente extends Pessoa{
     
     public Paciente(String email, String senha) {
 		super(email, senha);
+	}
+    
+    
+
+	public Paciente(String nome, String email, String senha) {
+		super(nome, email, senha);
+	}
+	
+	
+
+
+	public Paciente() {
+		super();
 	}
 
 

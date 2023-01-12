@@ -33,6 +33,11 @@ public abstract class Pessoa {
 		this.senha = senha;
 	}
      
+	public Pessoa() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public abstract int tipoUsuario();
 
 	//Getters and Setters
