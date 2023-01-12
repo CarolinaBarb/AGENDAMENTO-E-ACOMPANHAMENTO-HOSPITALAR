@@ -91,6 +91,7 @@ public class TelaMedico extends JFrame {
 		btnNewButton_1.setBackground(new Color(255, 240, 245));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		panel.add(btnNewButton_1);
