@@ -69,7 +69,7 @@ public class TelaHomePaciente implements ActionListener {
 		toolBar.setBackground(new Color(240, 230, 140));
 		toolBar.setBounds(0, 0, 1052, 21);
 		
-		Home = new JLabel("Mark Clinic");
+		Home = new JLabel("HOME");
 		Home.setForeground(new Color(148, 0, 211));
 		Home.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		toolBar.add(Home);
