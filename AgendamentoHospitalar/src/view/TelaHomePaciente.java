@@ -13,7 +13,7 @@ public class TelaHomePaciente implements ActionListener {
 	private JButton pagamentos;
 	private JButton documentos;
 	private JToolBar toolBar;
-	private JLabel markClinic;
+	private JLabel Home;
 	private JComboBox<String> comboBox;
 	private JMenuItem logout, verReceitas, verAtestados, verEncaminhamentos;
 	
@@ -69,10 +69,10 @@ public class TelaHomePaciente implements ActionListener {
 		toolBar.setBackground(new Color(240, 230, 140));
 		toolBar.setBounds(0, 0, 1052, 21);
 		
-		markClinic = new JLabel("Mark Clinic");
-		markClinic.setForeground(new Color(148, 0, 211));
-		markClinic.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		toolBar.add(markClinic);
+		Home = new JLabel("Mark Clinic");
+		Home.setForeground(new Color(148, 0, 211));
+		Home.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		toolBar.add(Home);
 		
         String[] items = {"Receitas", "Atestados", "Encaminhamentos", "Sair"};
 		
