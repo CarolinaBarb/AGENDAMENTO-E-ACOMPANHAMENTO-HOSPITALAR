@@ -21,7 +21,7 @@ public class Login implements ActionListener {
 		criarConta = new JButton("Criar Conta");
 		criarConta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cadastro lm = new Cadastro(null);
+				Cadastro lm = new Cadastro();
 				lm.container.setVisible(true);
                 this.dispose();
 			}

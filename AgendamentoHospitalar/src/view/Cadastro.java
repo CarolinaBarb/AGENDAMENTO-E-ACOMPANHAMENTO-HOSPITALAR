@@ -1,13 +1,14 @@
 package view;
 
+import control.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import control.*;
-
-public class Cadastro implements ActionListener {
-	JFrame container;
+import model.*
+;public class Cadastro implements ActionListener {
+	public JFrame container;
 	private JTextField inserirEmail;
 	private JPasswordField inserirSenha;
 	private JLabel emailLabel;
@@ -17,15 +18,32 @@ public class Cadastro implements ActionListener {
 	private JTextField txtCadastrar;
 	
 
-	public Cadastro(ControlDados d){
+	public Cadastro(){
 		container = new JFrame("Cadastro");
 		criarConta = new JButton("Criar Conta");
 		criarConta.addActionListener(new ActionListener() {
 			
+	ControlPaciente cp = new ControlPaciente();		
+			
+	//botao cadastrar
 			public void actionPerformed(ActionEvent e) {
-				Login lm = new Login(null);
-				lm.setVisible(true);
-                this.dispose();	
+				Paciente paciente = new Paciente();
+				
+				paciente.setNome(textField.getText());
+				paciente.setEmail(inserirEmail.getText());
+				paciente.setSenha(inserirSenha.getText());
+				
+				//tentar salvar
+				if(cp.salvar(paciente)) {
+					JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso");
+					//Login lm = new Login(null);
+				    //lm.setVisible(true);
+                    //this.dispose();	
+				}
+		
+				else {
+					JOptionPane.showMessageDialog(null, "Erro ao cadastrar paciente");
+				}
 			}
 
 			private void dispose() {
@@ -82,6 +100,23 @@ public class Cadastro implements ActionListener {
 		lblCadastroMedico.setBounds(100, 48, 300, 30);
 		container.getContentPane().add(lblCadastroMedico);
 		
+		JButton btnVerTodos = new JButton("ver todos");
+		btnVerTodos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MostrarPacientes pa = new MostrarPacientes();
+				pa.setVisible(true);
+	            this.dispose();	
+				
+			}
+
+			private void dispose() {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		btnVerTodos.setBounds(36, 398, 89, 23);
+		container.getContentPane().add(btnVerTodos);
+		
 	
 		
 		container.setVisible(true);
@@ -93,7 +128,7 @@ public class Cadastro implements ActionListener {
 
 	
 	public static void main(String[] args) {
-		new Cadastro(null);
+		new Cadastro();
 	}
 	
 	@Override
@@ -101,5 +136,4 @@ public class Cadastro implements ActionListener {
 		// TODO Auto-generated method stub
 		
 	}
-	
 }

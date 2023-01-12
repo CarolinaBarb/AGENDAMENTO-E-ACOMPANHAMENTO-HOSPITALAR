@@ -1,5 +1,6 @@
 package control;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import model.Paciente;
@@ -8,11 +9,25 @@ import util.Validar;
 
 public class ControlPaciente {
 	
+	private ArrayList<Paciente> pacientes = new ArrayList<>();
+	
+	public boolean salvar (Paciente m) {
+		if(m != null) {
+			pacientes.add(m);	
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public ArrayList <Paciente> retornarTodos(){
+		return pacientes;
+	}
+	
 		Validar validar = new Validar();
 		
-		
-		
-		
+
         public void cadastrar(String nome, String email, String senha, String id, String sexo, 
         		              Date DataNascimento, String cpf, double altura, double peso, String observacao) {
         	Paciente paciente = new Paciente(email, senha, sexo, nome, id, DataNascimento, cpf, altura, peso, observacao);
