@@ -1,12 +1,13 @@
 package view;
 
+import control.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import control.*;
-
-public class Cadastro implements ActionListener {
+import model.*
+;public class Cadastro implements ActionListener {
 	JFrame container;
 	private JTextField inserirEmail;
 	private JPasswordField inserirSenha;
@@ -22,10 +23,28 @@ public class Cadastro implements ActionListener {
 		criarConta = new JButton("Criar Conta");
 		criarConta.addActionListener(new ActionListener() {
 			
+	ControlPaciente cp = new ControlPaciente();		
+			
+	//boatao cadastrar
 			public void actionPerformed(ActionEvent e) {
-				Login lm = new Login(null);
-				lm.setVisible(true);
-                this.dispose();	
+				Paciente paciente = new Paciente();
+				
+				paciente.setNome(textField.getText());
+				paciente.setEmail(inserirEmail.getText());
+				paciente.setSenha(inserirSenha.getText());
+				
+				//tentar salvar
+				
+				if(cp.salvar(paciente)) {
+					JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso");
+					Login lm = new Login(null);
+				    lm.setVisible(true);
+                    this.dispose();	
+				}
+		
+				else {
+					JOptionPane.showMessageDialog(null, "Erro ao cadastrar paciente");
+				}
 			}
 
 			private void dispose() {

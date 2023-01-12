@@ -1,5 +1,8 @@
 package control;
 
+import model.Medico;
+
+import java.util.*;
 import java.util.Date;
 
 import model.Medico;
@@ -7,6 +10,25 @@ import util.Dados;
 import util.Validar;
 
 public class ControlMedico {
+	
+	private ArrayList<Medico> medicos = new ArrayList<>();
+	
+	public boolean salvar (Medico m) {
+		if(m != null) {
+			medicos.add(m);	
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public ArrayList <Medico> retornarTodos(){
+		return medicos;
+	}
+	
+	
+	
 	
 		Validar validar = new Validar();
 		
