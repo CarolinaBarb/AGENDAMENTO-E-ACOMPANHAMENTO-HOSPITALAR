@@ -14,7 +14,7 @@ public class TelaHomePaciente implements ActionListener {
 	private JButton documentos;
 	private JToolBar toolBar;
 	private JLabel markClinic;
-	private JPopupMenu popupMenu;
+	private JComboBox<String> comboBox;
 	private JMenuItem logout, verReceitas, verAtestados, verEncaminhamentos;
 	
 	public TelaHomePaciente(){
@@ -22,19 +22,19 @@ public class TelaHomePaciente implements ActionListener {
 		container = new JFrame("Home");
 		container.getContentPane().setBackground(new Color(255, 228, 225));
 		container.setTitle("HomePaciente");
-		container.setSize(1132, 820);
+		container.setSize(1066, 639);
 		container.setLocation(700, 700);
 		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		container.getContentPane().setLayout(null);
 		
-		marcarconsulta = new JButton("Marcar Consulta");
+		marcarconsulta = new JButton("Marcar Consultas");
 		marcarconsulta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		marcarconsulta.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		marcarconsulta.setBackground(new Color(152, 251, 152));
-		marcarconsulta.setBounds(68, 316, 216, 213);
+		marcarconsulta.setBackground(new Color(245, 255, 250));
+		marcarconsulta.setBounds(36, 215, 216, 213);
 		
 		agendamento = new JButton("Agendamentos");
 		agendamento.addActionListener(new ActionListener() {
@@ -42,8 +42,8 @@ public class TelaHomePaciente implements ActionListener {
 			}
 		});
 		agendamento.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		agendamento.setBackground(new Color(152, 251, 152));
-		agendamento.setBounds(328, 316, 216, 213);
+		agendamento.setBackground(new Color(245, 255, 250));
+		agendamento.setBounds(287, 215, 216, 213);
 
 		pagamentos = new JButton("Pagamentos");
 		pagamentos.addActionListener(new ActionListener() {
@@ -51,8 +51,8 @@ public class TelaHomePaciente implements ActionListener {
 			}
 		});
 		pagamentos.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		pagamentos.setBackground(new Color(152, 251, 152));
-		pagamentos.setBounds(574, 316, 216, 213);
+		pagamentos.setBackground(new Color(245, 255, 250));
+		pagamentos.setBounds(540, 215, 216, 213);
 		
 		documentos = new JButton("Documentos");
 		documentos.addActionListener(new ActionListener() {
@@ -60,40 +60,57 @@ public class TelaHomePaciente implements ActionListener {
 			}
 		});
 		documentos.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		documentos.setBackground(new Color(152, 251, 152));
-		documentos.setBounds(834, 316, 216, 213);
+		documentos.setBackground(new Color(245, 255, 250));
+		documentos.setBounds(792, 215, 216, 213);
 		
 		toolBar = new JToolBar();
 		toolBar.setToolTipText("");
 		toolBar.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		toolBar.setBackground(new Color(152, 251, 152));
-		toolBar.setBounds(0, 0, 1131, 69);
+		toolBar.setBackground(new Color(240, 230, 140));
+		toolBar.setBounds(0, 0, 1052, 21);
 		
 		markClinic = new JLabel("Mark Clinic");
-		markClinic.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		markClinic.setForeground(new Color(148, 0, 211));
+		markClinic.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		toolBar.add(markClinic);
-
-		popupMenu = new JPopupMenu();
-		popupMenu.setBorderPainted(false);
-		popupMenu.setBackground(new Color(255, 192, 203));
 		
-		toolBar.add(popupMenu);
+        String[] items = {"Receitas", "Atestados", "Encaminhamentos", "Sair"};
 		
+		comboBox = new JComboBox<>(items);
+		comboBox.setBackground(new Color(245, 255, 250));
+		comboBox.setBounds(941, 0, 101, 21);
+		container.getContentPane().add(comboBox);
+		
+	      
 		verReceitas = new JMenuItem("Receitas");
 		verReceitas.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-		popupMenu.add(verReceitas);
+		comboBox.add(verReceitas);
 		
 		verAtestados = new JMenuItem("Atestados");
 		verAtestados.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-		popupMenu.add(verAtestados);
+		comboBox.add(verAtestados);
 		
 		verEncaminhamentos = new JMenuItem("Encaminhamentos");
 		verEncaminhamentos.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-		popupMenu.add(verEncaminhamentos);
+		comboBox.add(verEncaminhamentos);
 		
 		logout = new JMenuItem("Sair");
 		logout.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-		popupMenu.add(logout);
+		comboBox.add(logout);
+
+		
+		verReceitas = new JMenuItem("Receitas");
+		verReceitas.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+
+		
+		verAtestados = new JMenuItem("Atestados");
+		verAtestados.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+		
+		verEncaminhamentos = new JMenuItem("Encaminhamentos");
+		verEncaminhamentos.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+		
+		logout = new JMenuItem("Sair");
+		logout.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 		
 		container.getContentPane().add(marcarconsulta);
 		container.getContentPane().add(agendamento);
