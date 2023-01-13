@@ -22,6 +22,14 @@ public class Medico extends Pessoa {
     
 
 
+	public Medico(String nome) {
+		super(nome);
+	}
+
+
+
+
+
 	public Medico(String email, String senha) {
 		super(email, senha);
 	}

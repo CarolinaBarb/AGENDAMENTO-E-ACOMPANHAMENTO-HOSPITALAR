@@ -38,6 +38,12 @@ public abstract class Pessoa {
 	}
 
 
+	public Pessoa(String nome2) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	public abstract int tipoUsuario();
 
 	//Getters and Setters

@@ -15,6 +15,15 @@ public class Consulta {
 		this.idMedico = idMedico;
 		this.idPaciente = idPaciente;
 	}
+	
+	
+	public Consulta(String especialidade, double valor) {
+		super();
+		this.especialidade = especialidade;
+		this.valor = valor;
+	}
+
+
 	//getters and setters
 	public String getEspecialidade() {
 		return especialidade;
