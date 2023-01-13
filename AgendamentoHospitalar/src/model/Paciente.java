@@ -31,6 +31,11 @@ public class Paciente extends Pessoa{
 	}
 
 
+	public Paciente(String email, String senha, String nome) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	//getters and setters
     public String getCpf() {
         return cpf;

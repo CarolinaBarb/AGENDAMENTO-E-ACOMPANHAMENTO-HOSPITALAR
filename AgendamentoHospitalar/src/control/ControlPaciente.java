@@ -30,13 +30,13 @@ public class ControlPaciente {
 
        public boolean cadastrar(ControlDados d, String nome, String email, String senha) {
        	Paciente paciente = new Paciente(email, senha, nome);
-        if(validar.validacriarConta(nome, email, senha) {
-        	return true;
-        }else {	
-        }
-             paciente.setNome(nome);
-             paciente.setEmail(email);
-             paciente.setSenha(senha);
+       	if(validar.validacriarConta(d, nome, email, senha)) {
+       		return true;
+       	}
+        paciente.setNome(nome);
+        paciente.setEmail(email);
+        paciente.setSenha(senha);
+             
      
        	return Dados.paciente.add(paciente);
         
