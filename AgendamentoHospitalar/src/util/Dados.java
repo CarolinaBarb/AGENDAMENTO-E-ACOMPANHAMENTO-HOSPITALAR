@@ -64,6 +64,26 @@ public class Dados {
 	public void setEnderecos(Endereco[] enderecos) {
 		this.enderecos = enderecos;
 	}
+
+	public int getQtPaciente() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void setQtPaciente(Object getQtPaciente) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public int getQtMedico() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void setQtMedico(Object getQtMedico) {
+		// TODO Auto-generated method stub
+		
+	}
 }
 	
 	

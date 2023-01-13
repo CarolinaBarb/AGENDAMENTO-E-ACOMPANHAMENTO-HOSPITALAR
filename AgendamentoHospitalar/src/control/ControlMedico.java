@@ -49,9 +49,9 @@ public class ControlMedico {
         	Dados.medico.add(medico);
         }
         
-        public boolean logar(String email,String senha) {
+        public boolean logar(ControlDados d,String email,String senha) {
         	Medico medico = new Medico(email, senha);
-        	if(validar.validaemail(email) == true && validar.validasenha(senha)== true) {
+        	if(validar.validaLoginMedic(d, email, senha)) {
         		return true;
         	}else {
         	}

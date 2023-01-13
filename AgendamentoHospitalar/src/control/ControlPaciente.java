@@ -39,10 +39,10 @@ public class ControlPaciente {
         
         	
        }
-        
-       public boolean logar(String email,String senha) {
+       
+       public boolean logar(ControlDados d, String email,String senha) {
        	Paciente paciente = new Paciente(email, senha);
-       	if(validar.validaemail(email) == true && validar.validasenha(senha)== true) { 
+       	if(validar.validaLoginPacient(d, email, senha)) { 
        		return true;
         	}else {
         }
