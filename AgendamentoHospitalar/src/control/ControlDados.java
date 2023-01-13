@@ -10,21 +10,13 @@ public class ControlDados {
 	private Dados d =  new Dados();
 	
 	public ControlDados() {
-		d.dados();
+		d.fillWithSomeData();
 	}
 
 	public Pessoa[] getPessoa() {
 		return d.getpessoa();
 	}
-	
-	public int getQuantidadePessoa() {
-		return d.getQuantidadepessoa();
-	}
-	
-	public void setQuantidadePessoa() {
-		d.setQuantidadepessoa(getQuantidadePessoa());
-	}
-	
+		
 	public void setPessoa() {
 		d.setpessoa(getPessoa());
 	}

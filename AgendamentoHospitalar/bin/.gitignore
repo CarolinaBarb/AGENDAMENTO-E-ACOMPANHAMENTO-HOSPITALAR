@@ -1,4 +1,5 @@
-/view/
 /control/
-/util/
 /model/
+/module-info.class
+/util/
+/view/

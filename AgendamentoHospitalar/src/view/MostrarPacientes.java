@@ -45,12 +45,12 @@ public class MostrarPacientes extends JFrame {
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Nome", "Especialidade"},
-				{"Emanuel", "fisioterapeuta"},
-				{"Joao", "psicologo"},
-				{"Helena", "pediatra"},
-				{"Maria", "fonaudiologa"},
-				{"Ana", "dermatologista"},
+				{"Nome", "Idade"},
+				{"Emanuel", "21 anos"},
+				{"Joao", "35 anos"},
+				{"Helena", "55 anos"},
+				{"Maria", "47 anos"},
+				{"Ana", "61 anos"},
 			},
 			new String[] {
 				"New column", "New column"
