@@ -36,6 +36,11 @@ public class Paciente extends Pessoa{
 	}
 
 
+	public Paciente() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	//getters and setters
     public String getCpf() {
         return cpf;

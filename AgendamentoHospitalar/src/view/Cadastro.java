@@ -47,8 +47,6 @@ import model.*
 				}
 			}
 
-			private void dispose() {
-			}
 		});
 		
 		emailLabel = new JLabel ("Email");
