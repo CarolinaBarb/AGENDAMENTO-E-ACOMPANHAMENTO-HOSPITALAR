@@ -1,27 +1,31 @@
 package control;
+import java.util.ArrayList;
+
 import model.*;
 import util.Dados;
 
 public class ControlDados {
-	private Dados dados =  new Dados();
+	
+	
+	private Dados d =  new Dados();
 	
 	public ControlDados() {
-		dados.dados();
+		d.dados();
 	}
 
 	public Pessoa[] getPessoa() {
-		return dados.getpessoa();
+		return d.getpessoa();
 	}
 	
 	public int getQuantidadePessoa() {
-		return dados.getQuantidadepessoa();
+		return d.getQuantidadepessoa();
 	}
 	
 	public void setQuantidadePessoa() {
-		dados.setQuantidadepessoa(getQuantidadePessoa());
+		d.setQuantidadepessoa(getQuantidadePessoa());
 	}
 	
 	public void setPessoa() {
-		dados.setpessoa(getPessoa());
+		d.setpessoa(getPessoa());
 	}
 }

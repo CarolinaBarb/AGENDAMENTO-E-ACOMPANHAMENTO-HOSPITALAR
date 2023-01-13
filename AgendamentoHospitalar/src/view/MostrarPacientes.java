@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.EventQueue;
+import java.lang.annotation.Target;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -44,18 +45,26 @@ public class MostrarPacientes extends JFrame {
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"amora", null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
+				{"Nome", "Especialidade"},
+				{"Emanuel", "fisioterapeuta"},
+				{"Joao", "psicologo"},
+				{"Helena", "pediatra"},
+				{"Maria", "fonaudiologa"},
+				{"Ana", "dermatologista"},
 			},
 			new String[] {
-				"New column", "New column", "New column"
+				"New column", "New column"
 			}
 		));
 		model = new DefaultTableModel();
+		
+		
+		
+		
+		
+		
+		
+		
 		contentPane.add(table);
 	}
 

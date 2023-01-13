@@ -16,6 +16,7 @@ import model.*
 	private JButton criarConta;
 	private JTextField textField;
 	private JTextField txtCadastrar;
+
 	
 
 	public Cadastro(){
