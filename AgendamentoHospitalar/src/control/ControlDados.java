@@ -13,11 +13,19 @@ public class ControlDados {
 		d.fillWithSomeData();
 	}
 
-	public Pessoa[] getPessoa() {
-		return d.getpessoa();
+	public Paciente[] getPaciente() {
+		return d.getPacientes();
 	}
-		
-	public void setPessoa() {
-		d.setpessoa(getPessoa());
+	
+	public void setPaciente() {
+		d.setPacientes(getPaciente());
+	}
+	
+	public Medico[] getMedico() {
+		return d.getMedicos();
+	}
+	
+	public void setMedico() {
+		d.setMedicos(getMedico());
 	}
 }
