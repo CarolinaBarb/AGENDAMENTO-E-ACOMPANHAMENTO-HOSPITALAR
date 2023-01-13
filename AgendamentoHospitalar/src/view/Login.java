@@ -1,5 +1,9 @@
 package view;
 
+import control.*;
+import model.Paciente;
+import util.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -20,6 +24,7 @@ public class Login implements ActionListener {
 		botao = new JButton("Entrar");
 		criarConta = new JButton("Criar Conta");
 		criarConta.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				Cadastro lm = new Cadastro();
 				lm.container.setVisible(true);
@@ -101,13 +106,69 @@ public class Login implements ActionListener {
 	public static void main(String[] args) {
 		new Login(null);
 	}
-	
+
+
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		Object src = e.getSource();
 		if(src == botao)
 			new TelaHomePaciente();
+		if(src == criarConta)
+			new Cadastro();
 		
 	}
+	
+	
+	public void actionPerformed1(ActionEvent e) {
+		if(logar(null, inserirEmail.getText(), inserirSenha.getText())) {
+
+			//case 1:
+			TelaHomePaciente tp = new TelaHomePaciente();
+		    tp.setVisible(true);
+            this.dispose();
+            
+			//case 2:
+				//TelaMedico tm = new TelaMedico();
+			    //tm.setVisible(true);
+	            //this.dispose();
+            
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Nao foi possivel realizar o login");
+		}
+		
+	}
+	   public boolean logar(ControlDados d, String email,String senha) {
+	       	Paciente paciente = new Paciente(email, senha);
+	       	if(validaLoginPacient(d, email, senha)) { 
+	       		return true;
+	        	}else {
+	        }
+	       	paciente.setPaciente(paciente);
+	       	return Dados.paciente.add(paciente);
+	       }
+
+	   public boolean validaLoginPacient(ControlDados d, String email, String senha) {
+			boolean loginvalidP = false;
+			String senhaP = "";
+			for(int i = 0; i < d.getQtPaciente(); i++ ) {
+				if(d.getPaciente()[i].getEmail().equals(email)) {
+					loginvalidP = true;
+				}
+			}
+			for(int i = 0; i < d.getQtPaciente(); i++) {
+				if(d.getPaciente()[i].getEmail().equals(email)) {
+					senhaP = d.getPaciente()[i].getSenha();
+				}
+			}
+			return loginvalidP;
+		}
+
+	private void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

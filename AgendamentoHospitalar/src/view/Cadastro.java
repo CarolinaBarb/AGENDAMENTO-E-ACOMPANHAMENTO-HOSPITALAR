@@ -47,9 +47,13 @@ import model.*
 				//}
 			//}
 
+<<<<<<< HEAD
 			//private void dispose() {
 			//}
 		//});
+=======
+		});
+>>>>>>> branch 'main' of https://github.com/CarolinaBarb/AGENDAMENTO-E-ACOMPANHAMENTO-HOSPITALAR.git
 		
 		emailLabel = new JLabel ("Email");
 		emailLabel.setHorizontalAlignment(SwingConstants.LEFT);
