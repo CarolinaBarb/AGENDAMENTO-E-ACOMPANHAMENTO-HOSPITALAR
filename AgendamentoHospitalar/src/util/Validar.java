@@ -4,6 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import control.ControlDados;
+import model.Paciente;
 
 public class Validar {
 		
@@ -39,6 +40,18 @@ public class Validar {
 		}
 			return senhavalid;
 	}*/
+	
+	public boolean validacriarConta(ControlDados d, String nome, String email, String senha) {
+		boolean cadastrovalid = false;
+		int qtPaciente = d.getQtPaciente();
+		if(senha.matches("[0-9a-zA-Z$*&_/@#]{4,}") || email.matches("^(.+)@(.+)$")
+				|| nome.matches("[0-9a-zA-Z]+")) {
+			return cadastrovalid = true;
+		}
+		d.setPaciente();
+		d.setQtPaciente(qtPaciente + 1);
+		return cadastrovalid;
+	}
 	
 	
 	public boolean validaLoginPacient(ControlDados d, String email, String senha) {

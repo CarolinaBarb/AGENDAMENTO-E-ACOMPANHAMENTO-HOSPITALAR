@@ -23,18 +23,11 @@ public class Paciente extends Pessoa{
     public Paciente(String email, String senha) {
 		super(email, senha);
 	}
-    
-    
-
-	public Paciente(String nome, String email, String senha) {
-		super(nome, email, senha);
-	}
-	
-	
+   
 
 
-	public Paciente() {
-		super();
+	public Paciente(String nome, String email, String senha, int i) {
+		super(email,senha);
 	}
 
 

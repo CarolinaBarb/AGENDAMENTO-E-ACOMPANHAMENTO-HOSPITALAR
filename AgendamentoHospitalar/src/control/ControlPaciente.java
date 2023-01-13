@@ -28,14 +28,17 @@ public class ControlPaciente {
 		Validar validar = new Validar();
 		
 
-       public void cadastrar(String nome, String email, String senha) {
+       public boolean cadastrar(ControlDados d, String nome, String email, String senha) {
        	Paciente paciente = new Paciente(email, senha, nome);
-        	
+        if(validar.validacriarConta(nome, email, senha) {
+        	return true;
+        }else {	
+        }
              paciente.setNome(nome);
              paciente.setEmail(email);
              paciente.setSenha(senha);
      
-       	Dados.paciente.add(paciente);
+       	return Dados.paciente.add(paciente);
         
         	
        }
