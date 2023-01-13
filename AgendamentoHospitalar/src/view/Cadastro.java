@@ -27,29 +27,29 @@ import model.*
 	ControlPaciente cp = new ControlPaciente();		
 			
 	//botao cadastrar
-			public void actionPerformed(ActionEvent e) {
+			/**public void actionPerformed(ActionEvent e) {
 				Paciente paciente = new Paciente();
 				
 				paciente.setNome(textField.getText());
 				paciente.setEmail(inserirEmail.getText());
-				paciente.setSenha(inserirSenha.getText());
+				paciente.setSenha(inserirSenha.getText());*/
 				
 				//tentar salvar
-				if(cp.salvar(paciente)) {
-					JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso");
+				//if(cp.salvar(paciente)) {
+					//JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso");
 					//Login lm = new Login(null);
 				    //lm.setVisible(true);
                     //this.dispose();	
-				}
+				//}
 		
-				else {
-					JOptionPane.showMessageDialog(null, "Erro ao cadastrar paciente");
-				}
-			}
+				//else {
+				//	JOptionPane.showMessageDialog(null, "Erro ao cadastrar paciente");
+				//}
+			//}
 
-			private void dispose() {
-			}
-		});
+			//private void dispose() {
+			//}
+		//});
 		
 		emailLabel = new JLabel ("Email");
 		emailLabel.setHorizontalAlignment(SwingConstants.LEFT);

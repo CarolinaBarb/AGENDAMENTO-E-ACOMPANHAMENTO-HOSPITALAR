@@ -92,15 +92,11 @@ public class Login implements ActionListener {
 		criarConta.addActionListener(this);
 
 	}
-	
-
 
 	void setVisible(boolean b) {
 		// TODO Auto-generated method stub
 		
 	}
-
-
 
 	public static void main(String[] args) {
 		new Login(null);
@@ -109,6 +105,9 @@ public class Login implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		Object src = e.getSource();
+		if(src == botao)
+			new TelaHomePaciente();
 		
 	}
 }
