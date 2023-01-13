@@ -28,32 +28,25 @@ public class ControlPaciente {
 		Validar validar = new Validar();
 		
 
-        public void cadastrar(String nome, String email, String senha, String id, String sexo, 
-        		              Date DataNascimento, String cpf, double altura, double peso, String observacao) {
-        	Paciente paciente = new Paciente(email, senha, sexo, nome, id, DataNascimento, cpf, altura, peso, observacao);
+       public void cadastrar(String nome, String email, String senha) {
+       	Paciente paciente = new Paciente(email, senha, nome);
         	
-              paciente.setNome(nome);
-              paciente.setAltura(altura);
-              paciente.setCpf(cpf);
-              paciente.setDataNascimento(DataNascimento);
-              paciente.setEmail(email);
-              paciente.setId(id);
-              paciente.setPeso(peso);
-              paciente.setSenha(senha);
-              paciente.setSexo(sexo);
-        	
-        	Dados.usuarios.add(paciente);
+             paciente.setNome(nome);
+             paciente.setEmail(email);
+             paciente.setSenha(senha);
+     
+       	Dados.paciente.add(paciente);
         
         	
-        }
+       }
         
-        public boolean logar(String email,String senha) {
-        	Paciente paciente = new Paciente(email, senha);
-        	if(validar.validaemail(email) == true && validar.validasenha(senha)== true) {
-        		return true;
+       public boolean logar(String email,String senha) {
+       	Paciente paciente = new Paciente(email, senha);
+       	if(validar.validaemail(email) == true && validar.validasenha(senha)== true) { 
+       		return true;
         	}else {
-        	}
-        	paciente.setPaciente(paciente);
-        	return Dados.usuarios.add(paciente);
         }
+       	paciente.setPaciente(paciente);
+       	return Dados.paciente.add(paciente);
+       }
 }

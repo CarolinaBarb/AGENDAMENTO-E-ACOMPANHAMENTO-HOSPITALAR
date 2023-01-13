@@ -5,6 +5,8 @@ import model.*;
 import java.util.*;
 
 public class Dados {
+	public static final ArrayList<Paciente> paciente = new ArrayList<Paciente>();
+	public static final ArrayList<Medico> medico = new ArrayList<Medico>();
 	private  Medico[] medicos = new Medico[50];
 	private Paciente [] pacientes = new Paciente[50];
 	private Consulta[] consultas = new Consulta[50];
@@ -15,7 +17,7 @@ public class Dados {
 	public void fillWithSomeData() {
 		Date d = Calendar.getInstance().getTime();
 		for(int i = 0; i < 5; i++) {
-			medicos[i] = new Medico("Fulano");
+			medicos[i] = new Medico("Fulano", "fulano@email.com", "123123", "CRM/SP 123456.");
 			pacientes[i] = new Paciente("Ana", "ana@gmail.com", "1234");
 			consultas[i] = new Consulta("dermatologista", 150.00);
 			finan[i] = new Financeiro(100.00, "exame");

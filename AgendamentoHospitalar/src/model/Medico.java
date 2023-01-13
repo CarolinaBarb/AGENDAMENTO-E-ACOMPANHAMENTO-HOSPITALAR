@@ -22,7 +22,7 @@ public class Medico extends Pessoa {
     
 
 
-	public Medico(String nome) {
+	public Medico(String nome, String email, String senha, String crm) {
 		super(nome);
 	}
 

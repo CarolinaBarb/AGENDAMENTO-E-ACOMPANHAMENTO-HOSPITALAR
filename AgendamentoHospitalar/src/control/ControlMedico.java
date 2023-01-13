@@ -5,7 +5,6 @@ import model.Medico;
 import java.util.*;
 import java.util.Date;
 
-import model.Medico;
 import util.Dados;
 import util.Validar;
 
@@ -34,9 +33,8 @@ public class ControlMedico {
 		
 		
 		
-        public void cadastrar(String nome, String email, String senha, String id, String sexo, 
-        		              Date DataNascimento, String crm, String especialidade, String Convenios_aceitos) {
-        	Medico medico = new Medico(Convenios_aceitos, especialidade, crm, sexo, id, DataNascimento, email, senha, nome);
+        public void cadastrar(String nome, String email, String senha, String crm) {
+        	Medico medico = new Medico(crm, email, senha, nome);
         	
         	if(validar.validacrm(crm)) {
         		
@@ -45,15 +43,10 @@ public class ControlMedico {
         	}
         	medico.setNome(nome);
             medico.setCrm(crm);
-            medico.setDataNascimento(DataNascimento);
             medico.setEmail(email);
-            medico.setId(id);
-            medico.setEspecialidade(especialidade);
             medico.setSenha(senha);
-            medico.setSexo(sexo);
-            medico.setConvenios_aceitos(Convenios_aceitos);
             
-        	Dados.usuarios.add(medico);
+        	Dados.medico.add(medico);
         }
         
         public boolean logar(String email,String senha) {
@@ -63,6 +56,6 @@ public class ControlMedico {
         	}else {
         	}
         	medico.setMedico(medico);
-        	return Dados.usuarios.add(medico);
+        	return Dados.medico.add(medico);
         }
 }
