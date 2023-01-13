@@ -18,7 +18,7 @@ public class Dados {
 		Date d = Calendar.getInstance().getTime();
 		for(int i = 0; i < 5; i++) {
 			medicos[i] = new Medico("Fulano", "fulano@email.com", "123123", "CRM/SP 123456.");
-			pacientes[i] = new Paciente("Ana", "ana@gmail.com", "1234");
+			pacientes[i] = new Paciente("Ana", "ana@email.com", "1234", i);
 			consultas[i] = new Consulta("dermatologista", 150.00);
 			finan[i] = new Financeiro(100.00, "exame");
 			enderecos[i] = new Endereco("02", "Brsilia", "DF", 57);			
