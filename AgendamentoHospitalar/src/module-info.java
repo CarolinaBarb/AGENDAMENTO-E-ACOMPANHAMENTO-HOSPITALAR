@@ -7,4 +7,5 @@
  */
 module AgendamentoHospitalar {
 	requires java.desktop;
+	requires java.sql;
 }
