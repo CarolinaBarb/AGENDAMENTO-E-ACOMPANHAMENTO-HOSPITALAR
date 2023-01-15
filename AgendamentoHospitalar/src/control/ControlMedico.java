@@ -1,61 +1,42 @@
 package control;
 
 import model.Medico;
+import model.Paciente;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 import java.util.Date;
+
+import javax.swing.JOptionPane;
 
 import util.Dados;
 import util.Validar;
 
 public class ControlMedico {
 	
-	private ArrayList<Medico> medicos = new ArrayList<>();
+	Connection conn;
 	
-	public boolean salvar (Medico m) {
-		if(m != null) {
-			medicos.add(m);	
-			return true;
-		}
-		else {
-			return false;
+
+	public ResultSet autenticacaoMedico(Medico medicocontrol) {
+		conn = new ConexaoDAO().conectaBD();
+
+		try {
+			String sql = "select * from Medicos where email_medico = ? and senha_medico = ?"; // mesmo q ta no banco
+
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, medicocontrol.getEmail()); // primeira ? e o email
+			pstm.setString(2, medicocontrol.getSenha()); // segunda ? e a senha
+
+			ResultSet rs = pstm.executeQuery();
+			return rs;
+
+		} catch (SQLException erro) {
+			JOptionPane.showMessageDialog(null, "MedicoControl: " + erro);
+			return null;
 		}
 	}
-	
-	public ArrayList <Medico> retornarTodos(){
-		return medicos;
-	}
-	
-	
-	
-	
-		Validar validar = new Validar();
-		
-		
-		
-        public void cadastrar(String nome, String email, String senha, String crm) {
-        	Medico medico = new Medico(crm, email, senha, nome);
-        	
-        	if(validar.validacrm(crm)) {
-        		
-        	} else {
-        		
-        	}
-        	medico.setNome(nome);
-            medico.setCrm(crm);
-            medico.setEmail(email);
-            medico.setSenha(senha);
-            
-        	Dados.medico.add(medico);
-        }
-        
-        public boolean logar(ControlDados d,String email,String senha) {
-        	Medico medico = new Medico(email, senha);
-        	if(validar.validaLoginMedic(d, email, senha)) {
-        		return true;
-        	}else {
-        	}
-        	medico.setMedico(medico);
-        	return Dados.medico.add(medico);
-        }
+
 }

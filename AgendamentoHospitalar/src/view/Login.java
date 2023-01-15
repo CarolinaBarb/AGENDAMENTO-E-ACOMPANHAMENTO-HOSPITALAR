@@ -130,7 +130,7 @@ public class Login implements ActionListener {
 		   }
 		   else {
 			   //enviar msg dizendo incorreto
-			   JOptionPane.showMessageDialog(null, "usuario ou senha invalido");
+			   JOptionPane.showMessageDialog(null, "email ou senha invalido");
 		   }
 		
 		} catch (SQLException erro) {
