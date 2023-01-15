@@ -1,14 +1,43 @@
 package control;
 
-import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import model.Paciente;
-import util.Dados;
-import util.Validar;
+import javax.swing.JOptionPane;
+
+//import com.mysql.jdbc.PreparedStatement;
+
+
 
 public class ControlPaciente {
 	
+	  Connection conn;
+	  
+	  public ResultSet autenticacaoPaciente(Paciente objpacientecontrol) {
+		  conn = new ConexaoDAO().conectaBD();
+		  
+		  try {
+			  String sql = "select * from usuario where nome_usuario = ? and senha_usuario = ?"; //mesmo q ta no banco
+			  
+			  java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			  pstm.setString(1, objpacientecontrol.getEmail());
+			  pstm.setString(2, objpacientecontrol.getSenha());
+			  
+			  ResultSet rs = pstm.executeQuery();  
+			  return rs;
+			
+		} catch (SQLException erro) {
+			JOptionPane.showMessageDialog(null, "PacienteControl: "+erro);
+			return null;
+		}
+	  }
+	
+	
+	
+	
+	/*
 	private ArrayList<Paciente> pacientes = new ArrayList<>();
 	
 	public boolean salvar (Paciente m) {
@@ -52,4 +81,5 @@ public class ControlPaciente {
        	paciente.setPaciente(paciente);
        	return Dados.paciente.add(paciente);
        }
+       */
 }
