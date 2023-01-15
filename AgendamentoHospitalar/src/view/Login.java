@@ -21,7 +21,7 @@ public class Login implements ActionListener {
 	private JLabel senhaLabel;
 	private JButton criarConta;
 
-	public Login(ControlDados d) {
+	public Login() {
 		container = new JFrame("Login");
 		btnEntrar = new JButton("Entrar");
 		criarConta = new JButton("Criar Conta");
@@ -79,15 +79,7 @@ public class Login implements ActionListener {
 		lblClienteNovo.setBounds(78, 320, 374, 30);
 		container.getContentPane().add(lblClienteNovo);
 
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Paciente");
-		rdbtnNewRadioButton.setBounds(100, 63, 109, 23);
-		container.getContentPane().add(rdbtnNewRadioButton);
-
-		JRadioButton rdbtnMedico = new JRadioButton("Medico");
-		rdbtnMedico.setBounds(244, 63, 109, 23);
-		container.getContentPane().add(rdbtnMedico);
-
-		JLabel lblLogin = new JLabel("Login");
+		JLabel lblLogin = new JLabel("Login Paciente");
 		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLogin.setFont(new Font("Franklin Gothic Book", Font.BOLD, 20));
 		lblLogin.setBounds(89, 11, 300, 30);
@@ -106,7 +98,7 @@ public class Login implements ActionListener {
 	}
 
 	public static void main(String[] args) {
-		new Login(null);
+		new Login();
 	}
 
 	@Override
