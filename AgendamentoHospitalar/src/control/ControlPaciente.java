@@ -1,6 +1,7 @@
 package control;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -9,77 +10,76 @@ import javax.swing.JOptionPane;
 
 //import com.mysql.jdbc.PreparedStatement;
 
-
-
 public class ControlPaciente {
-	
-	  Connection conn;
-	  
-	  public ResultSet autenticacaoPaciente(Paciente objpacientecontrol) {
-		  conn = new ConexaoDAO().conectaBD();
-		  
-		  try {
-			  String sql = "select * from usuario where nome_usuario = ? and senha_usuario = ?"; //mesmo q ta no banco
-			  
-			  java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
-			  pstm.setString(1, objpacientecontrol.getEmail());
-			  pstm.setString(2, objpacientecontrol.getSenha());
-			  
-			  ResultSet rs = pstm.executeQuery();  
-			  return rs;
+
+	Connection conn;
+	PreparedStatement pstm;
+
+	public void cadastrar(Paciente pacientes) {
+		String sql = "insert into paciente (nome_usuario, email_usuario, senha_usuario) values (?, ?, ?)";
+
+		conn = new ConexaoDAO().conectaBD();
+
+		try {
 			
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, pacientes.getNome()); //get pega, set atribui pegando o nome do paciente pra colocar na tabela
+			pstm.setString(2, pacientes.getEmail());
+			pstm.setString(3, pacientes.getSenha());
+
+			pstm.execute();
+			pstm.close();
+			
+		} catch (Exception erro) {
+			JOptionPane.showMessageDialog(null, "ControlPaciente" + erro);
+		}
+
+	}
+
+	public ResultSet autenticacaoPaciente(Paciente objpacientecontrol) {
+		conn = new ConexaoDAO().conectaBD();
+
+		try {
+			String sql = "select * from paciente where email_usuario = ? and senha_usuario = ?"; // mesmo q ta no banco
+
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, objpacientecontrol.getEmail()); // primeira ? e o email
+			pstm.setString(2, objpacientecontrol.getSenha()); // segunda ? e a senha
+
+			ResultSet rs = pstm.executeQuery();
+			return rs;
+
 		} catch (SQLException erro) {
-			JOptionPane.showMessageDialog(null, "PacienteControl: "+erro);
+			JOptionPane.showMessageDialog(null, "PacienteControl: " + erro);
 			return null;
 		}
-	  }
-	
-	
-	
-	
-	/*
-	private ArrayList<Paciente> pacientes = new ArrayList<>();
-	
-	public boolean salvar (Paciente m) {
-		if(m != null) {
-			pacientes.add(m);	
-			return true;
-		}
-		else {
-			return false;
-		}
 	}
-	
-	public ArrayList <Paciente> retornarTodos(){
-		return pacientes;
-	}
-	
-		Validar validar = new Validar();
-		
 
-       public boolean cadastrar(ControlDados d, String nome, String email, String senha) {
-       	Paciente paciente = new Paciente(email, senha, nome);
-       	if(validar.validacriarConta(d, nome, email, senha)) {
-       		return true;
-       	}
-        paciente.setNome(nome);
-        paciente.setEmail(email);
-        paciente.setSenha(senha);
-             
-     
-       	return Dados.paciente.add(paciente);
-        
-        	
-       }
-       
-       public boolean logar(ControlDados d, String email,String senha) {
-       	Paciente paciente = new Paciente(email, senha);
-       	if(validar.validaLoginPacient(d, email, senha)) { 
-       		return true;
-        	}else {
-        }
-       	paciente.setPaciente(paciente);
-       	return Dados.paciente.add(paciente);
-       }
-       */
+	/*
+	 * private ArrayList<Paciente> pacientes = new ArrayList<>();
+	 * 
+	 * public boolean salvar (Paciente m) { if(m != null) { pacientes.add(m); return
+	 * true; } else { return false; } }
+	 * 
+	 * public ArrayList <Paciente> retornarTodos(){ return pacientes; }
+	 * 
+	 * Validar validar = new Validar();
+	 * 
+	 * 
+	 * public boolean cadastrar(ControlDados d, String nome, String email, String
+	 * senha) { Paciente paciente = new Paciente(email, senha, nome);
+	 * if(validar.validacriarConta(d, nome, email, senha)) { return true; }
+	 * paciente.setNome(nome); paciente.setEmail(email); paciente.setSenha(senha);
+	 * 
+	 * 
+	 * return Dados.paciente.add(paciente);
+	 * 
+	 * 
+	 * }
+	 * 
+	 * public boolean logar(ControlDados d, String email,String senha) { Paciente
+	 * paciente = new Paciente(email, senha); if(validar.validaLoginPacient(d,
+	 * email, senha)) { return true; }else { } paciente.setPaciente(paciente);
+	 * return Dados.paciente.add(paciente); }
+	 */
 }
