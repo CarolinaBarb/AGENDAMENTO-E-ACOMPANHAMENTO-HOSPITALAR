@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 import model.Paciente;
 import javax.swing.JOptionPane;
@@ -16,7 +17,8 @@ public class ControlPaciente {
 	PreparedStatement pstm;
 
 	public void cadastrar(Paciente pacientes) {
-		String sql = "insert into paciente (nome_usuario, email_usuario, senha_usuario, sexo_usuario, altura, peso, observacao, cpf) values (?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "insert into paciente (nome_usuario, email_usuario, senha_usuario, sexo_usuario, data_nasciemnto, cpf, altura, peso, observacao) "
+				      + "values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		conn = new ConexaoDAO().conectaBD();
 
@@ -27,9 +29,9 @@ public class ControlPaciente {
 			pstm.setString(2, pacientes.getEmail());
 			pstm.setString(3, pacientes.getSenha());
 			pstm.setString(4, pacientes.getSexo());
-			//pstm.setDate(5, pacientes.getDataNascimento();
-			pstm.setString(5, pacientes.getAltura());
-			pstm.setString(6, pacientes.getPeso());
+			pstm.setDate(5, (java.sql.Date) new Date(pacientes.getDataNascimento().getTime()));
+			pstm.setDouble(5, pacientes.getAltura());
+			pstm.setDouble(6, pacientes.getPeso());
 			pstm.setString(7, pacientes.getObservacao());
 			pstm.setString(8, pacientes.getCpf());
 			
