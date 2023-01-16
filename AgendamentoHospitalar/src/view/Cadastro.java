@@ -1,9 +1,13 @@
 package view;
+
+import java.util.*;
 import control.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
+
 import control.*;
 import model.*
 ;public class Cadastro implements ActionListener {
@@ -27,20 +31,21 @@ import model.*
 	public Cadastro(){
 		container = new JFrame("Cadastro");
 		criarConta = new JButton("Criar Conta");
+		criarConta.setBounds(167, 393, 139, 30);
 		criarConta.addActionListener(new ActionListener() {
 					
 			
 	//botao cadastrar
 			public void actionPerformed(ActionEvent e) {
 				String nome, email, senha, sexo, observacao, cpf;
-				String altura, peso;
+				double altura, peso;
 				
 				nome = txtNome.getText();
 				email = txtEmail.getText();
 				senha = txtSenha.getText();
 				sexo = txtSexo.getText();
 				//dataNascimento = txtDataNascimento.getText();
-				altura = txtAltura.getText();
+				altura =txtAltura.getText();
 				peso = txtPeso.getText();
 				observacao = txtObservacao.getText();
 				cpf = txtCpf.getText();
@@ -51,7 +56,7 @@ import model.*
 				pacientes.setEmail(email);
 				pacientes.setSenha(senha);
 				pacientes.setSexo(sexo);
-				//pacientes.setDataNascimento(null);
+				pacientes.setDataNascimento(new Date(0,0,0));
 				pacientes.setAltura(altura);
 				pacientes.setPeso(peso);
 				pacientes.setObservacao(observacao);
@@ -65,6 +70,7 @@ import model.*
 		});
 
 		emailLabel = new JLabel ("Email");
+		emailLabel.setBounds(6, 106, 300, 30);
 
     
           
@@ -77,28 +83,24 @@ import model.*
   
 		emailLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		senhaLabel = new JLabel("Senha");
+		senhaLabel.setBounds(6, 189, 300, 30);
 		senhaLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		txtEmail = new JTextField(25);
+		txtEmail.setBounds(6, 147, 149, 30);
 		txtSenha = new JPasswordField(25);
+		txtSenha.setBounds(6, 245, 154, 30);
 		
 		container.getContentPane().setBackground(new Color(255, 228, 225));
 		container.setTitle("Cadastro");
 		container.setSize(500, 500);
 		container.setLocation(500, 300);
 		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		container.getContentPane().setLayout(null);
 		
 		criarConta.setFont(new Font("Arial", Font.BOLD, 14));
 		criarConta.setForeground(new Color(0, 0, 0));
-		criarConta.setBounds(167, 393, 139, 30);
-		
-		txtEmail.setBounds(6, 147, 149, 30);
 		emailLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
-		emailLabel.setBounds(6, 106, 300, 30);
-		
-		txtSenha.setBounds(6, 245, 154, 30);
 		senhaLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
-		senhaLabel.setBounds(6, 189, 300, 30);
+		container.getContentPane().setLayout(null);
 		
 		container.getContentPane().add(emailLabel);
 		container.getContentPane().add(txtEmail);
@@ -111,17 +113,17 @@ import model.*
 		container.getContentPane().add(txtNome);
 		
 		JLabel lblNomeCompleto = new JLabel("Nome Completo");
+		lblNomeCompleto.setBounds(6, 20, 300, 30);
 		lblNomeCompleto.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNomeCompleto.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
-		lblNomeCompleto.setBounds(6, 20, 300, 30);
 		container.getContentPane().add(lblNomeCompleto);
 		
 		JLabel lblCadastroMedico = new JLabel("Cadastro");
+		lblCadastroMedico.setBounds(89, 1, 300, 30);
 		lblCadastroMedico.setBackground(new Color(72, 209, 204));
 		lblCadastroMedico.setForeground(new Color(153, 50, 204));
 		lblCadastroMedico.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCadastroMedico.setFont(new Font("Franklin Gothic Book", Font.BOLD, 20));
-		lblCadastroMedico.setBounds(89, 1, 300, 30);
 		container.getContentPane().add(lblCadastroMedico);
 		
 		txtSexo = new JTextField(25);
@@ -167,8 +169,8 @@ import model.*
 		container.getContentPane().add(lblObservacao);
 		
 		txtCpf = new JTextField();
-		txtCpf.setColumns(10);
 		txtCpf.setBounds(179, 302, 114, 30);
+		txtCpf.setColumns(10);
 		container.getContentPane().add(txtCpf);
 		
 		lblCpf = new JLabel("CPF");
