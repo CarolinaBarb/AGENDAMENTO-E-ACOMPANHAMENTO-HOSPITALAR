@@ -18,7 +18,7 @@ import javax.swing.border.LineBorder;
 import control.*;
 
 public class TelaMedico extends JFrame {
-	private static ControlDados d = new ControlDados();
+
 	/**
 	 * Launch the application.
 	 */
