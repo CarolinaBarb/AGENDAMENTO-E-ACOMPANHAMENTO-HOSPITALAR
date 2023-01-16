@@ -81,6 +81,18 @@ public class Pagamentos extends JFrame {
 		contentPane.add(lblNewLabel_3);
 		
 		JButton btnNewButton = new JButton("Privado");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Privado priv = new Privado();
+				priv.setVisible(true);
+				this.dispose();
+			}
+
+			private void dispose() {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		btnNewButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 15));
 		btnNewButton.setBounds(394, 89, 128, 87);
 		contentPane.add(btnNewButton);
@@ -89,6 +101,14 @@ public class Pagamentos extends JFrame {
 		btnNewButton_1.setFont(new Font("Trebuchet MS", Font.PLAIN, 15));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Convenio conv = new Convenio();
+				conv.setVisible(true);
+				this.dispose();
+			}
+
+			private void dispose() {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 		btnNewButton_1.setBounds(569, 90, 131, 84);
