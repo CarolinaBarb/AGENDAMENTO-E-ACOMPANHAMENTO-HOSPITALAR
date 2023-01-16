@@ -8,6 +8,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Font;
 
 public class TelaPrincipal extends JFrame {
 
@@ -36,11 +38,15 @@ public class TelaPrincipal extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setForeground(new Color(221, 160, 221));
+		contentPane.setBackground(new Color(221, 160, 221));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		
 		JButton btnCadastrase = new JButton("Cadastra-se");
+		btnCadastrase.setFont(new Font("Times New Roman", Font.PLAIN, 10));
+		btnCadastrase.setBackground(new Color(128, 0, 128));
 		btnCadastrase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Cadastro lm = new Cadastro();
@@ -55,6 +61,8 @@ public class TelaPrincipal extends JFrame {
 		});
 		
 		JButton btnNewButton = new JButton("Login Paciente");
+		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 10));
+		btnNewButton.setBackground(new Color(128, 0, 128));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Login l = new Login();
@@ -68,6 +76,9 @@ public class TelaPrincipal extends JFrame {
 		});
 		
 		JButton btnNewButton_1 = new JButton("LoginMedico");
+		btnNewButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 10));
+		btnNewButton_1.setForeground(new Color(0, 0, 0));
+		btnNewButton_1.setBackground(new Color(128, 0, 128));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LoginMedico lm = new LoginMedico();
