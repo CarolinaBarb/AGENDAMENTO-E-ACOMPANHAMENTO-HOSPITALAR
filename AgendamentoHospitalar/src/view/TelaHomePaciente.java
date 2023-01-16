@@ -48,6 +48,14 @@ public class TelaHomePaciente implements ActionListener {
 		pagamentos = new JButton("Pagamentos");
 		pagamentos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Pagamentos pa = new Pagamentos();
+				pa.setVisible(true);
+	            this.dispose();	   
+			}
+
+			private void dispose() {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 		pagamentos.setFont(new Font("Tahoma", Font.PLAIN, 20));
