@@ -11,7 +11,7 @@ public class TelaHomePaciente implements ActionListener {
 	private JButton marcarconsulta;
 	private JButton agendamento;
 	private JButton pagamentos;
-	private JButton documentos;
+	private JButton prontuario;
 	private JToolBar toolBar;
 	private JLabel Home;
 	private JComboBox<String> comboBox;
@@ -62,14 +62,14 @@ public class TelaHomePaciente implements ActionListener {
 		pagamentos.setBackground(new Color(245, 255, 250));
 		pagamentos.setBounds(540, 215, 216, 213);
 		
-		documentos = new JButton("Documentos");
-		documentos.addActionListener(new ActionListener() {
+		prontuario = new JButton("Prontuario");
+		prontuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		documentos.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		documentos.setBackground(new Color(245, 255, 250));
-		documentos.setBounds(792, 215, 216, 213);
+		prontuario.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		prontuario.setBackground(new Color(245, 255, 250));
+		prontuario.setBounds(792, 215, 216, 213);
 		
 		toolBar = new JToolBar();
 		toolBar.setToolTipText("");
@@ -110,7 +110,7 @@ public class TelaHomePaciente implements ActionListener {
 		container.getContentPane().add(marcarconsulta);
 		container.getContentPane().add(agendamento);
 		container.getContentPane().add(pagamentos);
-		container.getContentPane().add(documentos);
+		container.getContentPane().add(prontuario);
 		container.getContentPane().add(toolBar);
 		
 		
@@ -120,7 +120,7 @@ public class TelaHomePaciente implements ActionListener {
 		marcarconsulta.addActionListener(this);
 		agendamento.addActionListener(this);
 		pagamentos.addActionListener(this);
-		documentos.addActionListener(this);
+		prontuario.addActionListener(this);
 
 	}
 
