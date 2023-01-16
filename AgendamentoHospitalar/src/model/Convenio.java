@@ -1,14 +1,18 @@
 package model;
 
+import java.sql.Date;
 import java.util.Scanner;
 
-public class Convenio extends Financeiro {
+public class Convenio extends Pagamento {
 	private String nome;
 	private String associados;
 	private String codigo;
 	
-	public Convenio(double valor, String tipo, String nome, String associados, String codigo) {
-		super(valor, tipo);
+	
+
+	public Convenio(double valor, String tipo, Date dataPagamento, model.Paciente Paciente, String nome,
+			String associados, String codigo) {
+		super(valor, tipo, dataPagamento, Paciente);
 		this.nome = nome;
 		this.associados = associados;
 		this.codigo = codigo;
@@ -37,9 +41,4 @@ public class Convenio extends Financeiro {
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
-	
-	
-	
-	
-
 }

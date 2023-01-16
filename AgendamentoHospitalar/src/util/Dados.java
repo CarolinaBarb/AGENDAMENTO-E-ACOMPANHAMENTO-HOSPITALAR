@@ -10,7 +10,7 @@ public class Dados {
 	private  Medico[] medicos = new Medico[50];
 	private Paciente [] pacientes = new Paciente[50];
 	private Consulta[] consultas = new Consulta[50];
-	private Financeiro[] finan = new Financeiro[50];
+	private Pagamento[] finan = new Pagamento[50];
 	private Endereco[] enderecos = new Endereco[50];
 	
 	
@@ -20,7 +20,7 @@ public class Dados {
 			medicos[i] = new Medico("Fulano", "fulano@email.com", "123123", "CRM/SP 123456.");
 			pacientes[i]= new Paciente("Ana", "ana@email.com","1234");
 			consultas[i] = new Consulta("dermatologista", 150.00);
-			finan[i] = new Financeiro(100.00, "exame");
+			finan[i] = new Pagamento(100.00, "exame");
 			enderecos[i] = new Endereco("02", "Brsilia", "DF", 57);			
 		}
 	}
@@ -49,11 +49,11 @@ public class Dados {
 		this.consultas = consultas;
 	}
 
-	public Financeiro[] getFinan() {
+	public Pagamento[] getFinan() {
 		return finan;
 	}
 
-	public void setFinan(Financeiro[] finan) {
+	public void setFinan(Pagamento[] finan) {
 		this.finan = finan;
 	}
 
