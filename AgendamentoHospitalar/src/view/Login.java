@@ -3,8 +3,6 @@ package view;
 import control.*;
 
 import model.*;
-import util.*;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
