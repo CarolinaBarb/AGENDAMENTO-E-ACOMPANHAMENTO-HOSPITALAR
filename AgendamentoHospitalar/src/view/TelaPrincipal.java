@@ -45,6 +45,7 @@ public class TelaPrincipal extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnCadastrase = new JButton("Cadastra-se");
+		btnCadastrase.setBounds(276, 13, 83, 21);
 		btnCadastrase.setFont(new Font("Times New Roman", Font.PLAIN, 10));
 		btnCadastrase.setBackground(new Color(128, 0, 128));
 		btnCadastrase.addActionListener(new ActionListener() {
@@ -61,6 +62,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		
 		JButton btnNewButton = new JButton("Login Paciente");
+		btnNewButton.setBounds(152, 13, 95, 21);
 		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 10));
 		btnNewButton.setBackground(new Color(128, 0, 128));
 		btnNewButton.addActionListener(new ActionListener() {
@@ -76,6 +78,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		
 		JButton btnNewButton_1 = new JButton("LoginMedico");
+		btnNewButton_1.setBounds(22, 13, 111, 20);
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 10));
 		btnNewButton_1.setForeground(new Color(0, 0, 0));
 		btnNewButton_1.setBackground(new Color(128, 0, 128));
@@ -90,6 +93,7 @@ public class TelaPrincipal extends JFrame {
 				
 			}
 		});
+		contentPane.setLayout(null);
 		contentPane.add(btnNewButton_1);
 		contentPane.add(btnNewButton);
 		contentPane.add(btnCadastrase);
