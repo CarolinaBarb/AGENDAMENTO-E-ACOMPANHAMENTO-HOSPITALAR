@@ -3,18 +3,21 @@ package view;
 import java.util.*;
 import control.*;
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Date;
 
 import control.*;
-import model.*
-;public class Cadastro implements ActionListener {
+import model.*;
+import com.toedter.calendar.JDayChooser;
+import com.toedter.calendar.JDateChooser;
+
+public class Cadastro implements ActionListener {
 	public JFrame container;
 	private JTextField txtEmail;
 	private JPasswordField txtSenha;
-	private JLabel emailLabel;
 	private JLabel senhaLabel;
 	private JButton criarConta;
 	private JTextField txtNome;
@@ -68,20 +71,6 @@ import model.*
 			}
 
 		});
-
-		emailLabel = new JLabel ("Email");
-		emailLabel.setBounds(6, 106, 300, 30);
-
-    
-          
-            
-    
-
-          
-    
-    
-  
-		emailLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		senhaLabel = new JLabel("Senha");
 		senhaLabel.setBounds(6, 189, 300, 30);
 		senhaLabel.setHorizontalAlignment(SwingConstants.LEFT);
@@ -98,11 +87,8 @@ import model.*
 		
 		criarConta.setFont(new Font("Arial", Font.BOLD, 14));
 		criarConta.setForeground(new Color(0, 0, 0));
-		emailLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
 		senhaLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
 		container.getContentPane().setLayout(null);
-		
-		container.getContentPane().add(emailLabel);
 		container.getContentPane().add(txtEmail);
 		container.getContentPane().add(senhaLabel);
 		container.getContentPane().add(txtSenha);
@@ -177,7 +163,9 @@ import model.*
 		lblCpf.setBounds(194, 279, 70, 15);
 		container.getContentPane().add(lblCpf);
 		
-
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(167, 200, 131, 19);
+		container.getContentPane().add(dateChooser);
 		
 		container.setVisible(true);
 		criarConta.addActionListener(this);
