@@ -47,7 +47,7 @@ public class Cadastro implements ActionListener {
 				email = txtEmail.getText();
 				senha = txtSenha.getText();
 				sexo = txtSexo.getText();
-				//dataNascimento = txtDataNascimento.getText();
+				dataNascimento = lblData.getText();
 				altura =txtAltura.getText();
 				peso = txtPeso.getText();
 				observacao = txtObservacao.getText();
@@ -95,14 +95,14 @@ public class Cadastro implements ActionListener {
 		container.getContentPane().add(criarConta);
 		
 		txtNome = new JTextField(25);
-		txtNome.setBounds(12, 85, 187, 30);
+		txtNome.setBounds(6, 43, 187, 30);
 		container.getContentPane().add(txtNome);
 		
-		JLabel lblNomeCompleto = new JLabel("Nome Completo");
-		lblNomeCompleto.setBounds(6, 20, 300, 30);
-		lblNomeCompleto.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNomeCompleto.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
-		container.getContentPane().add(lblNomeCompleto);
+		JLabel lblData = new JLabel("Nome Completo");
+		lblData.setBounds(6, 20, 300, 30);
+		lblData.setHorizontalAlignment(SwingConstants.LEFT);
+		lblData.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
+		container.getContentPane().add(lblData);
 		
 		JLabel lblCadastroMedico = new JLabel("Cadastro");
 		lblCadastroMedico.setBounds(89, 1, 300, 30);
