@@ -18,6 +18,7 @@ public class LoginMedico implements ActionListener {
 	private JPasswordField inserirSenha;
 	private JLabel emailLabel;
 	private JLabel senhaLabel;
+	private JPanel panel;
 
 	/**
 	 * @wbp.parser.entryPoint
@@ -25,45 +26,54 @@ public class LoginMedico implements ActionListener {
 	public LoginMedico() {
 		container = new JFrame("Login");
 		btnEntrar = new JButton("Entrar");
+		btnEntrar.setForeground(new Color(255, 255, 255));
 		
 			
 		
 		btnEntrar.setFont(new Font("Franklin Gothic Book", Font.PLAIN, 12));
 		emailLabel = new JLabel("Email");
+		emailLabel.setForeground(new Color(9, 69, 108));
+		emailLabel.setBackground(new Color(9, 69, 108));
 		emailLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		senhaLabel = new JLabel("Senha");
+		senhaLabel.setForeground(new Color(9, 69, 108));
 		senhaLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		inserirEmail = new JTextField(25);
 		inserirSenha = new JPasswordField(25);
 
-		container.getContentPane().setBackground(new Color(255, 228, 225));
+		container.getContentPane().setBackground(new Color(255, 255, 255));
 		container.setTitle("Login");
 		container.setSize(500, 500);
 		container.setLocation(500, 300);
 		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		container.getContentPane().setLayout(null);
 
-		btnEntrar.setBounds(188, 267, 120, 30);
+		btnEntrar.setBounds(185, 304, 120, 30);
 
-		inserirEmail.setBounds(100, 130, 300, 30);
+		inserirEmail.setBounds(100, 145, 300, 30);
 		emailLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
-		emailLabel.setBounds(100, 90, 300, 30);
+		emailLabel.setBounds(100, 105, 300, 30);
 
-		inserirSenha.setBounds(100, 210, 300, 30);
+		inserirSenha.setBounds(100, 237, 300, 30);
 		senhaLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
-		senhaLabel.setBounds(100, 170, 300, 30);
+		senhaLabel.setBounds(100, 197, 300, 30);
 
 		container.getContentPane().add(emailLabel);
 		container.getContentPane().add(inserirEmail);
 		container.getContentPane().add(senhaLabel);
 		container.getContentPane().add(inserirSenha);
 		container.getContentPane().add(btnEntrar);
-
-		JLabel lblLogin = new JLabel("Login Medico");
-		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setFont(new Font("Franklin Gothic Book", Font.BOLD, 20));
-		lblLogin.setBounds(89, 11, 300, 30);
-		container.getContentPane().add(lblLogin);
+		
+		panel = new JPanel();
+		panel.setBackground(new Color(9, 69, 108));
+		panel.setBounds(0, 0, 486, 61);
+		container.getContentPane().add(panel);
+		
+				JLabel lblLogin = new JLabel("Login Medico");
+				lblLogin.setForeground(new Color(255, 255, 255));
+				panel.add(lblLogin);
+				lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
+				lblLogin.setFont(new Font("Franklin Gothic Book", Font.BOLD, 20));
 
 		container.setVisible(true);
 

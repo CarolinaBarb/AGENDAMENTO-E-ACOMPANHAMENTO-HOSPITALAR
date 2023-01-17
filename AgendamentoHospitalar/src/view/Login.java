@@ -18,11 +18,21 @@ public class Login implements ActionListener {
 	private JLabel emailLabel;
 	private JLabel senhaLabel;
 	private JButton criarConta;
+	/**
+	 * @wbp.nonvisual location=-17,14
+	 */
+	private final JPanel panel = new JPanel();
+	private JPanel panel_1;
 
 	public Login() {
 		container = new JFrame("Login");
 		btnEntrar = new JButton("Entrar");
+		btnEntrar.setBounds(191, 263, 120, 30);
+		btnEntrar.setBackground(new Color(9, 69, 108));
+		btnEntrar.setForeground(new Color(255, 255, 255));
 		criarConta = new JButton("Criar Conta");
+		criarConta.setBounds(100, 370, 300, 30);
+		criarConta.setBackground(new Color(9, 69, 108));
 		criarConta.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -34,36 +44,36 @@ public class Login implements ActionListener {
 			private void dispose() {
 			}
 		});
-		btnEntrar.setFont(new Font("Franklin Gothic Book", Font.PLAIN, 12));
+		btnEntrar.setFont(new Font("Verdana", Font.BOLD, 12));
 		emailLabel = new JLabel("Email");
+		emailLabel.setBounds(100, 77, 300, 30);
+		emailLabel.setForeground(new Color(9, 69, 108));
 		emailLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		senhaLabel = new JLabel("Senha");
+		senhaLabel.setBounds(100, 154, 300, 30);
+		senhaLabel.setForeground(new Color(9, 69, 108));
 		senhaLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		criarConta.setHorizontalAlignment(SwingConstants.CENTER);
 		inserirEmail = new JTextField(25);
+		inserirEmail.setBounds(100, 114, 300, 30);
 		inserirSenha = new JPasswordField(25);
+		inserirSenha.setBounds(100, 194, 300, 30);
 
-		container.getContentPane().setBackground(new Color(255, 228, 225));
+		container.getContentPane().setBackground(new Color(255, 255, 255));
 		container.setTitle("Login");
 		container.setSize(500, 500);
 		container.setLocation(500, 300);
 		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		criarConta.setFont(new Font("Verdana", Font.BOLD, 14));
+		criarConta.setForeground(new Color(255, 255, 255));
+		emailLabel.setFont(new Font("Verdana", Font.BOLD, 16));
+		senhaLabel.setFont(new Font("Verdana", Font.BOLD, 16));
 		container.getContentPane().setLayout(null);
-
-		btnEntrar.setBounds(188, 267, 120, 30);
-
-		criarConta.setFont(new Font("Arial", Font.BOLD, 14));
-		criarConta.setForeground(new Color(0, 0, 0));
-		criarConta.setBounds(100, 349, 300, 30);
-
-		inserirEmail.setBounds(100, 130, 300, 30);
-		emailLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
-		emailLabel.setBounds(100, 90, 300, 30);
-
-		inserirSenha.setBounds(100, 210, 300, 30);
-		senhaLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
-		senhaLabel.setBounds(100, 170, 300, 30);
-
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		String img = null;
+		lblNewLabel.setIcon(new ImageIcon(img));
 		container.getContentPane().add(emailLabel);
 		container.getContentPane().add(inserirEmail);
 		container.getContentPane().add(senhaLabel);
@@ -71,17 +81,25 @@ public class Login implements ActionListener {
 		container.getContentPane().add(btnEntrar);
 		container.getContentPane().add(criarConta);
 
-		JLabel lblClienteNovo = new JLabel("É paciente novo e não possui cadastro? Cadastra-se aqui:");
+		JLabel lblClienteNovo = new JLabel(" Não possui cadastro? Cadastra-se aqui:");
+		lblClienteNovo.setBounds(77, 316, 374, 30);
+		lblClienteNovo.setForeground(new Color(9, 69, 108));
 		lblClienteNovo.setHorizontalAlignment(SwingConstants.LEFT);
-		lblClienteNovo.setFont(new Font("Franklin Gothic Book", Font.BOLD, 14));
-		lblClienteNovo.setBounds(78, 320, 374, 30);
+		lblClienteNovo.setFont(new Font("Verdana", Font.BOLD, 14));
 		container.getContentPane().add(lblClienteNovo);
-
-		JLabel lblLogin = new JLabel("Login Paciente");
-		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setFont(new Font("Franklin Gothic Book", Font.BOLD, 20));
-		lblLogin.setBounds(89, 11, 300, 30);
-		container.getContentPane().add(lblLogin);
+								
+								panel_1 = new JPanel();
+								panel_1.setBackground(new Color(9, 69, 108));
+								panel_1.setForeground(new Color(255, 255, 255));
+								panel_1.setBounds(-23, 0, 509, 53);
+								container.getContentPane().add(panel_1);
+								
+										JLabel lblLogin = new JLabel("Login Paciente");
+										panel_1.add(lblLogin);
+										lblLogin.setForeground(new Color(255, 255, 255));
+										lblLogin.setBackground(new Color(234, 42, 21));
+										lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
+										lblLogin.setFont(new Font("Times New Roman", Font.BOLD, 20));
 
 		container.setVisible(true);
 
@@ -140,5 +158,5 @@ public class Login implements ActionListener {
 
 	private void dispose() {
 	}
-
 }
+
