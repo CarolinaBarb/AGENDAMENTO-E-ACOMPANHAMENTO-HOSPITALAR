@@ -16,6 +16,7 @@ import java.awt.Image;
 import java.awt.Label;
 
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class TelaPrincipal extends JFrame {
 
@@ -52,7 +53,7 @@ public class TelaPrincipal extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnCadastrase = new JButton("Cadastra-se");
-		btnCadastrase.setBounds(301, 130, 111, 21);
+		btnCadastrase.setBounds(301, 165, 111, 21);
 		btnCadastrase.setForeground(new Color(255, 255, 255));
 		btnCadastrase.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnCadastrase.setBackground(new Color(9, 69, 108));
@@ -69,7 +70,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		
 		JButton btnNewButton = new JButton("Login Paciente");
-		btnNewButton.setBounds(155, 130, 111, 21);
+		btnNewButton.setBounds(155, 165, 111, 21);
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton.setBackground(new Color(9, 69, 108));
@@ -86,7 +87,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		
 		JButton btnNewButton_1 = new JButton("Login Medico");
-		btnNewButton_1.setBounds(10, 130, 111, 20);
+		btnNewButton_1.setBounds(10, 165, 111, 20);
 		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
@@ -111,10 +112,29 @@ public class TelaPrincipal extends JFrame {
 		panel.setBounds(-19, -16, 455, 71);
 		contentPane.add(panel);
 		
-		JLabel lblNewLabel = new JLabel("New label");
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		Image img = new ImageIcon(this.getClass().getResource("/user.png")).getImage();
-		lblNewLabel.setIcon(new ImageIcon(img));
-		lblNewLabel.setBounds(10, 76, 91, 44);
+		lblNewLabel.setIcon(new ImageIcon(img.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
+		lblNewLabel.setBounds(10, 81, 111, 63);
 		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		Image imag = new ImageIcon(this.getClass().getResource("/user.png")).getImage();
+		lblNewLabel_1.setIcon(new ImageIcon(imag.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
+		lblNewLabel_1.setBounds(155, 81, 111, 63);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("");
+		Image image = new ImageIcon(this.getClass().getResource("/user.png")).getImage();
+		lblNewLabel_1_1.setIcon(new ImageIcon(image.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
+		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1.setBounds(301, 81, 111, 63);
+		contentPane.add(lblNewLabel_1_1);
+	
+	
+		
+		
 	}
 }
