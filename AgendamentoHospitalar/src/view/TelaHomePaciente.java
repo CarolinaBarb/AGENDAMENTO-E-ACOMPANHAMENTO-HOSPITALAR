@@ -12,40 +12,44 @@ public class TelaHomePaciente implements ActionListener {
 	private JButton agendamento;
 	private JButton pagamentos;
 	private JButton prontuario;
-	private JToolBar toolBar;
-	private JLabel Home;
 	private JComboBox<String> comboBox;
 	private JMenuItem logout, verReceitas, verAtestados, verEncaminhamentos;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_1;
 	
 	public TelaHomePaciente(){
 		
 		container = new JFrame("Home");
-		container.getContentPane().setBackground(new Color(255, 228, 225));
+		container.getContentPane().setBackground(new Color(255, 255, 255));
 		container.setTitle("HomePaciente");
 		container.setSize(1066, 639);
 		container.setLocation(700, 700);
 		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		container.getContentPane().setLayout(null);
 		
 		marcarconsulta = new JButton("Marcar Consultas");
+		marcarconsulta.setBounds(36, 215, 216, 213);
+		marcarconsulta.setForeground(new Color(255, 255, 255));
 		marcarconsulta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		marcarconsulta.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		marcarconsulta.setBackground(new Color(245, 255, 250));
-		marcarconsulta.setBounds(36, 215, 216, 213);
+		marcarconsulta.setFont(new Font("Verdana", Font.PLAIN, 20));
+		marcarconsulta.setBackground(new Color(9, 69, 108));
 		
 		agendamento = new JButton("Agendamentos");
+		agendamento.setBounds(287, 215, 216, 213);
+		agendamento.setForeground(new Color(255, 255, 255));
 		agendamento.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		agendamento.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		agendamento.setBackground(new Color(245, 255, 250));
-		agendamento.setBounds(287, 215, 216, 213);
+		agendamento.setBackground(new Color(9, 69, 108));
 
 		pagamentos = new JButton("Pagamentos");
+		pagamentos.setBounds(540, 215, 216, 213);
+		pagamentos.setForeground(new Color(255, 255, 255));
 		pagamentos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Pagamentos pa = new Pagamentos();
@@ -59,34 +63,25 @@ public class TelaHomePaciente implements ActionListener {
 			}
 		});
 		pagamentos.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		pagamentos.setBackground(new Color(245, 255, 250));
-		pagamentos.setBounds(540, 215, 216, 213);
+		pagamentos.setBackground(new Color(9, 69, 108));
 		
 		prontuario = new JButton("Prontuario");
+		prontuario.setBounds(792, 215, 216, 213);
+		prontuario.setForeground(new Color(255, 255, 255));
 		prontuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		prontuario.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		prontuario.setBackground(new Color(245, 255, 250));
-		prontuario.setBounds(792, 215, 216, 213);
-		
-		toolBar = new JToolBar();
-		toolBar.setToolTipText("");
-		toolBar.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		toolBar.setBackground(new Color(240, 230, 140));
-		toolBar.setBounds(0, 0, 1052, 21);
-		
-		Home = new JLabel("HOME");
-		Home.setForeground(new Color(148, 0, 211));
-		Home.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		toolBar.add(Home);
+		prontuario.setBackground(new Color(9, 69, 108));
 		
         String[] items = {"Receitas", "Atestados", "Encaminhamentos", "Sair"};
+		container.getContentPane().setLayout(null);
 		
-		comboBox = new JComboBox<>(items);
-		comboBox.setBackground(new Color(245, 255, 250));
-		comboBox.setBounds(941, 0, 101, 21);
+		comboBox = new JComboBox<>();
+		comboBox.setBounds(941, 22, 101, 30);
+		comboBox.setEditable(true);
+		comboBox.setBackground(new Color(9, 69, 108));
 		container.getContentPane().add(comboBox);
 		
 	      
@@ -111,7 +106,19 @@ public class TelaHomePaciente implements ActionListener {
 		container.getContentPane().add(agendamento);
 		container.getContentPane().add(pagamentos);
 		container.getContentPane().add(prontuario);
-		container.getContentPane().add(toolBar);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(-19, 0, 1117, 72);
+		panel.setBackground(new Color(9, 69, 108));
+		container.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		
+		lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(29, 0, 117, 73);
+		panel.add(lblNewLabel_1);
+		Image home11 = new ImageIcon(this.getClass().getResource("/home11.png")).getImage();
+		lblNewLabel_1.setIcon(new ImageIcon(home11.getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
 		
 		
 		
