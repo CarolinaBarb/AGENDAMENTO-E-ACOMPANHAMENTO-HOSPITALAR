@@ -3,7 +3,7 @@ package view;
 import control.*;
 
 import model.*;
-import imagem.*;
+//import imagem.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

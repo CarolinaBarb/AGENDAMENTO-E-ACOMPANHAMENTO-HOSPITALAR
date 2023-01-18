@@ -1,7 +1,7 @@
 package view;
 
 import control.*;
-import imagem.*;
+//import imagem.*;
 import model.*;
 import javax.swing.*;
 import java.awt.*;
