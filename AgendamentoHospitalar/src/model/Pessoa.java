@@ -8,10 +8,10 @@ public abstract class Pessoa {
     private String senha;
     private String id;
     private String sexo;
-    private Date DataNascimento;
+    private String DataNascimento;
 
     //constructor
-    public Pessoa(String nome,String email, String senha, String id, String sexo, Date dataNascimento) {
+    public Pessoa(String nome,String email, String senha, String id, String sexo, String dataNascimento) {
         this.nome = nome;
         this.id = id;
         this.sexo = sexo;
@@ -65,10 +65,10 @@ public abstract class Pessoa {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return DataNascimento;
     }
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         DataNascimento = dataNascimento;
     }
 

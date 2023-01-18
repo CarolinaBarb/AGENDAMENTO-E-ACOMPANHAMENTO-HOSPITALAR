@@ -8,6 +8,7 @@ import java.util.Date;
 
 import model.Paciente;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 //import com.mysql.jdbc.PreparedStatement;
 
@@ -17,7 +18,7 @@ public class ControlPaciente {
 	PreparedStatement pstm;
 
 	public void cadastrar(Paciente pacientes) {
-		String sql = "insert into paciente (nome_usuario, email_usuario, senha_usuario, sexo_usuario, data_nasciemnto, cpf, altura, peso, observacao) "
+		String sql = "insert into paciente (nome_usuario, email_usuario, senha_usuario, sexo_usuario, data, cpf, altura, peso, observacao) "
 				      + "values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		conn = new ConexaoDAO().conectaBD();
@@ -29,7 +30,7 @@ public class ControlPaciente {
 			pstm.setString(2, pacientes.getEmail());
 			pstm.setString(3, pacientes.getSenha());
 			pstm.setString(4, pacientes.getSexo());
-			pstm.setDate(5, (java.sql.Date) new Date(pacientes.getDataNascimento().getTime()));
+			pstm.setString(5, (JTextField) txtData.getDateEditor().getUiComponent().getText());
 			pstm.setDouble(5, pacientes.getAltura());
 			pstm.setDouble(6, pacientes.getPeso());
 			pstm.setString(7, pacientes.getObservacao());

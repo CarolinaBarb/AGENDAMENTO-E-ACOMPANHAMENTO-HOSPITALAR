@@ -30,11 +30,12 @@ public class Cadastro implements ActionListener {
 	private JLabel lblObservacao;
 	private JTextField txtCpf;
 	private JLabel lblCpf;
+	private JDateChooser txtData;
 	
 	public Cadastro(){
 		container = new JFrame("Cadastro");
 		criarConta = new JButton("Criar Conta");
-		criarConta.setBounds(167, 393, 139, 30);
+		criarConta.setBounds(167, 421, 139, 30);
 		criarConta.addActionListener(new ActionListener() {
 					
 			
@@ -42,14 +43,15 @@ public class Cadastro implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				String nome, email, senha, sexo, observacao, cpf;
 				double altura, peso;
+				String data;
 				
 				nome = txtNome.getText();
 				email = txtEmail.getText();
 				senha = txtSenha.getText();
 				sexo = txtSexo.getText();
-				dataNascimento = lblData.getText();
-				altura =txtAltura.getText();
-				peso = txtPeso.getText();
+				data = txtData.getDateFormatString();
+				//altura =txtAltura.getText();
+				//peso = txtPeso.getText();
 				observacao = txtObservacao.getText();
 				cpf = txtCpf.getText();
 				
@@ -72,12 +74,12 @@ public class Cadastro implements ActionListener {
 
 		});
 		senhaLabel = new JLabel("Senha");
-		senhaLabel.setBounds(6, 189, 300, 30);
+		senhaLabel.setBounds(12, 270, 300, 30);
 		senhaLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		txtEmail = new JTextField(25);
 		txtEmail.setBounds(6, 147, 149, 30);
 		txtSenha = new JPasswordField(25);
-		txtSenha.setBounds(6, 245, 154, 30);
+		txtSenha.setBounds(6, 317, 154, 30);
 		
 		container.getContentPane().setBackground(new Color(255, 228, 225));
 		container.setTitle("Cadastro");
@@ -113,7 +115,7 @@ public class Cadastro implements ActionListener {
 		container.getContentPane().add(lblCadastroMedico);
 		
 		txtSexo = new JTextField(25);
-		txtSexo.setBounds(6, 353, 149, 30);
+		txtSexo.setBounds(6, 401, 149, 30);
 		container.getContentPane().add(txtSexo);
 		
 		txtAltura = new JTextField(25);
@@ -125,11 +127,11 @@ public class Cadastro implements ActionListener {
 		container.getContentPane().add(txtDataNascimento);
 		
 		JLabel lblSexo = new JLabel("Sexo");
-		lblSexo.setBounds(12, 317, 70, 15);
+		lblSexo.setBounds(12, 374, 70, 15);
 		container.getContentPane().add(lblSexo);
 		
 		JLabel lblNewLabel = new JLabel("Data de Nascimento");
-		lblNewLabel.setBounds(318, 189, 170, 15);
+		lblNewLabel.setBounds(298, 186, 170, 15);
 		container.getContentPane().add(lblNewLabel);
 		
 		JLabel lblAltura = new JLabel("Altura");
@@ -155,21 +157,17 @@ public class Cadastro implements ActionListener {
 		container.getContentPane().add(lblObservacao);
 		
 		txtCpf = new JTextField();
-		txtCpf.setBounds(179, 302, 114, 30);
+		txtCpf.setBounds(183, 379, 114, 30);
 		txtCpf.setColumns(10);
 		container.getContentPane().add(txtCpf);
 		
 		lblCpf = new JLabel("CPF");
-		lblCpf.setBounds(194, 279, 70, 15);
+		lblCpf.setBounds(188, 350, 70, 15);
 		container.getContentPane().add(lblCpf);
 		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(167, 200, 131, 19);
-		container.getContentPane().add(dateChooser);
-		
-		JDateChooser dateChooser_1 = new JDateChooser();
-		dateChooser_1.setBounds(167, 170, 131, 19);
-		container.getContentPane().add(dateChooser_1);
+		txtData = new JDateChooser();
+		txtData.setBounds(136, 177, 170, 42);
+		container.getContentPane().add(txtData);
 		
 		container.setVisible(true);
 		criarConta.addActionListener(this);
