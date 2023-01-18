@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
+import home.*;
 
 
 public class TelaHomePaciente implements ActionListener {
@@ -78,7 +80,7 @@ public class TelaHomePaciente implements ActionListener {
         String[] items = {"Receitas", "Atestados", "Encaminhamentos", "Sair"};
 		container.getContentPane().setLayout(null);
 		
-		comboBox = new JComboBox<>();
+		comboBox = new JComboBox<>(items);
 		comboBox.setBounds(941, 22, 101, 30);
 		comboBox.setEditable(true);
 		comboBox.setBackground(new Color(9, 69, 108));
@@ -117,7 +119,7 @@ public class TelaHomePaciente implements ActionListener {
 		lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(29, 0, 117, 73);
 		panel.add(lblNewLabel_1);
-		Image home11 = new ImageIcon(this.getClass().getResource("/home11.png")).getImage();
+		Image home11 = new ImageIcon(this.getClass().getResource("/home/home11.png")).getImage();
 		lblNewLabel_1.setIcon(new ImageIcon(home11.getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
 		
 		

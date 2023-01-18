@@ -1,7 +1,7 @@
 package view;
 
 import control.*;
-
+import imagem.*;
 import model.*;
 import javax.swing.*;
 import java.awt.*;
@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 
 public class Login implements ActionListener {
 	JFrame container;
@@ -99,9 +100,9 @@ public class Login implements ActionListener {
 		lblLogin.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		
 		JLabel lblNewLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/user.png")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
 		lblNewLabel.setIcon(new ImageIcon(img.getScaledInstance(150, 150, Image.SCALE_SMOOTH)));
-		lblNewLabel.setBounds(179, 65, 156, 178);
+		lblNewLabel.setBounds(179, 70, 156, 178);
 		container.getContentPane().add(lblNewLabel);
 
 		container.setVisible(true);

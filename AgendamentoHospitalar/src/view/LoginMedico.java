@@ -3,13 +3,14 @@ package view;
 import control.*;
 
 import model.*;
-
+import imagem.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 
 public class LoginMedico implements ActionListener {
 	JFrame container;
@@ -63,7 +64,7 @@ public class LoginMedico implements ActionListener {
 		container.getContentPane().add(btnEntrar);
 		
 		panel = new JPanel();
-		panel.setBounds(0, 0, 486, 61);
+		panel.setBounds(0, 0, 500, 61);
 		panel.setBackground(new Color(9, 69, 108));
 		container.getContentPane().add(panel);
 		
@@ -76,7 +77,7 @@ public class LoginMedico implements ActionListener {
 				JLabel lblNewLabel = new JLabel("");
 				lblNewLabel.setBounds(172, 71, 223, 152);
 				lblNewLabel.setForeground(new Color(0, 0, 255));
-				Image img = new ImageIcon(this.getClass().getResource("/user.png")).getImage();
+				Image img = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
 				lblNewLabel.setIcon(new ImageIcon(img.getScaledInstance(148, 148, Image.SCALE_SMOOTH)));
 				container.getContentPane().add(lblNewLabel);
 

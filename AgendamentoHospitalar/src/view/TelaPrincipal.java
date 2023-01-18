@@ -17,6 +17,8 @@ import java.awt.Label;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import imagem.*;
+
 
 public class TelaPrincipal extends JFrame {
 
@@ -43,7 +45,7 @@ public class TelaPrincipal extends JFrame {
 	 */
 	public TelaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 441, 300);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(221, 160, 221));
 		contentPane.setBackground(new Color(255, 255, 255));
@@ -109,25 +111,31 @@ public class TelaPrincipal extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(9, 69, 108));
-		panel.setBounds(-19, -16, 455, 71);
+		panel.setBounds(0, 0, 469, 54);
 		contentPane.add(panel);
+		
+		JLabel lblClinic = new JLabel("Clinic ");
+		panel.add(lblClinic);
+		lblClinic.setForeground(Color.WHITE);
+		lblClinic.setHorizontalAlignment(SwingConstants.CENTER);
+		lblClinic.setFont(new Font("Dialog", Font.BOLD, 25));
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		Image img = new ImageIcon(this.getClass().getResource("/user.png")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
 		lblNewLabel.setIcon(new ImageIcon(img.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
 		lblNewLabel.setBounds(10, 81, 111, 63);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		Image imag = new ImageIcon(this.getClass().getResource("/user.png")).getImage();
+		Image imag = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
 		lblNewLabel_1.setIcon(new ImageIcon(imag.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
 		lblNewLabel_1.setBounds(155, 81, 111, 63);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("");
-		Image image = new ImageIcon(this.getClass().getResource("/user.png")).getImage();
+		Image image = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
 		lblNewLabel_1_1.setIcon(new ImageIcon(image.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1.setBounds(301, 81, 111, 63);
