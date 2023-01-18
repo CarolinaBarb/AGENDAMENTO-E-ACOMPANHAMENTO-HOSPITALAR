@@ -167,6 +167,10 @@ public class Cadastro implements ActionListener {
 		dateChooser.setBounds(167, 200, 131, 19);
 		container.getContentPane().add(dateChooser);
 		
+		JDateChooser dateChooser_1 = new JDateChooser();
+		dateChooser_1.setBounds(167, 170, 131, 19);
+		container.getContentPane().add(dateChooser_1);
+		
 		container.setVisible(true);
 		criarConta.addActionListener(this);
 		
