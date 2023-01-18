@@ -5,7 +5,7 @@ import java.util.Date;
 public class Especialista extends Pessoa{
 	private String funcao;
 
-	public Especialista(String nome, String email, String senha, String id, String sexo, Date dataNascimento,
+	public Especialista(String nome, String email, String senha, String id, String sexo, String dataNascimento,
 			String funcao) {
 		super(nome, email, senha, id, sexo, dataNascimento);
 		this.funcao = funcao;

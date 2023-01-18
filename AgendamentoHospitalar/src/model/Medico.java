@@ -10,7 +10,7 @@ public class Medico extends Pessoa {
 
     //constructor
 
-    public Medico(String nome,String email, String senha, String id, String sexo, Date dataNascimento, String crm, String especialidade,
+    public Medico(String nome,String email, String senha, String id, String sexo, String dataNascimento, String crm, String especialidade,
             String convenios_aceitos) {
         super(nome, email, senha, id, sexo, dataNascimento);
         this.crm = crm;

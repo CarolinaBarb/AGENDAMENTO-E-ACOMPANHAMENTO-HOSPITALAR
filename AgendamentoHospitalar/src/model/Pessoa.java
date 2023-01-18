@@ -11,11 +11,11 @@ public abstract class Pessoa {
     private String DataNascimento;
 
     //constructor
-    public Pessoa(String nome,String email, String senha, String id, String sexo, String dataNascimento) {
+    public Pessoa(String nome,String email, String senha, String id, String sexo, String dataNascimento2) {
         this.nome = nome;
         this.id = id;
         this.sexo = sexo;
-        this.DataNascimento  = dataNascimento;
+        this.DataNascimento  = dataNascimento2;
         this.email = email;
         this.senha = senha;
     }

@@ -77,7 +77,7 @@ public class Cadastro implements ActionListener {
 		senhaLabel.setBounds(12, 270, 300, 30);
 		senhaLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		txtEmail = new JTextField(25);
-		txtEmail.setBounds(6, 147, 149, 30);
+		txtEmail.setBounds(11, 142, 149, 30);
 		txtSenha = new JPasswordField(25);
 		txtSenha.setBounds(6, 317, 154, 30);
 		
@@ -168,6 +168,10 @@ public class Cadastro implements ActionListener {
 		txtData = new JDateChooser();
 		txtData.setBounds(136, 177, 170, 42);
 		container.getContentPane().add(txtData);
+		
+		JLabel lblEmail = new JLabel("EMAIL");
+		lblEmail.setBounds(12, 98, 70, 15);
+		container.getContentPane().add(lblEmail);
 		
 		container.setVisible(true);
 		criarConta.addActionListener(this);

@@ -10,7 +10,7 @@ public class Paciente extends Pessoa{
     private String observacao;
     
     //full constructor
-    public Paciente(String nome,String email, String senha, String id, String sexo, Date dataNascimento, String cpf, double altura, double peso,
+    public Paciente(String nome,String email, String senha, String id, String sexo, String dataNascimento, String cpf, double altura, double peso,
             String observacao) {
         super(email, senha, sexo, nome, id, dataNascimento);
         this.cpf = cpf;

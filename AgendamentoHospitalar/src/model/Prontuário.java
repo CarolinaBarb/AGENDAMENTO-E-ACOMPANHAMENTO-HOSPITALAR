@@ -7,7 +7,7 @@ public class Prontuário extends Paciente {
 	private String descricao;
 	
 	
-	public Prontuário(String nome, String email, String senha, String id, String sexo, Date dataNascimento, String cpf,
+	public Prontuário(String nome, String email, String senha, String id, String sexo, String dataNascimento, String cpf,
 			double altura, double peso, String observacao, Date dtconsulta, String descricao) {
 		super(nome, email, senha, id, sexo, dataNascimento, cpf, altura, peso, observacao);
 		this.dtconsulta = dtconsulta;
