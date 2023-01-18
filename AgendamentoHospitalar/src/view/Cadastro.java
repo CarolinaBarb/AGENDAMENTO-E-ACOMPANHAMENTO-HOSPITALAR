@@ -25,7 +25,6 @@ public class Cadastro implements ActionListener {
 	private JTextField txtCadastrar;
 	private JTextField txtSexo;
 	private JTextField txtAltura;
-	private JTextField txtDataNascimento;
 	private JTextField txtObservacao;
 	private JTextField txtPeso;
 	private JLabel lblObservacao;
@@ -125,16 +124,12 @@ public class Cadastro implements ActionListener {
 		txtAltura.setBounds(319, 317, 149, 30);
 		container.getContentPane().add(txtAltura);
 		
-		txtDataNascimento = new JTextField(25);
-		txtDataNascimento.setBounds(319, 224, 149, 30);
-		container.getContentPane().add(txtDataNascimento);
-		
 		JLabel lblSexo = new JLabel("Sexo");
 		lblSexo.setBounds(12, 374, 70, 15);
 		container.getContentPane().add(lblSexo);
 		
 		JLabel lblNewLabel = new JLabel("Data de Nascimento");
-		lblNewLabel.setBounds(298, 186, 170, 15);
+		lblNewLabel.setBounds(160, 149, 170, 15);
 		container.getContentPane().add(lblNewLabel);
 		
 		JLabel lblAltura = new JLabel("Altura");
