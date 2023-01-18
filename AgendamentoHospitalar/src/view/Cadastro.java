@@ -11,7 +11,7 @@ import java.sql.Date;
 
 import control.*;
 import model.*;
-import com.toedter.calendar.JDayChooser;
+
 import com.toedter.calendar.JDateChooser;
 
 public class Cadastro implements ActionListener {
@@ -42,16 +42,16 @@ public class Cadastro implements ActionListener {
 	//botao cadastrar
 			public void actionPerformed(ActionEvent e) {
 				String nome, email, senha, sexo, observacao, cpf;
-				double altura, peso;
-				String data;
+				String  altura, peso;
+				String DataNascimento;
 				
 				nome = txtNome.getText();
 				email = txtEmail.getText();
 				senha = txtSenha.getText();
 				sexo = txtSexo.getText();
-				data = txtData.getDateFormatString();
-				//altura =txtAltura.getText();
-				//peso = txtPeso.getText();
+				DataNascimento = txtData.getDateFormatString();
+				altura =txtAltura.getText();
+				peso = txtPeso.getText();
 				observacao = txtObservacao.getText();
 				cpf = txtCpf.getText();
 				
@@ -61,7 +61,7 @@ public class Cadastro implements ActionListener {
 				pacientes.setEmail(email);
 				pacientes.setSenha(senha);
 				pacientes.setSexo(sexo);
-				pacientes.setDataNascimento(new Date(0,0,0));
+				pacientes.setDataNascimento(DataNascimento);
 				pacientes.setAltura(altura);
 				pacientes.setPeso(peso);
 				pacientes.setObservacao(observacao);

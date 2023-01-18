@@ -5,12 +5,12 @@ import java.util.*;
 
 public class Paciente extends Pessoa{
     private String cpf;
-    private double altura;  //mudar pra String depois
-    private double peso;    //mudar pra String depois
+    private String altura;  //mudar pra String depois
+    private String peso;    //mudar pra String depois
     private String observacao;
     
     //full constructor
-    public Paciente(String nome,String email, String senha, String id, String sexo, String dataNascimento, String cpf, double altura, double peso,
+    public Paciente(String nome,String email, String senha, String id, String sexo, String dataNascimento, String cpf, String altura, String peso,
             String observacao) {
         super(email, senha, sexo, nome, id, dataNascimento);
         this.cpf = cpf;
@@ -48,16 +48,16 @@ public class Paciente extends Pessoa{
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    public double getAltura() {
+    public String getAltura() {
         return altura;
     }
-    public void setAltura(double altura) {
+    public void setAltura(String altura) {
         this.altura = altura;
     }
-    public double getPeso() {
+    public String getPeso() {
         return peso;
     }
-    public void setPeso(double peso) {
+    public void setPeso(String peso) {
         this.peso = peso;
     }
 	@Override

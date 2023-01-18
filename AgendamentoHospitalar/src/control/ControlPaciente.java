@@ -18,7 +18,7 @@ public class ControlPaciente {
 	PreparedStatement pstm;
 
 	public void cadastrar(Paciente pacientes) {
-		String sql = "insert into paciente (nome_usuario, email_usuario, senha_usuario, sexo_usuario, data, cpf, altura, peso, observacao) "
+		String sql = "insert into paciente (nome_usuario, email_usuario, senha_usuario, sexo_usuario, DataNascimento, cpf, altura, peso, observacao) "
 				      + "values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		conn = new ConexaoDAO().conectaBD();
@@ -30,11 +30,12 @@ public class ControlPaciente {
 			pstm.setString(2, pacientes.getEmail());
 			pstm.setString(3, pacientes.getSenha());
 			pstm.setString(4, pacientes.getSexo());
-			pstm.setString(5, (JTextField) txtData.getDateEditor().getUiComponent().getText());
-			pstm.setDouble(5, pacientes.getAltura());
-			pstm.setDouble(6, pacientes.getPeso());
-			pstm.setString(7, pacientes.getObservacao());
-			pstm.setString(8, pacientes.getCpf());
+			pstm.setString(5, pacientes.getDataNascimento());
+			pstm.setString(6, pacientes.getCpf());
+			pstm.setString(7, pacientes.getAltura());
+			pstm.setString(8, pacientes.getPeso());
+			pstm.setString(9, pacientes.getObservacao());
+		
 			
 
 			pstm.execute();
