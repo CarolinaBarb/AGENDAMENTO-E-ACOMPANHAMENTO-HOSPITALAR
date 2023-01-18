@@ -3,7 +3,7 @@ package view;
 import control.*;
 
 import model.*;
-import imagem.*;
+//import imagem.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -77,7 +77,7 @@ public class LoginMedico implements ActionListener {
 				JLabel lblNewLabel = new JLabel("");
 				lblNewLabel.setBounds(172, 71, 223, 152);
 				lblNewLabel.setForeground(new Color(0, 0, 255));
-				Image img = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
+				Image img = new ImageIcon(this.getClass().getResource("/imagem/medico.png")).getImage();
 				lblNewLabel.setIcon(new ImageIcon(img.getScaledInstance(148, 148, Image.SCALE_SMOOTH)));
 				container.getContentPane().add(lblNewLabel);
 
