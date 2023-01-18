@@ -3,6 +3,7 @@ package view;
 import java.util.*;
 import control.*;
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -43,13 +44,15 @@ public class Cadastro implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				String nome, email, senha, sexo, observacao, cpf;
 				String  altura, peso;
-				String DataNascimento;
 				
+				String DataNascimento = ((JTextField)txtData.getDateEditor().getUiComponent()).getText();
+				
+				
+
 				nome = txtNome.getText();
 				email = txtEmail.getText();
 				senha = txtSenha.getText();
 				sexo = txtSexo.getText();
-				DataNascimento = txtData.getDateFormatString();
 				altura =txtAltura.getText();
 				peso = txtPeso.getText();
 				observacao = txtObservacao.getText();
@@ -166,6 +169,7 @@ public class Cadastro implements ActionListener {
 		container.getContentPane().add(lblCpf);
 		
 		txtData = new JDateChooser();
+		txtData.setDateFormatString("d '/' MM '/' y");
 		txtData.setBounds(136, 177, 170, 42);
 		container.getContentPane().add(txtData);
 		
