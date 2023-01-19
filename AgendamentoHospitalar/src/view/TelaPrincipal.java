@@ -88,7 +88,7 @@ public class TelaPrincipal extends JFrame {
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("Login Medico");
+		JButton btnNewButton_1 = new JButton("Login Médico");
 		btnNewButton_1.setBounds(10, 165, 111, 20);
 		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
@@ -114,7 +114,7 @@ public class TelaPrincipal extends JFrame {
 		panel.setBounds(0, 0, 469, 54);
 		contentPane.add(panel);
 		
-		JLabel lblClinic = new JLabel("Clinic ");
+		JLabel lblClinic = new JLabel("Leticia Linda");
 		panel.add(lblClinic);
 		lblClinic.setForeground(Color.WHITE);
 		lblClinic.setHorizontalAlignment(SwingConstants.CENTER);
@@ -122,7 +122,7 @@ public class TelaPrincipal extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		Image img = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/imagem/doctor.png")).getImage();
 		lblNewLabel.setIcon(new ImageIcon(img.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
 		lblNewLabel.setBounds(10, 81, 111, 63);
 		contentPane.add(lblNewLabel);

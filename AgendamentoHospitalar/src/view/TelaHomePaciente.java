@@ -125,10 +125,16 @@ public class TelaHomePaciente implements ActionListener {
 		
 		
 		lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(29, 0, 117, 73);
+		lblNewLabel_1.setBounds(33, 10, 62, 38);
 		panel.add(lblNewLabel_1);
 		Image home11 = new ImageIcon(this.getClass().getResource("/home/home11.png")).getImage();
 		lblNewLabel_1.setIcon(new ImageIcon(home11.getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
+		
+		JButton btnNewButton = new JButton("HOME");
+		btnNewButton.setForeground(new Color(9, 69, 108));
+		btnNewButton.setBackground(new Color(255, 255, 255));
+		btnNewButton.setBounds(24, 51, 85, 21);
+		panel.add(btnNewButton);
 		
 		
 		
