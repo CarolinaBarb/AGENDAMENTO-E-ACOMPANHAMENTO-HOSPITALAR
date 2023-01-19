@@ -28,7 +28,6 @@ import java.awt.event.ActionEvent;
 public class MarcarConsulta extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtValor;
 	private JTextField txtNome;
 
 	/**
@@ -73,20 +72,6 @@ public class MarcarConsulta extends JFrame {
 		txtData.setBounds(31, 102, 181, 19);
 		contentPane.add(txtData);
 		
-		JSpinner txtEspecialidade = new JSpinner();
-		txtEspecialidade.setModel(new SpinnerDateModel(new Date(1674010800000L), null, new Date(1705546800000L), Calendar.DAY_OF_YEAR));
-		txtEspecialidade.setBounds(261, 28, 201, 63);
-		contentPane.add(txtEspecialidade);
-		
-		txtValor = new JTextField();
-		txtValor.setBounds(38, 180, 145, 31);
-		contentPane.add(txtValor);
-		txtValor.setColumns(10);
-		
-		JLabel lblValor = new JLabel("Valor");
-		lblValor.setBounds(37, 150, 70, 15);
-		contentPane.add(lblValor);
-		
 		txtNome = new JTextField();
 		txtNome.setBounds(275, 150, 157, 42);
 		contentPane.add(txtNome);
@@ -100,22 +85,20 @@ public class MarcarConsulta extends JFrame {
 		btnMarcar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				String paciente, especialidade, valor;
+				String paciente, valor;
 				
 				
 				String data = ((JTextField)txtData.getDateEditor().getUiComponent()).getText();
-				
+				String especialidade = comboBox_1.getSelectedItem().toString();
 				
 
 				paciente = txtNome.getText();
-				especialidade = txtEspecialidade.getText();
-				valor = txtValor.getText();
+			
 				
 				Consulta consultas = new Consulta();
 				consultas.setIdPaciente(paciente);
 				consultas.setEspecialidade(especialidade);
-				consultas.setValor(valor);
-				consultas.setData(data1);
+				consultas.setData(data);
 			
 			
 				ControlConsulta consultacontrol = new ControlConsulta();
