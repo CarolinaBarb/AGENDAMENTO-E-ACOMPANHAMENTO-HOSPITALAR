@@ -174,7 +174,7 @@ public class Cadastro implements ActionListener {
 		
 		txtData = new JDateChooser();
 		txtData.setForeground(new Color(9, 69, 108));
-		txtData.setBackground(new Color(9, 69, 108));
+		txtData.setBackground(new Color(0, 0, 128));
 		txtData.getCalendarButton().setFont(new Font("Times New Roman", Font.PLAIN, 10));
 		txtData.getCalendarButton().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -75,7 +75,7 @@ public class TelaMedico extends JFrame {
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Médico");
-		btnNewButton_1.setBounds(544, 184, 267, 186);
+		btnNewButton_1.setBounds(516, 184, 267, 186);
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 22));
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
@@ -100,7 +100,7 @@ public class TelaMedico extends JFrame {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Doctor Dashboard");
+		JLabel lblNewLabel = new JLabel("Doctor ");
 		lblNewLabel.setBounds(483, 35, 260, 39);
 		panel_1.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 33));

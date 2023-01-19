@@ -1,4 +1,4 @@
-/package view;
+package view;
 
 import control.*;
 
@@ -77,7 +77,7 @@ public class LoginMedico implements ActionListener {
 				JLabel lblNewLabel = new JLabel("");
 				lblNewLabel.setBounds(172, 71, 223, 152);
 				lblNewLabel.setForeground(new Color(0, 0, 255));
-				Image img = new ImageIcon(this.getClass().getResource("/imagem/medico.png")).getImage();
+				Image img = new ImageIcon(this.getClass().getResource("/imagem/doctor.png")).getImage();
 				lblNewLabel.setIcon(new ImageIcon(img.getScaledInstance(148, 148, Image.SCALE_SMOOTH)));
 				container.getContentPane().add(lblNewLabel);
 
@@ -131,13 +131,15 @@ public class LoginMedico implements ActionListener {
 
 	}
 
-	private void dispose() {
-	}
 
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		 LogarMedico();
+		LoginMedico lm = new LoginMedico();
+		lm.setVisible(true);
+		this.dispose();
 		
+	}
+	private void dispose() {
 	}
 }
