@@ -17,15 +17,6 @@ public class ControlPaciente {
 	Connection conn;
 	PreparedStatement pstm;
 	
-	/*
-	public static java.sql.Date convertUtilDateToSqlDate(java.util.Date DataNascimento){
-		if(DataNascimento != null) {
-			java.sql.Date sqlDate = new java.sql.Date(DataNascimento.getTime());
-			return sqlDate;
-		}
-		return null;
-	}
-	*/
 
 	public void cadastrar(Paciente pacientes) {
 		String sql = "insert into paciente (nome_usuario, email_usuario, senha_usuario, sexo_usuario, DataNascimento, cpf, altura, peso, observacao) "

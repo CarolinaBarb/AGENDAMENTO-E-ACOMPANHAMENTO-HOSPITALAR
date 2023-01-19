@@ -11,13 +11,25 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JSpinner;
 import com.toedter.calendar.JDateChooser;
+
+import control.ControlConsulta;
+import control.ControlPaciente;
+import model.Consulta;
+import model.Paciente;
+
 import javax.swing.SpinnerDateModel;
 import java.util.Date;
 import java.util.Calendar;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MarcarConsulta extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField txtValor;
+	private JTextField txtNome;
 
 	/**
 	 * Launch the application.
@@ -54,17 +66,66 @@ public class MarcarConsulta extends JFrame {
 		contentPane.add(comboBox_1);
 		
 		JLabel lblEspecialidade = new JLabel("Especialidade");
-		lblEspecialidade.setBounds(50, 12, 157, 15);
+		lblEspecialidade.setBounds(68, 12, 157, 15);
 		contentPane.add(lblEspecialidade);
 		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(31, 102, 181, 19);
-		contentPane.add(dateChooser);
+		JDateChooser txtData = new JDateChooser();
+		txtData.setBounds(31, 102, 181, 19);
+		contentPane.add(txtData);
 		
-		JSpinner spinner_1 = new JSpinner();
-		spinner_1.setModel(new SpinnerDateModel(new Date(1674010800000L), null, new Date(1705546800000L), Calendar.DAY_OF_YEAR));
-		spinner_1.setBounds(260, 28, 201, 63);
-		contentPane.add(spinner_1);
+		JSpinner txtEspecialidade = new JSpinner();
+		txtEspecialidade.setModel(new SpinnerDateModel(new Date(1674010800000L), null, new Date(1705546800000L), Calendar.DAY_OF_YEAR));
+		txtEspecialidade.setBounds(261, 28, 201, 63);
+		contentPane.add(txtEspecialidade);
+		
+		txtValor = new JTextField();
+		txtValor.setBounds(38, 180, 145, 31);
+		contentPane.add(txtValor);
+		txtValor.setColumns(10);
+		
+		JLabel lblValor = new JLabel("Valor");
+		lblValor.setBounds(37, 150, 70, 15);
+		contentPane.add(lblValor);
+		
+		txtNome = new JTextField();
+		txtNome.setBounds(275, 150, 157, 42);
+		contentPane.add(txtNome);
+		txtNome.setColumns(10);
+		
+		JLabel lblNomeCompleto = new JLabel("Nome Completo");
+		lblNomeCompleto.setBounds(288, 137, 157, 15);
+		contentPane.add(lblNomeCompleto);
+		
+		JButton btnMarcar = new JButton("marcar consulta");
+		btnMarcar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String paciente, especialidade, valor;
+				
+				
+				String data = ((JTextField)txtData.getDateEditor().getUiComponent()).getText();
+				
+				
+
+				paciente = txtNome.getText();
+				especialidade = txtEspecialidade.getText();
+				valor = txtValor.getText();
+				
+				Consulta consultas = new Consulta();
+				consultas.setIdPaciente(paciente);
+				consultas.setEspecialidade(especialidade);
+				consultas.setValor(valor);
+				consultas.setData(data1);
+			
+			
+				ControlConsulta consultacontrol = new ControlConsulta();
+				consultacontrol.cadastrar(consultas);
+		
+				
+			}
+		});
+		btnMarcar.setBounds(188, 323, 181, 25);
+		contentPane.add(btnMarcar);
 		
 		
 		

@@ -4,13 +4,13 @@ import java.util.*;
 
 public class Consulta {
 	private String especialidade;
-	private double valor;
+	private String valor;
 	private Medico idMedico;
-	private Paciente idPaciente;
+	private String idPaciente;
 	private String data;
 
 	// construtores
-	public Consulta(String especialidade, double valor, Medico idMedico, Paciente idPaciente) {
+	public Consulta(String especialidade, String valor, Medico idMedico, String idPaciente) {
 		super();
 		this.especialidade = especialidade;
 		this.valor = valor;
@@ -18,10 +18,14 @@ public class Consulta {
 		this.idPaciente = idPaciente;
 	}
 
-	public Consulta(String especialidade, double valor) {
+	public Consulta(String especialidade, String valor) {
 		super();
 		this.especialidade = especialidade;
 		this.valor = valor;
+	}
+
+	public Consulta() {
+		// TODO Auto-generated constructor stub
 	}
 
 	// getters and setters
@@ -33,11 +37,11 @@ public class Consulta {
 		this.especialidade = especialidade;
 	}
 
-	public double getValor() {
+	public String getValor() {
 		return valor;
 	}
 
-	public void setValor(double valor) {
+	public void setValor(String valor) {
 		this.valor = valor;
 	}
 
@@ -49,11 +53,11 @@ public class Consulta {
 		this.idMedico = idMedico;
 	}
 
-	public Paciente getIdPaciente() {
+	public String getIdPaciente() {
 		return idPaciente;
 	}
 
-	public void setIdPaciente(Paciente idPaciente) {
+	public void setIdPaciente(String idPaciente) {
 		this.idPaciente = idPaciente;
 	}
 
