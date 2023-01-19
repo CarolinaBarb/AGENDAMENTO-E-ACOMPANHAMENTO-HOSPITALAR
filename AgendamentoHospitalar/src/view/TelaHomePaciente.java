@@ -34,6 +34,14 @@ public class TelaHomePaciente implements ActionListener {
 		marcarconsulta.setForeground(new Color(255, 255, 255));
 		marcarconsulta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MarcarConsulta mc = new MarcarConsulta();
+				mc.setVisible(true);
+				this.dispose();
+			}
+
+			private void dispose() {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 		marcarconsulta.setFont(new Font("Verdana", Font.PLAIN, 20));
