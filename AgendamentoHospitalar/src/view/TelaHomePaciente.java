@@ -68,7 +68,7 @@ public class TelaHomePaciente implements ActionListener {
 			}
 
 			private void dispose() {
-				// TODO Auto-generated method stub
+				
 				
 			}
 		});

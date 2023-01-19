@@ -17,7 +17,7 @@ import javax.swing.border.LineBorder;
 
 import control.*;
 
-public class TelaMedico extends JFrame {
+public class TelaAdmin extends JFrame {
 
 	/**
 	 * Launch the application.
@@ -26,7 +26,7 @@ public class TelaMedico extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaMedico frame = new TelaMedico();
+					TelaAdmin frame = new TelaAdmin();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +38,7 @@ public class TelaMedico extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TelaMedico() {
+	public TelaAdmin() {
 		
 		getContentPane().setBackground(new Color(9, 69, 108));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -81,8 +81,8 @@ public class TelaMedico extends JFrame {
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				PacientesAgendados ag = new PacientesAgendados();
-				ag.setVisible(true);
+				MostrarMedicos mm = new MostrarMedicos();
+				mm.setVisible(true);
 	            this.dispose();	 
 
 			}
@@ -114,6 +114,16 @@ public class TelaMedico extends JFrame {
 		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 22));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MostrarConsultas mc = new MostrarConsultas();
+				mc.setVisible(true);
+	            this.dispose();	
+				
+				
+			}
+
+			private void dispose() {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 		btnNewButton_2.setBounds(947, 184, 254, 186);

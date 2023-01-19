@@ -114,7 +114,7 @@ public class LoginMedico implements ActionListener {
 		   
 		   if(rsmedico.next()) {
 			   //chamar tela q eu quero abrir
-			   TelaMedico tp = new TelaMedico();
+			   TelaAdmin tp = new TelaAdmin();
 			    tp.setVisible(true);
 	            dispose();
 			   
