@@ -1,5 +1,6 @@
 package view;
 
+import control.*;
 import java.awt.EventQueue;
 import java.awt.Font;
 
@@ -7,13 +8,12 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JSpinner;
 import com.toedter.calendar.JDateChooser;
 
-import control.ControlConsulta;
-import control.ControlPaciente;
 import model.Consulta;
 import model.Paciente;
 
@@ -23,6 +23,8 @@ import java.util.Calendar;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JToolBar;
 
@@ -87,12 +89,12 @@ public class MarcarConsulta extends JFrame {
 		lblNomeCompleto.setBounds(288, 137, 157, 15);
 		contentPane.add(lblNomeCompleto);
 		
+		
 		JButton btnMarcar = new JButton("marcar consulta");
 		btnMarcar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 						
-				
-				String data = ((JTextField)txtData.getDateEditor().getUiComponent()).getText();
+				VerifData();
 				String especialidade = comboBox_1.getSelectedItem().toString();
 				String horario = comboBoxHora.getSelectedItem().toString();
 				
@@ -103,13 +105,36 @@ public class MarcarConsulta extends JFrame {
 				Consulta consultas = new Consulta();
 				consultas.setIdPaciente(paciente);
 				consultas.setEspecialidade(especialidade);
-				consultas.setData(data);
 				consultas.setHorario(horario);
-			
+	
 			
 				ControlConsulta consultacontrol = new ControlConsulta();
 				consultacontrol.cadastrar(consultas);
 		
+				
+			}
+
+			private void VerifData() {
+				try {
+					String data = ((JTextField)txtData.getDateEditor().getUiComponent()).getText();
+				
+					Consulta consultas = new Consulta();
+				   
+				   ControlDisponibilidade disponibilidadecontrol = new ControlDisponibilidade();
+				   ResultSet rsdisponibilidade = disponibilidadecontrol.autenticacaoDisponibilidade(consultas); //resultset tipo
+				   
+				   if(rsdisponibilidade.next()) {
+					   JOptionPane.showMessageDialog(null, "data indisponivel");
+				   }
+				   else {
+					   consultas.setData(data); 
+				   }
+				
+				} catch (SQLException erro) {
+					JOptionPane.showMessageDialog(null,"FRMMarcarCView" + erro);
+					
+							}
+
 				
 			}
 		});
@@ -120,10 +145,9 @@ public class MarcarConsulta extends JFrame {
 		
 		JLabel lblHorario = new JLabel("Horario");
 		lblHorario.setBounds(38, 150, 70, 15);
-		contentPane.add(lblHorario);
+		contentPane.add(lblHorario);	
 		
 		
-		
-		
-	}
+	
+}
 }

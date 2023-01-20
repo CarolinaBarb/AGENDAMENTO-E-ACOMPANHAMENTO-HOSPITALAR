@@ -2,6 +2,8 @@ package control;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
@@ -32,6 +34,24 @@ public class ControlDisponibilidade {
 			JOptionPane.showMessageDialog(null, "ControlDisponibilidade" + erro);
 		}
 
+	}
+	public ResultSet autenticacaoDisponibilidade(Consulta objdisponibilidade) {
+		conn = new ConexaoDAO().conectaBD();
+
+		try {
+			String sql = "select * from indisponiveis where data = ?";
+
+			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, objdisponibilidade.getData()); 
+
+
+			ResultSet rs = pstm.executeQuery();
+			return rs;
+
+		} catch (SQLException erro) {
+			JOptionPane.showMessageDialog(null, "DisponibilidadeControl: " + erro);
+			return null;
+		}
 	}
 
 }
