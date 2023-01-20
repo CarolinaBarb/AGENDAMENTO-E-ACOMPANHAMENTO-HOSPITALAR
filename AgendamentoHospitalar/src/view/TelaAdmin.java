@@ -132,5 +132,9 @@ public class TelaAdmin extends JFrame {
 		});
 		btnNewButton_2.setBounds(947, 184, 254, 186);
 		panel.add(btnNewButton_2);
+		
+		JButton btnDisponibilidade = new JButton("Disponibilidade");
+		btnDisponibilidade.setBounds(746, 408, 169, 34);
+		panel.add(btnDisponibilidade);
 	}
 }
