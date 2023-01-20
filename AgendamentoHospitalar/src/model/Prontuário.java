@@ -6,14 +6,13 @@ public class Prontuário extends Paciente {
 	private Date dtconsulta;
 	private String descricao;
 	
-	
-	public Prontuário(String nome, String email, String senha, String id, String sexo, String dataNascimento, String cpf,
-			double altura, double peso, String observacao, Date dtconsulta, String descricao) {
-		super(nome, email, senha, id, sexo, dataNascimento, cpf, altura, peso, observacao);
+
+	public Prontuário(String nome, String email, String senha, String id, String sexo, String dataNascimento,
+			String cpf, String altura2, String peso2, String observacao, Date dtconsulta, String descricao) {
+		super(nome, email, senha, id, sexo, dataNascimento, cpf, altura2, peso2, observacao);
 		this.dtconsulta = dtconsulta;
 		this.descricao = descricao;
 	}
-	
 	public Date getDtconsulta() {
 		return dtconsulta;
 	}

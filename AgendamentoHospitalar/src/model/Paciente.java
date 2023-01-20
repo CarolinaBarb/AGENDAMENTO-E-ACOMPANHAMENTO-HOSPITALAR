@@ -10,12 +10,12 @@ public class Paciente extends Pessoa{
     private String observacao;
     
     //full constructor
-    public Paciente(String nome,String email, String senha, String id, String sexo, String dataNascimento, String cpf, String altura, String peso,
+    public Paciente(String nome,String email, String senha, String id, String sexo, String dataNascimento, String cpf, String altura2, String peso2,
             String observacao) {
         super(email, senha, sexo, nome, id, dataNascimento);
         this.cpf = cpf;
-        this.altura = altura;
-        this.peso = peso;
+        this.altura = altura2;
+        this.peso = peso2;
         this.setObservacao(observacao);
     }
     
