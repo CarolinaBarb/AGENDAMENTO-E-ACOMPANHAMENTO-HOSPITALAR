@@ -24,6 +24,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JToolBar;
 
 public class MarcarConsulta extends JFrame {
 
@@ -77,6 +78,11 @@ public class MarcarConsulta extends JFrame {
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
+		JComboBox comboBoxHora = new JComboBox();
+		comboBoxHora.setModel(new DefaultComboBoxModel(new String[] {"Selecione", "8h00", "8h15", "8h30", "8h45", "9h00", "9h15", "9h30", "9h45", "10h00", "10h15", "10h30", "10h45", "11h00", "11h15", "11h30", "11h45", "14h00", "14h15", "14h30", "14h45", "15h00", "15h15", "15h30", "15h45", "16h00", "16h15", "16h30", "16h45", "17h00", "17h15", "17h30", "17h45"}));
+		comboBoxHora.setBounds(31, 188, 96, 24);
+		contentPane.add(comboBoxHora);
+		
 		JLabel lblNomeCompleto = new JLabel("Nome Completo");
 		lblNomeCompleto.setBounds(288, 137, 157, 15);
 		contentPane.add(lblNomeCompleto);
@@ -84,21 +90,21 @@ public class MarcarConsulta extends JFrame {
 		JButton btnMarcar = new JButton("marcar consulta");
 		btnMarcar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				String paciente, valor;
-				
+						
 				
 				String data = ((JTextField)txtData.getDateEditor().getUiComponent()).getText();
 				String especialidade = comboBox_1.getSelectedItem().toString();
+				String horario = comboBoxHora.getSelectedItem().toString();
 				
 
-				paciente = txtNome.getText();
+				String paciente = txtNome.getText();
 			
 				
 				Consulta consultas = new Consulta();
 				consultas.setIdPaciente(paciente);
 				consultas.setEspecialidade(especialidade);
 				consultas.setData(data);
+				consultas.setHorario(horario);
 			
 			
 				ControlConsulta consultacontrol = new ControlConsulta();
@@ -109,6 +115,12 @@ public class MarcarConsulta extends JFrame {
 		});
 		btnMarcar.setBounds(188, 323, 181, 25);
 		contentPane.add(btnMarcar);
+		
+
+		
+		JLabel lblHorario = new JLabel("Horario");
+		lblHorario.setBounds(38, 150, 70, 15);
+		contentPane.add(lblHorario);
 		
 		
 		

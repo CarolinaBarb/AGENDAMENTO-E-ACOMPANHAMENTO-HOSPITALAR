@@ -8,6 +8,15 @@ public class Consulta {
 	private Medico idMedico;
 	private String idPaciente;
 	private String data;
+	private String horario;
+
+	public String getHorario() {
+		return horario;
+	}
+
+	public void setHorario(String horario) {
+		this.horario = horario;
+	}
 
 	// construtores
 	public Consulta(String especialidade, String valor, Medico idMedico, String idPaciente) {

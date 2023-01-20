@@ -15,7 +15,7 @@ public class ControlConsulta {
 	
 
 	public void cadastrar(Consulta consultas) {
-		String sql = "insert into Consultas (paciente, especialidade, data) " + "values (?, ?, ?)";
+		String sql = "insert into Consultas (paciente, especialidade, data, horario) " + "values (?, ?, ?, ?)";
 
 		conn = new ConexaoDAO().conectaBD();
 
@@ -24,7 +24,8 @@ public class ControlConsulta {
 			pstm = conn.prepareStatement(sql);
 			pstm.setString(1, consultas.getIdPaciente());
 			pstm.setString(2, consultas.getEspecialidade());
-			pstm.setString(3, consultas.getData());		
+			pstm.setString(3, consultas.getData());	
+			pstm.setString(4, consultas.getHorario());	
 
 			pstm.execute();
 			pstm.close();
