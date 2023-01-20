@@ -3,6 +3,7 @@ package view;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -65,6 +66,8 @@ public class MarcarDisponibilidade extends JFrame {
 				
 				ControlDisponibilidade disponibilidadecontrol = new ControlDisponibilidade();
 				disponibilidadecontrol.cadastrar(indisponiveis);
+				
+				JOptionPane.showMessageDialog(null, "adicionado com sucesso");
 			}
 		});
 		btnAdd.setBounds(148, 88, 117, 25);
