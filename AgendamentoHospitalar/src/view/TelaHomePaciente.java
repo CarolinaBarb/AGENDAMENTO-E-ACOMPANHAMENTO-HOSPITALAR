@@ -62,15 +62,9 @@ public class TelaHomePaciente implements ActionListener {
 		pagamentos.setForeground(new Color(255, 255, 255));
 		pagamentos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Pagamentos pa = new Pagamentos();
-				pa.setVisible(true);
-	            this.dispose();	   
+			   
 			}
 
-			private void dispose() {
-				
-				
-			}
 		});
 		pagamentos.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		pagamentos.setBackground(new Color(9, 69, 108));

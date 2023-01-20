@@ -218,4 +218,10 @@ public class Cadastro implements ActionListener {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
 }
