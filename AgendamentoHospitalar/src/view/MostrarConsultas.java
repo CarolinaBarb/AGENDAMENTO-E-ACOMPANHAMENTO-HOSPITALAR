@@ -11,10 +11,17 @@ import javax.swing.JTextPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.Color;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JScrollPane;
 
 public class MostrarConsultas extends JFrame {
 
 	private JPanel contentPane;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -37,7 +44,7 @@ public class MostrarConsultas extends JFrame {
 	 */
 	public MostrarConsultas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 761, 355);
+		setBounds(100, 100, 800, 325);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -56,10 +63,10 @@ public class MostrarConsultas extends JFrame {
 				
 			}
 		});
-		btnNewButton.setBounds(574, 22, 163, 56);
+		btnNewButton.setBounds(173, 227, 156, 34);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Cadastrar Titular");
+		JButton btnNewButton_1 = new JButton("Cadastrar ");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Cadastro ca = new Cadastro();
@@ -72,15 +79,39 @@ public class MostrarConsultas extends JFrame {
 				
 			}
 		});
-		btnNewButton_1.setBounds(10, 22, 157, 56);
+		btnNewButton_1.setBounds(351, 227, 136, 34);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("Importar Titular");
-		btnNewButton_2.setBounds(191, 22, 157, 56);
-		contentPane.add(btnNewButton_2);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 31, 766, 175);
+		contentPane.add(scrollPane);
 		
-		JButton btnNewButton_3 = new JButton("Excluir Titular");
-		btnNewButton_3.setBounds(385, 22, 157, 56);
-		contentPane.add(btnNewButton_3);
+		table = new JTable();
+		table.setForeground(new Color(100, 149, 237));
+		table.setFont(new Font("Trebuchet MS", Font.PLAIN, 15));
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				
+			},
+			new String[] {
+				"Paciente", "Especialidade", "valor", "Data"
+			}
+		));
+		scrollPane.setViewportView(table);
+		
+		JButton btnNewButton_2 = new JButton("Excluir");
+		btnNewButton_2.setBounds(497, 227, 136, 34);
+		contentPane.add(btnNewButton_2);
 	}
 }
