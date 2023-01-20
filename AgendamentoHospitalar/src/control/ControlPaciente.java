@@ -66,7 +66,7 @@ public class ControlPaciente {
 			return null;
 		}
 	}
-
+	
 	/*
 	 * private ArrayList<Paciente> pacientes = new ArrayList<>();
 	 * 

@@ -8,9 +8,12 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.*;
+import java.awt.Color;
+
 
 public class MostrarPacientes extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	DefaultTableModel model;
 	private JTable table;
@@ -36,36 +39,51 @@ public class MostrarPacientes extends JFrame {
 	 */
 	public MostrarPacientes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 607, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
+		model = new DefaultTableModel();
+		contentPane.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 46, 597, 217);
+		contentPane.add(scrollPane);
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Nome", "Idade"},
-				{"Emanuel", "21 anos"},
-				{"Joao", "35 anos"},
-				{"Helena", "55 anos"},
-				{"Maria", "47 anos"},
-				{"Ana", "61 anos"},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
 			},
 			new String[] {
-				"New column", "New column"
+				"Nome", "Email", "Idade", "CPF", "Altura", "Peso", "Sexo", "Observação"
 			}
-		));
-		model = new DefaultTableModel();
+		) {
+			private static final long serialVersionUID = 1L;
+			Class[] columnTypes = new Class[] {
+				String.class, String.class, String.class, String.class, String.class, String.class, String.class, String.class
+			};
+			public Class getColumnClass(int columnIndex) {
+				return columnTypes[columnIndex];
+			}
+		});
+		scrollPane.setViewportView(table);
 		
-		
-		
-		
-		
-		
-		
-		
-		contentPane.add(table);
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(9, 69, 108));
+		panel.setBounds(0, -18, 620, 53);
+		contentPane.add(panel);
 	}
-
+	
+	private void CarregarCampos() {
+		int setar = table.getSelectedRow();
+		table.getModel().getValueAt(setar, 1).toString();
+	}
+	
 }
