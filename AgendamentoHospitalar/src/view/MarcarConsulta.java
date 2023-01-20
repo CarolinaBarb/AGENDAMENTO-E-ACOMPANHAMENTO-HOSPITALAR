@@ -15,6 +15,7 @@ import javax.swing.JSpinner;
 import com.toedter.calendar.JDateChooser;
 
 import model.Consulta;
+import model.Disponibilidade;
 import model.Paciente;
 
 import javax.swing.SpinnerDateModel;
@@ -95,39 +96,41 @@ public class MarcarConsulta extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 						
 				VerifData();
-				String especialidade = comboBox_1.getSelectedItem().toString();
-				String horario = comboBoxHora.getSelectedItem().toString();
 				
-
-				String paciente = txtNome.getText();
-			
-				
-				Consulta consultas = new Consulta();
-				consultas.setIdPaciente(paciente);
-				consultas.setEspecialidade(especialidade);
-				consultas.setHorario(horario);
-	
-			
-				ControlConsulta consultacontrol = new ControlConsulta();
-				consultacontrol.cadastrar(consultas);
-		
 				
 			}
 
 			private void VerifData() {
 				try {
+					
 					String data = ((JTextField)txtData.getDateEditor().getUiComponent()).getText();
 				
-					Consulta consultas = new Consulta();
+					Disponibilidade consult = new Disponibilidade();
 				   
 				   ControlDisponibilidade disponibilidadecontrol = new ControlDisponibilidade();
-				   ResultSet rsdisponibilidade = disponibilidadecontrol.autenticacaoDisponibilidade(consultas); //resultset tipo
+				   ResultSet rsdisponibilidade = disponibilidadecontrol.autenticacaoDisponibilidade(consult); //resultset tipo
 				   
 				   if(rsdisponibilidade.next()) {
 					   JOptionPane.showMessageDialog(null, "data indisponivel");
 				   }
 				   else {
-					   consultas.setData(data); 
+					    String especialidade = comboBox_1.getSelectedItem().toString();
+						String horario = comboBoxHora.getSelectedItem().toString();
+						
+
+						String paciente = txtNome.getText();
+					
+						
+						Consulta consultas = new Consulta();
+						consultas.setIdPaciente(paciente);
+						consultas.setEspecialidade(especialidade);
+						consultas.setHorario(horario);
+			            consultas.setData(data);
+					
+						ControlConsulta consultacontrol = new ControlConsulta();
+						consultacontrol.cadastrar(consultas);
+				
+					    
 				   }
 				
 				} catch (SQLException erro) {

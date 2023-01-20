@@ -35,7 +35,7 @@ public class ControlDisponibilidade {
 		}
 
 	}
-	public ResultSet autenticacaoDisponibilidade(Consulta objdisponibilidade) {
+	public ResultSet autenticacaoDisponibilidade(Disponibilidade objdisponibilidade) {
 		conn = new ConexaoDAO().conectaBD();
 
 		try {

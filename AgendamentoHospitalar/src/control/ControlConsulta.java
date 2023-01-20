@@ -2,10 +2,13 @@ package control;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
 import model.Consulta;
+import model.Disponibilidade;
 import model.Paciente;
 
 public class ControlConsulta {
@@ -34,6 +37,6 @@ public class ControlConsulta {
 			JOptionPane.showMessageDialog(null, "ControlConsulta" + erro);
 		}
 
-	}
+	}	
 	
 }

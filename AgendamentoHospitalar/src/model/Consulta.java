@@ -9,6 +9,9 @@ public class Consulta {
 	private String idPaciente;
 	private String data;
 	private String horario;
+	private String data_indisponivel;
+
+	
 
 	public String getHorario() {
 		return horario;
@@ -76,6 +79,14 @@ public class Consulta {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+	
+	public String getData_indisponivel() {
+		return data_indisponivel;
+	}
+
+	public void setData_indisponivel(String data_indisponivel) {
+		this.data_indisponivel = data_indisponivel;
 	}
 
 }
