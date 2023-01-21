@@ -1,9 +1,12 @@
+
+
 package control;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 
 import model.Paciente;
@@ -16,7 +19,7 @@ public class ControlPaciente {
 
 	Connection conn;
 	PreparedStatement pstm;
-	
+	ArrayList<Paciente> lista = new ArrayList<>();
 
 	public void cadastrar(Paciente pacientes) {
 		String sql = "insert into paciente (nome_usuario, email_usuario, senha_usuario, sexo_usuario, DataNascimento, cpf, altura, peso, observacao) "
@@ -50,7 +53,6 @@ public class ControlPaciente {
 
 	public ResultSet autenticacaoPaciente(Paciente objpacientecontrol) {
 		conn = new ConexaoDAO().conectaBD();
-
 		try {
 			String sql = "select * from paciente where email_usuario = ? and senha_usuario = ?"; // mesmo q ta no banco
 
@@ -65,7 +67,38 @@ public class ControlPaciente {
 			JOptionPane.showMessageDialog(null, "PacienteControl: " + erro);
 			return null;
 		}
+		
+		 
 	}
+	
+	public ArrayList<Paciente> PesquisarPaciente(){
+		 String sql = "select * from paciente";
+		 conn = new ConexaoDAO().conectaBD();
+		  
+		 try {
+			 pstm = conn.prepareStatement(sql);
+			 ResultSet rs = pstm.executeQuery();
+			 
+			 while(rs.next()) {
+				 Paciente objpaciente = new Paciente();
+				 objpaciente.setNome(rs.getString("nome_usuario"));
+				 objpaciente.setEmail(rs.getString("email_usuario"));
+				 objpaciente.setDataNascimento(rs.getString("DataNascimento"));
+				 objpaciente.setCpf(rs.getString("cpf"));
+				 objpaciente.setAltura(rs.getString("altura"));
+				 objpaciente.setPeso(rs.getString("peso"));
+				 objpaciente.setSexo(rs.getString("sexo_usuario"));
+				 objpaciente.setObservacao(rs.getString("observacao"));
+				 
+				 lista.add(objpaciente);
+			 }
+			 
+		 }catch(SQLException erro) {
+		    JOptionPane.showMessageDialog(null, "Pesquisar Paciente:" + erro);
+	 
+		 }
+		 return lista;
+	 }
 	
 	/*
 	 * private ArrayList<Paciente> pacientes = new ArrayList<>();

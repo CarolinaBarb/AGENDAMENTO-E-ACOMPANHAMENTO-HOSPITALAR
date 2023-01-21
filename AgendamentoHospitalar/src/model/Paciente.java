@@ -80,4 +80,6 @@ public class Paciente extends Pessoa{
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
 	}
+
+
 }

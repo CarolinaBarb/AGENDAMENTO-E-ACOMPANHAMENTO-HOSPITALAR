@@ -2,6 +2,8 @@ package view;
 
 import java.awt.EventQueue;
 import java.lang.annotation.Target;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,6 +12,11 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.*;
 import java.awt.Color;
 
+import control.*;
+import model.Paciente;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 
 public class MostrarPacientes extends JFrame {
 
@@ -17,10 +24,39 @@ public class MostrarPacientes extends JFrame {
 	private JPanel contentPane;
 	DefaultTableModel model;
 	private JTable table;
+	private JButton btnMostrar;
 
 	/**
 	 * Launch the application.
 	 */
+	
+	private void listarValores() {
+		try {
+			ControlPaciente objcontrolpaciente = new ControlPaciente();
+			DefaultTableModel model = (DefaultTableModel) table.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Paciente> lista = objcontrolpaciente.PesquisarPaciente();
+			
+			for(int num = 0; num < lista.size(); num++) {
+				model.addRow(new Object[] {
+						lista.get(num).getNome(),
+						lista.get(num).getEmail(),
+						lista.get(num).getDataNascimento(),
+						lista.get(num).getCpf(),
+						lista.get(num).getAltura(),
+						lista.get(num).getPeso(),
+						lista.get(num).getSexo(),
+						lista.get(num).getObservacao()
+						
+				});
+			}
+			
+		}catch(Exception erro) {
+			JOptionPane.showMessageDialog(null, "Listar Valores View:" + erro);
+		}
+	}
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -39,7 +75,7 @@ public class MostrarPacientes extends JFrame {
 	 */
 	public MostrarPacientes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 607, 300);
+		setBounds(100, 100, 597, 226);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -48,7 +84,7 @@ public class MostrarPacientes extends JFrame {
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 46, 597, 217);
+		scrollPane.setBounds(0, 46, 597, 116);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -76,14 +112,18 @@ public class MostrarPacientes extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(9, 69, 108));
 		panel.setBounds(0, -18, 620, 53);
+		panel.setBackground(new Color(9, 69, 108));
 		contentPane.add(panel);
+		
+		btnMostrar = new JButton("mostrar");
+		btnMostrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				listarValores();
+			}
+		});
+		btnMostrar.setBackground(new Color(9, 69, 108));
+		btnMostrar.setBounds(10, 164, 117, 25);
+		contentPane.add(btnMostrar);
 	}
-	
-	private void CarregarCampos() {
-		int setar = table.getSelectedRow();
-		table.getModel().getValueAt(setar, 1).toString();
-	}
-	
 }
