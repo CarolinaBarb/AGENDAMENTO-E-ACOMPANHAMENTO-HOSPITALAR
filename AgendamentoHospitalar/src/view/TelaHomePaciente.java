@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
-import home.*;
+//import home.*;
 
 
 public class TelaHomePaciente implements ActionListener {
@@ -16,8 +16,8 @@ public class TelaHomePaciente implements ActionListener {
 	private JButton prontuario;
 	private JComboBox<String> comboBox;
 	private JMenuItem logout, verReceitas, verAtestados, verEncaminhamentos;
-	private JLabel lblNewLabel;
-	private JLabel lblNewLabel_2;
+	//private JLabel lblNewLabel;
+    //private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_1;
 	
 	public TelaHomePaciente(){

@@ -20,6 +20,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 import control.*;
+import view.MostrarPacientes;
 
 public class TelaAdmin extends JFrame {
 
@@ -66,6 +67,7 @@ public class TelaAdmin extends JFrame {
 		
 		public void actionPerformed(ActionEvent e) {	
 			MostrarPacientes pa = new MostrarPacientes();
+			pa.listarValores();
 			pa.setVisible(true);
             this.dispose();	             
 			}

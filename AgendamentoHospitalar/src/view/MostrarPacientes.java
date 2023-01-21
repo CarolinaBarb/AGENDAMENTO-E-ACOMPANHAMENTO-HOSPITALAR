@@ -30,7 +30,7 @@ public class MostrarPacientes extends JFrame {
 	 * Launch the application.
 	 */
 	
-	private void listarValores() {
+	public void listarValores() {
 		try {
 			ControlPaciente objcontrolpaciente = new ControlPaciente();
 			DefaultTableModel model = (DefaultTableModel) table.getModel();
@@ -116,14 +116,5 @@ public class MostrarPacientes extends JFrame {
 		panel.setBackground(new Color(9, 69, 108));
 		contentPane.add(panel);
 		
-		btnMostrar = new JButton("mostrar");
-		btnMostrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				listarValores();
-			}
-		});
-		btnMostrar.setBackground(new Color(9, 69, 108));
-		btnMostrar.setBounds(10, 164, 117, 25);
-		contentPane.add(btnMostrar);
 	}
 }
