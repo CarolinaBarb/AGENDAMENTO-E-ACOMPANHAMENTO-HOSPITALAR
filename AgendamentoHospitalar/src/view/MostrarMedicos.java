@@ -3,14 +3,22 @@ package view;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import control.ControlMedico;
+import control.ControlPaciente;
+import model.Medico;
+import model.Paciente;
+
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class MostrarMedicos extends JFrame {
@@ -21,6 +29,29 @@ public class MostrarMedicos extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	public void listarValoresM() {
+		try {
+			ControlMedico objcontrolmedico = new ControlMedico();
+			DefaultTableModel model = (DefaultTableModel) table.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Medico> lista = objcontrolmedico.PesquisarMedico();
+			
+			for(int num = 0; num < lista.size(); num++) {
+				model.addRow(new Object[] {
+						lista.get(num).getNome(),
+						lista.get(num).getEmail(),
+						lista.get(num).getCrm(),
+						lista.get(num).getEspecialidade()
+						
+				});
+			}
+			
+		}catch(Exception erro) {
+			JOptionPane.showMessageDialog(null, "Listar Valores View:" + erro);
+		}
+		
+	}
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

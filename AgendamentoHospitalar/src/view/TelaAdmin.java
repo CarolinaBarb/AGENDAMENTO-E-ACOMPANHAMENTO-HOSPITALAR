@@ -21,6 +21,7 @@ import java.sql.SQLException;
 
 import control.*;
 import view.MostrarPacientes;
+import view.MostrarMedicos;
 
 public class TelaAdmin extends JFrame {
 
@@ -87,7 +88,8 @@ public class TelaAdmin extends JFrame {
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MostrarMedicos mm = new MostrarMedicos();
+				MostrarMedicos mm = new MostrarMedicos(); 
+				mm.listarValoresM();
 				mm.setVisible(true);
 	            this.dispose();	 
 

@@ -8,14 +8,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
-import java.util.Date;
 
 import javax.swing.JOptionPane;
-
+import java.util.ArrayList;
 
 public class ControlMedico {
 	
 	Connection conn;
+	PreparedStatement pstm;
+	ArrayList<Medico> lista = new ArrayList<>();
 	
 
 	public ResultSet autenticacaoMedico(Medico medicocontrol) {
@@ -35,6 +36,32 @@ public class ControlMedico {
 			JOptionPane.showMessageDialog(null, "MedicoControl: " + erro);
 			return null;
 		}
+	}
+	
+	public ArrayList<Medico> PesquisarMedico(){
+		String sql = "select * from Medicos";
+		conn = new ConexaoDAO().conectaBD();
+		
+		try {
+			 pstm = conn.prepareStatement(sql);
+			 ResultSet rs = pstm.executeQuery();
+			 
+			 while(rs.next()) {
+				 Medico objmedico = new Medico();
+				 objmedico.setNome(rs.getString("nome"));
+				 objmedico.setEmail(rs.getString("email_medico"));
+				 objmedico.setCrm(rs.getString("crm"));
+				 objmedico.setEspecialidade(rs.getString("especialidade"));
+				 
+				 lista.add(objmedico);
+			 }
+			 
+		 }catch(SQLException erro) {
+		    JOptionPane.showMessageDialog(null, "Pesquisar Medico:" + erro);
+	 
+		 }
+		 return lista;
+	 
 	}
 
 }
