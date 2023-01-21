@@ -49,7 +49,7 @@ public class ControlMedico {
 			 while(rs.next()) {
 				 Medico objmedico = new Medico();
 				 objmedico.setNome(rs.getString("nome"));
-				 objmedico.setEmail(rs.getString("email_medico"));
+				 objmedico.setEmail(rs.getString("email_medicos"));
 				 objmedico.setCrm(rs.getString("crm"));
 				 objmedico.setEspecialidade(rs.getString("especialidade"));
 				 
@@ -62,6 +62,31 @@ public class ControlMedico {
 		 }
 		 return lista;
 	 
+	}
+
+	public void cadastrar(Medico medicos) {
+		String sql = "insert into Medicos (nome, email_medicos,crm,especialidade) "
+			      + "values (?, ?, ?, ?)";
+
+	conn = new ConexaoDAO().conectaBD();
+
+	try {
+		
+		pstm = conn.prepareStatement(sql);
+		pstm.setString(1, medicos.getNome()); 
+		pstm.setString(2, medicos.getEmail());
+		pstm.setString(3, medicos.getCrm());
+		pstm.setString(4, medicos.getEspecialidade());
+	
+		
+
+		pstm.execute();
+		pstm.close();
+		
+	} catch (Exception erro) {
+		JOptionPane.showMessageDialog(null, "ControlMedico" + erro);
+	}
+		
 	}
 
 }
