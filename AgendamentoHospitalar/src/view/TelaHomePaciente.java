@@ -82,7 +82,7 @@ public class TelaHomePaciente implements ActionListener {
         String[] items = {"Receitas", "Atestados", "Encaminhamentos", "Sair"};
 		container.getContentPane().setLayout(null);
 		
-		comboBox = new JComboBox<>(items);
+		comboBox = new JComboBox<>();
 		comboBox.setBounds(941, 22, 101, 30);
 		comboBox.setEditable(true);
 		comboBox.setBackground(new Color(9, 69, 108));
@@ -125,6 +125,18 @@ public class TelaHomePaciente implements ActionListener {
 		lblNewLabel_1.setIcon(new ImageIcon(home11.getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
 		
 		JButton btnNewButton = new JButton("HOME");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaPrincipal lm = new TelaPrincipal();
+				lm.setVisible(true);
+				this.dispose();
+			}
+
+			private void dispose() {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		btnNewButton.setForeground(new Color(9, 69, 108));
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setBounds(24, 51, 85, 21);
