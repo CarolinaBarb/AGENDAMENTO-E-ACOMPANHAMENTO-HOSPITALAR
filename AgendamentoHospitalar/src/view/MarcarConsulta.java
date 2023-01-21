@@ -102,13 +102,13 @@ public class MarcarConsulta extends JFrame {
 
 			private void VerifData() {
 				try {
-					
 					String data = ((JTextField)txtData.getDateEditor().getUiComponent()).getText();
-				
+					
 					Disponibilidade consult = new Disponibilidade();
+					consult.setData(data);
 				   
-				   ControlDisponibilidade disponibilidadecontrol = new ControlDisponibilidade();
-				   ResultSet rsdisponibilidade = disponibilidadecontrol.autenticacaoDisponibilidade(consult); //resultset tipo
+				    ControlDisponibilidade disponibilidadecontrol = new ControlDisponibilidade();
+				    ResultSet rsdisponibilidade = disponibilidadecontrol.autenticacaoDisponibilidade(consult); //resultset tipo
 				   
 				   if(rsdisponibilidade.next()) {
 					   JOptionPane.showMessageDialog(null, "data indisponivel");
@@ -116,27 +116,22 @@ public class MarcarConsulta extends JFrame {
 				   else {
 					    String especialidade = comboBox_1.getSelectedItem().toString();
 						String horario = comboBoxHora.getSelectedItem().toString();
-						
-
 						String paciente = txtNome.getText();
-					
 						
 						Consulta consultas = new Consulta();
+						
 						consultas.setIdPaciente(paciente);
 						consultas.setEspecialidade(especialidade);
+						consultas.setData(data);
 						consultas.setHorario(horario);
-			            consultas.setData(data);
-					
+			            
 						ControlConsulta consultacontrol = new ControlConsulta();
 						consultacontrol.cadastrar(consultas);
-				
-					    
 				   }
 				
 				} catch (SQLException erro) {
 					JOptionPane.showMessageDialog(null,"FRMMarcarCView" + erro);
-					
-							}
+				}
 
 				
 			}
