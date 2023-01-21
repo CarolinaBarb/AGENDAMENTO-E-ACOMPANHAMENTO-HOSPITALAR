@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
 
-public class LoginMedico implements ActionListener {
+public class LoginAdmin implements ActionListener {
 	JFrame container;
 	private JButton btnEntrar;
 	private JTextField inserirEmail;
@@ -24,7 +24,7 @@ public class LoginMedico implements ActionListener {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public LoginMedico() {
+	public LoginAdmin() {
 		container = new JFrame("Login");
 		btnEntrar = new JButton("Entrar");
 		btnEntrar.setBounds(184, 408, 120, 30);
@@ -68,7 +68,7 @@ public class LoginMedico implements ActionListener {
 		panel.setBackground(new Color(9, 69, 108));
 		container.getContentPane().add(panel);
 		
-				JLabel lblLogin = new JLabel("Login Médico");
+				JLabel lblLogin = new JLabel("Login Administrador");
 				lblLogin.setForeground(new Color(255, 255, 255));
 				panel.add(lblLogin);
 				lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
@@ -93,7 +93,7 @@ public class LoginMedico implements ActionListener {
 	}
 
 	public static void main(String[] args) {
-		new LoginMedico();
+		new LoginAdmin();
 	}
 
 
@@ -135,7 +135,7 @@ public class LoginMedico implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		LoginMedico lm = new LoginMedico();
+		LoginAdmin lm = new LoginAdmin();
 		lm.setVisible(true);
 		this.dispose();
 		

@@ -17,7 +17,7 @@ import java.awt.Image;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import imagem.*;
+//import imagem.*;
 
 
 public class TelaPrincipal extends JFrame {
@@ -95,7 +95,7 @@ public class TelaPrincipal extends JFrame {
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LoginMedico lm = new LoginMedico();
+				LoginAdmin lm = new LoginAdmin();
 				lm.setVisible(true);
 				this.dispose();
 			}
