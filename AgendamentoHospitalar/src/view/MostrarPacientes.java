@@ -24,8 +24,6 @@ public class MostrarPacientes extends JFrame {
 	private JPanel contentPane;
 	DefaultTableModel model;
 	private JTable table;
-	private JButton btnMostrar;
-
 	/**
 	 * Launch the application.
 	 */
