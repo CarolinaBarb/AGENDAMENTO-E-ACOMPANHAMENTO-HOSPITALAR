@@ -193,7 +193,7 @@ public class Cadastro implements ActionListener {
 		
 		panel = new JPanel();
 		panel.setBackground(new Color(9, 69, 108));
-		panel.setBounds(0, 0, 486, 54);
+		panel.setBounds(0, 0, 496, 54);
 		container.getContentPane().add(panel);
 		
 		JLabel lblCadastroMedico = new JLabel("Cadastro");
