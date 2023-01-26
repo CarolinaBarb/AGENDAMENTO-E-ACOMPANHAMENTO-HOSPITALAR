@@ -123,6 +123,7 @@ public class TelaAdmin extends JFrame {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MostrarConsultas mc = new MostrarConsultas();
+				mc.listarValoresC();
 				mc.setVisible(true);
 	            this.dispose();	
 				

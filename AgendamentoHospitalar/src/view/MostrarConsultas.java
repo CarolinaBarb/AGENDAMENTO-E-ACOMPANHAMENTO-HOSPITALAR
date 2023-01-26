@@ -109,17 +109,7 @@ public class MostrarConsultas extends JFrame {
 				listarValoresC();
 			}
 		});
-		btnNewButton_2.setBounds(427, 227, 136, 34);
-		contentPane.add(btnNewButton_2);
-		
-		JButton btnMostrar = new JButton("mostrar");
-		btnMostrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				listarValoresC();
-			}
-		});
-		btnMostrar.setBounds(588, 22, 127, 34);
-		contentPane.add(btnMostrar);
+	
 		
 		textCodigo = new JTextField();
 		textCodigo.setEnabled(false);
@@ -141,7 +131,7 @@ public class MostrarConsultas extends JFrame {
 		contentPane.add(btnCarregarCampos);
 	}
 	
-	private void listarValoresC() {
+	void listarValoresC() {
 		try {
 			ControlConsulta objconsulta = new ControlConsulta();
 			

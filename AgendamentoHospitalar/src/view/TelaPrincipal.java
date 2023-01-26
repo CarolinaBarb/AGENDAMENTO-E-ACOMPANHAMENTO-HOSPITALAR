@@ -63,11 +63,7 @@ public class TelaPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Cadastro lm = new Cadastro();
 				lm.container.setVisible(true);
-				this.dispose();
-			}
-
-			private void dispose() {
-				
+				dispose();
 			}
 		});
 		
@@ -80,12 +76,9 @@ public class TelaPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Login l = new Login();
 				l.container.setVisible(true);
-				this.dispose();
+				dispose();
 			}
 
-			private void dispose() {
-				
-			}
 		});
 		
 		JButton btnNewButton_1 = new JButton("Login Médico");
@@ -97,11 +90,7 @@ public class TelaPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				LoginAdmin lm = new LoginAdmin();
 				lm.setVisible(true);
-				this.dispose();
-			}
-
-			private void dispose() {
-				
+				dispose();
 			}
 		});
 		contentPane.setLayout(null);
