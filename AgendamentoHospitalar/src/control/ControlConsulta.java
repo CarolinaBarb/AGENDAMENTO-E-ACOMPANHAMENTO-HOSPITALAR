@@ -13,6 +13,8 @@ import model.Disponibilidade;
 import model.Medico;
 import model.Paciente;
 
+import java.util.*
+;
 public class ControlConsulta {
 
 	Connection conn;
@@ -88,5 +90,37 @@ public class ControlConsulta {
 		 }
 		 	
 	}
+	
+	public ArrayList<Consulta> PacienteConsulta(){
+		
+		
+		String sql = "select * from consultas where paciente = 'julia' "; //ColocarNome.getText()
+		conn = new ConexaoDAO().conectaBD();
+		
+		
+		try {
+			 pstm = conn.prepareStatement(sql);
+			 ResultSet rs = pstm.executeQuery();
+			 
+			 while(rs.next()) {
+				 Consulta objconsulta = new Consulta();
+				 objconsulta.setIdPaciente(rs.getString("paciente"));
+				 objconsulta.setEspecialidade(rs.getString("especialidade"));
+				 objconsulta.setHorario(rs.getString("horario"));
+				 objconsulta.setData(rs.getString("data"));
+				 objconsulta.setValor(rs.getString("valor"));
+				 objconsulta.setID(rs.getInt("idconsulta"));
+				 
+				 lista.add(objconsulta);
+			 }
+			 
+		 }catch(SQLException erro) {
+		    JOptionPane.showMessageDialog(null, "Pesquisar Consulta:" + erro);
+	 
+		 }
+		 return lista;
+	 
+	}
+
 	
 }

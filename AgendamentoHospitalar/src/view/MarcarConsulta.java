@@ -32,7 +32,7 @@ import javax.swing.JToolBar;
 public class MarcarConsulta extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtNome;
+	private JTextField txtNomeConsulta;
 
 	/**
 	 * Launch the application.
@@ -76,10 +76,10 @@ public class MarcarConsulta extends JFrame {
 		txtData.setBounds(31, 102, 181, 19);
 		contentPane.add(txtData);
 		
-		txtNome = new JTextField();
-		txtNome.setBounds(275, 150, 157, 42);
-		contentPane.add(txtNome);
-		txtNome.setColumns(10);
+		txtNomeConsulta = new JTextField();
+		txtNomeConsulta.setBounds(275, 150, 157, 42);
+		contentPane.add(txtNomeConsulta);
+		txtNomeConsulta.setColumns(10);
 		
 		JComboBox comboBoxHora = new JComboBox();
 		comboBoxHora.setModel(new DefaultComboBoxModel(new String[] {"Selecione", "8h00", "8h15", "8h30", "8h45", "9h00", "9h15", "9h30", "9h45", "10h00", "10h15", "10h30", "10h45", "11h00", "11h15", "11h30", "11h45", "14h00", "14h15", "14h30", "14h45", "15h00", "15h15", "15h30", "15h45", "16h00", "16h15", "16h30", "16h45", "17h00", "17h15", "17h30", "17h45"}));
@@ -116,7 +116,7 @@ public class MarcarConsulta extends JFrame {
 				   else {
 					    String especialidade = comboBox_1.getSelectedItem().toString();
 						String horario = comboBoxHora.getSelectedItem().toString();
-						String paciente = txtNome.getText();
+						String paciente = txtNomeConsulta.getText();
 						
 						Consulta consultas = new Consulta();
 						

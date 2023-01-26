@@ -52,6 +52,16 @@ public class TelaHomePaciente implements ActionListener {
 		agendamento.setForeground(new Color(255, 255, 255));
 		agendamento.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ConsultasPacientes cp = new ConsultasPacientes();
+				cp.setVisible(true);
+				this.dispose();
+				
+				
+			}
+
+			private void dispose() {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 		agendamento.setFont(new Font("Tahoma", Font.PLAIN, 20));
