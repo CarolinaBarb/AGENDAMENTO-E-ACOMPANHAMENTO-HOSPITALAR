@@ -65,28 +65,6 @@ public class ConsultasPacientes extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Adicionar Pagamento");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Pagamentos pa = new Pagamentos();
-				pa.setVisible(true);
-	            dispose();	
-			}
-		});
-		btnNewButton.setBounds(74, 227, 156, 34);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Cadastrar ");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				MarcarConsulta ca = new MarcarConsulta();
-				ca.setVisible(true);
-	            dispose();	
-			}
-		});
-		btnNewButton_1.setBounds(252, 227, 136, 34);
-		contentPane.add(btnNewButton_1);
-		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(25, 60, 751, 146);
 		contentPane.add(scrollPane);
@@ -102,16 +80,6 @@ public class ConsultasPacientes extends JFrame {
 			}
 		));
 		scrollPane.setViewportView(table);
-		
-		JButton btnNewButton_2 = new JButton("Excluir");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				excluir();
-				listarValoresC();
-			}
-		});
-		btnNewButton_2.setBounds(427, 227, 136, 34);
-		contentPane.add(btnNewButton_2);
 		
 		JButton btnMostrar = new JButton("mostrar");
 		btnMostrar.addActionListener(new ActionListener() {
@@ -131,15 +99,6 @@ public class ConsultasPacientes extends JFrame {
 		JLabel lblNewLabel = new JLabel("codigo");
 		lblNewLabel.setBounds(25, 10, 45, 13);
 		contentPane.add(lblNewLabel);
-		
-		JButton btnCarregarCampos = new JButton("Carregar Campos");
-		btnCarregarCampos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CarregarCampos();
-			}
-		});
-		btnCarregarCampos.setBounds(588, 227, 127, 34);
-		contentPane.add(btnCarregarCampos);
 		
 		ColocarNome = new JTextField();
 		ColocarNome.setBounds(170, 7, 114, 19);
@@ -173,11 +132,6 @@ public class ConsultasPacientes extends JFrame {
 			JOptionPane.showMessageDialog(null, erro);
 			
 		}
-	}
-	private void CarregarCampos() {
-		int setar = table.getSelectedRow();
-		
-		textCodigo.setText(table.getModel().getValueAt(setar, 1).toString());
 	}
 	private void excluir() {
 		int id_consulta;
