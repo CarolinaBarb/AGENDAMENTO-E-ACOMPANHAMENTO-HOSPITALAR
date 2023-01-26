@@ -10,8 +10,19 @@ public class Consulta {
 	private String data;
 	private String horario;
 	private String data_indisponivel;
+	private int ID;
+	
+	
 
 	
+
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
 
 	public String getHorario() {
 		return horario;
@@ -88,5 +99,7 @@ public class Consulta {
 	public void setData_indisponivel(String data_indisponivel) {
 		this.data_indisponivel = data_indisponivel;
 	}
+
+
 
 }

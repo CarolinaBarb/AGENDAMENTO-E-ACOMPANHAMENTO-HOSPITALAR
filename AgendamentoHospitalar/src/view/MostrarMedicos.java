@@ -29,29 +29,7 @@ public class MostrarMedicos extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public void listarValoresM() {
-		try {
-			ControlMedico objcontrolmedico = new ControlMedico();
-			DefaultTableModel model = (DefaultTableModel) table.getModel();
-			model.setNumRows(0);
-			
-			ArrayList<Medico> lista = objcontrolmedico.PesquisarMedico();
-			
-			for(int num = 0; num < lista.size(); num++) {
-				model.addRow(new Object[] {
-						lista.get(num).getNome(),
-						lista.get(num).getEmail(),
-						lista.get(num).getCrm(),
-						lista.get(num).getEspecialidade()
-						
-				});
-			}
-			
-		}catch(Exception erro) {
-			JOptionPane.showMessageDialog(null, "Listar Valores View:" + erro);
-		}
-		
-	}
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -135,5 +113,27 @@ public class MostrarMedicos extends JFrame {
 		btnNewButton_1.setBounds(362, 252, 186, 33);
 		contentPane.add(btnNewButton_1);
 	}
-
+	
+	public void listarValoresM() {
+		try {
+			ControlMedico objcontrolmedico = new ControlMedico();
+			DefaultTableModel model = (DefaultTableModel) table.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Medico> lista = objcontrolmedico.PesquisarMedico();
+			
+			for(int num = 0; num < lista.size(); num++) {
+				model.addRow(new Object[] {
+						lista.get(num).getNome(),
+						lista.get(num).getEmail(),
+						lista.get(num).getCrm(),
+						lista.get(num).getEspecialidade()
+						
+				});
+			}
+			
+		}catch(Exception erro) {
+			JOptionPane.showMessageDialog(null, "Listar Valores View:" + erro);
 }
+	}}
+
