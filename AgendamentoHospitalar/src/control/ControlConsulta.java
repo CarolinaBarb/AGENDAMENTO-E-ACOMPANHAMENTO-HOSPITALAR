@@ -91,16 +91,18 @@ public class ControlConsulta {
 		 	
 	}
 	
-	public ArrayList<Consulta> PacienteConsulta(){
+	public ArrayList<Consulta> PacienteConsulta(String IdPaciente){
 		
 		
-		String sql = "select * from consultas where paciente = 'julia' "; //ColocarNome.getText()
+		String sql = "select * from consultas where paciente = ? "; //ColocarNome.getText()
 		conn = new ConexaoDAO().conectaBD();
 		
 		
 		try {
 			 pstm = conn.prepareStatement(sql);
-			 ResultSet rs = pstm.executeQuery();
+			 pstm.setString(1, IdPaciente);
+			
+			ResultSet rs = pstm.executeQuery();
 			 
 			 while(rs.next()) {
 				 Consulta objconsulta = new Consulta();
@@ -115,7 +117,7 @@ public class ControlConsulta {
 			 }
 			 
 		 }catch(SQLException erro) {
-		    JOptionPane.showMessageDialog(null, "Pesquisar Consulta:" + erro);
+		    JOptionPane.showMessageDialog(null, "Paciente Consulta:" + erro);
 	 
 		 }
 		 return lista;
