@@ -84,7 +84,7 @@ public class ConsultasPacientes extends JFrame {
 		JButton btnMostrar = new JButton("mostrar");
 		btnMostrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				listarValoresC();
+				listarValoresC(IdPaciente);
 			}
 		});
 		btnMostrar.setBounds(588, 22, 127, 34);
@@ -106,14 +106,14 @@ public class ConsultasPacientes extends JFrame {
 		ColocarNome.setColumns(10);
 	}
 	
-	private void listarValoresC() {
+	private void listarValoresC(String IdPaciente) {
 		try {
 			ControlConsulta objconsulta = new ControlConsulta();
 			
 			DefaultTableModel  model = (DefaultTableModel) table.getModel();
 			model.setNumRows(0);
 			
-			ArrayList<Consulta> lista = objconsulta.PacienteConsulta();
+			ArrayList<Consulta> lista = objconsulta.PacienteConsulta(IdPaciente);
 			
 			for(int num = 0; num < lista.size();num ++) {
 				model.addRow(new Object[] {
