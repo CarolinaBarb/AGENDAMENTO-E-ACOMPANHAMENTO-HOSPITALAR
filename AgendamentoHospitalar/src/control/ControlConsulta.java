@@ -23,7 +23,7 @@ public class ControlConsulta {
 	
 
 	public void cadastrar(Consulta consultas) {
-		String sql = "insert into Consultas (paciente, especialidade, data, horario) " + "values (?, ?, ?, ?)";
+		String sql = "insert into consultas (paciente, especialidade, data, horario, valor) " + "values (?, ?, ?, ?, ?)";
 
 		conn = new ConexaoDAO().conectaBD();
 
@@ -34,6 +34,7 @@ public class ControlConsulta {
 			pstm.setString(2, consultas.getEspecialidade());
 			pstm.setString(3, consultas.getData());	
 			pstm.setString(4, consultas.getHorario());	
+			pstm.setString(5, consultas.getValor());
 
 			pstm.execute();
 			pstm.close();
@@ -54,11 +55,11 @@ public class ControlConsulta {
 			 while(rs.next()) {
 				 Consulta objconsulta = new Consulta();
 				 objconsulta.setIdPaciente(rs.getString("paciente"));
-				 objconsulta.setEspecialidade(rs.getString("especialidade"));
-				 objconsulta.setHorario(rs.getString("horario"));
-				 objconsulta.setData(rs.getString("data"));
-				 objconsulta.setValor(rs.getString("valor"));
 				 objconsulta.setID(rs.getInt("idconsulta"));
+				 objconsulta.setEspecialidade(rs.getString("especialidade"));
+				 objconsulta.setData(rs.getString("data"));
+				 objconsulta.setHorario(rs.getString("horario"));
+				 objconsulta.setValor(rs.getString("valor"));
 				 
 				 lista.add(objconsulta);
 			 }

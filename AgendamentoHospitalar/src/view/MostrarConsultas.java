@@ -97,7 +97,7 @@ public class MostrarConsultas extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"Paciente", "Codigo", "Especialidade", "valor", "Data"
+				"Paciente", "Codigo", "Especialidade", "Horario", "Valor", "Data"
 			}
 		));
 		scrollPane.setViewportView(table);
