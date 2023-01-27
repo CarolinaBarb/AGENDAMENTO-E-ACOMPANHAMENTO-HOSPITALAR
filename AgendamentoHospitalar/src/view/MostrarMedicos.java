@@ -20,11 +20,14 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class MostrarMedicos extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
+	private JTextField textCodigo;
 
 	/**
 	 * Launch the application.
@@ -61,29 +64,22 @@ public class MostrarMedicos extends JFrame {
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane_1.setBounds(10, 31, 639, 183);
+		scrollPane_1.setBounds(10, 77, 639, 137);
 		contentPane.add(scrollPane_1);
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
 			},
 			new String[] {
-				"Nome", "Email", "crm", "Especialidade"
+				"id", "Nome", "Email", "crm", "Especialidade"
 			}
 		));
 		scrollPane_1.setViewportView(table);
@@ -93,24 +89,41 @@ public class MostrarMedicos extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Cadastro ca = new Cadastro();
 				ca.container.setVisible(true);
-				this.dispose();
+				dispose();
 			}
 
-			private void dispose() {
-				// TODO Auto-generated method stub
-				
-			}
 			
 		});
-		btnNewButton.setBounds(115, 252, 177, 33);
+		btnNewButton.setBounds(55, 252, 177, 33);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Excluir existente");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton Excluir = new JButton("Excluir");
+		Excluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				excluir();
+				listarValoresM();
 			}
 		});
-		btnNewButton_1.setBounds(362, 252, 186, 33);
+		Excluir.setBounds(261, 252, 186, 33);
+		contentPane.add(Excluir);
+		
+		JLabel lblNewLabel = new JLabel("Codigo");
+		lblNewLabel.setBounds(10, 21, 45, 13);
+		contentPane.add(lblNewLabel);
+		
+		textCodigo = new JTextField();
+		textCodigo.setEnabled(false);
+		textCodigo.setBounds(10, 37, 54, 19);
+		contentPane.add(textCodigo);
+		textCodigo.setColumns(10);
+		
+		JButton btnNewButton_1 = new JButton("carregar campos");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CarregarCampos();
+			}
+		});
+		btnNewButton_1.setBounds(481, 252, 111, 33);
 		contentPane.add(btnNewButton_1);
 	}
 	
@@ -135,5 +148,25 @@ public class MostrarMedicos extends JFrame {
 		}catch(Exception erro) {
 			JOptionPane.showMessageDialog(null, "Listar Valores View:" + erro);
 }
-	}}
+	
+	}
+	public void CarregarCampos() {
+		int setar = table.getSelectedRow();
+		
+		textCodigo.setText(table.getModel().getValueAt(setar, 1).toString());
+	}
+	
+	public void excluir() {
+		int id_Medico;
+		
+		id_Medico = Integer.parseInt(textCodigo.getText());
+		
+		Medico objmedico = new Medico();
+		objmedico.setIdmedico(id_Medico);
+		
+		ControlMedico objcontrolMedico = new ControlMedico();
+		objcontrolMedico.excluirMedico(objmedico);
+		
+	}
+}
 

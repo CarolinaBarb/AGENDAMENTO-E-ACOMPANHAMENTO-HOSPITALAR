@@ -65,7 +65,7 @@ public class ControlMedico {
 	}
 
 	public void cadastrar(Medico medicos) {
-		String sql = "insert into Medicos (nome, email_medicos,crm,especialidade) "
+		String sql = "insert into Medicos (idmedico, nome, email_medicos,crm,especialidade) "
 			      + "values (?, ?, ?, ?)";
 
 	conn = new ConexaoDAO().conectaBD();
@@ -73,10 +73,11 @@ public class ControlMedico {
 	try {
 		
 		pstm = conn.prepareStatement(sql);
-		pstm.setString(1, medicos.getNome()); 
-		pstm.setString(2, medicos.getEmail());
-		pstm.setString(3, medicos.getCrm());
-		pstm.setString(4, medicos.getEspecialidade());
+		pstm.setInt(1, medicos.getIdmedico());
+		pstm.setString(2, medicos.getNome()); 
+		pstm.setString(3, medicos.getEmail());
+		pstm.setString(4, medicos.getCrm());
+		pstm.setString(5, medicos.getEspecialidade());
 	
 		
 
@@ -86,6 +87,27 @@ public class ControlMedico {
 	} catch (Exception erro) {
 		JOptionPane.showMessageDialog(null, "ControlMedico" + erro);
 	}
+		
+	}
+	
+	public void excluirMedico(Medico objMedico) {
+		String sql = "delete from medicos where idmedico = ?";
+		
+		conn = new ConexaoDAO().conectaBD();
+		
+		try {
+			 pstm = conn.prepareStatement(sql);
+			 pstm.setInt(1, objMedico.getIdmedico());
+			 
+			 pstm.execute();
+			 pstm.close();
+			
+			 
+		 }catch(SQLException erro) {
+		    JOptionPane.showMessageDialog(null, "Medico Excluir:" + erro);
+	 
+		 }
+		
 		
 	}
 
