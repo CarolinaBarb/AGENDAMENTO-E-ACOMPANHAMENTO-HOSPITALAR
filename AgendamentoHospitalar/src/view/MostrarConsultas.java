@@ -129,6 +129,16 @@ public class MostrarConsultas extends JFrame {
 		});
 		btnCarregarCampos.setBounds(588, 227, 127, 34);
 		contentPane.add(btnCarregarCampos);
+		
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				excluir();
+				listarValoresC();
+			}
+		});
+		btnExcluir.setBounds(450, 235, 85, 21);
+		contentPane.add(btnExcluir);
 	}
 	
 	void listarValoresC() {

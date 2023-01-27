@@ -91,14 +91,10 @@ public class TelaAdmin extends JFrame {
 				MostrarMedicos mm = new MostrarMedicos(); 
 				mm.listarValoresM();
 				mm.setVisible(true);
-	            this.dispose();	 
+	            dispose();	 
 
 			}
 
-			private void dispose() {
-				// TODO Auto-generated method stub
-				
-			}
 		});
 		panel.add(btnNewButton_1);
 		
