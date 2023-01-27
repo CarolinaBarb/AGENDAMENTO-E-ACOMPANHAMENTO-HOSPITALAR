@@ -8,15 +8,17 @@ public class Paciente extends Pessoa{
     private String altura;  //mudar pra String depois
     private String peso;    //mudar pra String depois
     private String observacao;
+    private int idpaciente;
     
     //full constructor
     public Paciente(String nome,String email, String senha, String id, String sexo, String dataNascimento, String cpf, String altura2, String peso2,
-            String observacao) {
+            String observacao, int idpaciente) {
         super(email, senha, sexo, nome, id, dataNascimento);
         this.cpf = cpf;
         this.altura = altura2;
         this.peso = peso2;
         this.setObservacao(observacao);
+        this.idpaciente = idpaciente;
     }
     
     
@@ -60,6 +62,17 @@ public class Paciente extends Pessoa{
     public void setPeso(String peso) {
         this.peso = peso;
     }
+    
+	public int getIdpaciente() {
+		return idpaciente;
+	}
+
+
+	public void setIdpaciente(int idpaciente) {
+		this.idpaciente = idpaciente;
+	}
+
+
 	@Override
 	public int tipoUsuario() {
 		// TODO Auto-generated method stub

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
+import model.Consulta;
 import model.Paciente;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -21,8 +22,8 @@ public class ControlPaciente {
 	
 
 	public void cadastrar(Paciente pacientes) {
-		String sql = "insert into paciente (nome_usuario, email_usuario, senha_usuario, sexo_usuario, DataNascimento, cpf, altura, peso, observacao) "
-				      + "values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "insert into paciente (idpaciente, nome_usuario, email_usuario, senha_usuario, sexo_usuario, DataNascimento, cpf, altura, peso, observacao) "
+				      + "values (?,?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		conn = new ConexaoDAO().conectaBD();
 
@@ -38,6 +39,7 @@ public class ControlPaciente {
 			pstm.setString(7, pacientes.getAltura());
 			pstm.setString(8, pacientes.getPeso());
 			pstm.setString(9, pacientes.getObservacao());
+			pstm.setInt(10, pacientes.getIdpaciente());
 		
 			
 
@@ -87,6 +89,7 @@ public class ControlPaciente {
 				 objpaciente.setPeso(rs.getString("peso"));
 				 objpaciente.setSexo(rs.getString("sexo_usuario"));
 				 objpaciente.setObservacao(rs.getString("observacao"));
+				 objpaciente.setIdpaciente(rs.getInt("idpaciente"));
 				 
 				 lista.add(objpaciente);
 			 }
@@ -97,5 +100,24 @@ public class ControlPaciente {
 		 }
 		 return lista;
 	 }
+	public void excluirPaciente (Paciente objPaciente) {
+		String sql = "delete from pacientes where idconsulta = ? ";
+		
+		conn = new ConexaoDAO().conectaBD();
+		
+		try {
+			 pstm = conn.prepareStatement(sql);
+			 pstm.setInt(1, objPaciente.getIdpaciente());
+			 
+			 pstm.execute();
+			 pstm.close();
+			
+			 
+		 }catch(SQLException erro) {
+		    JOptionPane.showMessageDialog(null, "Consulta Excluir:" + erro);
+	 
+		 }
+		 	
+	}
 	
 }

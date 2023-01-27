@@ -1,5 +1,6 @@
 package control;
 
+import model.Consulta;
 import model.Medico;
 import model.Paciente;
 
@@ -48,10 +49,12 @@ public class ControlMedico {
 			 
 			 while(rs.next()) {
 				 Medico objmedico = new Medico();
+				 objmedico.setIdmedico(rs.getInt("idmedico"));
 				 objmedico.setNome(rs.getString("nome"));
 				 objmedico.setEmail(rs.getString("email_medicos"));
 				 objmedico.setCrm(rs.getString("crm"));
 				 objmedico.setEspecialidade(rs.getString("especialidade"));
+				
 				 
 				 lista.add(objmedico);
 			 }
@@ -64,9 +67,10 @@ public class ControlMedico {
 	 
 	}
 
+
 	public void cadastrar(Medico medicos) {
 		String sql = "insert into Medicos (idmedico, nome, email_medicos,crm,especialidade) "
-			      + "values (?, ?, ?, ?)";
+			      + "values (?, ?, ?, ?, ?)";
 
 	conn = new ConexaoDAO().conectaBD();
 
