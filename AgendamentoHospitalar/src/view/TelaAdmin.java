@@ -121,15 +121,11 @@ public class TelaAdmin extends JFrame {
 				MostrarConsultas mc = new MostrarConsultas();
 				mc.listarValoresC();
 				mc.setVisible(true);
-	            this.dispose();	
+	            dispose();	
 				
 				
 			}
 
-			private void dispose() {
-				// TODO Auto-generated method stub
-				
-			}
 		});
 		btnNewButton_2.setBounds(947, 184, 254, 186);
 		panel.add(btnNewButton_2);
