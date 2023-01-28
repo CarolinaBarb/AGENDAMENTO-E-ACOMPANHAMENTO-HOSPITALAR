@@ -44,7 +44,7 @@ public class MarcarDisponibilidade extends JFrame {
 	 */
 	public MarcarDisponibilidade() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 358, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -52,7 +52,7 @@ public class MarcarDisponibilidade extends JFrame {
 		contentPane.setLayout(null);
 		
 		JDateChooser DCdata = new JDateChooser();
-		DCdata.setBounds(159, 10, 131, 19);
+		DCdata.setBounds(64, 72, 186, 19);
 		contentPane.add(DCdata);
 		
 		JButton btnAdd = new JButton("add");
@@ -70,8 +70,19 @@ public class MarcarDisponibilidade extends JFrame {
 				JOptionPane.showMessageDialog(null, "adicionado com sucesso");
 			}
 		});
-		btnAdd.setBounds(148, 88, 117, 25);
+		btnAdd.setBounds(94, 126, 117, 25);
 		contentPane.add(btnAdd);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaSecretaria tl = new TelaSecretaria();
+				tl.setVisible(true);
+				dispose();
+			}
+		});
+		btnVoltar.setBounds(249, 232, 85, 21);
+		contentPane.add(btnVoltar);
 	}
 	
 	

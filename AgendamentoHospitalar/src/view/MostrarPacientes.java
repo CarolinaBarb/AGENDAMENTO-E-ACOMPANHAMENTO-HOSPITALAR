@@ -49,7 +49,7 @@ public class MostrarPacientes extends JFrame {
 	 */
 	public MostrarPacientes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 597, 323);
+		setBounds(100, 100, 760, 331);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -58,7 +58,7 @@ public class MostrarPacientes extends JFrame {
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 109, 563, 85);
+		scrollPane.setBounds(141, 92, 595, 123);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -78,12 +78,19 @@ public class MostrarPacientes extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, -18, 620, 53);
+		panel.setBounds(0, -18, 746, 53);
 		panel.setBackground(new Color(9, 69, 108));
 		contentPane.add(panel);
 		
 		JButton btnNewButton = new JButton("Cadastrar");
-		btnNewButton.setBounds(107, 229, 85, 21);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Cadastro ca = new Cadastro();
+				ca.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton.setBounds(10, 95, 85, 21);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("excluir");
@@ -93,7 +100,7 @@ public class MostrarPacientes extends JFrame {
 				listarValores();
 			}
 		});
-		btnNewButton_1.setBounds(250, 229, 85, 21);
+		btnNewButton_1.setBounds(10, 140, 85, 27);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Carregar campos");
@@ -102,18 +109,33 @@ public class MostrarPacientes extends JFrame {
 				CarregarCampos();
 			}
 		});
-		btnNewButton_2.setBounds(390, 229, 85, 21);
+		btnNewButton_2.setBounds(614, 51, 122, 21);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblCodigo = new JLabel("codigo");
-		lblCodigo.setBounds(10, 45, 45, 13);
+		lblCodigo.setBounds(141, 55, 45, 13);
 		contentPane.add(lblCodigo);
 		
 		textCodigo = new JTextField();
 		textCodigo.setEnabled(false);
-		textCodigo.setBounds(10, 68, 51, 19);
+		textCodigo.setBounds(180, 52, 51, 19);
 		contentPane.add(textCodigo);
 		textCodigo.setColumns(10);
+		
+		JButton Editar = new JButton("Editar");
+		Editar.setBounds(10, 194, 85, 21);
+		contentPane.add(Editar);
+		
+		JButton btnNewButton_3 = new JButton("Voltar");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaAdmin ta = new TelaAdmin();
+				ta.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_3.setBounds(651, 263, 85, 21);
+		contentPane.add(btnNewButton_3);
 		
 		
 		

@@ -13,13 +13,17 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JEditorPane;
+import javax.swing.JScrollPane;
 
 public class Pagamentos extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
 	private JTextField textField_2;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -42,7 +46,7 @@ public class Pagamentos extends JFrame {
 	 */
 	public Pagamentos() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 775, 445);
+		setBounds(100, 100, 775, 383);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -58,20 +62,15 @@ public class Pagamentos extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		textField = new JTextField();
-		textField.setBounds(158, 73, 96, 19);
+		textField.setBounds(167, 73, 96, 19);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Informações do Paciente:\r\n");
 		lblNewLabel_2.setForeground(new Color(9, 69, 108));
 		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		lblNewLabel_2.setBounds(21, 146, 287, 30);
+		lblNewLabel_2.setBounds(21, 161, 287, 30);
 		contentPane.add(lblNewLabel_2);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(20, 186, 226, 197);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Tipo de Pagamento:");
 		lblNewLabel_3.setForeground(new Color(9, 69, 108));
@@ -139,5 +138,30 @@ public class Pagamentos extends JFrame {
 		panel.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 27));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JButton Voltar = new JButton("Voltar");
+		Voltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaSecretaria tl = new TelaSecretaria();
+				tl.setVisible(true);
+				dispose();
+			}
+		});
+		Voltar.setBounds(618, 306, 133, 30);
+		contentPane.add(Voltar);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(21, 213, 287, 55);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"ID", "Nome", "CPF", "Data", "Valor"
+			}
+		));
+		scrollPane.setViewportView(table);
 	}
 }

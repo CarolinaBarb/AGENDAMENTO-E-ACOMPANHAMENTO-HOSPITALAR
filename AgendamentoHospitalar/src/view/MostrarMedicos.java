@@ -66,7 +66,7 @@ public class MostrarMedicos extends JFrame {
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane_1.setBounds(10, 77, 639, 137);
+		scrollPane_1.setBounds(242, 55, 407, 170);
 		contentPane.add(scrollPane_1);
 		
 		table = new JTable();
@@ -82,14 +82,14 @@ public class MostrarMedicos extends JFrame {
 		JButton btnNewButton = new JButton("Cadastrar novo");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cadastro ca = new Cadastro();
+				CadastrarMedico ca = new CadastrarMedico();
 				ca.container.setVisible(true);
 				dispose();
 			}
 
 			
 		});
-		btnNewButton.setBounds(55, 252, 177, 33);
+		btnNewButton.setBounds(28, 52, 177, 33);
 		contentPane.add(btnNewButton);
 		
 		JButton Excluir = new JButton("Excluir");
@@ -99,16 +99,16 @@ public class MostrarMedicos extends JFrame {
 				listarValoresM();
 			}
 		});
-		Excluir.setBounds(261, 252, 186, 33);
+		Excluir.setBounds(28, 114, 177, 33);
 		contentPane.add(Excluir);
 		
-		JLabel lblNewLabel = new JLabel("Codigo");
-		lblNewLabel.setBounds(10, 21, 45, 13);
+		JLabel lblNewLabel = new JLabel("Codigo:");
+		lblNewLabel.setBounds(242, 22, 45, 13);
 		contentPane.add(lblNewLabel);
 		
 		textCodigoM = new JTextField();
 		textCodigoM.setEnabled(false);
-		textCodigoM.setBounds(10, 37, 54, 19);
+		textCodigoM.setBounds(283, 19, 54, 19);
 		contentPane.add(textCodigoM);
 		textCodigoM.setColumns(10);
 		
@@ -118,8 +118,23 @@ public class MostrarMedicos extends JFrame {
 				CarregarCampos();
 			}
 		});
-		btnNewButton_1.setBounds(481, 252, 111, 33);
+		btnNewButton_1.setBounds(538, 12, 111, 33);
 		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Editar");
+		btnNewButton_2.setBounds(28, 180, 177, 33);
+		contentPane.add(btnNewButton_2);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaAdmin ta = new TelaAdmin();
+				ta.setVisible(true);
+				dispose();
+			}
+		});
+		btnVoltar.setBounds(564, 278, 85, 21);
+		contentPane.add(btnVoltar);
 	}
 	
 	public void listarValoresM() {

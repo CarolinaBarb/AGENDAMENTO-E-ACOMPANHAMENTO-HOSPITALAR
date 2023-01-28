@@ -57,25 +57,14 @@ public class MostrarConsultas extends JFrame {
 	 */
 	public MostrarConsultas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 325);
+		setBounds(100, 100, 754, 364);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Adicionar Pagamento");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Pagamentos pa = new Pagamentos();
-				pa.setVisible(true);
-	            dispose();	
-			}
-		});
-		btnNewButton.setBounds(74, 227, 156, 34);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Cadastrar ");
+		JButton btnNewButton_1 = new JButton("Editar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MarcarConsulta ca = new MarcarConsulta();
@@ -83,11 +72,11 @@ public class MostrarConsultas extends JFrame {
 	            dispose();	
 			}
 		});
-		btnNewButton_1.setBounds(252, 227, 136, 34);
+		btnNewButton_1.setBounds(10, 128, 136, 45);
 		contentPane.add(btnNewButton_1);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(25, 60, 751, 146);
+		scrollPane.setBounds(168, 64, 562, 183);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -113,12 +102,12 @@ public class MostrarConsultas extends JFrame {
 		
 		textCodigo = new JTextField();
 		textCodigo.setEnabled(false);
-		textCodigo.setBounds(25, 30, 96, 19);
+		textCodigo.setBounds(223, 17, 96, 19);
 		contentPane.add(textCodigo);
 		textCodigo.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("codigo");
-		lblNewLabel.setBounds(25, 10, 45, 13);
+		lblNewLabel.setBounds(168, 20, 45, 13);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnCarregarCampos = new JButton("Carregar Campos");
@@ -127,7 +116,7 @@ public class MostrarConsultas extends JFrame {
 				CarregarCampos();
 			}
 		});
-		btnCarregarCampos.setBounds(588, 227, 127, 34);
+		btnCarregarCampos.setBounds(600, 16, 130, 20);
 		contentPane.add(btnCarregarCampos);
 		
 		JButton btnExcluir = new JButton("Excluir");
@@ -137,8 +126,19 @@ public class MostrarConsultas extends JFrame {
 				listarValoresC();
 			}
 		});
-		btnExcluir.setBounds(450, 235, 85, 21);
+		btnExcluir.setBounds(10, 64, 136, 45);
 		contentPane.add(btnExcluir);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaAdmin ta = new TelaAdmin();
+				ta.setVisible(true);
+				dispose();
+			}
+		});
+		btnVoltar.setBounds(645, 296, 85, 21);
+		contentPane.add(btnVoltar);
 	}
 	
 	void listarValoresC() {

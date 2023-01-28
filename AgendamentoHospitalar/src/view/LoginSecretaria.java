@@ -96,13 +96,12 @@ public class LoginSecretaria extends JFrame {
 						TelaSecretaria tl = new TelaSecretaria();
 						tl.setVisible(true);
 						dispose();
-						
 					}else {
 						JOptionPane.showMessageDialog(null, "Usuario ou senha invalida");
 					}
 					
 				}catch(SQLException erro){
-					JOptionPane.showMessageDialog(null, erro);
+					JOptionPane.showMessageDialog(null, "login secretaria" + erro);
 					
 				}
 

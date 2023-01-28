@@ -12,28 +12,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
 
-public class LoginAdmin implements ActionListener {
+public class LoginAdmin extends JFrame {
 	JFrame container;
-	private JButton btnEntrar;
 	private JTextField inserirEmail;
 	private JPasswordField inserirSenha;
 	private JLabel emailLabel;
 	private JLabel senhaLabel;
 	private JPanel panel;
+	private JButton btnEntrar;
+	private JLabel lblNewLabel_1;
+	private JButton Cadastrar;
 
-	/**
-	 * @wbp.parser.entryPoint
-	 */
+
 	public LoginAdmin() {
 		container = new JFrame("Login");
-		btnEntrar = new JButton("Entrar");
-		btnEntrar.setBounds(184, 408, 120, 30);
-		btnEntrar.setBackground(new Color(9, 69, 108));
-		btnEntrar.setForeground(new Color(255, 255, 255));
-		
-			
-		
-		btnEntrar.setFont(new Font("Franklin Gothic Book", Font.PLAIN, 12));
 		emailLabel = new JLabel("Email");
 		emailLabel.setBounds(100, 233, 300, 30);
 		emailLabel.setForeground(new Color(9, 69, 108));
@@ -50,7 +42,7 @@ public class LoginAdmin implements ActionListener {
 
 		container.getContentPane().setBackground(new Color(255, 255, 255));
 		container.setTitle("Login");
-		container.setSize(500, 500);
+		container.setSize(500, 558);
 		container.setLocation(500, 300);
 		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		emailLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
@@ -61,7 +53,6 @@ public class LoginAdmin implements ActionListener {
 		container.getContentPane().add(inserirEmail);
 		container.getContentPane().add(senhaLabel);
 		container.getContentPane().add(inserirSenha);
-		container.getContentPane().add(btnEntrar);
 		
 		panel = new JPanel();
 		panel.setBounds(0, 0, 500, 61);
@@ -80,66 +71,58 @@ public class LoginAdmin implements ActionListener {
 				Image img = new ImageIcon(this.getClass().getResource("/imagem/doctor.png")).getImage();
 				lblNewLabel.setIcon(new ImageIcon(img.getScaledInstance(148, 148, Image.SCALE_SMOOTH)));
 				container.getContentPane().add(lblNewLabel);
+				
+				btnEntrar = new JButton("Entrar");
+				btnEntrar.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						try {
+							String email_adm;
+							String senha_adm;
+							
+							email_adm = inserirEmail.getText();
+							senha_adm = inserirSenha.getText();
+							
+							Administrador objAdministrador = new Administrador();
+							objAdministrador.setEmail(email_adm);
+							objAdministrador.setSenha(senha_adm);
+							
+							ControlAdministrador objadm = new ControlAdministrador();
+							ResultSet rsAdm = objadm.autenticacaoAdministrador(objAdministrador);
+							if(rsAdm.next()) {
+								TelaAdmin ta = new TelaAdmin();
+								ta.setVisible(true);
+								dispose();
+							}
+						} catch (SQLException erro) {
+							JOptionPane.showMessageDialog(null, "login adm" + erro);
+						}
+						
+						
+
+					}
+				});
+				btnEntrar.setBounds(191, 415, 110, 21);
+				container.getContentPane().add(btnEntrar);
+				
+				lblNewLabel_1 = new JLabel("ou");
+				lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+				lblNewLabel_1.setBounds(222, 446, 45, 13);
+				container.getContentPane().add(lblNewLabel_1);
+				
+				Cadastrar = new JButton("Cadastre-se");
+				Cadastrar.setBounds(191, 469, 110, 21);
+				container.getContentPane().add(Cadastrar);
 
 		container.setVisible(true);
 
-		btnEntrar.addActionListener(this);
-
 	}
 
-	void setVisible(boolean b) {
-		// TODO Auto-generated method stub
 
-	}
 
 	public static void main(String[] args) {
 		new LoginAdmin();
 	}
+	
+	
 
-
-	private void LogarMedico() {
-		
-		try {
-			String email_medico, senha_medico;
-		
-		    email_medico = inserirEmail.getText();
-		    senha_medico = inserirSenha.getText();
-		
-		   Medico medicomodel = new Medico();
-		   medicomodel.setEmail(email_medico);
-		   medicomodel.setSenha(senha_medico);
-		   
-		   ControlMedico medicocontrol = new ControlMedico();
-		   ResultSet rsmedico = medicocontrol.autenticacaoMedico(medicomodel); //resultset tipo
-		   
-		   if(rsmedico.next()) {
-			   //chamar tela q eu quero abrir
-			   TelaAdmin tp = new TelaAdmin();
-			    tp.setVisible(true);
-	            dispose();
-			   
-		   }
-		   else {
-			   //enviar msg dizendo incorreto
-			   JOptionPane.showMessageDialog(null, "email ou senha invalido");
-		   }
-		
-		} catch (SQLException erro) {
-			JOptionPane.showMessageDialog(null,"FRMLoginView" +erro);
-			
-					}
-
-	}
-
-
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		LoginAdmin lm = new LoginAdmin();
-		lm.setVisible(true);
-		this.dispose();
-		
-	}
-	private void dispose() {
-	}
 }

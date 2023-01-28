@@ -32,6 +32,7 @@ public class Cadastro implements ActionListener {
 	private JLabel lblCpf;
 	private JDateChooser txtData;
 	private JPanel panel;
+	private JButton btnNewButton;
 	
 	public Cadastro(){
 		container = new JFrame("Cadastro");
@@ -89,7 +90,7 @@ public class Cadastro implements ActionListener {
 		
 		container.getContentPane().setBackground(new Color(255, 255, 255));
 		container.setTitle("Cadastro");
-		container.setSize(500, 500);
+		container.setSize(500, 543);
 		container.setLocation(500, 300);
 		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -202,6 +203,16 @@ public class Cadastro implements ActionListener {
 		lblCadastroMedico.setForeground(new Color(255, 255, 255));
 		lblCadastroMedico.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCadastroMedico.setFont(new Font("Times New Roman", Font.BOLD, 22));
+		
+		btnNewButton = new JButton("Tela Principal");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaPrincipal tp = new TelaPrincipal();
+				tp.setVisible(true);
+			}
+		});
+		btnNewButton.setBounds(349, 472, 127, 24);
+		container.getContentPane().add(btnNewButton);
 		
 		container.setVisible(true);
 		criarConta.addActionListener(this);

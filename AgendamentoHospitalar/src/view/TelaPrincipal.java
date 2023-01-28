@@ -45,7 +45,7 @@ public class TelaPrincipal extends JFrame {
 	 */
 	public TelaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 441, 300);
+		setBounds(100, 100, 626, 280);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(221, 160, 221));
 		contentPane.setBackground(new Color(255, 255, 255));
@@ -53,19 +53,6 @@ public class TelaPrincipal extends JFrame {
 
 		
 		setContentPane(contentPane);
-		
-		JButton btnCadastrase = new JButton("Cadastra-se");
-		btnCadastrase.setBounds(301, 165, 111, 21);
-		btnCadastrase.setForeground(new Color(255, 255, 255));
-		btnCadastrase.setFont(new Font("Verdana", Font.PLAIN, 10));
-		btnCadastrase.setBackground(new Color(9, 69, 108));
-		btnCadastrase.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Cadastro lm = new Cadastro();
-				lm.container.setVisible(true);
-				dispose();
-			}
-		});
 		
 		JButton btnNewButton = new JButton("Login Paciente");
 		btnNewButton.setBounds(155, 165, 111, 21);
@@ -96,11 +83,10 @@ public class TelaPrincipal extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(btnNewButton_1);
 		contentPane.add(btnNewButton);
-		contentPane.add(btnCadastrase);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(9, 69, 108));
-		panel.setBounds(0, 0, 469, 54);
+		panel.setBounds(0, 0, 612, 54);
 		contentPane.add(panel);
 		
 		JLabel lblClinic = new JLabel("Leticia Linda");
@@ -129,6 +115,33 @@ public class TelaPrincipal extends JFrame {
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1.setBounds(301, 81, 111, 63);
 		contentPane.add(lblNewLabel_1_1);
+		
+		JButton btnNewButton_2 = new JButton("Login Administrador");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LoginAdmin ta = new LoginAdmin();
+				ta.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_2.setBounds(301, 165, 123, 21);
+		contentPane.add(btnNewButton_2);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("");
+		lblNewLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_1.setBounds(450, 81, 111, 63);
+		contentPane.add(lblNewLabel_1_1_1);
+		
+		JButton btnNewButton_3 = new JButton("Login Secretária(o)");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LoginSecretaria ls = new LoginSecretaria();
+				ls.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_3.setBounds(464, 165, 111, 21);
+		contentPane.add(btnNewButton_3);
 	
 	
 		
