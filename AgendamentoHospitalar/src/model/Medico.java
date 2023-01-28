@@ -41,7 +41,7 @@ public class Medico extends Pessoa {
 
 
 	public Medico() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 

@@ -6,14 +6,12 @@ public abstract class Pessoa {
     private String nome;
     private String email;
     private String senha;
-    private String id;
     private String sexo;
     private String DataNascimento;
 
     //constructor
     public Pessoa(String nome,String email, String senha, String id, String sexo, String dataNascimento2) {
         this.nome = nome;
-        this.id = id;
         this.sexo = sexo;
         this.DataNascimento  = dataNascimento2;
         this.email = email;
@@ -34,12 +32,10 @@ public abstract class Pessoa {
 	}
      
 	public Pessoa() {
-		// TODO Auto-generated constructor stub
 	}
 
 
 	public Pessoa(String nome2) {
-		// TODO Auto-generated constructor stub
 	}
 
 
@@ -53,12 +49,7 @@ public abstract class Pessoa {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getId() {
-        return id;
-    }
-    public void setId(String id) {
-        this.id = id;
-    }
+
     public String getSexo() {
         return sexo;
     }

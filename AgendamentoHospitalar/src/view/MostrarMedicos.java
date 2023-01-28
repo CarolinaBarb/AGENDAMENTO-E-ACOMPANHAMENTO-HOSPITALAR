@@ -10,8 +10,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import control.ControlConsulta;
 import control.ControlMedico;
 import control.ControlPaciente;
+import model.Consulta;
 import model.Medico;
 import model.Paciente;
 
@@ -27,7 +29,7 @@ public class MostrarMedicos extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
-	private JTextField textCodigo;
+	private JTextField textCodigoM;
 
 	/**
 	 * Launch the application.
@@ -70,13 +72,6 @@ public class MostrarMedicos extends JFrame {
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
 			},
 			new String[] {
 				"id", "Nome", "Email", "crm", "Especialidade"
@@ -111,13 +106,13 @@ public class MostrarMedicos extends JFrame {
 		lblNewLabel.setBounds(10, 21, 45, 13);
 		contentPane.add(lblNewLabel);
 		
-		textCodigo = new JTextField();
-		textCodigo.setEnabled(false);
-		textCodigo.setBounds(10, 37, 54, 19);
-		contentPane.add(textCodigo);
-		textCodigo.setColumns(10);
+		textCodigoM = new JTextField();
+		textCodigoM.setEnabled(false);
+		textCodigoM.setBounds(10, 37, 54, 19);
+		contentPane.add(textCodigoM);
+		textCodigoM.setColumns(10);
 		
-		JButton btnNewButton_1 = new JButton("carregar campos");
+		JButton btnNewButton_1 = new JButton("carregar Campos");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CarregarCampos();
@@ -129,14 +124,15 @@ public class MostrarMedicos extends JFrame {
 	
 	public void listarValoresM() {
 		try {
-			ControlMedico objcontrolmedico = new ControlMedico();
+			ControlMedico objmedico = new ControlMedico();
 			DefaultTableModel model = (DefaultTableModel) table.getModel();
 			model.setNumRows(0);
 			
-			ArrayList<Medico> lista = objcontrolmedico.PesquisarMedico();
+			ArrayList<Medico> lista = objmedico.PesquisarMedico();
 			
 			for(int num = 0; num < lista.size(); num++) {
 				model.addRow(new Object[] {
+						lista.get(num).getIdmedico(),
 						lista.get(num).getNome(),
 						lista.get(num).getEmail(),
 						lista.get(num).getCrm(),
@@ -150,22 +146,24 @@ public class MostrarMedicos extends JFrame {
 }
 	
 	}
-	public void CarregarCampos() {
+	private void CarregarCampos() {
 		int setar = table.getSelectedRow();
 		
-		textCodigo.setText(table.getModel().getValueAt(setar, 1).toString());
+		textCodigoM.setText(table.getModel().getValueAt(setar, 0).toString());
 	}
 	
-	public void excluir() {
-		int id_Medico;
+	
+	private void excluir() {
+		int id_medico;
 		
-		id_Medico = Integer.parseInt(textCodigo.getText());
+		id_medico = Integer.parseInt(textCodigoM.getText());
 		
 		Medico objmedico = new Medico();
-		objmedico.setIdmedico(id_Medico);
+		objmedico.setIdmedico(id_medico);
 		
-		ControlMedico objcontrolMedico = new ControlMedico();
-		objcontrolMedico.excluirMedico(objmedico);
+		ControlMedico objcontrolmedico = new ControlMedico();
+		objcontrolmedico.excluirMedico(objmedico);
+		
 		
 	}
 }

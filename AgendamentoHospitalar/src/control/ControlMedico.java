@@ -40,7 +40,7 @@ public class ControlMedico {
 	}
 	
 	public ArrayList<Medico> PesquisarMedico(){
-		String sql = "select * from Medicos";
+		String sql = "select * from medicos";
 		conn = new ConexaoDAO().conectaBD();
 		
 		try {

@@ -101,7 +101,7 @@ public class ControlPaciente {
 		 return lista;
 	 }
 	public void excluirPaciente (Paciente objPaciente) {
-		String sql = "delete from pacientes where idconsulta = ? ";
+		String sql = "delete from paciente where idpaciente = ? ";
 		
 		conn = new ConexaoDAO().conectaBD();
 		

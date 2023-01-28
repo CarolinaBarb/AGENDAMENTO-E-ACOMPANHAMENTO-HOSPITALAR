@@ -60,7 +60,7 @@ public class TelaAdmin extends JFrame {
 		getContentPane().add(panel);
 		
 		JButton btnNewButton = new JButton("Pacientes ");
-		btnNewButton.setBounds(93, 184, 267, 186);
+		btnNewButton.setBounds(90, 222, 240, 111);
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(9, 69, 108));
 		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 22));
@@ -82,7 +82,7 @@ public class TelaAdmin extends JFrame {
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Médico");
-		btnNewButton_1.setBounds(516, 184, 267, 186);
+		btnNewButton_1.setBounds(376, 225, 240, 108);
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 22));
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
@@ -92,7 +92,6 @@ public class TelaAdmin extends JFrame {
 				mm.listarValoresM();
 				mm.setVisible(true);
 	            dispose();	 
-
 			}
 
 		});
@@ -122,16 +121,23 @@ public class TelaAdmin extends JFrame {
 				mc.listarValoresC();
 				mc.setVisible(true);
 	            dispose();	
-				
-				
+
 			}
 
+			
 		});
-		btnNewButton_2.setBounds(947, 184, 254, 186);
+		btnNewButton_2.setBounds(661, 225, 240, 108);
 		panel.add(btnNewButton_2);
 		
-		JButton btnDisponibilidade = new JButton("Disponibilidade");
-		btnDisponibilidade.setBounds(746, 408, 169, 34);
-		panel.add(btnDisponibilidade);
+		JButton btnNewButton_3 = new JButton("Cadastrar Secretario(a)");
+		btnNewButton_3.setForeground(new Color(255, 255, 255));
+		btnNewButton_3.setFont(new Font("Verdana", Font.PLAIN, 17));
+		btnNewButton_3.setBackground(new Color(72, 61, 139));
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_3.setBounds(955, 222, 240, 111);
+		panel.add(btnNewButton_3);
 	}
 }
