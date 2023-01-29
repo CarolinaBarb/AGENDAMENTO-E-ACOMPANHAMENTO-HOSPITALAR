@@ -25,9 +25,7 @@ import view.MostrarMedicos;
 
 public class TelaAdmin extends JFrame {
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -40,10 +38,6 @@ public class TelaAdmin extends JFrame {
 			}
 		});
 	}
-
-	/**
-	 * Create the frame.
-	 */
 	public TelaAdmin() {
 		
 		getContentPane().setBackground(new Color(9, 69, 108));
@@ -70,11 +64,8 @@ public class TelaAdmin extends JFrame {
 			MostrarPacientes pa = new MostrarPacientes();
 			pa.listarValores();
 			pa.setVisible(true);
-            this.dispose();	             
+            dispose();	             
 			}
-
-		private void dispose() {	
-		}
 	}
 		);
 		panel.setLayout(null);
@@ -129,12 +120,16 @@ public class TelaAdmin extends JFrame {
 		btnNewButton_2.setBounds(661, 225, 240, 108);
 		panel.add(btnNewButton_2);
 		
-		JButton btnNewButton_3 = new JButton("Cadastrar Secretario(a)");
+		JButton btnNewButton_3 = new JButton("Funcionarios");
 		btnNewButton_3.setForeground(new Color(255, 255, 255));
 		btnNewButton_3.setFont(new Font("Verdana", Font.PLAIN, 17));
 		btnNewButton_3.setBackground(new Color(72, 61, 139));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MostrarFuncionarios mf = new MostrarFuncionarios();
+				mf.listarValores();
+				mf.setVisible(true);
+				dispose();
 			}
 		});
 		btnNewButton_3.setBounds(955, 222, 240, 111);

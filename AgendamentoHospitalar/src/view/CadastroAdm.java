@@ -1,6 +1,6 @@
 package view;
 
-import java.awt.EventQueue;
+import java.awt.*;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -27,9 +27,7 @@ public class CadastroAdm extends JFrame {
 	private JPasswordField passwordField;
 	private JTextField textSexo;
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -43,9 +41,7 @@ public class CadastroAdm extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public CadastroAdm() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 390, 344);

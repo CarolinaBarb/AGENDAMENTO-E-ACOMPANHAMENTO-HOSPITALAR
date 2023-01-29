@@ -20,6 +20,7 @@ public class CadastrarMedico implements ActionListener {
 	private JTextField txtCrm;
 	private JLabel lblCrm;
 	private JPanel panel;
+	private JButton btnVoltar;
 	
 	public CadastrarMedico(){
 		container = new JFrame("Cadastro");
@@ -119,6 +120,17 @@ public class CadastrarMedico implements ActionListener {
 		lblCadastroMedico.setForeground(new Color(255, 255, 255));
 		lblCadastroMedico.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCadastroMedico.setFont(new Font("Times New Roman", Font.BOLD, 22));
+		
+		btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MostrarMedicos md = new MostrarMedicos();
+				md.setVisible(true);
+				//dispose();
+			}
+		});
+		btnVoltar.setBounds(381, 257, 85, 21);
+		container.getContentPane().add(btnVoltar);
 		
 		container.setVisible(true);
 		criarConta.addActionListener(this);
