@@ -9,32 +9,25 @@ public class Paciente extends Pessoa{
     private String peso;    //mudar pra String depois
     private String observacao;
     private int idpaciente;
+    private String idade;
     
     //full constructor
-    public Paciente(String nome,String email, String senha, String id, String sexo, String dataNascimento, String cpf, String altura2, String peso2,
-            String observacao, int idpaciente) {
-        super(email, senha, sexo, nome, id, dataNascimento);
-        this.cpf = cpf;
-        this.altura = altura2;
-        this.peso = peso2;
-        this.setObservacao(observacao);
-        this.idpaciente = idpaciente;
-    }
     
     
     public Paciente(String email, String senha) {
 		super(email, senha);
 	}
-   
+    
 
-
-	public Paciente(String nome, String email, String senha, int i) {
-		super(email,senha);
-	}
-
-
-	public Paciente(String email, String senha, String nome) {
-		// TODO Auto-generated constructor stub
+	public Paciente(String email, String senha, String cpf, String altura, String peso, String observacao,
+			int idpaciente, String idade) {
+		super(email, senha);
+		this.cpf = cpf;
+		this.altura = altura;
+		this.peso = peso;
+		this.observacao = observacao;
+		this.idpaciente = idpaciente;
+		this.idade = idade;
 	}
 
 
@@ -71,17 +64,23 @@ public class Paciente extends Pessoa{
 	public void setIdpaciente(int idpaciente) {
 		this.idpaciente = idpaciente;
 	}
+	
+
+
+	public String getIdade() {
+		return idade;
+	}
+
+
+	public void setIdade(String idade) {
+		this.idade = idade;
+	}
 
 
 	@Override
 	public int tipoUsuario() {
 		// TODO Auto-generated method stub
 		return 0;
-	}
-
-
-	public void setPaciente(Paciente paciente) {
-		
 	}
 
 

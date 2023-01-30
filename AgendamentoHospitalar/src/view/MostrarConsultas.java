@@ -34,6 +34,12 @@ public class MostrarConsultas extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 	private JTextField textCodigo;
+	private JTextField textPaciente;
+	private JTextField textMedico;
+	private JTextField textEspecialidade;
+	private JTextField textHorario;
+	private JTextField textValor;
+	private JTextField textData;
 
 	/**
 	 * Launch the application.
@@ -57,7 +63,7 @@ public class MostrarConsultas extends JFrame {
 	 */
 	public MostrarConsultas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 754, 364);
+		setBounds(100, 100, 904, 330);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -67,16 +73,14 @@ public class MostrarConsultas extends JFrame {
 		JButton btnNewButton_1 = new JButton("Editar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MarcarConsulta ca = new MarcarConsulta();
-				ca.setVisible(true);
-	            dispose();	
+				
 			}
 		});
-		btnNewButton_1.setBounds(10, 128, 136, 45);
+		btnNewButton_1.setBounds(173, 237, 136, 30);
 		contentPane.add(btnNewButton_1);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(168, 64, 562, 183);
+		scrollPane.setBounds(312, 40, 562, 183);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -84,9 +88,10 @@ public class MostrarConsultas extends JFrame {
 		table.setFont(new Font("Trebuchet MS", Font.PLAIN, 15));
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
+				{null, null, null, null, null, null, null},
 			},
 			new String[] {
-				"Paciente", "Codigo", "Especialidade", "Horario", "Valor", "Data"
+				"ID", "Paciente", "Medico", "Especialidade", "Horario", "Valor", "Data"
 			}
 		));
 		scrollPane.setViewportView(table);
@@ -102,12 +107,12 @@ public class MostrarConsultas extends JFrame {
 		
 		textCodigo = new JTextField();
 		textCodigo.setEnabled(false);
-		textCodigo.setBounds(223, 17, 96, 19);
+		textCodigo.setBounds(367, 11, 96, 19);
 		contentPane.add(textCodigo);
 		textCodigo.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("codigo");
-		lblNewLabel.setBounds(168, 20, 45, 13);
+		lblNewLabel.setBounds(312, 17, 45, 13);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnCarregarCampos = new JButton("Carregar Campos");
@@ -116,7 +121,7 @@ public class MostrarConsultas extends JFrame {
 				CarregarCampos();
 			}
 		});
-		btnCarregarCampos.setBounds(600, 16, 130, 20);
+		btnCarregarCampos.setBounds(746, 13, 130, 20);
 		contentPane.add(btnCarregarCampos);
 		
 		JButton btnExcluir = new JButton("Excluir");
@@ -126,7 +131,7 @@ public class MostrarConsultas extends JFrame {
 				listarValoresC();
 			}
 		});
-		btnExcluir.setBounds(10, 64, 136, 45);
+		btnExcluir.setBounds(10, 237, 136, 30);
 		contentPane.add(btnExcluir);
 		
 		JButton btnVoltar = new JButton("Voltar");
@@ -137,8 +142,68 @@ public class MostrarConsultas extends JFrame {
 				dispose();
 			}
 		});
-		btnVoltar.setBounds(645, 296, 85, 21);
+		btnVoltar.setBounds(793, 262, 85, 21);
 		contentPane.add(btnVoltar);
+		
+		JLabel lblPaciente = new JLabel("Paciente");
+		lblPaciente.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblPaciente.setBounds(10, 45, 96, 13);
+		contentPane.add(lblPaciente);
+		
+		textPaciente = new JTextField();
+		textPaciente.setBounds(78, 39, 224, 19);
+		contentPane.add(textPaciente);
+		textPaciente.setColumns(10);
+		
+		JLabel lblEspecialidae = new JLabel("Especialidade");
+		lblEspecialidae.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblEspecialidae.setBounds(10, 91, 96, 13);
+		contentPane.add(lblEspecialidae);
+		
+		JLabel lblMedico = new JLabel("Medico");
+		lblMedico.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblMedico.setBounds(10, 68, 72, 13);
+		contentPane.add(lblMedico);
+		
+		textMedico = new JTextField();
+		textMedico.setBounds(78, 67, 224, 19);
+		contentPane.add(textMedico);
+		textMedico.setColumns(10);
+		
+		textEspecialidade = new JTextField();
+		textEspecialidade.setBounds(103, 90, 136, 19);
+		contentPane.add(textEspecialidade);
+		textEspecialidade.setColumns(10);
+		
+		JLabel lblHorario = new JLabel("Horario");
+		lblHorario.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblHorario.setBounds(10, 142, 72, 13);
+		contentPane.add(lblHorario);
+		
+		textHorario = new JTextField();
+		textHorario.setBounds(77, 141, 96, 19);
+		contentPane.add(textHorario);
+		textHorario.setColumns(10);
+		
+		JLabel lblValor = new JLabel("Valor");
+		lblValor.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblValor.setBounds(10, 171, 45, 13);
+		contentPane.add(lblValor);
+		
+		textValor = new JTextField();
+		textValor.setBounds(50, 170, 96, 19);
+		contentPane.add(textValor);
+		textValor.setColumns(10);
+		
+		JLabel lblData = new JLabel("Data");
+		lblData.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblData.setBounds(10, 114, 45, 13);
+		contentPane.add(lblData);
+		
+		textData = new JTextField();
+		textData.setBounds(50, 114, 96, 19);
+		contentPane.add(textData);
+		textData.setColumns(10);
 	}
 	
 	void listarValoresC() {
@@ -152,12 +217,13 @@ public class MostrarConsultas extends JFrame {
 			
 			for(int num = 0; num < lista.size();num ++) {
 				model.addRow(new Object[] {
-						lista.get(num).getIdPaciente(),
 						lista.get(num).getID(),
+						lista.get(num).getIdPaciente(),
+						lista.get(num).getIdMedico(),
 						lista.get(num).getEspecialidade(),
 						lista.get(num).getHorario(),
+						lista.get(num).getData(),
 						lista.get(num).getValor(),
-						lista.get(num).getData()
 				});
 				
 			}
@@ -171,7 +237,14 @@ public class MostrarConsultas extends JFrame {
 	private void CarregarCampos() {
 		int setar = table.getSelectedRow();
 		
-		textCodigo.setText(table.getModel().getValueAt(setar, 1).toString());
+		textCodigo.setText(table.getModel().getValueAt(setar, 0).toString());
+		textPaciente.setText(table.getModel().getValueAt(setar, 1).toString());
+		textMedico.setText(table.getModel().getValueAt(setar, 2).toString());
+		textEspecialidade.setText(table.getModel().getValueAt(setar, 3).toString());
+		textHorario.setText(table.getModel().getValueAt(setar, 4).toString());
+		textData.setText(table.getModel().getValueAt(setar, 5).toString());
+		textValor.setText(table.getModel().getValueAt(setar, 6).toString());
+
 	}
 	private void excluir() {
 		int id_consulta;

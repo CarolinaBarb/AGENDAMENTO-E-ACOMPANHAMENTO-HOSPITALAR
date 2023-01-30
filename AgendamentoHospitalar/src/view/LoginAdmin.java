@@ -88,6 +88,7 @@ public class LoginAdmin extends JFrame {
 							
 							ControlAdministrador objadm = new ControlAdministrador();
 							ResultSet rsAdm = objadm.autenticacaoAdministrador(objAdministrador);
+							
 							if(rsAdm.next()) {
 								TelaAdmin ta = new TelaAdmin();
 								ta.setVisible(true);

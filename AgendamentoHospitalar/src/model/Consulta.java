@@ -5,7 +5,7 @@ import java.util.*;
 public class Consulta {
 	private String especialidade;
 	private String valor;
-	private Medico idMedico;
+	private String idMedico;
 	private String idPaciente;
 	private String data;
 	private String horario;
@@ -33,7 +33,7 @@ public class Consulta {
 	}
 
 	// construtores
-	public Consulta(String especialidade, String valor, Medico idMedico, String idPaciente) {
+	public Consulta(String especialidade, String valor, String idMedico, String idPaciente) {
 		super();
 		this.especialidade = especialidade;
 		this.valor = valor;
@@ -68,11 +68,11 @@ public class Consulta {
 		this.valor = valor;
 	}
 
-	public Medico getIdMedico() {
+	public 	String getIdMedico() {
 		return idMedico;
 	}
 
-	public void setIdMedico(Medico idMedico) {
+	public void setIdMedico(String idMedico) {
 		this.idMedico = idMedico;
 	}
 

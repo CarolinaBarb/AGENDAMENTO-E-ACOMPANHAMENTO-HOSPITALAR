@@ -22,7 +22,7 @@ public class ControlPaciente {
 	
 
 	public void cadastrar(Paciente pacientes) {
-		String sql = "insert into paciente (idpaciente, nome_usuario, email_usuario, senha_usuario, sexo_usuario, DataNascimento, cpf, altura, peso, observacao) "
+		String sql = "insert into paciente ( nome_usuario, email_usuario, senha_usuario, sexo_usuario, DataNascimento, cpf, altura, peso, observacao, idade) "
 				      + "values (?,?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		conn = new ConexaoDAO().conectaBD();
@@ -39,11 +39,11 @@ public class ControlPaciente {
 			pstm.setString(7, pacientes.getAltura());
 			pstm.setString(8, pacientes.getPeso());
 			pstm.setString(9, pacientes.getObservacao());
-			pstm.setInt(10, pacientes.getIdpaciente());
+			pstm.setString(10, pacientes.getIdade());
 		
-			
 
 			pstm.execute();
+			JOptionPane.showMessageDialog(null, "cadastro concluido!");
 			pstm.close();
 			
 		} catch (Exception erro) {
@@ -81,15 +81,17 @@ public class ControlPaciente {
 			 
 			 while(rs.next()) {
 				 Paciente objpaciente = new Paciente();
+				 objpaciente.setIdpaciente(rs.getInt("idpaciente"));
 				 objpaciente.setNome(rs.getString("nome_usuario"));
-				 objpaciente.setEmail(rs.getString("email_usuario"));
+				 objpaciente.setIdade(rs.getString("idade"));
 				 objpaciente.setDataNascimento(rs.getString("DataNascimento"));
 				 objpaciente.setCpf(rs.getString("cpf"));
 				 objpaciente.setAltura(rs.getString("altura"));
 				 objpaciente.setPeso(rs.getString("peso"));
 				 objpaciente.setSexo(rs.getString("sexo_usuario"));
+				 objpaciente.setEmail(rs.getString("email_usuario"));
 				 objpaciente.setObservacao(rs.getString("observacao"));
-				 objpaciente.setIdpaciente(rs.getInt("idpaciente"));
+				
 				 
 				 lista.add(objpaciente);
 			 }

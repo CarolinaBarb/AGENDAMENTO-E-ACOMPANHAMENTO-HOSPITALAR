@@ -69,8 +69,8 @@ public class ControlMedico {
 
 
 	public void cadastrar(Medico medicos) {
-		String sql = "insert into Medicos (idmedico, nome, email_medicos,crm,especialidade) "
-			      + "values (?, ?, ?, ?, ?)";
+		String sql = "insert into Medicos (idmedico, nome, email_medicos ,crm,especialidade, senha_medico) "
+			      + "values (?, ?, ?, ?, ?, ?)";
 
 	conn = new ConexaoDAO().conectaBD();
 
@@ -82,10 +82,12 @@ public class ControlMedico {
 		pstm.setString(3, medicos.getEmail());
 		pstm.setString(4, medicos.getCrm());
 		pstm.setString(5, medicos.getEspecialidade());
+		pstm.setString(6, medicos.getSenha());
 	
 		
 
 		pstm.execute();
+		JOptionPane.showMessageDialog(null, "cadastro concluido!");
 		pstm.close();
 		
 	} catch (Exception erro) {

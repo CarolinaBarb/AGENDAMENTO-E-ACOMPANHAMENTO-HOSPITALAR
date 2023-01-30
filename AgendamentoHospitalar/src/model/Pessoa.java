@@ -10,18 +10,21 @@ public abstract class Pessoa {
     private String DataNascimento;
 
     //constructor
-    public Pessoa(String nome,String email, String senha, String id, String sexo, String dataNascimento2) {
-        this.nome = nome;
-        this.sexo = sexo;
-        this.DataNascimento  = dataNascimento2;
-        this.email = email;
-        this.senha = senha;
-    }
-
+    
 
 	public Pessoa(String email, String senha) {
 		this.email = email;
 		this.senha = senha;
+	}
+
+
+	public Pessoa(String nome, String email, String senha, String sexo, String dataNascimento) {
+		super();
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		this.sexo = sexo;
+		DataNascimento = dataNascimento;
 	}
 
 
