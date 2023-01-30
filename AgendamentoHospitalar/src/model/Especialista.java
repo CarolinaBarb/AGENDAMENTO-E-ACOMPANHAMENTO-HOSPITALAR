@@ -5,12 +5,14 @@ import java.util.Date;
 public class Especialista extends Pessoa{
 	private String funcao;
 
-	public Especialista(String nome, String email, String senha, String id, String sexo, String dataNascimento,
-			String funcao) {
-		super(nome, email, senha, id, sexo, dataNascimento);
+	
+	
+
+	public Especialista(String email, String senha, String funcao) {
+		super(email, senha);
 		this.funcao = funcao;
 	}
-	
+
 
 	public String getFuncao() {
 		return funcao;

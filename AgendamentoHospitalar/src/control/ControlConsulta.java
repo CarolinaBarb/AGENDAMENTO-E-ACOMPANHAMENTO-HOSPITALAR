@@ -126,6 +126,32 @@ public class ControlConsulta {
 		 return lista;
 	 
 	}
+	
+	public void editarConsulta(Consulta objconsulta) {
+		String sql = "update consultas set paciente = ?, medico = ?, especialidade = ?, horario = ?, data = ?, valor = ? where idconsulta = ?";
+		
+		conn = new ConexaoDAO().conectaBD();
+		
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, objconsulta.getIdPaciente());
+			pstm.setString(2, objconsulta.getIdMedico());
+			pstm.setString(3, objconsulta.getEspecialidade());
+			pstm.setString(5, objconsulta.getHorario());	
+			pstm.setString(4, objconsulta.getData());	
+			pstm.setString(6, objconsulta.getValor());
+			pstm.setInt(7, objconsulta.getID());
+
+			pstm.execute();
+			JOptionPane.showMessageDialog(null, "editado");
+			pstm.close();
+			
+		} catch (Exception erro) {
+			JOptionPane.showMessageDialog(null, "Control Editar" + erro);
+		}
+		
+		
+	}
 
 	
 }

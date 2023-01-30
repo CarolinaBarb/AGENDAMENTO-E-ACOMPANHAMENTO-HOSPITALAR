@@ -183,7 +183,7 @@ public class MostrarPacientes extends JFrame {
 		contentPane.add(lblNome);
 		
 		textNome = new JTextField();
-		textNome.setBounds(61, 62, 258, 19);
+		textNome.setBounds(61, 62, 272, 19);
 		contentPane.add(textNome);
 		textNome.setColumns(10);
 		
@@ -201,7 +201,7 @@ public class MostrarPacientes extends JFrame {
 		contentPane.add(lblCpf);
 		
 		textCpf = new JTextField();
-		textCpf.setBounds(186, 131, 133, 19);
+		textCpf.setBounds(186, 131, 147, 19);
 		contentPane.add(textCpf);
 		textCpf.setColumns(10);
 		
@@ -215,11 +215,11 @@ public class MostrarPacientes extends JFrame {
 		textAltura.setColumns(10);
 		
 		JLabel lblPeso = new JLabel("Peso (kg)");
-		lblPeso.setBounds(132, 111, 45, 13);
+		lblPeso.setBounds(132, 111, 95, 13);
 		contentPane.add(lblPeso);
 		
 		textPeso = new JTextField();
-		textPeso.setBounds(187, 108, 96, 19);
+		textPeso.setBounds(237, 108, 96, 19);
 		contentPane.add(textPeso);
 		textPeso.setColumns(10);
 		
@@ -237,7 +237,7 @@ public class MostrarPacientes extends JFrame {
 		contentPane.add(lblObservacao);
 		
 		textObs = new JTextField();
-		textObs.setBounds(81, 154, 238, 61);
+		textObs.setBounds(81, 154, 252, 61);
 		contentPane.add(textObs);
 		textObs.setColumns(10);
 		
@@ -246,7 +246,7 @@ public class MostrarPacientes extends JFrame {
 		contentPane.add(lblEmail);
 		
 		textEmail = new JTextField();
-		textEmail.setBounds(61, 226, 258, 19);
+		textEmail.setBounds(61, 226, 272, 19);
 		contentPane.add(textEmail);
 		textEmail.setColumns(10);
 		
@@ -259,11 +259,11 @@ public class MostrarPacientes extends JFrame {
 		contentPane.add(passwordField);
 		
 		JLabel lblDataNascimento = new JLabel("Data de Nascimento");
-		lblDataNascimento.setBounds(132, 89, 96, 13);
+		lblDataNascimento.setBounds(132, 89, 121, 13);
 		contentPane.add(lblDataNascimento);
 		
 		textDataNascimento = new JTextField();
-		textDataNascimento.setBounds(234, 86, 70, 19);
+		textDataNascimento.setBounds(263, 86, 70, 19);
 		contentPane.add(textDataNascimento);
 		textDataNascimento.setColumns(10);
 		

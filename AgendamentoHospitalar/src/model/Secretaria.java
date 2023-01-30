@@ -8,17 +8,23 @@ public class Secretaria extends Pessoa {
 	private String contato;
 	
 	
-	public Secretaria(String nome, String email, String senha, String id, String sexo, String dataNascimento2,
-			int idSscretaria, String cpf, String data_admissao, String funcao, String contato) {
-		super(nome, email, senha, id, sexo, dataNascimento2);
+	
+	
+	
+
+
+
+	public Secretaria(String email, String senha, int idSscretaria, String cpf, String data_admissao, String funcao,
+			String contato) {
+		super(email, senha);
 		this.idSscretaria = idSscretaria;
 		this.cpf = cpf;
 		Data_admissao = data_admissao;
 		this.funcao = funcao;
 		this.contato = contato;
 	}
-	
-	
+
+
 
 
 

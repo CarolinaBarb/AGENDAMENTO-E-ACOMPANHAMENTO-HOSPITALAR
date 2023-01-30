@@ -116,5 +116,32 @@ public class ControlMedico {
 		
 		
 	}
+	
+	public void editar(Medico medicos) {
+	String sql = "update medicos set nome = ?, email_medicos = ?, crm = ?, especialidade = ?, senha_medico = ? where idmedico = ?";
 
+	conn = new ConexaoDAO().conectaBD();
+
+	try {
+		
+		pstm = conn.prepareStatement(sql);
+		pstm.setString(1, medicos.getNome()); 
+		pstm.setString(2, medicos.getEmail());
+		pstm.setString(3, medicos.getCrm());
+		pstm.setString(4, medicos.getEspecialidade());
+		pstm.setString(5, medicos.getSenha());
+		pstm.setInt(6, medicos.getIdmedico());
+	
+		
+		pstm.execute();
+		JOptionPane.showMessageDialog(null, "cadastro concluido!");
+		pstm.close();
+		
+	} catch (Exception erro) {
+		JOptionPane.showMessageDialog(null, "ControlMedico" + erro);
+	}
+		
+	
+
+}
 }

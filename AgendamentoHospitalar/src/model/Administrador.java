@@ -4,10 +4,11 @@ public class Administrador extends Pessoa {
 	private int idAdministrador;
 	private String cpf;
 	
-	
-	public Administrador(String nome, String email, String senha, String id, String sexo, String dataNascimento2,
-			int idAdministrador, String cpf) {
-		super(nome, email, senha, id, sexo, dataNascimento2);
+
+
+
+	public Administrador(String email, String senha, int idAdministrador, String cpf) {
+		super(email, senha);
 		this.idAdministrador = idAdministrador;
 		this.cpf = cpf;
 	}

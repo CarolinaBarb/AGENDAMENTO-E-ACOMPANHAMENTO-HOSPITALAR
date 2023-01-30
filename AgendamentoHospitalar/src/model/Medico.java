@@ -10,22 +10,25 @@ public class Medico extends Pessoa {
     private int idmedico;
 
     //constructor
-
-    public Medico(String nome,String email, String senha, String id, String sexo, String dataNascimento, String crm, String especialidade,
-            String convenios_aceitos, int idmedico) {
-        super(nome, email, senha, id, sexo, dataNascimento);
-        this.crm = crm;
-        this.especialidade = especialidade;
-        this.Convenios_aceitos = convenios_aceitos;
-        this.idmedico = idmedico;
-    }
-
-
+    
     
 
 
 	public Medico(String nome, String email, String senha, String crm) {
 		super(nome);
+	}
+
+
+
+
+
+	public Medico(String email, String senha, String crm, String especialidade, String convenios_aceitos,
+			int idmedico) {
+		super(email, senha);
+		this.crm = crm;
+		this.especialidade = especialidade;
+		Convenios_aceitos = convenios_aceitos;
+		this.idmedico = idmedico;
 	}
 
 

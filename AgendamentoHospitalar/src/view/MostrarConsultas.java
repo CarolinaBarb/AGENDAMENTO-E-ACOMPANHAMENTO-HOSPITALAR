@@ -73,6 +73,9 @@ public class MostrarConsultas extends JFrame {
 		JButton btnNewButton_1 = new JButton("Editar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				editar();
+				listarValoresC();
+				limpar();
 				
 			}
 		});
@@ -204,6 +207,15 @@ public class MostrarConsultas extends JFrame {
 		textData.setBounds(50, 114, 96, 19);
 		contentPane.add(textData);
 		textData.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Limpar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				limpar(); 
+			}
+		});
+		btnNewButton.setBounds(651, 13, 85, 21);
+		contentPane.add(btnNewButton);
 	}
 	
 	void listarValoresC() {
@@ -256,6 +268,44 @@ public class MostrarConsultas extends JFrame {
 		
 		ControlConsulta objcontrolconsulta = new ControlConsulta();
 		objcontrolconsulta.excluirConsulta(objconsulta);
+		
+		
+	}
+	private void limpar() {
+		textCodigo.setText("");
+		textPaciente.setText("");
+		textMedico.setText("");
+		textEspecialidade.setText("");
+		textHorario.setText("");
+		textData.setText("");
+		textValor.setText("");
+		
+		
+	}
+	private void editar() {
+		int ID;
+		String paciente, medico, especialidade, horario, data, valor;
+		
+		ID = Integer.parseInt(textCodigo.getText());
+		paciente = textPaciente.getText();
+		medico = textMedico.getText();
+		especialidade = textEspecialidade.getText();
+		horario = textHorario.getText();
+		data = textData.getText();
+		valor = textValor.getText();
+		
+		Consulta objeditarconsulta = new Consulta();
+		objeditarconsulta.setIdPaciente(paciente);
+		objeditarconsulta.setIdMedico(medico);
+		objeditarconsulta.setEspecialidade(especialidade);
+		objeditarconsulta.setHorario(horario);
+		objeditarconsulta.setData(data);
+		objeditarconsulta.setValor(valor);
+		objeditarconsulta.setID(ID);
+		
+		
+		ControlConsulta objcontrolconsulta = new ControlConsulta();
+		objcontrolconsulta.editarConsulta(objeditarconsulta);
 		
 		
 	}

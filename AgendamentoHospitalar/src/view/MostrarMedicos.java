@@ -146,6 +146,13 @@ public class MostrarMedicos extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnEditar = new JButton("Editar");
+		btnEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				editar();
+				listarValoresM();
+				limpar();
+			}
+		});
 		btnEditar.setBounds(274, 179, 122, 19);
 		contentPane.add(btnEditar);
 		
@@ -162,41 +169,41 @@ public class MostrarMedicos extends JFrame {
 		
 		JLabel lblNome = new JLabel("Nome");
 		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNome.setBounds(23, 62, 45, 13);
+		lblNome.setBounds(23, 30, 45, 13);
 		contentPane.add(lblNome);
 		
 		textNome = new JTextField();
-		textNome.setBounds(70, 59, 194, 19);
+		textNome.setBounds(70, 29, 194, 19);
 		contentPane.add(textNome);
 		textNome.setColumns(10);
 		
 		JLabel lblEmail = new JLabel("Email");
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblEmail.setBounds(23, 85, 45, 13);
+		lblEmail.setBounds(23, 60, 45, 13);
 		contentPane.add(lblEmail);
 		
 		textEmail = new JTextField();
-		textEmail.setBounds(70, 84, 194, 19);
+		textEmail.setBounds(70, 55, 194, 19);
 		contentPane.add(textEmail);
 		textEmail.setColumns(10);
 		
 		JLabel lblCrm = new JLabel("Crm");
 		lblCrm.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblCrm.setBounds(23, 108, 45, 13);
+		lblCrm.setBounds(23, 83, 45, 13);
 		contentPane.add(lblCrm);
 		
 		textCrm = new JTextField();
-		textCrm.setBounds(70, 107, 96, 19);
+		textCrm.setBounds(70, 83, 96, 19);
 		contentPane.add(textCrm);
 		textCrm.setColumns(10);
 		
 		JLabel lblEspecialidade = new JLabel("Especialidade");
 		lblEspecialidade.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblEspecialidade.setBounds(23, 131, 109, 13);
+		lblEspecialidade.setBounds(23, 106, 109, 13);
 		contentPane.add(lblEspecialidade);
 		
 		textEspecialidade = new JTextField();
-		textEspecialidade.setBounds(120, 130, 144, 19);
+		textEspecialidade.setBounds(119, 105, 144, 19);
 		contentPane.add(textEspecialidade);
 		textEspecialidade.setColumns(10);
 		
@@ -211,11 +218,11 @@ public class MostrarMedicos extends JFrame {
 		
 		JLabel lblSenha = new JLabel("Senha");
 		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblSenha.setBounds(23, 154, 45, 13);
+		lblSenha.setBounds(23, 129, 45, 13);
 		contentPane.add(lblSenha);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(70, 154, 144, 19);
+		passwordField.setBounds(70, 129, 144, 19);
 		contentPane.add(passwordField);
 	}
 	
@@ -274,6 +281,29 @@ public class MostrarMedicos extends JFrame {
 		objcontrolmedico.excluirMedico(objmedico);
 		
 		
+	}
+	private void editar() {
+		int idmedico;
+		String nome, email, crm, especialidade, senha;
+		
+		idmedico = Integer.parseInt(textCodigoM.getText());
+		nome = textNome.getText();
+		email = textEmail.getText();
+		crm = textCrm.getText();
+		especialidade = textEspecialidade.getText();
+		senha = passwordField.getText();
+		
+		
+		Medico objeditarMedico = new Medico();
+		objeditarMedico.setIdmedico(idmedico);
+		objeditarMedico.setNome(nome);
+		objeditarMedico.setEmail(email);
+		objeditarMedico.setCrm(crm);
+		objeditarMedico.setEspecialidade(especialidade);
+		objeditarMedico.setSenha(senha);
+		
+		ControlMedico objcontrolMedico = new ControlMedico();
+		objcontrolMedico.editar(objeditarMedico);
 	}
 }
 

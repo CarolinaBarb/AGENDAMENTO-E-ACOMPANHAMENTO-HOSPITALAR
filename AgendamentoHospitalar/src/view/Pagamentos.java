@@ -62,7 +62,7 @@ public class Pagamentos extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		textField = new JTextField();
-		textField.setBounds(167, 73, 96, 19);
+		textField.setBounds(161, 73, 96, 19);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -124,7 +124,7 @@ public class Pagamentos extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(80, 117, 96, 19);
+		textField_2.setBounds(69, 117, 96, 19);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
@@ -151,7 +151,7 @@ public class Pagamentos extends JFrame {
 		contentPane.add(Voltar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(21, 213, 287, 55);
+		scrollPane.setBounds(21, 190, 287, 132);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
