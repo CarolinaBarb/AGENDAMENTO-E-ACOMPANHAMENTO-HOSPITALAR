@@ -15,8 +15,10 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 
-import control.ControlSecretaria;
-import model.Secretaria;
+import control.ControlConsulta;
+import control.ControlFuncionario;
+import model.Consulta;
+import model.Funcionario;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -177,19 +179,19 @@ public class MostrarFuncionarios extends JFrame {
 				sexo = textSexo.getText();
 			
 				
-				Secretaria objsecretaria = new Secretaria();
-				objsecretaria.setContato(contato);
-				objsecretaria.setCpf(cpf);
-				objsecretaria.setData_admissao(data_admissao);
-				objsecretaria.setDataNascimento(data_nascimento);
-				objsecretaria.setFuncao(funcao);
-				objsecretaria.setNome(nome);
-				objsecretaria.setEmail(email);
-				objsecretaria.setSenha(senha);
-				objsecretaria.setSexo(sexo);
+				Funcionario objFuncionario = new Funcionario();
+				objFuncionario.setContato(contato);
+				objFuncionario.setCpf(cpf);
+				objFuncionario.setData_admissao(data_admissao);
+				objFuncionario.setDataNascimento(data_nascimento);
+				objFuncionario.setFuncao(funcao);
+				objFuncionario.setNome(nome);
+				objFuncionario.setEmail(email);
+				objFuncionario.setSenha(senha);
+				objFuncionario.setSexo(sexo);
 				
-				ControlSecretaria objcontrolSec = new ControlSecretaria();
-				objcontrolSec.CadastrarSecretaria(objsecretaria);
+				ControlFuncionario objcontrolfun = new ControlFuncionario();
+				objcontrolfun.CadastrarFuncionario(objFuncionario);
 				
 				listarValores();
 				limpar();
@@ -211,6 +213,13 @@ public class MostrarFuncionarios extends JFrame {
 		contentPane.add(btnExcluir);
 		
 		JButton btnEditar = new JButton("Editar");
+		btnEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				editar();
+				listarValores();
+				limpar();
+			}
+		});
 		btnEditar.setBounds(367, 301, 169, 21);
 		contentPane.add(btnEditar);
 		
@@ -266,16 +275,16 @@ public class MostrarFuncionarios extends JFrame {
 	
 	public void listarValores() {
 		try {
-			ControlSecretaria objcontrolsecre = new ControlSecretaria();
+			ControlFuncionario objcontrolsecre = new ControlFuncionario();
 			
 			DefaultTableModel Model = (DefaultTableModel) table.getModel();
 			Model.setNumRows(0);
 			
-			ArrayList<Secretaria> Lista = objcontrolsecre.PesquisarSecretaria();
+			ArrayList<Funcionario> Lista = objcontrolsecre.PesquisarFuncionario();
 			
 			for (int num = 0; num < Lista.size(); num ++) {
 				Model.addRow(new Object[] {
-						Lista.get(num).getIdSscretaria(),
+						Lista.get(num).getIdfuncionario(),
 						Lista.get(num).getNome(),
 						Lista.get(num).getCpf(),
 						Lista.get(num).getDataNascimento(),
@@ -315,10 +324,10 @@ public class MostrarFuncionarios extends JFrame {
 		
 		id_funcionario = Integer.parseInt(textCodigo.getText());
 		
-		Secretaria objsecretaria = new Secretaria();
-		objsecretaria.setIdSscretaria(id_funcionario);
+		Funcionario objsecretaria = new Funcionario();
+		objsecretaria.setIdfuncionario(id_funcionario);
 		
-		ControlSecretaria objcontrolsecretaria = new ControlSecretaria();
+		ControlFuncionario objcontrolsecretaria = new ControlFuncionario();
 		objcontrolsecretaria.excluirFuncionario(objsecretaria);
 	}
 	
@@ -333,6 +342,37 @@ public class MostrarFuncionarios extends JFrame {
 		textSexo.setText("");
 		textContato.setText("");
 		passwordField.setText("");
+		
+	}
+	private void editar() {
+		int idfuncionario;
+		String nome, cpf, DataNascimento, Dataadmissao, Funcao, sexo, contato, senha,email;
+		
+		idfuncionario = Integer.parseInt(textCodigo.getText());
+		nome = textNome.getText();
+		cpf = textCPF.getText();
+		DataNascimento = textDataNascimento.getText();
+		Dataadmissao = textDataadmissao.getText();
+		Funcao = textFuncao.getText();
+		sexo = textSexo.getText();
+		contato = textContato.getText();
+		senha = passwordField.getText();
+		email = textEmail.getText();
+		
+		Funcionario objeditarfuncionario = new Funcionario();
+		objeditarfuncionario.setIdfuncionario(idfuncionario);
+		objeditarfuncionario.setNome(nome);
+		objeditarfuncionario.setCpf(cpf);
+		objeditarfuncionario.setDataNascimento(DataNascimento);
+		objeditarfuncionario.setData_admissao(Dataadmissao);;
+		objeditarfuncionario.setFuncao(Funcao);;
+		objeditarfuncionario.setSexo(sexo);
+		objeditarfuncionario.setContato(contato);
+		objeditarfuncionario.setSenha(senha);
+		objeditarfuncionario.setEmail(email);;
+		
+		ControlFuncionario objcontrolfuncionario = new ControlFuncionario();
+		objcontrolfuncionario.editar(objeditarfuncionario);
 		
 	}
 }

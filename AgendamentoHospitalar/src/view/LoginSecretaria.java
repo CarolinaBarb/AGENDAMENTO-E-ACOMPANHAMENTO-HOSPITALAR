@@ -6,8 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import control.ControlSecretaria;
-import model.Secretaria;
+import control.ControlFuncionario;
+import model.Funcionario;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -85,11 +85,11 @@ public class LoginSecretaria extends JFrame {
 					email_secretaria = textUsuario.getText();
 					senha_secretaria = passwordSenha.getText();
 					
-					Secretaria objSecretaria = new Secretaria();
+					Funcionario objSecretaria = new Funcionario();
 					objSecretaria.setEmail(email_secretaria);
 					objSecretaria.setSenha(senha_secretaria);
 					
-					ControlSecretaria objsecretaria = new ControlSecretaria();
+					ControlFuncionario objsecretaria = new ControlFuncionario();
 					ResultSet rssecretaria = objsecretaria.autenticacaoSecretaria(objSecretaria);
 					
 					if(rssecretaria.next()) {

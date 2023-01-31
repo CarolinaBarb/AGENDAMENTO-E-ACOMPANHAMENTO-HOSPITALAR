@@ -1,7 +1,7 @@
 package model;
 
-public class Secretaria extends Pessoa {
-	private int idSscretaria;
+public class Funcionario extends Pessoa {
+	private int idfuncionario;
 	private String cpf;
 	private String Data_admissao;
 	private String funcao;
@@ -14,10 +14,10 @@ public class Secretaria extends Pessoa {
 
 
 
-	public Secretaria(String email, String senha, int idSscretaria, String cpf, String data_admissao, String funcao,
+	public Funcionario(String email, String senha, int idfuncionario, String cpf, String data_admissao, String funcao,
 			String contato) {
 		super(email, senha);
-		this.idSscretaria = idSscretaria;
+		this.idfuncionario = idfuncionario;
 		this.cpf = cpf;
 		Data_admissao = data_admissao;
 		this.funcao = funcao;
@@ -92,20 +92,20 @@ public class Secretaria extends Pessoa {
 
 
 
-	public Secretaria() {
+	public Funcionario() {
 		
 	}
 
 
 
-	public int getIdSscretaria() {
-		return idSscretaria;
+	public int getIdfuncionario() {
+		return idfuncionario;
 	}
 
 
 
-	public void setIdSscretaria(int idSscretaria) {
-		this.idSscretaria = idSscretaria;
+	public void setIdfuncionario(int idfuncionario) {
+		this.idfuncionario = idfuncionario;
 	}
 
 
