@@ -58,7 +58,7 @@ public class ControlPaciente {
 		try {
 			String sql = "select * from paciente where email_usuario = ? and senha_usuario = ?"; // mesmo q ta no banco
 
-			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, objpacientecontrol.getEmail()); // primeira ? e o email
 			pstm.setString(2, objpacientecontrol.getSenha()); // segunda ? e a senha
 

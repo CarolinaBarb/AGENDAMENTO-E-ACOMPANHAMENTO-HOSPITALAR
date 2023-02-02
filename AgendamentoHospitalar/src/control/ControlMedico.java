@@ -24,7 +24,7 @@ public class ControlMedico {
 		conn = new ConexaoDAO().conectaBD();
 
 		try {
-			String sql = "select * from Medicos where email_medico = ? and senha_medico = ?"; // mesmo q ta no banco
+			String sql = "select * from Medicos where email_medicos = ? and senha_medico = ?"; // mesmo q ta no banco
 
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, medicocontrol.getEmail()); // primeira ? e o email

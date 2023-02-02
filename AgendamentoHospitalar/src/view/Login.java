@@ -23,6 +23,7 @@ public class Login implements ActionListener {
 	 */
 	private final JPanel panel = new JPanel();
 	private JPanel panel_1;
+	private JButton btnTelaPrincipal;
 
 	public Login() {
 		container = new JFrame("Login");
@@ -77,6 +78,17 @@ public class Login implements ActionListener {
 		lblNewLabel.setIcon(new ImageIcon(img.getScaledInstance(150, 150, Image.SCALE_SMOOTH)));
 		lblNewLabel.setBounds(179, 70, 156, 178);
 		container.getContentPane().add(lblNewLabel);
+		
+		btnTelaPrincipal = new JButton("Tela Principal");
+		btnTelaPrincipal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaPrincipal tp = new TelaPrincipal();
+				tp.setVisible(true);
+				dispose();
+			}
+		});
+		btnTelaPrincipal.setBounds(26, 63, 85, 21);
+		container.getContentPane().add(btnTelaPrincipal);
 
 		container.setVisible(true);
 

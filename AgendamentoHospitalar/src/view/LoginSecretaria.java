@@ -110,6 +110,18 @@ public class LoginSecretaria extends JFrame {
 		btnEntrar.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnEntrar.setBounds(178, 272, 85, 21);
 		contentPane.add(btnEntrar);
+		
+		JButton btnTelaPrincipal = new JButton("Tela Principal");
+		btnTelaPrincipal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaPrincipal tp = new TelaPrincipal();
+				tp.setVisible(true);
+				dispose();
+				
+			}
+		});
+		btnTelaPrincipal.setBounds(10, 10, 109, 21);
+		contentPane.add(btnTelaPrincipal);
 	}
 	
 		

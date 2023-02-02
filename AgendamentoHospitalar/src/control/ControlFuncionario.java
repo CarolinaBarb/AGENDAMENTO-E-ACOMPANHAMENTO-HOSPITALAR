@@ -21,7 +21,7 @@ public class ControlFuncionario {
 		conn = new ConexaoDAO().conectaBD();
 
 		try {
-			String sql = "select * from secretaria where email= ? and senha = ?"; // mesmo q ta no banco
+			String sql = "select * from funcionario where email= ? and senha = ?"; // mesmo q ta no banco
 
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, objsecretaria.getEmail()); // primeira ? e o email

@@ -75,7 +75,7 @@ public class TelaPrincipal extends JFrame {
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LoginAdmin lm = new LoginAdmin();
+				LoginMedico lm = new LoginMedico();
 				lm.setVisible(true);
 				dispose();
 			}

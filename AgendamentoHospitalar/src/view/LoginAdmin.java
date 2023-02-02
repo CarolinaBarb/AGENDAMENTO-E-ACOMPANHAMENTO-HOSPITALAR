@@ -22,6 +22,7 @@ public class LoginAdmin extends JFrame {
 	private JButton btnEntrar;
 	private JLabel lblNewLabel_1;
 	private JButton Cadastrar;
+	private JButton btnTelaPrincipal;
 
 
 	public LoginAdmin() {
@@ -113,6 +114,16 @@ public class LoginAdmin extends JFrame {
 				Cadastrar = new JButton("Cadastre-se");
 				Cadastrar.setBounds(191, 469, 110, 21);
 				container.getContentPane().add(Cadastrar);
+				
+				btnTelaPrincipal = new JButton("Tela Principal");
+				btnTelaPrincipal.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						TelaPrincipal tp = new TelaPrincipal();
+						tp.setVisible(true);
+					}
+				});
+				btnTelaPrincipal.setBounds(10, 71, 120, 21);
+				container.getContentPane().add(btnTelaPrincipal);
 
 		container.setVisible(true);
 
