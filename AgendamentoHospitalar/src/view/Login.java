@@ -98,10 +98,7 @@ public class Login implements ActionListener {
 
 	}
 
-	void setVisible(boolean b) {
-		// TODO Auto-generated method stub
 
-	}
 
 	public static void main(String[] args) {
 		new Login();
@@ -129,7 +126,7 @@ public class Login implements ActionListener {
 		   
 		   if(rspaciente.next()) {
 			   //chamar tela q eu quero abrir
-			   TelaHomePaciente tp = new TelaHomePaciente();
+			   TelaPaciente tp = new TelaPaciente();
 			    tp.setVisible(true);
 	            dispose();
 			   

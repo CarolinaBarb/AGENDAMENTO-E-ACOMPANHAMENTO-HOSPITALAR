@@ -61,9 +61,8 @@ public class TelaPrincipal extends JFrame {
 		btnNewButton.setBackground(new Color(9, 69, 108));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Login l = new Login();
-				l.container.setVisible(true);
-				dispose();
+				Login lo = new Login();
+			
 			}
 
 		});

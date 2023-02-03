@@ -56,7 +56,7 @@ public class Atestado extends JFrame {
 		contentPane.add(lblAtestado);
 		
 		JLabel lblNewLabel = new JLabel("Justificativa");
-		lblNewLabel.setBounds(11, 84, 65, 13);
+		lblNewLabel.setBounds(11, 84, 122, 13);
 		contentPane.add(lblNewLabel);
 		
 		textField = new JTextField();
@@ -65,20 +65,20 @@ public class Atestado extends JFrame {
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nome do Paciente");
-		lblNewLabel_1.setBounds(10, 33, 89, 13);
+		lblNewLabel_1.setBounds(10, 33, 123, 13);
 		contentPane.add(lblNewLabel_1);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(110, 30, 206, 19);
+		textField_1.setBounds(131, 30, 197, 19);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Quantidadde de dias");
-		lblNewLabel_2.setBounds(12, 55, 141, 13);
+		lblNewLabel_2.setBounds(11, 56, 154, 18);
 		contentPane.add(lblNewLabel_2);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(110, 53, 39, 19);
+		textField_2.setBounds(131, 59, 39, 19);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		

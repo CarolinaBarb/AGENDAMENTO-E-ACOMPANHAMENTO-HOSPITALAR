@@ -1,183 +1,180 @@
 package view;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
-//import home.*;
+import java.awt.event.ActionEvent;
 
+public class TelaPaciente extends JFrame {
 
-public class TelaHomePaciente implements ActionListener {
-	JFrame container;
-	private JButton marcarconsulta;
-	private JButton agendamento;
-	private JButton pagamentos;
-	private JButton prontuario;
-	private JComboBox<String> comboBox;
-	private JMenuItem logout, verReceitas, verAtestados, verEncaminhamentos;
-	//private JLabel lblNewLabel;
-    //private JLabel lblNewLabel_2;
-	private JLabel lblNewLabel_1;
-	
-	public TelaHomePaciente(){
-		
-		container = new JFrame("Home");
-		container.getContentPane().setBackground(new Color(255, 255, 255));
-		container.setTitle("HomePaciente");
-		container.setSize(1066, 639);
-		container.setLocation(700, 700);
-		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		marcarconsulta = new JButton("Marcar Consultas");
-		marcarconsulta.setBounds(36, 215, 216, 213);
-		marcarconsulta.setForeground(new Color(255, 255, 255));
-		marcarconsulta.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				MarcarConsulta mc = new MarcarConsulta();
-				mc.setVisible(true);
-				this.dispose();
-			}
+	private JPanel contentPane;
+	private JTextField textNome;
+	private JTable table;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
 
-			private void dispose() {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-		marcarconsulta.setFont(new Font("Verdana", Font.PLAIN, 20));
-		marcarconsulta.setBackground(new Color(9, 69, 108));
-		
-		agendamento = new JButton("Agendamentos");
-		agendamento.setBounds(287, 215, 216, 213);
-		agendamento.setForeground(new Color(255, 255, 255));
-		agendamento.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				MostrarConsultas cp = new MostrarConsultas();
-				cp.setVisible(true);
-				this.dispose();
-				
-				
-			}
-
-			private void dispose() {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-		agendamento.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		agendamento.setBackground(new Color(9, 69, 108));
-
-		pagamentos = new JButton("Pagamentos");
-		pagamentos.setBounds(540, 215, 216, 213);
-		pagamentos.setForeground(new Color(255, 255, 255));
-		pagamentos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			   
-			}
-
-		});
-		pagamentos.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		pagamentos.setBackground(new Color(9, 69, 108));
-		
-		prontuario = new JButton("Prontuario");
-		prontuario.setBounds(792, 215, 216, 213);
-		prontuario.setForeground(new Color(255, 255, 255));
-		prontuario.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		prontuario.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		prontuario.setBackground(new Color(9, 69, 108));
-		
-        String[] items = {"Receitas", "Atestados", "Encaminhamentos", "Sair"};
-		container.getContentPane().setLayout(null);
-		
-		comboBox = new JComboBox<>();
-		comboBox.setBounds(941, 22, 101, 30);
-		comboBox.setEditable(true);
-		comboBox.setBackground(new Color(9, 69, 108));
-		container.getContentPane().add(comboBox);
-		
-	      
-		verReceitas = new JMenuItem("Receitas");
-		verReceitas.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-		comboBox.add(verReceitas);
-		
-		verAtestados = new JMenuItem("Atestados");
-		verAtestados.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-		comboBox.add(verAtestados);
-		
-		verEncaminhamentos = new JMenuItem("Encaminhamentos");
-		verEncaminhamentos.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-		comboBox.add(verEncaminhamentos);
-		
-		logout = new JMenuItem("Sair");
-		logout.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-		comboBox.add(logout);
-
-		
-		container.getContentPane().add(marcarconsulta);
-		container.getContentPane().add(agendamento);
-		container.getContentPane().add(pagamentos);
-		container.getContentPane().add(prontuario);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(-19, 0, 1117, 72);
-		panel.setBackground(new Color(9, 69, 108));
-		container.getContentPane().add(panel);
-		panel.setLayout(null);
-		
-		
-		lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(33, 10, 62, 38);
-		panel.add(lblNewLabel_1);
-		Image home11 = new ImageIcon(this.getClass().getResource("/home/home11.png")).getImage();
-		lblNewLabel_1.setIcon(new ImageIcon(home11.getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
-		
-		JButton btnNewButton = new JButton("HOME");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				TelaPrincipal lm = new TelaPrincipal();
-				lm.setVisible(true);
-				this.dispose();
-			}
-
-			private void dispose() {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-		btnNewButton.setForeground(new Color(9, 69, 108));
-		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setBounds(24, 51, 85, 21);
-		panel.add(btnNewButton);
-		
-		
-		
-		container.setVisible(true);
-		
-		marcarconsulta.addActionListener(this);
-		agendamento.addActionListener(this);
-		pagamentos.addActionListener(this);
-		prontuario.addActionListener(this);
-
-	}
-
-
-	void setVisible(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
+	/**
+	 * Launch the application.
+	 */
 	public static void main(String[] args) {
-		new TelaHomePaciente();
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaPaciente frame = new TelaPaciente();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+
+	/**
+	 * Create the frame.
+	 */
+	public TelaPaciente() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 734, 357);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
+		JLabel lblNewLabel = new JLabel("Paciente: ");
+		lblNewLabel.setBounds(10, 10, 73, 13);
+		contentPane.add(lblNewLabel);
+		
+		textNome = new JTextField();
+		textNome.setEnabled(false);
+		textNome.setBounds(63, 7, 449, 19);
+		contentPane.add(textNome);
+		textNome.setColumns(10);
+		
+		JLabel lblSelecionar = new JLabel("Selecionar Consultas");
+		lblSelecionar.setBounds(10, 57, 189, 13);
+		contentPane.add(lblSelecionar);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 80, 504, 90);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null, null, null},
+			},
+			new String[] {
+				"Medico", "Especialidade", "Data", "Hora", "Valor", "Diagn\u00F3stico", "Observa\u00E7\u00E3o"
+			}
+		));
+		scrollPane.setViewportView(table);
+		
+		JLabel lblNewLabel_1 = new JLabel("Medico");
+		lblNewLabel_1.setBounds(12, 183, 45, 13);
+		contentPane.add(lblNewLabel_1);
+		
+		textField = new JTextField();
+		textField.setEnabled(false);
+		textField.setBounds(8, 198, 96, 19);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("Especialidade");
+		lblNewLabel_2.setBounds(10, 222, 82, 20);
+		contentPane.add(lblNewLabel_2);
+		
+		textField_1 = new JTextField();
+		textField_1.setEnabled(false);
+		textField_1.setBounds(8, 245, 96, 19);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblNewLabel_3 = new JLabel("Data");
+		lblNewLabel_3.setBounds(127, 186, 45, 13);
+		contentPane.add(lblNewLabel_3);
+		
+		textField_2 = new JTextField();
+		textField_2.setEnabled(false);
+		textField_2.setBounds(122, 201, 96, 19);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+		
+		JLabel lblNewLabel_4 = new JLabel("Hora");
+		lblNewLabel_4.setBounds(126, 229, 45, 13);
+		contentPane.add(lblNewLabel_4);
+		
+		textField_3 = new JTextField();
+		textField_3.setEnabled(false);
+		textField_3.setBounds(120, 246, 96, 19);
+		contentPane.add(textField_3);
+		textField_3.setColumns(10);
+		
+		JLabel lblNewLabel_5 = new JLabel("Valor");
+		lblNewLabel_5.setBounds(237, 187, 45, 13);
+		contentPane.add(lblNewLabel_5);
+		
+		textField_4 = new JTextField();
+		textField_4.setEnabled(false);
+		textField_4.setBounds(230, 203, 96, 19);
+		contentPane.add(textField_4);
+		textField_4.setColumns(10);
+		
+		JLabel lblNewLabel_6 = new JLabel("Diagnostico");
+		lblNewLabel_6.setBounds(234, 231, 78, 13);
+		contentPane.add(lblNewLabel_6);
+		
+		textField_5 = new JTextField();
+		textField_5.setEnabled(false);
+		textField_5.setBounds(231, 248, 96, 19);
+		contentPane.add(textField_5);
+		textField_5.setColumns(10);
+		
+		JLabel lblNewLabel_7 = new JLabel("Observação");
+		lblNewLabel_7.setBounds(344, 187, 89, 13);
+		contentPane.add(lblNewLabel_7);
+		
+		textField_6 = new JTextField();
+		textField_6.setEnabled(false);
+		textField_6.setBounds(344, 205, 172, 62);
+		contentPane.add(textField_6);
+		textField_6.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Conferir Receitas");
+		btnNewButton.setBounds(545, 79, 153, 21);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Conferir Prontuário");
+		btnNewButton_1.setBounds(546, 107, 152, 21);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Voltar");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaPrincipal tp = new TelaPrincipal();
+				tp.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_2.setBounds(610, 286, 85, 21);
+		contentPane.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("Selecionar");
+		btnNewButton_3.setBounds(428, 57, 85, 21);
+		contentPane.add(btnNewButton_3);
 	}
 }
