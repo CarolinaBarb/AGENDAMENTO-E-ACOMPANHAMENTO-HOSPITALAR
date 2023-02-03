@@ -52,7 +52,7 @@ public class TelaHomePaciente implements ActionListener {
 		agendamento.setForeground(new Color(255, 255, 255));
 		agendamento.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ConsultasPacientes cp = new ConsultasPacientes();
+				MostrarConsultas cp = new MostrarConsultas();
 				cp.setVisible(true);
 				this.dispose();
 				

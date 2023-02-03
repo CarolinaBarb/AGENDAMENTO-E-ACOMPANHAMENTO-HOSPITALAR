@@ -36,6 +36,7 @@ public class MarcarConsulta extends JFrame {
 	private JTextField txtNomeConsulta;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JTextField textField_2;
 
 	/**
 	 * Launch the application.
@@ -81,7 +82,7 @@ public class MarcarConsulta extends JFrame {
 		
 		JDateChooser txtData = new JDateChooser();
 		txtData.getCalendarButton().setBackground(new Color(9, 69, 108));
-		txtData.setBounds(7, 231, 181, 19);
+		txtData.setBounds(7, 268, 181, 19);
 		contentPane.add(txtData);
 		
 		txtNomeConsulta = new JTextField();
@@ -162,26 +163,26 @@ public class MarcarConsulta extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Médico:");
 		lblNewLabel.setForeground(new Color(9, 69, 108));
-		lblNewLabel.setBounds(7, 147, 77, 15);
+		lblNewLabel.setBounds(7, 188, 77, 15);
 		contentPane.add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setBounds(7, 170, 181, 19);
+		textField.setBounds(7, 216, 181, 19);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Data:");
 		lblNewLabel_1.setForeground(new Color(9, 69, 108));
-		lblNewLabel_1.setBounds(7, 208, 45, 13);
+		lblNewLabel_1.setBounds(7, 245, 45, 13);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Valor:");
 		lblNewLabel_2.setForeground(new Color(9, 69, 108));
-		lblNewLabel_2.setBounds(7, 271, 45, 13);
+		lblNewLabel_2.setBounds(290, 219, 45, 13);
 		contentPane.add(lblNewLabel_2);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(7, 294, 181, 19);
+		textField_1.setBounds(290, 242, 133, 19);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -202,6 +203,16 @@ public class MarcarConsulta extends JFrame {
 		panel.setBackground(new Color(9, 69, 108));
 		panel.setBounds(0, 0, 485, 54);
 		contentPane.add(panel);
+		
+		JLabel lblNewLabel_3 = new JLabel("Email:");
+		lblNewLabel_3.setForeground(new Color(0, 0, 128));
+		lblNewLabel_3.setBounds(7, 138, 45, 13);
+		contentPane.add(lblNewLabel_3);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(7, 157, 181, 19);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
 		
 		
 	

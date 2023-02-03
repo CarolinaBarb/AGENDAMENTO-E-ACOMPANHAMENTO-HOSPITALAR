@@ -92,7 +92,7 @@ public class LoginMedico extends JFrame {
 					ResultSet rsmed = controlemedico.autenticacaoMedico(objmedico);
 					
 					if(rsmed.next()) {
-						TelaAdmin ta = new TelaAdmin();
+						TelaMedico ta = new TelaMedico();
 						ta.setVisible(true);
 						dispose();
 					}
