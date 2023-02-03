@@ -28,7 +28,7 @@ public class Login implements ActionListener {
 	public Login() {
 		container = new JFrame("Login");
 		btnEntrar = new JButton("Entrar");
-		btnEntrar.setBounds(194, 426, 120, 30);
+		btnEntrar.setBounds(179, 439, 120, 30);
 		btnEntrar.setBackground(new Color(9, 69, 108));
 		btnEntrar.setForeground(new Color(255, 255, 255));
 		btnEntrar.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -80,6 +80,8 @@ public class Login implements ActionListener {
 		container.getContentPane().add(lblNewLabel);
 		
 		btnTelaPrincipal = new JButton("Tela Principal");
+		btnTelaPrincipal.setForeground(new Color(255, 255, 255));
+		btnTelaPrincipal.setBackground(new Color(9, 69, 108));
 		btnTelaPrincipal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaPrincipal tp = new TelaPrincipal();
@@ -87,7 +89,7 @@ public class Login implements ActionListener {
 				dispose();
 			}
 		});
-		btnTelaPrincipal.setBounds(26, 63, 85, 21);
+		btnTelaPrincipal.setBounds(330, 533, 146, 30);
 		container.getContentPane().add(btnTelaPrincipal);
 
 		container.setVisible(true);

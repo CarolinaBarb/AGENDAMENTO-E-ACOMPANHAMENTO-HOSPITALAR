@@ -55,7 +55,7 @@ public class TelaPrincipal extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnNewButton = new JButton("Login Paciente");
-		btnNewButton.setBounds(155, 165, 111, 21);
+		btnNewButton.setBounds(155, 165, 127, 21);
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton.setBackground(new Color(9, 69, 108));
@@ -69,7 +69,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		
 		JButton btnNewButton_1 = new JButton("Login Médico");
-		btnNewButton_1.setBounds(10, 165, 111, 20);
+		btnNewButton_1.setBounds(10, 165, 127, 20);
 		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
@@ -113,10 +113,13 @@ public class TelaPrincipal extends JFrame {
 		Image image = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
 		lblNewLabel_1_1.setIcon(new ImageIcon(image.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1.setBounds(301, 81, 111, 63);
+		lblNewLabel_1_1.setBounds(313, 81, 111, 63);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JButton btnNewButton_2 = new JButton("Login Administrador");
+		btnNewButton_2.setForeground(new Color(255, 255, 255));
+		btnNewButton_2.setBackground(new Color(9, 69, 108));
+		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LoginAdmin ta = new LoginAdmin();
@@ -124,15 +127,20 @@ public class TelaPrincipal extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_2.setBounds(301, 165, 123, 21);
+		btnNewButton_2.setBounds(301, 165, 143, 21);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("");
 		lblNewLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_1.setBounds(450, 81, 111, 63);
+		Image image2 = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
+		lblNewLabel_1_1.setIcon(new ImageIcon(image.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
+		lblNewLabel_1_1_1.setBounds(479, 81, 111, 63);
 		contentPane.add(lblNewLabel_1_1_1);
 		
 		JButton btnNewButton_3 = new JButton("Login Secretária(o)");
+		btnNewButton_3.setForeground(new Color(255, 255, 255));
+		btnNewButton_3.setBackground(new Color(9, 69, 108));
+		btnNewButton_3.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LoginSecretaria ls = new LoginSecretaria();
@@ -140,8 +148,12 @@ public class TelaPrincipal extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_3.setBounds(464, 165, 111, 21);
+		btnNewButton_3.setBounds(464, 165, 138, 21);
 		contentPane.add(btnNewButton_3);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setBounds(479, 81, 96, 63);
+		contentPane.add(lblNewLabel_2);
 	
 	
 		

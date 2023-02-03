@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class LoginSecretaria extends JFrame {
 
@@ -50,32 +51,38 @@ public class LoginSecretaria extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 444, 422);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("usuário");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		JLabel lblNewLabel = new JLabel("Usuário");
+		lblNewLabel.setBounds(0, 93, 410, 35);
+		lblNewLabel.setForeground(new Color(9, 69, 108));
+		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 15));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(10, 67, 410, 35);
 		contentPane.add(lblNewLabel);
 		
 		textUsuario = new JTextField();
-		textUsuario.setBounds(93, 112, 259, 19);
+		textUsuario.setBounds(93, 138, 259, 19);
 		contentPane.add(textUsuario);
 		textUsuario.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Senha");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1.setBounds(194, 157, 45, 13);
+		lblNewLabel_1.setBounds(184, 200, 63, 13);
+		lblNewLabel_1.setForeground(new Color(9, 69, 108));
+		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 15));
 		contentPane.add(lblNewLabel_1);
 		
 		passwordSenha = new JPasswordField();
-		passwordSenha.setBounds(93, 194, 259, 19);
+		passwordSenha.setBounds(93, 236, 259, 19);
 		contentPane.add(passwordSenha);
 		
 		JButton btnEntrar = new JButton("Entrar");
+		btnEntrar.setBounds(174, 288, 85, 21);
+		btnEntrar.setForeground(new Color(255, 255, 255));
+		btnEntrar.setBackground(new Color(9, 69, 108));
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -107,11 +114,14 @@ public class LoginSecretaria extends JFrame {
 
 			}
 		});
-		btnEntrar.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnEntrar.setBounds(178, 272, 85, 21);
+		btnEntrar.setFont(new Font("Verdana", Font.PLAIN, 15));
 		contentPane.add(btnEntrar);
 		
 		JButton btnTelaPrincipal = new JButton("Tela Principal");
+		btnTelaPrincipal.setBounds(311, 354, 109, 21);
+		btnTelaPrincipal.setForeground(new Color(255, 255, 255));
+		btnTelaPrincipal.setBackground(new Color(9, 69, 108));
+		btnTelaPrincipal.setFont(new Font("Verdana", Font.PLAIN, 11));
 		btnTelaPrincipal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaPrincipal tp = new TelaPrincipal();
@@ -120,8 +130,12 @@ public class LoginSecretaria extends JFrame {
 				
 			}
 		});
-		btnTelaPrincipal.setBounds(10, 10, 109, 21);
 		contentPane.add(btnTelaPrincipal);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 430, 67);
+		panel.setBackground(new Color(9, 69, 108));
+		contentPane.add(panel);
 	}
 	
 		

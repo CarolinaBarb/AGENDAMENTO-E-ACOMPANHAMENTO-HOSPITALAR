@@ -46,8 +46,8 @@ public class LoginAdmin extends JFrame {
 		container.setSize(500, 558);
 		container.setLocation(500, 300);
 		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		emailLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
-		senhaLabel.setFont(new Font("Franklin Gothic Book", Font.BOLD, 16));
+		emailLabel.setFont(new Font("Verdana", Font.BOLD, 16));
+		senhaLabel.setFont(new Font("Verdana", Font.BOLD, 16));
 		container.getContentPane().setLayout(null);
 
 		container.getContentPane().add(emailLabel);
@@ -64,16 +64,19 @@ public class LoginAdmin extends JFrame {
 				lblLogin.setForeground(new Color(255, 255, 255));
 				panel.add(lblLogin);
 				lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-				lblLogin.setFont(new Font("Times New Roman", Font.BOLD, 20));
+				lblLogin.setFont(new Font("Verdana", Font.BOLD, 20));
 				
 				JLabel lblNewLabel = new JLabel("");
 				lblNewLabel.setBounds(172, 71, 223, 152);
 				lblNewLabel.setForeground(new Color(0, 0, 255));
-				Image img = new ImageIcon(this.getClass().getResource("/imagem/doctor.png")).getImage();
+				Image img = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
 				lblNewLabel.setIcon(new ImageIcon(img.getScaledInstance(148, 148, Image.SCALE_SMOOTH)));
 				container.getContentPane().add(lblNewLabel);
 				
 				btnEntrar = new JButton("Entrar");
+				btnEntrar.setBackground(new Color(9, 69, 108));
+				btnEntrar.setForeground(new Color(255, 255, 255));
+				btnEntrar.setFont(new Font("Verdana", Font.PLAIN, 10));
 				btnEntrar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						try {
@@ -107,15 +110,23 @@ public class LoginAdmin extends JFrame {
 				container.getContentPane().add(btnEntrar);
 				
 				lblNewLabel_1 = new JLabel("ou");
+				lblNewLabel_1.setFont(new Font("Verdana", Font.BOLD, 13));
+				lblNewLabel_1.setForeground(new Color(9, 69, 108));
 				lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 				lblNewLabel_1.setBounds(222, 446, 45, 13);
 				container.getContentPane().add(lblNewLabel_1);
 				
 				Cadastrar = new JButton("Cadastre-se");
+				Cadastrar.setBackground(new Color(9, 69, 108));
+				Cadastrar.setForeground(new Color(255, 255, 255));
+				Cadastrar.setFont(new Font("Verdana", Font.PLAIN, 10));
 				Cadastrar.setBounds(191, 469, 110, 21);
 				container.getContentPane().add(Cadastrar);
 				
 				btnTelaPrincipal = new JButton("Tela Principal");
+				btnTelaPrincipal.setBackground(new Color(9, 69, 108));
+				btnTelaPrincipal.setForeground(new Color(255, 255, 255));
+				btnTelaPrincipal.setFont(new Font("Verdana", Font.PLAIN, 10));
 				btnTelaPrincipal.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						TelaPrincipal tp = new TelaPrincipal();
