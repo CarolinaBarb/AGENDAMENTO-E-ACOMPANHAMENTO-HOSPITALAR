@@ -10,8 +10,13 @@ import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import control.ControlConsulta;
+import model.Consulta;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class TelaPaciente extends JFrame {
@@ -176,5 +181,21 @@ public class TelaPaciente extends JFrame {
 		JButton btnNewButton_3 = new JButton("Selecionar");
 		btnNewButton_3.setBounds(428, 57, 85, 21);
 		contentPane.add(btnNewButton_3);
+	}
+	
+	public void listarValoresPaciente() {
+		try {
+			String email = ;
+			ControlConsulta objpesquisarConsulta = new ControlConsulta();
+			
+			DefaultTableModel model = (DefaultTableModel) table.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Consulta> lista = objpesquisarConsulta.PacienteConsulta(email);
+			
+		}catch(Exception erro){
+			
+		}
+		
 	}
 }

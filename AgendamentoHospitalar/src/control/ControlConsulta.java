@@ -36,7 +36,6 @@ public class ControlConsulta {
 			pstm.setString(4, consultas.getData());	
 			pstm.setString(5, consultas.getHorario());	
 			pstm.setString(6, consultas.getValor());
-
 			pstm.execute();
 			pstm.close();
 			
@@ -94,16 +93,16 @@ public class ControlConsulta {
 		 	
 	}
 	
-	public ArrayList<Consulta> PacienteConsulta(String IdPaciente){
+	public ArrayList<Consulta> PacienteConsulta(String email){
 		
 		
-		String sql = "select * from consultas where paciente = ? "; //ColocarNome.getText()
+		String sql = "select * from consultas where email = ? "; //ColocarNome.getText()
 		conn = new ConexaoDAO().conectaBD();
 		
 		
 		try {
 			 pstm = conn.prepareStatement(sql);
-			 pstm.setString(1, IdPaciente);
+			 pstm.setString(1, email);
 			
 			ResultSet rs = pstm.executeQuery();
 			 

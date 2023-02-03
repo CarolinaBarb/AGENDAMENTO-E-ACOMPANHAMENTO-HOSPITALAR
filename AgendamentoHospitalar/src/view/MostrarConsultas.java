@@ -218,7 +218,7 @@ public class MostrarConsultas extends JFrame {
 		contentPane.add(btnNewButton);
 	}
 	
-	void listarValoresC() {
+	public void listarValoresC() {
 		try {
 			ControlConsulta objconsulta = new ControlConsulta();
 			
