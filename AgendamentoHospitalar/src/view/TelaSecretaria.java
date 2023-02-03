@@ -85,6 +85,7 @@ public class TelaSecretaria extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Pagamentos pg = new Pagamentos();
 				pg.setVisible(true);
+				pg.listarValoresP();
 				dispose();
 			}
 		});

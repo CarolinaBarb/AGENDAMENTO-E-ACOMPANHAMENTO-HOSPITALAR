@@ -6,23 +6,29 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import control.ControlConsulta;
+import model.Consulta;
+
 import javax.swing.JEditorPane;
 import javax.swing.JScrollPane;
 
 public class Pagamentos extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_2;
+	private JTextField textValor;
+	private JTextField textData;
 	private JTable table;
 
 	/**
@@ -61,12 +67,12 @@ public class Pagamentos extends JFrame {
 		lblNewLabel_1.setBounds(21, 71, 144, 19);
 		contentPane.add(lblNewLabel_1);
 		
-		textField = new JTextField();
-		textField.setBounds(161, 73, 96, 19);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textValor = new JTextField();
+		textValor.setBounds(161, 73, 96, 19);
+		contentPane.add(textValor);
+		textValor.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Informações do Paciente:\r\n");
+		JLabel lblNewLabel_2 = new JLabel("Informações da Consulta:\r\n");
 		lblNewLabel_2.setForeground(new Color(9, 69, 108));
 		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		lblNewLabel_2.setBounds(21, 161, 287, 30);
@@ -123,10 +129,10 @@ public class Pagamentos extends JFrame {
 		lblNewLabel_4.setBounds(25, 118, 45, 13);
 		contentPane.add(lblNewLabel_4);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(69, 117, 96, 19);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		textData = new JTextField();
+		textData.setBounds(69, 117, 96, 19);
+		contentPane.add(textData);
+		textData.setColumns(10);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(9, 69, 108));
@@ -157,11 +163,47 @@ public class Pagamentos extends JFrame {
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
+				{null, null, null, null, null},
 			},
 			new String[] {
-				"ID", "Nome", "CPF", "Data", "Valor"
+				"ID", "Nome", "Medico", "Data", "Valor"
 			}
 		));
 		scrollPane.setViewportView(table);
+		
+		JButton btnNewButton_2 = new JButton("Carregar Campos");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int setar = table.getSelectedRow();
+				
+				textValor.setText(table.getModel().getValueAt(setar, 4).toString());
+				textData.setText(table.getModel().getValueAt(setar, 3).toString());
+			}
+		});
+		btnNewButton_2.setBounds(318, 301, 133, 21);
+		contentPane.add(btnNewButton_2);
+	}
+	
+	public void listarValoresP() {
+		try {
+			ControlConsulta objcontrolConsulta = new ControlConsulta();
+			
+			DefaultTableModel Model = (DefaultTableModel) table.getModel();
+			Model.setNumRows(0);
+			
+			ArrayList <Consulta> Lista = objcontrolConsulta.PesquisarConsulta();
+			for(int num = 0; num < Lista.size(); num++) {
+				Model.addRow(new Object[] {
+						Lista.get(num).getID(),
+						Lista.get(num).getIdPaciente(),
+						Lista.get(num).getIdMedico(),
+						Lista.get(num).getData(),
+						Lista.get(num).getValor(),
+				});
+			}
+			
+		}catch(Exception erro) {
+			JOptionPane.showMessageDialog(null, "listar valores Pagamentos" + erro);
+		}
 	}
 }

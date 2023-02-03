@@ -134,5 +134,16 @@ public class TelaAdmin extends JFrame {
 		});
 		btnNewButton_3.setBounds(955, 222, 240, 111);
 		panel.add(btnNewButton_3);
+		
+		JButton btnRetornar = new JButton("Retornar para tela Principal");
+		btnRetornar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaPrincipal tp = new TelaPrincipal();
+				tp.setVisible(true);
+				dispose();
+			}
+		});
+		btnRetornar.setBounds(989, 467, 208, 21);
+		panel.add(btnRetornar);
 	}
 }
