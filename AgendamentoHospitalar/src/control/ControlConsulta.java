@@ -19,7 +19,7 @@ public class ControlConsulta {
 
 	Connection conn;
 	PreparedStatement pstm;
-	ArrayList<Consulta> lista = new ArrayList<>();
+	public static ArrayList<Consulta> lista = new ArrayList<>();
 	
 
 	public void cadastrar(Consulta consultas) {
@@ -62,6 +62,7 @@ public class ControlConsulta {
 				 objconsulta.setData(rs.getString("data"));
 				 objconsulta.setHorario(rs.getString("horario"));
 				 objconsulta.setValor(rs.getString("valor"));
+				 objconsulta.setEmail(rs.getString("email"));
 				 
 				 lista.add(objconsulta);
 			 }

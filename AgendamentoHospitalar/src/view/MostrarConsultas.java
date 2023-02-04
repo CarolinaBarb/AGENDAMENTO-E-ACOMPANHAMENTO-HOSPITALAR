@@ -236,6 +236,7 @@ public class MostrarConsultas extends JFrame {
 						lista.get(num).getHorario(),
 						lista.get(num).getData(),
 						lista.get(num).getValor(),
+						lista.get(num).getEmail()
 				});
 				
 			}

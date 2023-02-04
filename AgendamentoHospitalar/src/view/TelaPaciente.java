@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 import control.ControlConsulta;
 import model.Consulta;
+import model.Paciente;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -57,6 +58,11 @@ public class TelaPaciente extends JFrame {
 	public TelaPaciente() {
 		
 		listarValoresPaciente(Login.inserirEmail.getText());
+		if(ControlConsulta.lista.isEmpty()){
+	        
+        }else{
+            System.out.println("vazio");
+        }
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 734, 357);
@@ -66,9 +72,9 @@ public class TelaPaciente extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Paciente: ");
-		lblNewLabel.setBounds(10, 10, 73, 13);
-		contentPane.add(lblNewLabel);
+		JLabel Pacientelbl = new JLabel("Paciente: ");
+		Pacientelbl.setBounds(10, 10, 73, 13);
+		contentPane.add(Pacientelbl);
 		
 		textNome = new JTextField();
 		textNome.setEnabled(false);
@@ -88,9 +94,15 @@ public class TelaPaciente extends JFrame {
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null},
 			},
 			new String[] {
-				"Medico", "Especialidade", "Data", "Hora", "Valor", "Diagnostico", "Observacao"
+				"Email", "Medico", "Especialidade", "Data", "Hora", "Valor", "Diagnostico", "Observacao"
 			}
 		));
 		scrollPane.setViewportView(table);
@@ -194,7 +206,7 @@ public class TelaPaciente extends JFrame {
 		try {
 			ControlConsulta objpesquisarConsulta = new ControlConsulta();
 			
-			DefaultTableModel model = (DefaultTableModel) table.getModel();
+			DefaultTableModel model = (DefaultTableModel)table.getModel();
 			model.setNumRows(0);
 			
 			ArrayList<Consulta> lista = objpesquisarConsulta.PacienteConsulta(email);

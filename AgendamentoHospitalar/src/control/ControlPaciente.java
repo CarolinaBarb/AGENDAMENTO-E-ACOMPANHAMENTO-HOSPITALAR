@@ -22,7 +22,7 @@ public class ControlPaciente {
 	
 
 	public void cadastrar(Paciente pacientes) {
-		String sql = "insert into paciente ( nome_usuario, email_usuario, senha_usuario, sexo_usuario, DataNascimento, cpf, altura, peso, observacao, idade) "
+		String sql = "insert into paciente ( nome_usuario, email, senha_usuario, sexo_usuario, DataNascimento, cpf, altura, peso, observacao, idade) "
 				      + "values (?,?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		conn = new ConexaoDAO().conectaBD();
@@ -56,7 +56,7 @@ public class ControlPaciente {
 		conn = new ConexaoDAO().conectaBD();
 
 		try {
-			String sql = "select * from paciente where email_usuario = ? and senha_usuario = ?"; // mesmo q ta no banco
+			String sql = "select * from paciente where email = ? and senha_usuario = ?"; // mesmo q ta no banco
 
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, objpacientecontrol.getEmail()); // primeira ? e o email
@@ -89,7 +89,7 @@ public class ControlPaciente {
 				 objpaciente.setAltura(rs.getString("altura"));
 				 objpaciente.setPeso(rs.getString("peso"));
 				 objpaciente.setSexo(rs.getString("sexo_usuario"));
-				 objpaciente.setEmail(rs.getString("email_usuario"));
+				 objpaciente.setEmail(rs.getString("email"));
 				 objpaciente.setObservacao(rs.getString("observacao"));
 				
 				 
