@@ -34,9 +34,9 @@ public class MarcarConsulta extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtNomeConsulta;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField txtMedicoConsulta;
+	private JTextField txtValorConsulta;
+	private JTextField txtEmailConsulta;
 
 	/**
 	 * Launch the application.
@@ -132,6 +132,9 @@ public class MarcarConsulta extends JFrame {
 					    String especialidade = comboBox_1.getSelectedItem().toString();
 						String horario = comboBoxHora.getSelectedItem().toString();
 						String paciente = txtNomeConsulta.getText();
+						String email = txtEmailConsulta.getText();
+						String medico =  txtMedicoConsulta.getText();
+						String valor = txtValorConsulta.getText();
 						
 						Consulta consultas = new Consulta();
 						
@@ -139,6 +142,10 @@ public class MarcarConsulta extends JFrame {
 						consultas.setEspecialidade(especialidade);
 						consultas.setData(data);
 						consultas.setHorario(horario);
+						consultas.setEmail(email);
+						consultas.setIdMedico(medico);
+						consultas.setValor(valor);
+						
 			            
 						ControlConsulta consultacontrol = new ControlConsulta();
 						consultacontrol.cadastrar(consultas);
@@ -166,10 +173,10 @@ public class MarcarConsulta extends JFrame {
 		lblNewLabel.setBounds(7, 188, 77, 15);
 		contentPane.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setBounds(7, 216, 181, 19);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtMedicoConsulta = new JTextField();
+		txtMedicoConsulta.setBounds(7, 216, 181, 19);
+		contentPane.add(txtMedicoConsulta);
+		txtMedicoConsulta.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Data:");
 		lblNewLabel_1.setForeground(new Color(9, 69, 108));
@@ -181,10 +188,10 @@ public class MarcarConsulta extends JFrame {
 		lblNewLabel_2.setBounds(290, 219, 45, 13);
 		contentPane.add(lblNewLabel_2);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(290, 242, 133, 19);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		txtValorConsulta = new JTextField();
+		txtValorConsulta.setBounds(290, 242, 133, 19);
+		contentPane.add(txtValorConsulta);
+		txtValorConsulta.setColumns(10);
 		
 		JButton btnVoltar = new JButton("voltar");
 		btnVoltar.setBackground(new Color(9, 69, 108));
@@ -209,10 +216,10 @@ public class MarcarConsulta extends JFrame {
 		lblNewLabel_3.setBounds(7, 138, 45, 13);
 		contentPane.add(lblNewLabel_3);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(7, 157, 181, 19);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		txtEmailConsulta = new JTextField();
+		txtEmailConsulta.setBounds(7, 157, 181, 19);
+		contentPane.add(txtEmailConsulta);
+		txtEmailConsulta.setColumns(10);
 		
 		
 	

@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -24,17 +25,19 @@ public class TelaPaciente extends JFrame {
 	private JPanel contentPane;
 	private JTextField textNome;
 	private JTable table;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
+	private JTextField textMedico;
+	private JTextField textEspecialidade;
+	private JTextField textData;
+	private JTextField textHora;
+	private JTextField textValor;
+	private JTextField textDiagnostico;
+	private JTextField textObs;
 
 	/**
 	 * Launch the application.
 	 */
+	
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -52,6 +55,9 @@ public class TelaPaciente extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaPaciente() {
+		
+		listarValoresPaciente(Login.inserirEmail.getText());
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 734, 357);
 		contentPane = new JPanel();
@@ -84,7 +90,7 @@ public class TelaPaciente extends JFrame {
 				{null, null, null, null, null, null, null},
 			},
 			new String[] {
-				"Medico", "Especialidade", "Data", "Hora", "Valor", "Diagn\u00F3stico", "Observa\u00E7\u00E3o"
+				"Medico", "Especialidade", "Data", "Hora", "Valor", "Diagnostico", "Observacao"
 			}
 		));
 		scrollPane.setViewportView(table);
@@ -93,71 +99,71 @@ public class TelaPaciente extends JFrame {
 		lblNewLabel_1.setBounds(12, 183, 45, 13);
 		contentPane.add(lblNewLabel_1);
 		
-		textField = new JTextField();
-		textField.setEnabled(false);
-		textField.setBounds(8, 198, 96, 19);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textMedico = new JTextField();
+		textMedico.setEnabled(false);
+		textMedico.setBounds(8, 198, 96, 19);
+		contentPane.add(textMedico);
+		textMedico.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Especialidade");
 		lblNewLabel_2.setBounds(10, 222, 82, 20);
 		contentPane.add(lblNewLabel_2);
 		
-		textField_1 = new JTextField();
-		textField_1.setEnabled(false);
-		textField_1.setBounds(8, 245, 96, 19);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		textEspecialidade = new JTextField();
+		textEspecialidade.setEnabled(false);
+		textEspecialidade.setBounds(8, 245, 96, 19);
+		contentPane.add(textEspecialidade);
+		textEspecialidade.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Data");
 		lblNewLabel_3.setBounds(127, 186, 45, 13);
 		contentPane.add(lblNewLabel_3);
 		
-		textField_2 = new JTextField();
-		textField_2.setEnabled(false);
-		textField_2.setBounds(122, 201, 96, 19);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		textData = new JTextField();
+		textData.setEnabled(false);
+		textData.setBounds(122, 201, 96, 19);
+		contentPane.add(textData);
+		textData.setColumns(10);
 		
 		JLabel lblNewLabel_4 = new JLabel("Hora");
 		lblNewLabel_4.setBounds(126, 229, 45, 13);
 		contentPane.add(lblNewLabel_4);
 		
-		textField_3 = new JTextField();
-		textField_3.setEnabled(false);
-		textField_3.setBounds(120, 246, 96, 19);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		textHora = new JTextField();
+		textHora.setEnabled(false);
+		textHora.setBounds(120, 246, 96, 19);
+		contentPane.add(textHora);
+		textHora.setColumns(10);
 		
 		JLabel lblNewLabel_5 = new JLabel("Valor");
 		lblNewLabel_5.setBounds(237, 187, 45, 13);
 		contentPane.add(lblNewLabel_5);
 		
-		textField_4 = new JTextField();
-		textField_4.setEnabled(false);
-		textField_4.setBounds(230, 203, 96, 19);
-		contentPane.add(textField_4);
-		textField_4.setColumns(10);
+		textValor = new JTextField();
+		textValor.setEnabled(false);
+		textValor.setBounds(230, 203, 96, 19);
+		contentPane.add(textValor);
+		textValor.setColumns(10);
 		
 		JLabel lblNewLabel_6 = new JLabel("Diagnostico");
 		lblNewLabel_6.setBounds(234, 231, 78, 13);
 		contentPane.add(lblNewLabel_6);
 		
-		textField_5 = new JTextField();
-		textField_5.setEnabled(false);
-		textField_5.setBounds(231, 248, 96, 19);
-		contentPane.add(textField_5);
-		textField_5.setColumns(10);
+		textDiagnostico = new JTextField();
+		textDiagnostico.setEnabled(false);
+		textDiagnostico.setBounds(231, 248, 96, 19);
+		contentPane.add(textDiagnostico);
+		textDiagnostico.setColumns(10);
 		
 		JLabel lblNewLabel_7 = new JLabel("Observação");
 		lblNewLabel_7.setBounds(344, 187, 89, 13);
 		contentPane.add(lblNewLabel_7);
 		
-		textField_6 = new JTextField();
-		textField_6.setEnabled(false);
-		textField_6.setBounds(344, 205, 172, 62);
-		contentPane.add(textField_6);
-		textField_6.setColumns(10);
+		textObs = new JTextField();
+		textObs.setEnabled(false);
+		textObs.setBounds(344, 205, 172, 62);
+		contentPane.add(textObs);
+		textObs.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Conferir Receitas");
 		btnNewButton.setBounds(545, 79, 153, 21);
@@ -181,11 +187,11 @@ public class TelaPaciente extends JFrame {
 		JButton btnNewButton_3 = new JButton("Selecionar");
 		btnNewButton_3.setBounds(428, 57, 85, 21);
 		contentPane.add(btnNewButton_3);
+		
 	}
 	
-	public void listarValoresPaciente() {
+	public void listarValoresPaciente(String email) {
 		try {
-			String email = ;
 			ControlConsulta objpesquisarConsulta = new ControlConsulta();
 			
 			DefaultTableModel model = (DefaultTableModel) table.getModel();
@@ -193,7 +199,20 @@ public class TelaPaciente extends JFrame {
 			
 			ArrayList<Consulta> lista = objpesquisarConsulta.PacienteConsulta(email);
 			
+			for(int num = 0; num < lista.size(); num++) {
+				model.addRow(new Object[] {
+						lista.get(num).getID(),
+						lista.get(num).getIdPaciente(),
+						lista.get(num).getIdMedico(),
+						lista.get(num).getEspecialidade(),
+						lista.get(num).getData(),
+						lista.get(num).getHorario(),
+						lista.get(num).getValor()			
+				});
+			}
+			
 		}catch(Exception erro){
+			JOptionPane.showMessageDialog(null, "Listar Valores  Paciente View:" + erro);
 			
 		}
 		

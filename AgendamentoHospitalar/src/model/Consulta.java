@@ -10,6 +10,7 @@ public class Consulta {
 	private String data;
 	private String horario;
 	private String data_indisponivel;
+	private String email;
 	private int ID;
 	
 	
@@ -33,12 +34,13 @@ public class Consulta {
 	}
 
 	// construtores
-	public Consulta(String especialidade, String valor, String idMedico, String idPaciente) {
+	public Consulta(String especialidade, String valor, String idMedico, String idPaciente, String email) {
 		super();
 		this.especialidade = especialidade;
 		this.valor = valor;
 		this.idMedico = idMedico;
 		this.idPaciente = idPaciente;
+		this.email = email;
 	}
 
 	public Consulta(String especialidade, String valor) {
@@ -98,6 +100,14 @@ public class Consulta {
 
 	public void setData_indisponivel(String data_indisponivel) {
 		this.data_indisponivel = data_indisponivel;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 

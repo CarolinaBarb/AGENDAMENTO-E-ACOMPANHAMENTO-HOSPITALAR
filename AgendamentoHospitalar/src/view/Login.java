@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 public class Login implements ActionListener {
 	JFrame container;
 	private JButton btnEntrar;
-	private JTextField inserirEmail;
+	public static JTextField inserirEmail;
 	private JPasswordField inserirSenha;
 	private JLabel emailLabel;
 	private JLabel senhaLabel;
@@ -29,6 +29,7 @@ public class Login implements ActionListener {
 	private JButton btnTelaPrincipal;
 
 	public Login() {
+				
 		container = new JFrame("Login");
 		btnEntrar = new JButton("Entrar");
 		btnEntrar.setBounds(179, 439, 120, 30);
@@ -109,7 +110,7 @@ public class Login implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-       Logar();
+        Logar();
 	}
 
 	private void Logar() {
@@ -150,5 +151,8 @@ public class Login implements ActionListener {
 	}
 	
 
+	public JTextField getInserirEmail() {
+		return inserirEmail;
+	}
 }
 
