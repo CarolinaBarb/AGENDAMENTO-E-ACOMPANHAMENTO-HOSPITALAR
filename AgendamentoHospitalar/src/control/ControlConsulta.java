@@ -111,11 +111,12 @@ public class ControlConsulta {
 			 while(rs.next()) {
 				 Consulta objconsulta = new Consulta();
 				 objconsulta.setIdPaciente(rs.getString("paciente"));
+				 objconsulta.setEmail(rs.getString("email"));
+				 objconsulta.setIdMedico(rs.getString("medico"));
 				 objconsulta.setEspecialidade(rs.getString("especialidade"));
 				 objconsulta.setHorario(rs.getString("horario"));
 				 objconsulta.setData(rs.getString("data"));
 				 objconsulta.setValor(rs.getString("valor"));
-				 objconsulta.setID(rs.getInt("idconsulta"));
 				 
 				 lista.add(objconsulta);
 			 }

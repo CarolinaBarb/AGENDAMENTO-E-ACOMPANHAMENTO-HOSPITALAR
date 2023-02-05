@@ -131,7 +131,8 @@ public class Login implements ActionListener {
 		   if(rspaciente.next()) {
 			   //chamar tela q eu quero abrir
 			   TelaPaciente tp = new TelaPaciente();
-			    tp.setVisible(true);
+			   tp.listarValoresPaciente(nome_usuario);
+			   tp.setVisible(true);
 	            dispose();
 			   
 		   }

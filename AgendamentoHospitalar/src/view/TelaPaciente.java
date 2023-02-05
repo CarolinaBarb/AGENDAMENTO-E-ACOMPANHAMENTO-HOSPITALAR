@@ -14,7 +14,6 @@ import javax.swing.table.DefaultTableModel;
 
 import control.ControlConsulta;
 import model.Consulta;
-import model.Paciente;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -61,7 +60,8 @@ public class TelaPaciente extends JFrame {
 		if(ControlConsulta.lista.isEmpty()){
 	        
         }else{
-            System.out.println("vazio");
+        	textNome.setText(ControlConsulta.lista.get(0).getEmail());
+            //System.out.println("vazio");
         }
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -98,11 +98,9 @@ public class TelaPaciente extends JFrame {
 				{null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
 			},
 			new String[] {
-				"Email", "Medico", "Especialidade", "Data", "Hora", "Valor", "Diagnostico", "Observacao"
+				"Nome","Email", "Medico", "Especialidade", "Data", "Hora", "Valor"
 			}
 		));
 		scrollPane.setViewportView(table);
@@ -202,6 +200,9 @@ public class TelaPaciente extends JFrame {
 		
 	}
 	
+	
+
+
 	public void listarValoresPaciente(String email) {
 		try {
 			ControlConsulta objpesquisarConsulta = new ControlConsulta();
@@ -213,13 +214,14 @@ public class TelaPaciente extends JFrame {
 			
 			for(int num = 0; num < lista.size(); num++) {
 				model.addRow(new Object[] {
-						lista.get(num).getID(),
 						lista.get(num).getIdPaciente(),
+						lista.get(num).getEmail(),
 						lista.get(num).getIdMedico(),
 						lista.get(num).getEspecialidade(),
 						lista.get(num).getData(),
 						lista.get(num).getHorario(),
-						lista.get(num).getValor()			
+						lista.get(num).getValor(),
+						
 				});
 			}
 			
