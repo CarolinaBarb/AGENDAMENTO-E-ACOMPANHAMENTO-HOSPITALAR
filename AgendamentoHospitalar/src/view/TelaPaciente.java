@@ -56,7 +56,7 @@ public class TelaPaciente extends JFrame {
 	 */
 	public TelaPaciente() {
 		
-		listarValoresPaciente(Login.inserirEmail.getText());
+		listarValoresPaciente(LoginPaciente.inserirEmail.getText());
 		if(ControlConsulta.lista.isEmpty()){
 	        
         }else{

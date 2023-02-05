@@ -56,7 +56,7 @@ public class ControlPaciente {
 		conn = new ConexaoDAO().conectaBD();
 
 		try {
-			String sql = "select * from paciente where email = ? and senha_usuario = ?"; // mesmo q ta no banco
+			String sql = "select * from paciente where email_usuario = ? and senha_usuario = ?"; // mesmo q ta no banco
 
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, objpacientecontrol.getEmail()); // primeira ? e o email
