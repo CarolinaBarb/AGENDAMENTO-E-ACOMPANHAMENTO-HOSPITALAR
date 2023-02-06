@@ -22,9 +22,9 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import control.ControlConsulta;
-import control.ControlMedico;
+import control.ControlConsulta;
 import model.Consulta;
-import model.Medico;
+import model.Consulta;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -32,7 +32,6 @@ import javax.swing.JTextField;
 public class MostrarConsultas extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
 	private JTextField textCodigo;
 	private JTextField textPaciente;
 	private JTextField textMedico;
@@ -40,6 +39,7 @@ public class MostrarConsultas extends JFrame {
 	private JTextField textHorario;
 	private JTextField textValor;
 	private JTextField textData;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -68,9 +68,9 @@ public class MostrarConsultas extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		JButton btnNewButton_1 = new JButton("Editar");
+		btnNewButton_1.setBounds(173, 237, 136, 30);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				editar();
@@ -79,25 +79,8 @@ public class MostrarConsultas extends JFrame {
 				
 			}
 		});
-		btnNewButton_1.setBounds(173, 237, 136, 30);
+		contentPane.setLayout(null);
 		contentPane.add(btnNewButton_1);
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(312, 40, 562, 183);
-		contentPane.add(scrollPane);
-		
-		table = new JTable();
-		table.setForeground(new Color(100, 149, 237));
-		table.setFont(new Font("Trebuchet MS", Font.PLAIN, 15));
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null, null, null, null},
-			},
-			new String[] {
-				"ID", "Paciente", "Medico", "Especialidade", "Horario", "Valor", "Data"
-			}
-		));
-		scrollPane.setViewportView(table);
 		
 		JButton btnNewButton_2 = new JButton("Excluir");
 		btnNewButton_2.addActionListener(new ActionListener() {
@@ -109,8 +92,8 @@ public class MostrarConsultas extends JFrame {
 	
 		
 		textCodigo = new JTextField();
-		textCodigo.setEnabled(false);
 		textCodigo.setBounds(367, 11, 96, 19);
+		textCodigo.setEnabled(false);
 		contentPane.add(textCodigo);
 		textCodigo.setColumns(10);
 		
@@ -119,25 +102,16 @@ public class MostrarConsultas extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnCarregarCampos = new JButton("Carregar Campos");
+		btnCarregarCampos.setBounds(746, 13, 130, 20);
 		btnCarregarCampos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CarregarCampos();
 			}
 		});
-		btnCarregarCampos.setBounds(746, 13, 130, 20);
 		contentPane.add(btnCarregarCampos);
 		
-		JButton btnExcluir = new JButton("Excluir");
-		btnExcluir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				excluir();
-				listarValoresC();
-			}
-		});
-		btnExcluir.setBounds(10, 237, 136, 30);
-		contentPane.add(btnExcluir);
-		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBounds(793, 262, 85, 21);
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaAdmin ta = new TelaAdmin();
@@ -145,12 +119,11 @@ public class MostrarConsultas extends JFrame {
 				dispose();
 			}
 		});
-		btnVoltar.setBounds(793, 262, 85, 21);
 		contentPane.add(btnVoltar);
 		
 		JLabel lblPaciente = new JLabel("Paciente");
-		lblPaciente.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblPaciente.setBounds(10, 45, 96, 13);
+		lblPaciente.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		contentPane.add(lblPaciente);
 		
 		textPaciente = new JTextField();
@@ -159,13 +132,13 @@ public class MostrarConsultas extends JFrame {
 		textPaciente.setColumns(10);
 		
 		JLabel lblEspecialidae = new JLabel("Especialidade");
-		lblEspecialidae.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblEspecialidae.setBounds(10, 91, 96, 13);
+		lblEspecialidae.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		contentPane.add(lblEspecialidae);
 		
 		JLabel lblMedico = new JLabel("Medico");
-		lblMedico.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblMedico.setBounds(10, 68, 72, 13);
+		lblMedico.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		contentPane.add(lblMedico);
 		
 		textMedico = new JTextField();
@@ -179,8 +152,8 @@ public class MostrarConsultas extends JFrame {
 		textEspecialidade.setColumns(10);
 		
 		JLabel lblHorario = new JLabel("Horario");
-		lblHorario.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblHorario.setBounds(10, 142, 72, 13);
+		lblHorario.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		contentPane.add(lblHorario);
 		
 		textHorario = new JTextField();
@@ -189,8 +162,8 @@ public class MostrarConsultas extends JFrame {
 		textHorario.setColumns(10);
 		
 		JLabel lblValor = new JLabel("Valor");
-		lblValor.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblValor.setBounds(10, 171, 45, 13);
+		lblValor.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		contentPane.add(lblValor);
 		
 		textValor = new JTextField();
@@ -199,8 +172,8 @@ public class MostrarConsultas extends JFrame {
 		textValor.setColumns(10);
 		
 		JLabel lblData = new JLabel("Data");
-		lblData.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblData.setBounds(10, 114, 45, 13);
+		lblData.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		contentPane.add(lblData);
 		
 		textData = new JTextField();
@@ -209,13 +182,37 @@ public class MostrarConsultas extends JFrame {
 		textData.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Limpar");
+		btnNewButton.setBounds(651, 13, 85, 21);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				limpar(); 
 			}
 		});
-		btnNewButton.setBounds(651, 13, 85, 21);
 		contentPane.add(btnNewButton);
+		
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setBounds(10, 237, 136, 30);
+		btnExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				excluir();
+				listarValoresC();
+			}
+		});
+		contentPane.add(btnExcluir);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(322, 40, 536, 144);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"ID", "Paciente", "Medico", "Especialidade", "Horario", "Valor", "Data"
+			}
+		));
+		scrollPane.setViewportView(table);
 	}
 	
 	public void listarValoresC() {
@@ -236,7 +233,7 @@ public class MostrarConsultas extends JFrame {
 						lista.get(num).getHorario(),
 						lista.get(num).getData(),
 						lista.get(num).getValor(),
-						lista.get(num).getEmail()
+						lista.get(num).getEmail(),
 				});
 				
 			}
@@ -260,15 +257,15 @@ public class MostrarConsultas extends JFrame {
 
 	}
 	private void excluir() {
-		int id_consulta;
+		int id;
 		
-		id_consulta = Integer.parseInt(textCodigo.getText());
+		id = Integer.parseInt(textCodigo.getText());
 		
 		Consulta objconsulta = new Consulta();
-		objconsulta.setID(id_consulta);
+		objconsulta.setID(id);
 		
 		ControlConsulta objcontrolconsulta = new ControlConsulta();
-		objcontrolconsulta.excluirConsulta(objconsulta);
+		objcontrolconsulta.excluirconsultas(objconsulta);
 		
 		
 	}

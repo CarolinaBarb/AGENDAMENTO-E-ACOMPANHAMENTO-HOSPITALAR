@@ -134,7 +134,7 @@ public class ControlMedico {
 	
 		
 		pstm.execute();
-		JOptionPane.showMessageDialog(null, "cadastro concluido!");
+		JOptionPane.showMessageDialog(null, "editado!");
 		pstm.close();
 		
 	} catch (Exception erro) {

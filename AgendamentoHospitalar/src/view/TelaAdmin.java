@@ -114,8 +114,6 @@ public class TelaAdmin extends JFrame {
 	            dispose();	
 
 			}
-
-			
 		});
 		btnNewButton_2.setBounds(661, 225, 240, 108);
 		panel.add(btnNewButton_2);

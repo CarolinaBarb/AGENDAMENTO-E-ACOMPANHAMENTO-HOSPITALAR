@@ -9,6 +9,7 @@ import java.util.Date;
 
 import model.Consulta;
 import model.Paciente;
+import model.Paciente;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -121,5 +122,34 @@ public class ControlPaciente {
 		 }
 		 	
 	}
+	public void editar(Paciente Paciente) {
+		String sql = "update paciente set nome_usuario = ?, email = ?, senha_usuario = ?, "
+				+ "sexo_usuario = ?, DataNascimento = ?, cpf = ?, altura = ?, peso = ?, observacao = ?, idade = ? where idpaciente = ?";
+
+		conn = new ConexaoDAO().conectaBD();
+
+		try {
+			
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, Paciente.getNome()); 
+			pstm.setString(2, Paciente.getEmail());
+			pstm.setString(3, Paciente.getSenha());
+			pstm.setString(4, Paciente.getSexo());
+			pstm.setString(5, Paciente.getDataNascimento());
+			pstm.setString(6, Paciente.getCpf());
+			pstm.setString(7, Paciente.getAltura());
+			pstm.setString(8, Paciente.getPeso());
+			pstm.setString(9, Paciente.getObservacao());
+			pstm.setString(10, Paciente.getIdade());
+			pstm.setInt(11, Paciente.getIdpaciente());
+			
+			pstm.execute();
+			JOptionPane.showMessageDialog(null, "editado!");
+			pstm.close();
+			
+		} catch (Exception erro) {
+			JOptionPane.showMessageDialog(null, "ControlPaciente editar" + erro);
+		}
 	
+}
 }

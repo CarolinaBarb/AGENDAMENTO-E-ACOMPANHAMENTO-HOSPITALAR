@@ -12,6 +12,7 @@ import java.awt.Color;
 
 import control.*;
 import model.Paciente;
+import model.Paciente;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -164,6 +165,13 @@ public class MostrarPacientes extends JFrame {
 		textCodigo.setColumns(10);
 		
 		JButton Editar = new JButton("Editar");
+		Editar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				editar();
+				listarValores();
+				limpar();
+			}
+		});
 		Editar.setBounds(234, 284, 85, 21);
 		contentPane.add(Editar);
 		
@@ -344,5 +352,39 @@ public class MostrarPacientes extends JFrame {
 		textEmail.setText("");
 		textObs.setText("");
 		
+	}
+	private void editar() {
+		int idpaciente;
+		String nome, idade, DataNascimento, Cpf, Altura, peso, sexo, email, obs, senha ;
+		
+		idpaciente = Integer.parseInt(textCodigo.getText());
+		nome = textNome.getText();
+		email = textEmail.getText();
+		DataNascimento = textDataNascimento.getText();
+		Cpf = textCpf.getText();
+		Altura = textAltura.getText();
+		peso = textPeso.getText();
+		sexo = textSexo.getText();
+		obs = textObs.getText();
+		senha = passwordField.getText();
+		idade = textIdade.getText();
+		
+		
+		Paciente objeditarPaciente = new Paciente();
+		objeditarPaciente.setIdpaciente(idpaciente);
+		objeditarPaciente.setNome(nome);
+		objeditarPaciente.setEmail(email);
+		objeditarPaciente.setDataNascimento(DataNascimento);
+		objeditarPaciente.setCpf(Cpf);
+		objeditarPaciente.setAltura(Altura);
+		objeditarPaciente.setPeso(peso);
+		objeditarPaciente.setSexo(sexo);
+		objeditarPaciente.setObservacao(obs);
+		objeditarPaciente.setSenha(senha);
+		objeditarPaciente.setIdade(idade);
+		
+		
+		ControlPaciente objcontrolPaciente = new ControlPaciente();
+		objcontrolPaciente.editar(objeditarPaciente);
 	}
 }

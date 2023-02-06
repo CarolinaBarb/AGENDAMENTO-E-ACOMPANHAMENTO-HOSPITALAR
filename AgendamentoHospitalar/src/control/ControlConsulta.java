@@ -20,6 +20,7 @@ public class ControlConsulta {
 	Connection conn;
 	PreparedStatement pstm;
 	public static ArrayList<Consulta> lista = new ArrayList<>();
+	public static ArrayList<Consulta> lista1 = new ArrayList<>();
 	
 
 	public void cadastrar(Consulta consultas) {
@@ -59,40 +60,37 @@ public class ControlConsulta {
 				 objconsulta.setIdPaciente(rs.getString("paciente"));
 				 objconsulta.setIdMedico(rs.getString("medico"));
 				 objconsulta.setEspecialidade(rs.getString("especialidade"));
-				 objconsulta.setData(rs.getString("data"));
 				 objconsulta.setHorario(rs.getString("horario"));
+				 objconsulta.setData(rs.getString("data"));
 				 objconsulta.setValor(rs.getString("valor"));
 				 objconsulta.setEmail(rs.getString("email"));
 				 
-				 lista.add(objconsulta);
+				 lista1.add(objconsulta);
 			 }
 			 
 		 }catch(SQLException erro) {
 		    JOptionPane.showMessageDialog(null, "Pesquisar Consulta:" + erro);
 	 
 		 }
-		 return lista;
+		 return lista1;
 	 
 	}
-	
-	public void excluirConsulta (Consulta objConsulta) {
-		String sql = "delete from consultas where idconsulta = ? ";
+	public void excluirconsultas(Consulta objconsulta) {
+		String sql = "delete from consultas where idconsulta =  ?";
 		
 		conn = new ConexaoDAO().conectaBD();
-		
 		try {
-			 pstm = conn.prepareStatement(sql);
-			 pstm.setInt(1, objConsulta.getID() );
-			 
-			 pstm.execute();
-			 pstm.close();
+			pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, objconsulta.getID());
 			
-			 
-		 }catch(SQLException erro) {
-		    JOptionPane.showMessageDialog(null, "Consulta Excluir:" + erro);
-	 
-		 }
-		 	
+			pstm.execute();
+			JOptionPane.showMessageDialog(null, "deletado");
+			pstm.close();
+			
+		}catch(SQLException erro) {
+			JOptionPane.showMessageDialog(null, "consulta excluir" + erro);
+		}
+		
 	}
 	
 	public ArrayList<Consulta> PacienteConsulta(String email){
