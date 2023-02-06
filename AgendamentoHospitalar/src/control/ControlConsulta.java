@@ -63,6 +63,8 @@ public class ControlConsulta {
 				 objconsulta.setHorario(rs.getString("horario"));
 				 objconsulta.setValor(rs.getString("valor"));
 				 objconsulta.setEmail(rs.getString("email"));
+				 objconsulta.setDiagnostico(rs.getString("diagnostico"));
+				 objconsulta.setObs(rs.getString("observacao"));
 				 
 				 lista.add(objconsulta);
 			 }
@@ -117,6 +119,8 @@ public class ControlConsulta {
 				 objconsulta.setHorario(rs.getString("horario"));
 				 objconsulta.setData(rs.getString("data"));
 				 objconsulta.setValor(rs.getString("valor"));
+				 objconsulta.setDiagnostico(rs.getString("diagnostico"));
+				 objconsulta.setObs(rs.getString("observacao"));
 				 
 				 lista.add(objconsulta);
 			 }

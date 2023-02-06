@@ -14,9 +14,11 @@ import javax.swing.table.DefaultTableModel;
 
 import control.ControlConsulta;
 import model.Consulta;
+import model.Receita;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
@@ -32,6 +34,7 @@ public class TelaPaciente extends JFrame {
 	private JTextField textValor;
 	private JTextField textDiagnostico;
 	private JTextField textObs;
+	public static JTextField textEmail;
 
 	/**
 	 * Launch the application.
@@ -65,7 +68,7 @@ public class TelaPaciente extends JFrame {
         }
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 734, 357);
+		setBounds(100, 100, 805, 357);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -78,7 +81,7 @@ public class TelaPaciente extends JFrame {
 		
 		textNome = new JTextField();
 		textNome.setEnabled(false);
-		textNome.setBounds(63, 7, 449, 19);
+		textNome.setBounds(63, 7, 530, 19);
 		contentPane.add(textNome);
 		textNome.setColumns(10);
 		
@@ -87,20 +90,20 @@ public class TelaPaciente extends JFrame {
 		contentPane.add(lblSelecionar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 80, 504, 90);
+		scrollPane.setBounds(10, 80, 583, 90);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
 			},
 			new String[] {
-				"Nome","Email", "Medico", "Especialidade", "Data", "Hora", "Valor"
+				"Nome", "Email", "Medico", "Especialidade", "Data", "Hora", "Valor", "Diagn\u00F3stico", "Observa\u00E7\u00E3o"
 			}
 		));
 		scrollPane.setViewportView(table);
@@ -171,16 +174,31 @@ public class TelaPaciente extends JFrame {
 		
 		textObs = new JTextField();
 		textObs.setEnabled(false);
-		textObs.setBounds(344, 205, 172, 62);
+		textObs.setBounds(344, 205, 249, 62);
 		contentPane.add(textObs);
 		textObs.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Conferir Receitas");
-		btnNewButton.setBounds(545, 79, 153, 21);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String usuario;
+					
+				usuario = textEmail.getText();
+				
+				Receita objreceita = new Receita();
+				objreceita.setEmail(usuario);
+					
+				ReceitaPaciente rp = new ReceitaPaciente();
+				rp.ListarValoresReceita(usuario);
+				rp.setVisible(true);
+				dispose();
+			
+		}});
+		btnNewButton.setBounds(628, 76, 153, 21);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Conferir Prontuário");
-		btnNewButton_1.setBounds(546, 107, 152, 21);
+		btnNewButton_1.setBounds(629, 107, 152, 21);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Voltar");
@@ -191,12 +209,27 @@ public class TelaPaciente extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_2.setBounds(610, 286, 85, 21);
+		btnNewButton_2.setBounds(696, 289, 85, 21);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Selecionar");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CarregarCampos();
+			}
+		});
 		btnNewButton_3.setBounds(428, 57, 85, 21);
 		contentPane.add(btnNewButton_3);
+		
+		JLabel lbltextEmail = new JLabel("Email");
+		lbltextEmail.setBounds(10, 33, 45, 13);
+		contentPane.add(lbltextEmail);
+		
+		textEmail = new JTextField();
+		textEmail.setEnabled(false);
+		textEmail.setBounds(63, 33, 530, 19);
+		contentPane.add(textEmail);
+		textEmail.setColumns(10);
 		
 	}
 	
@@ -221,6 +254,8 @@ public class TelaPaciente extends JFrame {
 						lista.get(num).getData(),
 						lista.get(num).getHorario(),
 						lista.get(num).getValor(),
+						lista.get(num).getDiagnostico(),
+						lista.get(num).getObs(),
 						
 				});
 			}
@@ -230,5 +265,22 @@ public class TelaPaciente extends JFrame {
 			
 		}
 		
+	}
+	public void CarregarCampos() {
+		int setar = table.getSelectedRow();
+		
+		textNome.setText(table.getModel().getValueAt(setar, 0).toString());
+		textEmail.setText(table.getModel().getValueAt(setar, 1).toString());
+		textMedico.setText(table.getModel().getValueAt(setar, 2).toString());
+		textEspecialidade.setText(table.getModel().getValueAt(setar, 3).toString());
+		textHora.setText(table.getModel().getValueAt(setar, 4).toString());
+		textData.setText(table.getModel().getValueAt(setar, 5).toString());
+		textValor.setText(table.getModel().getValueAt(setar, 6).toString());
+		textDiagnostico.setText(table.getModel().getValueAt(setar, 7).toString());
+		textObs.setText(table.getModel().getValueAt(setar, 8).toString());
+	}
+	
+	public JTextField getInserirEmail() {
+		return textEmail;
 	}
 }

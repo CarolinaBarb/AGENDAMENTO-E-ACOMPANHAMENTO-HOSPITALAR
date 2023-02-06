@@ -11,42 +11,38 @@ public class Consulta {
 	private String horario;
 	private String data_indisponivel;
 	private String email;
+	private String diagnostico;
+	private String Obs;
 	private int ID;
 	
 	
 
 	
 
-	public int getID() {
-		return ID;
-	}
 
-	public void setID(int iD) {
-		ID = iD;
-	}
-
-	public String getHorario() {
-		return horario;
-	}
-
-	public void setHorario(String horario) {
-		this.horario = horario;
-	}
 
 	// construtores
-	public Consulta(String especialidade, String valor, String idMedico, String idPaciente, String email) {
-		super();
-		this.especialidade = especialidade;
-		this.valor = valor;
-		this.idMedico = idMedico;
-		this.idPaciente = idPaciente;
-		this.email = email;
-	}
 
 	public Consulta(String especialidade, String valor) {
 		super();
 		this.especialidade = especialidade;
 		this.valor = valor;
+	}
+
+	public Consulta(String especialidade, String valor, String idMedico, String idPaciente, String data, String horario,
+			String data_indisponivel, String email, String diagnostico, String obs, int iD) {
+		super();
+		this.especialidade = especialidade;
+		this.valor = valor;
+		this.idMedico = idMedico;
+		this.idPaciente = idPaciente;
+		this.data = data;
+		this.horario = horario;
+		this.data_indisponivel = data_indisponivel;
+		this.email = email;
+		this.diagnostico = diagnostico;
+		Obs = obs;
+		ID = iD;
 	}
 
 	public Consulta() {
@@ -109,6 +105,38 @@ public class Consulta {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
+
+	public String getHorario() {
+		return horario;
+	}
+
+	public void setHorario(String horario) {
+		this.horario = horario;
+	}
+
+	public String getDiagnostico() {
+		return diagnostico;
+	}
+
+	public void setDiagnostico(String diagnostico) {
+		this.diagnostico = diagnostico;
+	}
+
+	public String getObs() {
+		return Obs;
+	}
+
+	public void setObs(String obs) {
+		Obs = obs;
+	}
+	
 
 
 
