@@ -21,6 +21,7 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextArea;
 
 public class TelaMedico extends JFrame {
 
@@ -28,7 +29,6 @@ public class TelaMedico extends JFrame {
 	private JTable table;
 	private JTextField textDiagnostico;
 	private JLabel lblObservacao;
-	private JTextField textObservacao;
 
 	/**
 	 * Launch the application.
@@ -96,11 +96,6 @@ public class TelaMedico extends JFrame {
 		lblObservacao.setBounds(10, 216, 98, 13);
 		contentPane.add(lblObservacao);
 		
-		textObservacao = new JTextField();
-		textObservacao.setBounds(12, 236, 277, 89);
-		contentPane.add(textObservacao);
-		textObservacao.setColumns(10);
-		
 		JButton btnNewButton_1 = new JButton("Registrar");
 		btnNewButton_1.setBounds(365, 281, 171, 44);
 		contentPane.add(btnNewButton_1);
@@ -137,5 +132,9 @@ public class TelaMedico extends JFrame {
 		});
 		btnAtestado.setBounds(365, 214, 171, 44);
 		contentPane.add(btnAtestado);
+		
+		JTextArea textObservações = new JTextArea();
+		textObservações.setBounds(11, 233, 285, 108);
+		contentPane.add(textObservações);
 	}
 }

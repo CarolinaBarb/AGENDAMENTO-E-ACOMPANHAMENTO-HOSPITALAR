@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.EventQueue;
+import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,11 +14,13 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import control.ControlConsulta;
+import control.ControlReceitas;
 import model.Consulta;
 import model.Receita;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
@@ -181,17 +184,30 @@ public class TelaPaciente extends JFrame {
 		JButton btnNewButton = new JButton("Conferir Receitas");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String usuario;
-					
-				usuario = textEmail.getText();
-				
-				Receita objreceita = new Receita();
-				objreceita.setEmail(usuario);
-					
-				ReceitaPaciente rp = new ReceitaPaciente();
-				rp.ListarValoresReceita(usuario);
-				rp.setVisible(true);
-				dispose();
+				 try {
+					 String usuario;
+						
+						usuario = textEmail.getText();
+						
+						Receita objreceita = new Receita();
+						objreceita.setEmail(usuario);
+						
+						ControlReceitas objcontrolreceita = new ControlReceitas();
+						ResultSet rs = objcontrolreceita.autenticacaoReceita(objreceita);
+					if(rs.next()) {
+						   ReceitaPaciente rp = new ReceitaPaciente();
+						   rp.ListarValoresReceita(usuario);
+						   rp.setVisible(true);
+					       dispose();
+						   
+					   }
+					   else {
+						   //enviar msg dizendo incorreto
+						   JOptionPane.showMessageDialog(null, "email invalido");
+					   }
+				} catch (SQLException erro) {
+					JOptionPane.showMessageDialog(null,"FRMTelaPacienteView" +erro);
+				}
 			
 		}});
 		btnNewButton.setBounds(628, 76, 153, 21);

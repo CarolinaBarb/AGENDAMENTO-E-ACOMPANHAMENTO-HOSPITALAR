@@ -179,6 +179,7 @@ public class ReceitaPaciente extends JFrame {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				LoginPaciente lp = new LoginPaciente();
 				lp.setVisible(true);
 				dispose();
@@ -189,17 +190,18 @@ public class ReceitaPaciente extends JFrame {
 	}
 	public void ListarValoresReceita(String email){
 		try {
-			DefaultTableModel model = (DefaultTableModel)table.getModel();
-			model.setNumRows(0);
 			ControlReceitas objcontrolreceita = new ControlReceitas();
 
+			DefaultTableModel model = (DefaultTableModel)table.getModel();
+			model.setNumRows(0);
+			
 			ArrayList<Receita> lista = objcontrolreceita.PacienteReceita(email);
 			
 			for(int num = 0; num < lista.size(); num++) {
 				model.addRow(new Object[] {
 						lista.get(num).getIdreceita(),
-						lista.get(num).getNomePaciente(),
 						lista.get(num).getMedicoResp(),
+						lista.get(num).getNomePaciente(),
 						lista.get(num).getEmail(),
 						lista.get(num).getMedicamento(),
 						lista.get(num).getDosagemReceitada(),
@@ -210,7 +212,7 @@ public class ReceitaPaciente extends JFrame {
 			}
 			
 		}catch(Exception erro){
-			JOptionPane.showMessageDialog(null, "Listar Valores  Paciente View:" + erro);
+			JOptionPane.showMessageDialog(null, "Listar Valores Receita View:" + erro);
 			
 		}
 	}

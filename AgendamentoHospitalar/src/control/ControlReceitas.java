@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import model.Medico;
+import model.Paciente;
 import model.Receita;
 
 public class ControlReceitas {
@@ -81,8 +82,8 @@ public class ControlReceitas {
 			
 			while(rs.next()) {
 				Receita objReceita = new Receita();
-				objReceita.setNomePaciente(rs.getString("nome_paciente"));
 				objReceita.setMedicoResp(rs.getString("nome_medico"));
+				objReceita.setNomePaciente(rs.getString("nome_paciente"));
 				objReceita.setEmail(rs.getString("email"));
 				objReceita.setMedicamento(rs.getString("medicamento"));
 				objReceita.setDosagemReceitada(rs.getString("dosagem"));
@@ -98,6 +99,24 @@ public class ControlReceitas {
 		return lista;
 		
 	}
+	public ResultSet autenticacaoReceita(Receita objreceita) {
+		conn = new ConexaoDAO().conectaBD();
+
+		try {
+			String sql = "select * from receita where email = ? "; // mesmo q ta no banco
+
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, objreceita.getEmail()); // primeira ? e o email
+
+			ResultSet rs = pstm.executeQuery();
+			return rs;
+
+		} catch (SQLException erro) {
+			JOptionPane.showMessageDialog(null, "PacienteControl: " + erro);
+			return null;
+		}
+	}
+	
 	
 
 }
