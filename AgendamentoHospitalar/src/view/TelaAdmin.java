@@ -57,7 +57,7 @@ public class TelaAdmin extends JFrame {
 		btnNewButton.setBounds(90, 222, 240, 111);
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(9, 69, 108));
-		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 22));
+		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 17));
 		btnNewButton.addActionListener(new ActionListener() {
 		
 		public void actionPerformed(ActionEvent e) {	
@@ -75,7 +75,7 @@ public class TelaAdmin extends JFrame {
 		JButton btnNewButton_1 = new JButton("Médico");
 		btnNewButton_1.setBounds(376, 225, 240, 108);
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
-		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 22));
+		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 17));
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -105,7 +105,7 @@ public class TelaAdmin extends JFrame {
 		JButton btnNewButton_2 = new JButton("Consultas");
 		btnNewButton_2.setBackground(new Color(9, 69, 108));
 		btnNewButton_2.setForeground(new Color(255, 255, 255));
-		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 22));
+		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 17));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MostrarConsultas mc = new MostrarConsultas();
@@ -118,10 +118,10 @@ public class TelaAdmin extends JFrame {
 		btnNewButton_2.setBounds(661, 225, 240, 108);
 		panel.add(btnNewButton_2);
 		
-		JButton btnNewButton_3 = new JButton("Funcionarios");
+		JButton btnNewButton_3 = new JButton("Funcionários");
 		btnNewButton_3.setForeground(new Color(255, 255, 255));
 		btnNewButton_3.setFont(new Font("Verdana", Font.PLAIN, 17));
-		btnNewButton_3.setBackground(new Color(72, 61, 139));
+		btnNewButton_3.setBackground(new Color(9, 69, 108));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MostrarFuncionarios mf = new MostrarFuncionarios();
@@ -134,6 +134,9 @@ public class TelaAdmin extends JFrame {
 		panel.add(btnNewButton_3);
 		
 		JButton btnRetornar = new JButton("Retornar para tela Principal");
+		btnRetornar.setForeground(new Color(255, 255, 255));
+		btnRetornar.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnRetornar.setBackground(new Color(9, 69, 108));
 		btnRetornar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaPrincipal tp = new TelaPrincipal();
@@ -141,7 +144,7 @@ public class TelaAdmin extends JFrame {
 				dispose();
 			}
 		});
-		btnRetornar.setBounds(989, 467, 208, 21);
+		btnRetornar.setBounds(997, 465, 208, 26);
 		panel.add(btnRetornar);
 	}
 }

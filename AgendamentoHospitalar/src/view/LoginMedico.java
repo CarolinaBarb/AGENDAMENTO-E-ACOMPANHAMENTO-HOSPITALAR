@@ -22,6 +22,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+import java.awt.Color;
 
 public class LoginMedico extends JFrame {
 
@@ -52,29 +53,35 @@ public class LoginMedico extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 341, 374);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblUsuario = new JLabel("Usuario");
-		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		JLabel lblUsuario = new JLabel("Usuário");
+		lblUsuario.setForeground(new Color(9, 69, 108));
+		lblUsuario.setFont(new Font("Verdana", Font.PLAIN, 15));
 		lblUsuario.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUsuario.setBounds(10, 109, 307, 13);
+		lblUsuario.setBounds(10, 127, 307, 13);
 		contentPane.add(lblUsuario);
 		
 		textEmail = new JTextField();
-		textEmail.setBounds(69, 132, 193, 19);
+		textEmail.setBounds(69, 150, 193, 19);
 		contentPane.add(textEmail);
 		textEmail.setColumns(10);
 		
 		JLabel lblSenha = new JLabel("Senha");
-		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblSenha.setForeground(new Color(9, 69, 108));
+		lblSenha.setFont(new Font("Verdana", Font.PLAIN, 15));
 		lblSenha.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSenha.setBounds(10, 161, 307, 14);
+		lblSenha.setBounds(10, 191, 307, 14);
 		contentPane.add(lblSenha);
 		
 		JButton btnEntrar = new JButton("Entrar");
+		btnEntrar.setForeground(new Color(255, 255, 255));
+		btnEntrar.setBackground(new Color(9, 69, 108));
+		btnEntrar.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -101,14 +108,17 @@ public class LoginMedico extends JFrame {
 				}
 			}
 		});
-		btnEntrar.setBounds(122, 248, 85, 21);
+		btnEntrar.setBounds(118, 257, 85, 21);
 		contentPane.add(btnEntrar);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(69, 185, 193, 19);
+		passwordField.setBounds(69, 215, 193, 19);
 		contentPane.add(passwordField);
 		
 		JButton btnTelaPrincipal = new JButton("Tela Principal");
+		btnTelaPrincipal.setForeground(new Color(255, 255, 255));
+		btnTelaPrincipal.setBackground(new Color(9, 69, 108));
+		btnTelaPrincipal.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnTelaPrincipal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaPrincipal tp = new TelaPrincipal();
@@ -116,7 +126,7 @@ public class LoginMedico extends JFrame {
 				dispose();
 			}
 		});
-		btnTelaPrincipal.setBounds(10, 10, 85, 21);
+		btnTelaPrincipal.setBounds(205, 306, 112, 21);
 		contentPane.add(btnTelaPrincipal);
 	}
 	

@@ -14,8 +14,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
@@ -51,13 +54,14 @@ public class LoginPaciente extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 506);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(0, 64, 128));
+		panel.setBackground(new Color(9, 69, 108));
 		panel.setBounds(0, 0, 436, 58);
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -66,42 +70,56 @@ public class LoginPaciente extends JFrame {
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBackground(new Color(255, 255, 255));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel.setBounds(10, 10, 416, 13);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 21));
+		lblNewLabel.setBounds(10, 10, 416, 23);
 		panel.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Email");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		JLabel lblNewLabel_1 = new JLabel("Email:");
+		lblNewLabel_1.setForeground(new Color(9, 69, 108));
+		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(10, 199, 45, 13);
 		contentPane.add(lblNewLabel_1);
 		
 		inserirEmail = new JTextField();
-		inserirEmail.setBounds(10, 222, 397, 19);
+		inserirEmail.setBounds(10, 222, 316, 19);
 		contentPane.add(inserirEmail);
 		inserirEmail.setColumns(25);
 		
-		JLabel lblNewLabel_2 = new JLabel("Senha");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_2.setBounds(10, 251, 45, 13);
+		JLabel lblNewLabel_2 = new JLabel("Senha:");
+		lblNewLabel_2.setForeground(new Color(9, 69, 108));
+		lblNewLabel_2.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblNewLabel_2.setBounds(10, 256, 45, 13);
 		contentPane.add(lblNewLabel_2);
 		
 		inserirSenha = new JTextField();
-		inserirSenha.setBounds(10, 283, 397, 19);
+		inserirSenha.setBounds(10, 279, 316, 19);
 		contentPane.add(inserirSenha);
 		inserirSenha.setColumns(10);
 		
 		JButton btnEntrar = new JButton("Entrar");
+		btnEntrar.setForeground(new Color(255, 255, 255));
+		btnEntrar.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnEntrar.setBackground(new Color(9, 69, 108));
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Logar();
 			}
 		});
-		btnEntrar.setBounds(192, 346, 85, 21);
+		btnEntrar.setBounds(162, 346, 110, 21);
 		contentPane.add(btnEntrar);
 		
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton("Voltar");
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setBackground(new Color(9, 69, 108));
+		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton_1.setBounds(351, 438, 85, 21);
 		contentPane.add(btnNewButton_1);
+		
+		JLabel lblNewLabel_3 = new JLabel("fg");
+		Image image = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
+		lblNewLabel_1_1.setIcon(new ImageIcon(image.getScaledInstance(80, 81, Image.SCALE_SMOOTH)));
+		lblNewLabel_3.setBounds(119, 68, 188, 94);
+		contentPane.add(lblNewLabel_3);
 	}
 	private void Logar() {
 		

@@ -24,6 +24,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Font;
 
 public class TelaPaciente extends JFrame {
 
@@ -71,12 +73,15 @@ public class TelaPaciente extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 805, 357);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel Pacientelbl = new JLabel("Paciente: ");
+		Pacientelbl.setFont(new Font("Verdana", Font.PLAIN, 10));
+		Pacientelbl.setForeground(new Color(9, 69, 108));
 		Pacientelbl.setBounds(10, 10, 73, 13);
 		contentPane.add(Pacientelbl);
 		
@@ -86,12 +91,14 @@ public class TelaPaciente extends JFrame {
 		contentPane.add(textNome);
 		textNome.setColumns(10);
 		
-		JLabel lblSelecionar = new JLabel("Selecionar Consultas");
-		lblSelecionar.setBounds(10, 57, 189, 13);
+		JLabel lblSelecionar = new JLabel("Selecionar Consultas:");
+		lblSelecionar.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblSelecionar.setForeground(new Color(9, 69, 108));
+		lblSelecionar.setBounds(10, 67, 189, 13);
 		contentPane.add(lblSelecionar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 80, 583, 90);
+		scrollPane.setBounds(10, 90, 583, 90);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -109,57 +116,70 @@ public class TelaPaciente extends JFrame {
 		));
 		scrollPane.setViewportView(table);
 		
-		JLabel lblNewLabel_1 = new JLabel("Medico");
-		lblNewLabel_1.setBounds(12, 183, 45, 13);
+		JLabel lblNewLabel_1 = new JLabel("Médico:");
+		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_1.setForeground(new Color(9, 69, 108));
+		lblNewLabel_1.setBounds(10, 190, 45, 13);
 		contentPane.add(lblNewLabel_1);
 		
 		textMedico = new JTextField();
 		textMedico.setEnabled(false);
-		textMedico.setBounds(8, 198, 96, 19);
+		textMedico.setBounds(8, 206, 96, 19);
 		contentPane.add(textMedico);
 		textMedico.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Especialidade");
-		lblNewLabel_2.setBounds(10, 222, 82, 20);
+		JLabel lblNewLabel_2 = new JLabel("Especialidade:");
+		lblNewLabel_2.setForeground(new Color(9, 69, 108));
+		lblNewLabel_2.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_2.setBounds(10, 239, 82, 20);
 		contentPane.add(lblNewLabel_2);
 		
 		textEspecialidade = new JTextField();
 		textEspecialidade.setEnabled(false);
-		textEspecialidade.setBounds(8, 245, 96, 19);
+		textEspecialidade.setBounds(8, 262, 96, 19);
 		contentPane.add(textEspecialidade);
 		textEspecialidade.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("Data");
-		lblNewLabel_3.setBounds(127, 186, 45, 13);
+		JLabel lblNewLabel_3 = new JLabel("Data:");
+		lblNewLabel_3.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_3.setForeground(new Color(9, 69, 108));
+		lblNewLabel_3.setBounds(124, 190, 45, 13);
 		contentPane.add(lblNewLabel_3);
 		
 		textData = new JTextField();
 		textData.setEnabled(false);
-		textData.setBounds(122, 201, 96, 19);
+		textData.setBounds(124, 206, 96, 19);
 		contentPane.add(textData);
 		textData.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("Hora");
-		lblNewLabel_4.setBounds(126, 229, 45, 13);
+		JLabel lblNewLabel_4 = new JLabel("Hora:");
+		lblNewLabel_4.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_4.setForeground(new Color(9, 69, 108));
+		lblNewLabel_4.setBounds(134, 243, 45, 13);
 		contentPane.add(lblNewLabel_4);
 		
 		textHora = new JTextField();
 		textHora.setEnabled(false);
-		textHora.setBounds(120, 246, 96, 19);
+		textHora.setBounds(133, 262, 96, 19);
 		contentPane.add(textHora);
 		textHora.setColumns(10);
 		
-		JLabel lblNewLabel_5 = new JLabel("Valor");
-		lblNewLabel_5.setBounds(237, 187, 45, 13);
+		JLabel lblNewLabel_5 = new JLabel("Valor:");
+		lblNewLabel_5.setForeground(new Color(9, 69, 108));
+		lblNewLabel_5.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_5.setBounds(250, 190, 45, 13);
 		contentPane.add(lblNewLabel_5);
 		
 		textValor = new JTextField();
 		textValor.setEnabled(false);
-		textValor.setBounds(230, 203, 96, 19);
+		textValor.setBounds(247, 206, 96, 19);
 		contentPane.add(textValor);
 		textValor.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Conferir Receitas");
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(9, 69, 108));
+		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				 try {
@@ -188,14 +208,24 @@ public class TelaPaciente extends JFrame {
 				}
 			
 		}});
-		btnNewButton.setBounds(628, 76, 153, 21);
+		btnNewButton.setBounds(628, 93, 153, 21);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Conferir Prontuário");
-		btnNewButton_1.setBounds(629, 107, 152, 21);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnNewButton_1.setBackground(new Color(9, 69, 108));
+		btnNewButton_1.setBounds(628, 142, 152, 21);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Voltar");
+		btnNewButton_2.setForeground(new Color(255, 255, 255));
+		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnNewButton_2.setBackground(new Color(9, 69, 108));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaPrincipal tp = new TelaPrincipal();
@@ -207,15 +237,20 @@ public class TelaPaciente extends JFrame {
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Selecionar");
+		btnNewButton_3.setForeground(new Color(255, 255, 255));
+		btnNewButton_3.setBackground(new Color(9, 69, 108));
+		btnNewButton_3.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CarregarCampos();
 			}
 		});
-		btnNewButton_3.setBounds(428, 57, 85, 21);
+		btnNewButton_3.setBounds(679, 48, 102, 21);
 		contentPane.add(btnNewButton_3);
 		
-		JLabel lbltextEmail = new JLabel("Email");
+		JLabel lbltextEmail = new JLabel("Email:");
+		lbltextEmail.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lbltextEmail.setForeground(new Color(9, 69, 108));
 		lbltextEmail.setBounds(10, 33, 45, 13);
 		contentPane.add(lbltextEmail);
 		

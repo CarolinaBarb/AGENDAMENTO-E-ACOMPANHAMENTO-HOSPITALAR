@@ -211,6 +211,11 @@ public class MarcarConsulta extends JFrame {
 		panel.setBounds(0, 0, 485, 54);
 		contentPane.add(panel);
 		
+		JLabel lblNewLabel_4 = new JLabel("Consultas");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
+		lblNewLabel_4.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+		panel.add(lblNewLabel_4);
+		
 		JLabel lblNewLabel_3 = new JLabel("Email:");
 		lblNewLabel_3.setForeground(new Color(0, 0, 128));
 		lblNewLabel_3.setBounds(7, 138, 45, 13);

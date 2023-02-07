@@ -12,6 +12,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class Atestado extends JFrame {
 
@@ -44,62 +45,71 @@ public class Atestado extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 352, 351);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblAtestado = new JLabel("Atestado");
-		lblAtestado.setHorizontalAlignment(SwingConstants.CENTER);
-		lblAtestado.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblAtestado.setBounds(0, 10, 338, 13);
-		contentPane.add(lblAtestado);
-		
-		JLabel lblNewLabel = new JLabel("Justificativa");
-		lblNewLabel.setBounds(11, 84, 122, 13);
+		JLabel lblNewLabel = new JLabel("Justificativa:");
+		lblNewLabel.setForeground(new Color(9, 69, 108));
+		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel.setBounds(10, 116, 122, 13);
 		contentPane.add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setBounds(11, 101, 230, 43);
+		textField.setBounds(10, 139, 230, 43);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("Nome do Paciente");
-		lblNewLabel_1.setBounds(10, 33, 123, 13);
+		JLabel lblNewLabel_1 = new JLabel("Nome do Paciente:");
+		lblNewLabel_1.setForeground(new Color(9, 69, 108));
+		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_1.setBounds(9, 64, 123, 13);
 		contentPane.add(lblNewLabel_1);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(131, 30, 197, 19);
+		textField_1.setBounds(136, 61, 177, 16);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Quantidadde de dias");
-		lblNewLabel_2.setBounds(11, 56, 154, 18);
+		JLabel lblNewLabel_2 = new JLabel("Quantidade de dias:");
+		lblNewLabel_2.setForeground(new Color(9, 69, 108));
+		lblNewLabel_2.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_2.setBounds(9, 88, 154, 18);
 		contentPane.add(lblNewLabel_2);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(131, 59, 39, 19);
+		textField_2.setBounds(136, 88, 177, 18);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("Recomendações");
-		lblNewLabel_3.setBounds(10, 153, 113, 13);
+		JLabel lblNewLabel_3 = new JLabel("Recomendações:");
+		lblNewLabel_3.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_3.setForeground(new Color(9, 69, 108));
+		lblNewLabel_3.setBounds(10, 192, 113, 13);
 		contentPane.add(lblNewLabel_3);
 		
 		textField_3 = new JTextField();
-		textField_3.setBounds(11, 170, 227, 57);
+		textField_3.setBounds(8, 215, 227, 43);
 		contentPane.add(textField_3);
 		textField_3.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Gerar Atestado");
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(9, 69, 108));
+		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(10, 269, 155, 21);
+		btnNewButton.setBounds(8, 283, 155, 21);
 		contentPane.add(btnNewButton);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setForeground(new Color(255, 255, 255));
+		btnVoltar.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnVoltar.setBackground(new Color(9, 69, 108));
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaMedico tm = new TelaMedico();
@@ -107,8 +117,19 @@ public class Atestado extends JFrame {
 				dispose();
 			}
 		});
-		btnVoltar.setBounds(243, 269, 85, 21);
+		btnVoltar.setBounds(243, 283, 85, 21);
 		contentPane.add(btnVoltar);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(9, 69, 108));
+		panel.setBounds(0, 0, 338, 43);
+		contentPane.add(panel);
+		
+		JLabel lblAtestado = new JLabel("Atestado");
+		lblAtestado.setForeground(new Color(255, 255, 255));
+		panel.add(lblAtestado);
+		lblAtestado.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAtestado.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 	}
 
 }

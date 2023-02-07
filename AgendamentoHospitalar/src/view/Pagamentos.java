@@ -126,7 +126,7 @@ public class Pagamentos extends JFrame {
 		JLabel lblNewLabel_4 = new JLabel("Data: ");
 		lblNewLabel_4.setForeground(new Color(9, 69, 108));
 		lblNewLabel_4.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		lblNewLabel_4.setBounds(25, 118, 45, 13);
+		lblNewLabel_4.setBounds(21, 118, 45, 13);
 		contentPane.add(lblNewLabel_4);
 		
 		textData = new JTextField();
@@ -146,6 +146,9 @@ public class Pagamentos extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JButton Voltar = new JButton("Voltar");
+		Voltar.setForeground(new Color(255, 255, 255));
+		Voltar.setFont(new Font("Verdana", Font.PLAIN, 10));
+		Voltar.setBackground(new Color(9, 69, 108));
 		Voltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaSecretaria tl = new TelaSecretaria();
@@ -153,7 +156,7 @@ public class Pagamentos extends JFrame {
 				dispose();
 			}
 		});
-		Voltar.setBounds(618, 306, 133, 30);
+		Voltar.setBounds(618, 306, 133, 19);
 		contentPane.add(Voltar);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -172,6 +175,9 @@ public class Pagamentos extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JButton btnNewButton_2 = new JButton("Carregar Campos");
+		btnNewButton_2.setForeground(new Color(255, 255, 255));
+		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnNewButton_2.setBackground(new Color(9, 69, 108));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int setar = table.getSelectedRow();
