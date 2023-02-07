@@ -35,8 +35,6 @@ public class TelaPaciente extends JFrame {
 	private JTextField textData;
 	private JTextField textHora;
 	private JTextField textValor;
-	private JTextField textDiagnostico;
-	private JTextField textObs;
 	public static JTextField textEmail;
 
 	/**
@@ -61,7 +59,7 @@ public class TelaPaciente extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaPaciente() {
-		
+	
 		listarValoresPaciente(LoginPaciente.inserirEmail.getText());
 		if(ControlConsulta.lista.isEmpty()){
 	        
@@ -106,7 +104,7 @@ public class TelaPaciente extends JFrame {
 				{null, null, null, null, null, null, null, null, null},
 			},
 			new String[] {
-				"Nome", "Email", "Medico", "Especialidade", "Data", "Hora", "Valor", "Diagn\u00F3stico", "Observa\u00E7\u00E3o"
+				"Nome", "Email", "Medico", "Especialidade", "Data", "Hora", "Valor"
 			}
 		));
 		scrollPane.setViewportView(table);
@@ -161,33 +159,13 @@ public class TelaPaciente extends JFrame {
 		contentPane.add(textValor);
 		textValor.setColumns(10);
 		
-		JLabel lblNewLabel_6 = new JLabel("Diagnostico");
-		lblNewLabel_6.setBounds(234, 231, 78, 13);
-		contentPane.add(lblNewLabel_6);
-		
-		textDiagnostico = new JTextField();
-		textDiagnostico.setEnabled(false);
-		textDiagnostico.setBounds(231, 248, 96, 19);
-		contentPane.add(textDiagnostico);
-		textDiagnostico.setColumns(10);
-		
-		JLabel lblNewLabel_7 = new JLabel("Observação");
-		lblNewLabel_7.setBounds(344, 187, 89, 13);
-		contentPane.add(lblNewLabel_7);
-		
-		textObs = new JTextField();
-		textObs.setEnabled(false);
-		textObs.setBounds(344, 205, 249, 62);
-		contentPane.add(textObs);
-		textObs.setColumns(10);
-		
 		JButton btnNewButton = new JButton("Conferir Receitas");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				 try {
 					 String usuario;
 						
-						usuario = textEmail.getText();
+						usuario = LoginPaciente.inserirEmail.getText();
 						
 						Receita objreceita = new Receita();
 						objreceita.setEmail(usuario);
@@ -270,8 +248,6 @@ public class TelaPaciente extends JFrame {
 						lista.get(num).getData(),
 						lista.get(num).getHorario(),
 						lista.get(num).getValor(),
-						lista.get(num).getDiagnostico(),
-						lista.get(num).getObs(),
 						
 				});
 			}
@@ -292,8 +268,6 @@ public class TelaPaciente extends JFrame {
 		textHora.setText(table.getModel().getValueAt(setar, 4).toString());
 		textData.setText(table.getModel().getValueAt(setar, 5).toString());
 		textValor.setText(table.getModel().getValueAt(setar, 6).toString());
-		textDiagnostico.setText(table.getModel().getValueAt(setar, 7).toString());
-		textObs.setText(table.getModel().getValueAt(setar, 8).toString());
 	}
 	
 	public JTextField getInserirEmail() {

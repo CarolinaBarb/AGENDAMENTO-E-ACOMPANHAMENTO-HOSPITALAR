@@ -25,7 +25,6 @@ import java.awt.event.ActionEvent;
 public class ReceitaPaciente extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
 	private JTable table_1;
 	private JTextField textMedico;
 	private JTextField textNomePaciente;
@@ -55,13 +54,7 @@ public class ReceitaPaciente extends JFrame {
 	 * Create the frame.
 	 */
 	public ReceitaPaciente() {
-		ListarValoresReceita(TelaPaciente.textEmail.getText());
-		if(ControlReceitas.lista.isEmpty()){
-	        
-        }else{
-        	textNomePaciente.setText(ControlReceitas.lista.get(0).getEmail());
-            //System.out.println("vazio");
-        }
+		ListarValoresReceita(LoginPaciente.inserirEmail.getText());
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 560, 496);
@@ -70,10 +63,6 @@ public class ReceitaPaciente extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		table = new JTable();
-		table.setBounds(201, 10, 0, 0);
-		contentPane.add(table);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 65, 526, 139);
@@ -192,7 +181,7 @@ public class ReceitaPaciente extends JFrame {
 		try {
 			ControlReceitas objcontrolreceita = new ControlReceitas();
 
-			DefaultTableModel model = (DefaultTableModel)table.getModel();
+			DefaultTableModel model = (DefaultTableModel)table_1.getModel();
 			model.setNumRows(0);
 			
 			ArrayList<Receita> lista = objcontrolreceita.PacienteReceita(email);

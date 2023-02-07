@@ -24,7 +24,7 @@ public class ControlMedico {
 		conn = new ConexaoDAO().conectaBD();
 
 		try {
-			String sql = "select * from Medicos where email_medicos = ? and senha_medico = ?"; // mesmo q ta no banco
+			String sql = "select * from medicos where email_medicos = ? and senha_medico = ?"; // mesmo q ta no banco
 
 			java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, medicocontrol.getEmail()); // primeira ? e o email
@@ -69,7 +69,7 @@ public class ControlMedico {
 
 
 	public void cadastrar(Medico medicos) {
-		String sql = "insert into Medicos (idmedico, nome, email_medicos ,crm,especialidade, senha_medico) "
+		String sql = "insert into medicos (idmedico, nome, email_medicos ,crm,especialidade, senha_medico) "
 			      + "values (?, ?, ?, ?, ?, ?)";
 
 	conn = new ConexaoDAO().conectaBD();

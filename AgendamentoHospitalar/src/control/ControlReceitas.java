@@ -20,7 +20,7 @@ public class ControlReceitas {
 	public void cadastrarReceita(Receita objreceita) {
 		conn = new ConexaoDAO().conectaBD();
 		
-		String sql = "insert into receita (nome_paciente, medicamento, dosagem, tomar, horario, dias, email) values (?,?,?,?,?,?,?)";
+		String sql = "insert into receita (nome_paciente, medicamento, dosagem, tomar, horario, dias, email, nome_medico) values (?,?,?,?,?,?,?,?)";
 		
 		try {
 			pstm = conn.prepareStatement(sql);
@@ -31,6 +31,7 @@ public class ControlReceitas {
 			pstm.setString(5, objreceita.getHorario());
 			pstm.setString(6, objreceita.getDias());
 			pstm.setString(7, objreceita.getEmail());
+			pstm.setString(8, objreceita.getMedicoResp());
 			
 			pstm.execute();
 			JOptionPane.showMessageDialog(null, "Receita Cadastrada com sucesso!");
