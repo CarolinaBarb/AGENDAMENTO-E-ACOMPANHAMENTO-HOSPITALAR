@@ -19,6 +19,7 @@ public class ControlConsulta {
 
 	Connection conn;
 	PreparedStatement pstm;
+	ResultSet rs;
 	public static ArrayList<Consulta> lista = new ArrayList<>();
 	public static ArrayList<Consulta> lista1 = new ArrayList<>();
 	
@@ -52,7 +53,7 @@ public class ControlConsulta {
 		
 		try {
 			 pstm = conn.prepareStatement(sql);
-			 ResultSet rs = pstm.executeQuery();
+			 rs = pstm.executeQuery();
 			 
 			 while(rs.next()) {
 				 Consulta objconsulta = new Consulta();
@@ -126,7 +127,36 @@ public class ControlConsulta {
 		 return lista;
 	 
 	}
-	
+public ArrayList<Consulta> PacientePagamento(String id){
+		
+		
+		String sql = "select * from consultas where idconsulta = ? "; //ColocarNome.getText()
+		conn = new ConexaoDAO().conectaBD();
+		
+		
+		try {
+			 pstm = conn.prepareStatement(sql);
+			 pstm.setString(1, id);
+			
+			ResultSet rs = pstm.executeQuery();
+			 
+			 while(rs.next()) {
+				 Consulta objconsulta = new Consulta();
+				 objconsulta.setID(rs.getInt("idconsulta"));
+				 objconsulta.setIdPaciente(rs.getString("paciente"));
+				 objconsulta.setData(rs.getString("data"));
+				 objconsulta.setValor(rs.getString("valor"));
+				 
+				 lista.add(objconsulta);
+			 }
+			 
+		 }catch(SQLException erro) {
+		    JOptionPane.showMessageDialog(null, "Paciente Consulta Pagamento:" + erro);
+	 
+		 }
+		 return lista;
+	 
+	}
 	public void editarConsulta(Consulta objconsulta) {
 		String sql = "update consultas set paciente = ?, medico = ?, especialidade = ?, horario = ?, data = ?, valor = ? where idconsulta = ?";
 		
@@ -152,6 +182,7 @@ public class ControlConsulta {
 		
 		
 	}
+	
 
 	
 }

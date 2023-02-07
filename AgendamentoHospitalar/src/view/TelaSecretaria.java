@@ -6,14 +6,20 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+
+import control.ControlConsulta;
+import model.Consulta;
+
 import javax.swing.JScrollPane;
 
 public class TelaSecretaria extends JFrame {
@@ -43,7 +49,7 @@ public class TelaSecretaria extends JFrame {
 	 */
 	public TelaSecretaria() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 714, 346);
+		setBounds(100, 100, 714, 391);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -129,5 +135,58 @@ public class TelaSecretaria extends JFrame {
 		panel.setBackground(new Color(9, 69, 108));
 		panel.setBounds(0, 0, 715, 48);
 		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JButton btnNewButton = new JButton("Voltar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaPrincipal tp = new TelaPrincipal();
+				tp.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(0, 64, 128));
+		btnNewButton.setBounds(602, 17, 85, 21);
+		panel.add(btnNewButton);
+		
+		JButton btnSelecionar = new JButton("Selecionar");
+		btnSelecionar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CarregarCampos();
+			}
+		});
+		btnSelecionar.setForeground(new Color(255, 255, 255));
+		btnSelecionar.setBackground(new Color(45, 84, 123));
+		btnSelecionar.setBounds(592, 309, 85, 21);
+		contentPane.add(btnSelecionar);
+	}
+	public void listarValores() {
+		try {
+			ControlConsulta objcontrolconsulta = new ControlConsulta();
+			DefaultTableModel  model = (DefaultTableModel) table.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Consulta> lista1 = objcontrolconsulta.PesquisarConsulta();
+			for(int num = 0;num < lista1.size();num++ ) {
+				model.addRow(new Object[] {
+					lista1.get(num).getID(),
+					lista1.get(num).getIdPaciente(),
+					lista1.get(num).getIdMedico(),
+					lista1.get(num).getEspecialidade(),
+					lista1.get(num).getHorario(),
+					lista1.get(num).getValor(),
+					lista1.get(num).getData(),
+				});
+			}
+		}catch (Exception erro) {
+			JOptionPane.showMessageDialog(null, "Listar Valores Consulta" + erro);
+		}
+		
+	}
+	public void CarregarCampos() {
+		int setar = table.getSelectedRow();
+		
+		TextCodigo.setText(table.getModel().getValueAt(setar, 0).toString());
 	}
 }

@@ -102,6 +102,7 @@ public class LoginSecretaria extends JFrame {
 					if(rssecretaria.next()) {
 						TelaSecretaria tl = new TelaSecretaria();
 						tl.setVisible(true);
+						tl.listarValores();
 						dispose();
 					}else {
 						JOptionPane.showMessageDialog(null, "Usuario ou senha invalida");

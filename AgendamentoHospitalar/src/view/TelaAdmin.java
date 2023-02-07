@@ -108,8 +108,8 @@ public class TelaAdmin extends JFrame {
 		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 17));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MostrarConsultas mc = new MostrarConsultas();
-				mc.listarValoresC();
+				MostrarConsulta mc = new MostrarConsulta();
+				mc.listarValores();
 				mc.setVisible(true);
 	            dispose();	
 

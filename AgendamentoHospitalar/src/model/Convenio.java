@@ -9,11 +9,10 @@ public class Convenio extends Pagamento {
 	private String codigo;
 	
 	
-
-	public Convenio(double valor, String tipo, Date dataPagamento, model.Paciente Paciente, String nome,
-			String associados, String codigo) {
-		super(valor, tipo, dataPagamento, Paciente);
-		this.nome = nome;
+	public Convenio(int idpagamento, String nome, String dataPagamento, String valor, String nome2, String associados,
+			String codigo) {
+		super(idpagamento, nome, dataPagamento, valor);
+		nome = nome2;
 		this.associados = associados;
 		this.codigo = codigo;
 	}

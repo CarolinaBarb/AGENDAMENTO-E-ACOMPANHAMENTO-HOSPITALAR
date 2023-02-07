@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JRadioButton;
@@ -15,14 +17,23 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import control.ControlConsulta;
+import model.Consulta;
 
 public class Convenio extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField textNome;
+	private JTextField textCodigo;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -56,69 +67,30 @@ public class Convenio extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("Nome do Convênio: ");
 		lblNewLabel_1.setForeground(new Color(9, 69, 108));
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(10, 68, 244, 23);
+		lblNewLabel_1.setBounds(10, 177, 244, 23);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Código:");
 		lblNewLabel_2.setForeground(new Color(9, 69, 108));
 		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		lblNewLabel_2.setBounds(10, 103, 101, 23);
+		lblNewLabel_2.setBounds(10, 210, 101, 23);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Associação: ");
 		lblNewLabel_3.setForeground(new Color(9, 69, 108));
 		lblNewLabel_3.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		lblNewLabel_3.setBounds(10, 143, 101, 13);
+		lblNewLabel_3.setBounds(10, 243, 101, 13);
 		contentPane.add(lblNewLabel_3);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Titular");
-		rdbtnNewRadioButton.setBackground(new Color(9, 69, 108));
-		rdbtnNewRadioButton.setForeground(new Color(255, 255, 255));
-		rdbtnNewRadioButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		rdbtnNewRadioButton.setBounds(8, 168, 103, 21);
-		contentPane.add(rdbtnNewRadioButton);
-		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Dependente");
-		rdbtnNewRadioButton_1.setBackground(new Color(9, 69, 108));
-		rdbtnNewRadioButton_1.setForeground(new Color(255, 255, 255));
-		rdbtnNewRadioButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		rdbtnNewRadioButton_1.setBounds(8, 191, 103, 21);
-		contentPane.add(rdbtnNewRadioButton_1);
-		
 		textField = new JTextField();
-		textField.setBounds(156, 72, 188, 16);
+		textField.setBounds(143, 180, 188, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(71, 107, 96, 13);
+		textField_1.setBounds(66, 213, 96, 19);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
-		
-		JLabel lblNewLabel_4 = new JLabel("Valor: ");
-		lblNewLabel_4.setForeground(new Color(9, 69, 108));
-		lblNewLabel_4.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		lblNewLabel_4.setBounds(1, 238, 123, 13);
-		contentPane.add(lblNewLabel_4);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(46, 237, 96, 14);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
-		
-		JLabel lblNewLabel_5 = new JLabel("Parcelamento");
-		lblNewLabel_5.setForeground(new Color(9, 69, 108));
-		lblNewLabel_5.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		lblNewLabel_5.setBounds(0, 273, 101, 13);
-		contentPane.add(lblNewLabel_5);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBackground(new Color(9, 69, 108));
-		comboBox.setForeground(new Color(255, 255, 255));
-		comboBox.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"1x", "2x", "3x", "4x", "5x", "6x"}));
-		comboBox.setBounds(99, 270, 101, 21);
-		contentPane.add(comboBox);
 		
 		JButton btnNewButton = new JButton("Gerar Recibo");
 		btnNewButton.setForeground(new Color(255, 255, 255));
@@ -128,7 +100,7 @@ public class Convenio extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		btnNewButton.setBounds(226, 302, 123, 37);
+		btnNewButton.setBounds(52, 302, 123, 37);
 		contentPane.add(btnNewButton);
 		
 		JPanel panel = new JPanel();
@@ -142,5 +114,80 @@ public class Convenio extends JFrame {
 		panel.add(lblNewLabel);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Titular", "Dependente"}));
+		comboBox_1.setBackground(new Color(45, 84, 123));
+		comboBox_1.setBounds(99, 240, 101, 21);
+		contentPane.add(comboBox_1);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 111, 382, 56);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"ID", "Nome", "Valor", "Data"
+			}
+		));
+		scrollPane.setViewportView(table);
+		
+		JButton btnNewButton_1 = new JButton("Voltar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Pagamentos pag = new Pagamentos();
+				pag.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setBackground(new Color(45, 84, 123));
+		btnNewButton_1.setBounds(218, 303, 123, 37);
+		contentPane.add(btnNewButton_1);
+		
+		textNome = new JTextField();
+		textNome.setBounds(10, 82, 321, 19);
+		contentPane.add(textNome);
+		textNome.setColumns(10);
+		
+		textCodigo = new JTextField();
+		textCodigo.setBounds(341, 82, 51, 19);
+		contentPane.add(textCodigo);
+		textCodigo.setColumns(10);
+	}
+	public void listarValoresPagamento(String id) {
+		try {
+			ControlConsulta objpesquisarConsulta = new ControlConsulta();
+			
+			DefaultTableModel model = (DefaultTableModel)table.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Consulta> lista = objpesquisarConsulta.PacientePagamento(id);
+			
+			for(int num = 0; num < lista.size(); num++) {
+				model.addRow(new Object[] {
+						lista.get(num).getID(),
+						lista.get(num).getIdPaciente(),
+						lista.get(num).getValor(),
+						lista.get(num).getData(),
+				});
+			}
+			
+		}catch(Exception erro){
+			JOptionPane.showMessageDialog(null, "Listar Valores  Paciente View:" + erro);
+			
+		}
+		
+	}
+	public void CarregarCampos() {
+		int setar = table.getSelectedRow();
+		
+		textNome.setText(table.getModel().getValueAt(0, 1).toString());
+		textCodigo.setText(table.getModel().getValueAt(0, 0).toString());
+		
+		
 	}
 }

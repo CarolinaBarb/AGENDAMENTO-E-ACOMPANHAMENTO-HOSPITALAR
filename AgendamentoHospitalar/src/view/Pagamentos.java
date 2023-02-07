@@ -30,6 +30,7 @@ public class Pagamentos extends JFrame {
 	private JTextField textValor;
 	private JTextField textData;
 	private JTable table;
+	public static JTextField textCodigo;
 
 	/**
 	 * Launch the application.
@@ -64,11 +65,12 @@ public class Pagamentos extends JFrame {
 		lblNewLabel_1.setForeground(new Color(9, 69, 108));
 		lblNewLabel_1.setBackground(new Color(9, 69, 108));
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		lblNewLabel_1.setBounds(21, 71, 144, 19);
+		lblNewLabel_1.setBounds(21, 76, 144, 19);
 		contentPane.add(lblNewLabel_1);
 		
 		textValor = new JTextField();
-		textValor.setBounds(161, 73, 96, 19);
+		textValor.setEnabled(false);
+		textValor.setBounds(159, 78, 96, 19);
 		contentPane.add(textValor);
 		textValor.setColumns(10);
 		
@@ -92,12 +94,9 @@ public class Pagamentos extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Privado priv = new Privado();
 				priv.setVisible(true);
-				this.dispose();
-			}
-
-			private void dispose() {
-				// TODO Auto-generated method stub
-				
+				priv.listarValoresPagamento(textCodigo.getText());
+				priv.CarregarCampos();
+				dispose();
 			}
 		});
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 15));
@@ -112,12 +111,9 @@ public class Pagamentos extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Convenio conv = new Convenio();
 				conv.setVisible(true);
-				this.dispose();
-			}
-
-			private void dispose() {
-				// TODO Auto-generated method stub
-				
+				conv.listarValoresPagamento(textCodigo.getText());
+				conv.CarregarCampos();
+				dispose();
 			}
 		});
 		btnNewButton_1.setBounds(580, 135, 131, 84);
@@ -126,11 +122,12 @@ public class Pagamentos extends JFrame {
 		JLabel lblNewLabel_4 = new JLabel("Data: ");
 		lblNewLabel_4.setForeground(new Color(9, 69, 108));
 		lblNewLabel_4.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		lblNewLabel_4.setBounds(21, 118, 45, 13);
+		lblNewLabel_4.setBounds(21, 109, 45, 13);
 		contentPane.add(lblNewLabel_4);
 		
 		textData = new JTextField();
-		textData.setBounds(69, 117, 96, 19);
+		textData.setEnabled(false);
+		textData.setBounds(69, 108, 96, 19);
 		contentPane.add(textData);
 		textData.setColumns(10);
 		
@@ -174,20 +171,29 @@ public class Pagamentos extends JFrame {
 		));
 		scrollPane.setViewportView(table);
 		
-		JButton btnNewButton_2 = new JButton("Carregar Campos");
+		JButton btnNewButton_2 = new JButton("Selecionar");
 		btnNewButton_2.setForeground(new Color(255, 255, 255));
 		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton_2.setBackground(new Color(9, 69, 108));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int setar = table.getSelectedRow();
-				
-				textValor.setText(table.getModel().getValueAt(setar, 4).toString());
-				textData.setText(table.getModel().getValueAt(setar, 3).toString());
+				CarregarCampos();
 			}
 		});
 		btnNewButton_2.setBounds(318, 301, 133, 21);
 		contentPane.add(btnNewButton_2);
+		
+		JLabel lblCodigo = new JLabel("Código");
+		lblCodigo.setForeground(new Color(45, 84, 123));
+		lblCodigo.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		lblCodigo.setBounds(21, 137, 85, 19);
+		contentPane.add(lblCodigo);
+		
+		textCodigo = new JTextField();
+		textCodigo.setEnabled(false);
+		textCodigo.setBounds(79, 137, 45, 19);
+		contentPane.add(textCodigo);
+		textCodigo.setColumns(10);
 	}
 	
 	public void listarValoresP() {
@@ -212,4 +218,14 @@ public class Pagamentos extends JFrame {
 			JOptionPane.showMessageDialog(null, "listar valores Pagamentos" + erro);
 		}
 	}
+	public void CarregarCampos() {
+		int setar = table.getSelectedRow();
+		
+		textValor.setText(table.getModel().getValueAt(setar, 4).toString());
+		textData.setText(table.getModel().getValueAt(setar, 3).toString());
+		textCodigo.setText(table.getModel().getValueAt(setar, 0).toString());
+	}
+	public JTextField getInserirId() {
+		return textCodigo;
+}
 }

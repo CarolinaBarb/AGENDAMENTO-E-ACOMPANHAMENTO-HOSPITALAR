@@ -75,24 +75,26 @@ public class LoginPaciente extends JFrame {
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Email:");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setForeground(new Color(9, 69, 108));
 		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 12));
-		lblNewLabel_1.setBounds(10, 199, 45, 13);
+		lblNewLabel_1.setBounds(0, 199, 436, 13);
 		contentPane.add(lblNewLabel_1);
 		
 		inserirEmail = new JTextField();
-		inserirEmail.setBounds(10, 222, 316, 19);
+		inserirEmail.setBounds(56, 222, 316, 19);
 		contentPane.add(inserirEmail);
 		inserirEmail.setColumns(25);
 		
 		JLabel lblNewLabel_2 = new JLabel("Senha:");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setForeground(new Color(9, 69, 108));
 		lblNewLabel_2.setFont(new Font("Verdana", Font.PLAIN, 12));
-		lblNewLabel_2.setBounds(10, 256, 45, 13);
+		lblNewLabel_2.setBounds(0, 256, 436, 13);
 		contentPane.add(lblNewLabel_2);
 		
 		inserirSenha = new JTextField();
-		inserirSenha.setBounds(10, 279, 316, 19);
+		inserirSenha.setBounds(56, 279, 316, 19);
 		contentPane.add(inserirSenha);
 		inserirSenha.setColumns(10);
 		
@@ -109,16 +111,24 @@ public class LoginPaciente extends JFrame {
 		contentPane.add(btnEntrar);
 		
 		JButton btnNewButton_1 = new JButton("Voltar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaPrincipal tp = new TelaPrincipal();
+				tp.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
 		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
-		btnNewButton_1.setBounds(351, 438, 85, 21);
+		btnNewButton_1.setBounds(341, 438, 85, 21);
 		contentPane.add(btnNewButton_1);
 		
-		JLabel lblNewLabel_3 = new JLabel("fg");
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		Image image = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
-		lblNewLabel_1_1.setIcon(new ImageIcon(image.getScaledInstance(80, 81, Image.SCALE_SMOOTH)));
-		lblNewLabel_3.setBounds(119, 68, 188, 94);
+		lblNewLabel_3.setIcon(new ImageIcon(image.getScaledInstance(80, 81, Image.SCALE_SMOOTH)));
+		lblNewLabel_3.setBounds(10, 68, 416, 94);
 		contentPane.add(lblNewLabel_3);
 	}
 	private void Logar() {
@@ -134,7 +144,7 @@ public class LoginPaciente extends JFrame {
 		    objpacientemodel.setSenha(senha_usuario);
 		   
 		    ControlPaciente objpacientecontrol = new ControlPaciente();
-		   ResultSet rspaciente = objpacientecontrol.autenticacaoPaciente(objpacientemodel); //resultset tipo
+		    ResultSet rspaciente = objpacientecontrol.autenticacaoPaciente(objpacientemodel); //resultset tipo
 		   
 		   if(rspaciente.next()) {
 			   //chamar tela q eu quero abrir
