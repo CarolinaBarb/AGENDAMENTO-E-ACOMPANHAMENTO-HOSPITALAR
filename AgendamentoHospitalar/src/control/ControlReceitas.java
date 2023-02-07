@@ -20,18 +20,17 @@ public class ControlReceitas {
 	public void cadastrarReceita(Receita objreceita) {
 		conn = new ConexaoDAO().conectaBD();
 		
-		String sql = "insert into receita (nome_paciente, medicamento, dosagem, tomar, horario, dias, email, nome_medico) values (?,?,?,?,?,?,?,?)";
+		String sql = "insert into receita (nome_paciente, medicamento, dosagem, frequencia, dias, email, nome_medico) values (?,?,?,?,?,?,?)";
 		
 		try {
 			pstm = conn.prepareStatement(sql);
 			pstm.setString(1, objreceita.getNomePaciente());
 			pstm.setString(2, objreceita.getMedicamento());
 			pstm.setString(3, objreceita.getDosagemReceitada());
-			pstm.setString(4, objreceita.getTomarVezes());
-			pstm.setString(5, objreceita.getHorario());
-			pstm.setString(6, objreceita.getDias());
-			pstm.setString(7, objreceita.getEmail());
-			pstm.setString(8, objreceita.getMedicoResp());
+			pstm.setString(4, objreceita.getFrequencia());
+			pstm.setString(5, objreceita.getDias());
+			pstm.setString(6, objreceita.getEmail());
+			pstm.setString(7, objreceita.getMedicoResp());
 			
 			pstm.execute();
 			JOptionPane.showMessageDialog(null, "Receita Cadastrada com sucesso!");
@@ -56,8 +55,7 @@ public class ControlReceitas {
 				 objReceita.setEmail(rs.getString("email"));
 				 objReceita.setMedicamento(rs.getString("medicamento"));;
 				 objReceita.setDosagemReceitada(rs.getString("dosagem"));;
-				 objReceita.setTomarVezes(rs.getString("tomar"));;
-				 objReceita.setHorario(rs.getString("horario"));
+				 objReceita.setFrequencia(rs.getString("tomar"));;
 				 objReceita.setDias(rs.getString("dias"));
 				
 				 
@@ -88,8 +86,7 @@ public class ControlReceitas {
 				objReceita.setEmail(rs.getString("email"));
 				objReceita.setMedicamento(rs.getString("medicamento"));
 				objReceita.setDosagemReceitada(rs.getString("dosagem"));
-				objReceita.setTomarVezes(rs.getString("tomar"));
-				objReceita.setHorario(rs.getString("horario"));
+				objReceita.setFrequencia(rs.getString("frequencia"));
 				objReceita.setDias(rs.getString("dias"));
 				
 				lista.add(objReceita);

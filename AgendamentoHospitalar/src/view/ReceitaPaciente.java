@@ -73,7 +73,7 @@ public class ReceitaPaciente extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"ID", "Medico", "Paciente", "Medicamento", "Dosagem", "Vezes ao dia", "Horario", "Dias"
+				"ID", "Medico", "Paciente", "Medicamento", "Dosagem", "Frequencia", "Dias"
 			}
 		));
 		table_1.getColumnModel().getColumn(1).setPreferredWidth(65);
@@ -191,11 +191,9 @@ public class ReceitaPaciente extends JFrame {
 						lista.get(num).getIdreceita(),
 						lista.get(num).getMedicoResp(),
 						lista.get(num).getNomePaciente(),
-						lista.get(num).getEmail(),
 						lista.get(num).getMedicamento(),
 						lista.get(num).getDosagemReceitada(),
-						lista.get(num).getTomarVezes(),
-						lista.get(num).getHorario(),
+						lista.get(num).getFrequencia(),
 						lista.get(num).getDias(),
 				});
 			}

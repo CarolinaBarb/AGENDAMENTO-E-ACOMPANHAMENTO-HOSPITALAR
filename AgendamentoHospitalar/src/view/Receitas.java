@@ -26,15 +26,18 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+
+
+
+
 public class Receitas extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textmedicamento;
 	private JTextField textdosagem;
-	private JTextField texthorario;
+	private JTextField textfrequencia;
 	private JTextField textnome;
 	private JTextField textDias;
-	private JTextField texttomar;
 	private JTextField textMedico;
 	private JTextField textEmail;
 
@@ -90,23 +93,14 @@ public class Receitas extends JFrame {
 		contentPane.add(textdosagem);
 		textdosagem.setColumns(10);
 		
-		JLabel lblTomar = new JLabel("Tomar");
-		lblTomar.setHorizontalAlignment(SwingConstants.LEFT);
-		lblTomar.setBounds(10, 238, 45, 13);
-		contentPane.add(lblTomar);
-		
-		JLabel lblNewLabel_1 = new JLabel("Vezes ao dia");
-		lblNewLabel_1.setBounds(114, 238, 116, 13);
-		contentPane.add(lblNewLabel_1);
-		
-		JLabel lblHorario = new JLabel("Horario");
-		lblHorario.setBounds(10, 261, 45, 13);
+		JLabel lblHorario = new JLabel("Frequencia");
+		lblHorario.setBounds(10, 270, 116, 13);
 		contentPane.add(lblHorario);
 		
-		texthorario = new JTextField();
-		texthorario.setBounds(58, 258, 42, 19);
-		contentPane.add(texthorario);
-		texthorario.setColumns(10);
+		textfrequencia = new JTextField();
+		textfrequencia.setBounds(10, 295, 90, 19);
+		contentPane.add(textfrequencia);
+		textfrequencia.setColumns(10);
 		
 		JLabel lblDias = new JLabel("Dias");
 		lblDias.setBounds(236, 220, 45, 13);
@@ -115,15 +109,13 @@ public class Receitas extends JFrame {
 		JButton GerarReceita = new JButton("Gerar Receita");
 		GerarReceita.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String nome_paciente, medicamento, dosagem, horario, dias,email_paciente, medico;
-				String tomar;
+				String nome_paciente, medicamento, dosagem, frequencia, dias,email_paciente, medico;
 				
 				nome_paciente = textnome.getText();
 				email_paciente = textEmail.getText();
 				medicamento = textmedicamento.getText();
 				dosagem = textdosagem.getText();
-				tomar = texttomar.getText();
-				horario = texthorario.getText();
+				frequencia = textfrequencia.getText();
 				dias = textDias.getText();
 				medico = textMedico.getText();
 				
@@ -134,8 +126,7 @@ public class Receitas extends JFrame {
 				objreceita.setEmail(email_paciente);
 				objreceita.setMedicamento(medicamento);
 				objreceita.setDosagemReceitada(dosagem);
-				objreceita.setTomarVezes(tomar);
-				objreceita.setHorario(horario);
+				objreceita.setFrequencia(frequencia);
 				objreceita.setDias(dias);
 				
 				ControlReceitas objcontrolReceita = new ControlReceitas();
@@ -170,11 +161,6 @@ public class Receitas extends JFrame {
 		textDias.setBounds(273, 217, 145, 19);
 		contentPane.add(textDias);
 		textDias.setColumns(10);
-		
-		texttomar = new JTextField();
-		texttomar.setBounds(58, 235, 42, 19);
-		contentPane.add(texttomar);
-		texttomar.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Medico Responsável");
 		lblNewLabel_2.setBounds(10, 50, 116, 13);

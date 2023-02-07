@@ -7,21 +7,19 @@ public class Receita {
 		private String MedicoResp;
 		private String Medicamento;
 		private String DosagemReceitada;
-		private String TomarVezes;
-		private String Horario;
+		private String Frequencia;
 		private String Dias;
 		private String Email;
 		private int idreceita;
 		
 		public Receita(String nomePaciente, String medicoResp, String medicamento, String dosagemReceitada,
-				String tomarVezes, String horario, String dias, String email, int idreceita) {
+				String frequencia, String dias, String email, int idreceita) {
 			super();
 			NomePaciente = nomePaciente;
 			MedicoResp = medicoResp;
 			Medicamento = medicamento;
 			DosagemReceitada = dosagemReceitada;
-			TomarVezes = tomarVezes;
-			Horario = horario;
+			Frequencia = frequencia;
 			Dias = dias;
 			Email = email;
 			this.idreceita = idreceita;
@@ -47,17 +45,12 @@ public class Receita {
 		public void setDosagemReceitada(String dosagemReceitada) {
 			DosagemReceitada = dosagemReceitada;
 		}
-		public String getTomarVezes() {
-			return TomarVezes;
+	
+		public String getFrequencia() {
+			return Frequencia;
 		}
-		public void setTomarVezes(String tomarVezes) {
-			TomarVezes = tomarVezes;
-		}
-		public String getHorario() {
-			return Horario;
-		}
-		public void setHorario(String horario) {
-			Horario = horario;
+		public void setFrequencia(String frequencia) {
+			Frequencia = frequencia;
 		}
 		public String getDias() {
 			return Dias;
