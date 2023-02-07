@@ -136,5 +136,17 @@ public class TelaMedico extends JFrame {
 		JTextArea textObservações = new JTextArea();
 		textObservações.setBounds(11, 233, 285, 108);
 		contentPane.add(textObservações);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LoginMedico lm = new LoginMedico();
+				lm.setVisible(true);
+				dispose();
+				
+			}
+		});
+		btnVoltar.setBounds(402, 346, 117, 25);
+		contentPane.add(btnVoltar);
 	}
 }
