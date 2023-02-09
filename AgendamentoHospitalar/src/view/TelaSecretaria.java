@@ -150,6 +150,12 @@ public class TelaSecretaria extends JFrame {
 		btnNewButton.setBounds(602, 17, 85, 21);
 		panel.add(btnNewButton);
 		
+		JLabel lblNewLabel_2 = new JLabel("Secretária");
+		lblNewLabel_2.setBounds(289, 14, 149, 21);
+		panel.add(lblNewLabel_2);
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 22));
+		
 		JButton btnSelecionar = new JButton("Selecionar");
 		btnSelecionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

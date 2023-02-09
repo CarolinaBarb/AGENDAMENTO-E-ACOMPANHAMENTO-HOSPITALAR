@@ -52,7 +52,7 @@ public class LoginSecretaria extends JFrame {
 	 */
 	public LoginSecretaria() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 444, 422);
+		setBounds(100, 100, 444, 521);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -61,29 +61,29 @@ public class LoginSecretaria extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Usuário");
-		lblNewLabel.setBounds(0, 172, 410, 35);
+		lblNewLabel.setBounds(0, 238, 410, 35);
 		lblNewLabel.setForeground(new Color(9, 69, 108));
 		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 15));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblNewLabel);
 		
 		textUsuario = new JTextField();
-		textUsuario.setBounds(93, 212, 259, 19);
+		textUsuario.setBounds(93, 273, 259, 19);
 		contentPane.add(textUsuario);
 		textUsuario.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Senha");
-		lblNewLabel_1.setBounds(181, 256, 63, 13);
+		lblNewLabel_1.setBounds(181, 319, 63, 13);
 		lblNewLabel_1.setForeground(new Color(9, 69, 108));
 		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 15));
 		contentPane.add(lblNewLabel_1);
 		
 		passwordSenha = new JPasswordField();
-		passwordSenha.setBounds(93, 284, 259, 19);
+		passwordSenha.setBounds(93, 342, 259, 19);
 		contentPane.add(passwordSenha);
 		
 		JButton btnEntrar = new JButton("Entrar");
-		btnEntrar.setBounds(170, 326, 85, 21);
+		btnEntrar.setBounds(159, 393, 85, 21);
 		btnEntrar.setForeground(new Color(255, 255, 255));
 		btnEntrar.setBackground(new Color(9, 69, 108));
 		btnEntrar.addActionListener(new ActionListener() {
@@ -122,7 +122,7 @@ public class LoginSecretaria extends JFrame {
 		contentPane.add(btnEntrar);
 		
 		JButton btnTelaPrincipal = new JButton("Tela Principal");
-		btnTelaPrincipal.setBounds(311, 354, 109, 21);
+		btnTelaPrincipal.setBounds(301, 453, 109, 21);
 		btnTelaPrincipal.setForeground(new Color(255, 255, 255));
 		btnTelaPrincipal.setBackground(new Color(9, 69, 108));
 		btnTelaPrincipal.setFont(new Font("Verdana", Font.PLAIN, 11));
@@ -149,8 +149,8 @@ public class LoginSecretaria extends JFrame {
 		JLabel lblNewLabel_2 = new JLabel("");
         lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
         Image image2 = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
-        lblNewLabel_2.setIcon(new ImageIcon(image2.getScaledInstance(90, 90, Image.SCALE_SMOOTH)));
-		lblNewLabel_2.setBounds(124, 77, 164, 96);
+        lblNewLabel_2.setIcon(new ImageIcon(image2.getScaledInstance(148, 148, Image.SCALE_SMOOTH)));
+		lblNewLabel_2.setBounds(124, 77, 164, 151);
 		contentPane.add(lblNewLabel_2);
 		
 	

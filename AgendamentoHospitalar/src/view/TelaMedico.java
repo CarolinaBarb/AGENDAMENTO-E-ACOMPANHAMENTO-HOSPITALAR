@@ -173,5 +173,10 @@ public class TelaMedico extends JFrame {
 		panel.setBackground(new Color(9, 69, 108));
 		panel.setBounds(0, 0, 548, 39);
 		contentPane.add(panel);
+		
+		JLabel lblNewLabel = new JLabel("Médico");
+		panel.add(lblNewLabel);
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 23));
 	}
 }

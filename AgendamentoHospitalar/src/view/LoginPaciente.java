@@ -52,7 +52,7 @@ public class LoginPaciente extends JFrame {
 	 */
 	public LoginPaciente() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 506);
+		setBounds(100, 100, 450, 541);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -78,11 +78,11 @@ public class LoginPaciente extends JFrame {
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setForeground(new Color(9, 69, 108));
 		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 12));
-		lblNewLabel_1.setBounds(0, 199, 436, 13);
+		lblNewLabel_1.setBounds(0, 235, 436, 13);
 		contentPane.add(lblNewLabel_1);
 		
 		inserirEmail = new JTextField();
-		inserirEmail.setBounds(56, 222, 316, 19);
+		inserirEmail.setBounds(56, 258, 316, 19);
 		contentPane.add(inserirEmail);
 		inserirEmail.setColumns(25);
 		
@@ -90,11 +90,11 @@ public class LoginPaciente extends JFrame {
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setForeground(new Color(9, 69, 108));
 		lblNewLabel_2.setFont(new Font("Verdana", Font.PLAIN, 12));
-		lblNewLabel_2.setBounds(0, 256, 436, 13);
+		lblNewLabel_2.setBounds(0, 303, 436, 13);
 		contentPane.add(lblNewLabel_2);
 		
 		inserirSenha = new JTextField();
-		inserirSenha.setBounds(56, 279, 316, 19);
+		inserirSenha.setBounds(56, 326, 316, 19);
 		contentPane.add(inserirSenha);
 		inserirSenha.setColumns(10);
 		
@@ -107,7 +107,7 @@ public class LoginPaciente extends JFrame {
 				Logar();
 			}
 		});
-		btnEntrar.setBounds(162, 346, 110, 21);
+		btnEntrar.setBounds(165, 393, 110, 21);
 		contentPane.add(btnEntrar);
 		
 		JButton btnNewButton_1 = new JButton("Voltar");
@@ -121,14 +121,14 @@ public class LoginPaciente extends JFrame {
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
 		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
-		btnNewButton_1.setBounds(341, 438, 85, 21);
+		btnNewButton_1.setBounds(341, 461, 85, 21);
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		Image image = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
-		lblNewLabel_3.setIcon(new ImageIcon(image.getScaledInstance(80, 81, Image.SCALE_SMOOTH)));
-		lblNewLabel_3.setBounds(10, 68, 416, 94);
+		lblNewLabel_3.setIcon(new ImageIcon(image.getScaledInstance(148, 148, Image.SCALE_SMOOTH)));
+		lblNewLabel_3.setBounds(10, 68, 416, 145);
 		contentPane.add(lblNewLabel_3);
 	}
 	private void Logar() {

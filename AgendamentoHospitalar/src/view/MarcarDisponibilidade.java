@@ -47,7 +47,7 @@ public class MarcarDisponibilidade extends JFrame {
 	 */
 	public MarcarDisponibilidade() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 358, 300);
+		setBounds(100, 100, 358, 362);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -57,7 +57,7 @@ public class MarcarDisponibilidade extends JFrame {
 		
 		JDateChooser DCdata = new JDateChooser();
 		DCdata.getCalendarButton().setBackground(new Color(9, 61, 108));
-		DCdata.setBounds(75, 99, 186, 19);
+		DCdata.setBounds(80, 127, 186, 19);
 		contentPane.add(DCdata);
 		
 		JButton btnAdd = new JButton("add");
@@ -78,7 +78,7 @@ public class MarcarDisponibilidade extends JFrame {
 				JOptionPane.showMessageDialog(null, "adicionado com sucesso");
 			}
 		});
-		btnAdd.setBounds(102, 151, 117, 25);
+		btnAdd.setBounds(115, 188, 117, 25);
 		contentPane.add(btnAdd);
 		
 		JButton btnVoltar = new JButton("Voltar");
@@ -92,12 +92,12 @@ public class MarcarDisponibilidade extends JFrame {
 				dispose();
 			}
 		});
-		btnVoltar.setBounds(249, 232, 85, 21);
+		btnVoltar.setBounds(249, 279, 85, 21);
 		contentPane.add(btnVoltar);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(9, 61, 108));
-		panel.setBounds(0, 0, 344, 46);
+		panel.setBounds(0, 0, 344, 55);
 		contentPane.add(panel);
 		
 		JLabel lblNewLabel = new JLabel("Disponibilidade");

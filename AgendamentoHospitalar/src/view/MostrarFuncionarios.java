@@ -302,6 +302,11 @@ public class MostrarFuncionarios extends JFrame {
 		});
 		btnLimpar.setBounds(10, 305, 170, 21);
 		contentPane.add(btnLimpar);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(9, 69, 108));
+		panel.setBounds(0, 0, 1009, 13);
+		contentPane.add(panel);
 	}
 	
 	public void listarValores() {

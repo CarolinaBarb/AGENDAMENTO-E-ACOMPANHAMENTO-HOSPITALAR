@@ -54,7 +54,7 @@ public class LoginMedico extends JFrame {
 	 */
 	public LoginMedico() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 336, 408);
+		setBounds(100, 100, 336, 496);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -66,11 +66,11 @@ public class LoginMedico extends JFrame {
 		lblUsuario.setForeground(new Color(9, 69, 108));
 		lblUsuario.setFont(new Font("Verdana", Font.PLAIN, 15));
 		lblUsuario.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUsuario.setBounds(0, 168, 307, 13);
+		lblUsuario.setBounds(0, 234, 307, 13);
 		contentPane.add(lblUsuario);
 		
 		textEmail = new JTextField();
-		textEmail.setBounds(69, 192, 193, 19);
+		textEmail.setBounds(57, 257, 205, 19);
 		contentPane.add(textEmail);
 		textEmail.setColumns(10);
 		
@@ -78,7 +78,7 @@ public class LoginMedico extends JFrame {
 		lblSenha.setForeground(new Color(9, 69, 108));
 		lblSenha.setFont(new Font("Verdana", Font.PLAIN, 15));
 		lblSenha.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSenha.setBounds(0, 221, 307, 14);
+		lblSenha.setBounds(0, 286, 307, 14);
 		contentPane.add(lblSenha);
 		
 		JButton btnEntrar = new JButton("Entrar");
@@ -111,11 +111,11 @@ public class LoginMedico extends JFrame {
 				}
 			}
 		});
-		btnEntrar.setBounds(112, 286, 85, 21);
+		btnEntrar.setBounds(118, 361, 85, 21);
 		contentPane.add(btnEntrar);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(69, 245, 193, 19);
+		passwordField.setBounds(57, 310, 205, 19);
 		contentPane.add(passwordField);
 		
 		JButton btnTelaPrincipal = new JButton("Tela Principal");
@@ -129,14 +129,14 @@ public class LoginMedico extends JFrame {
 				dispose();
 			}
 		});
-		btnTelaPrincipal.setBounds(200, 340, 112, 21);
+		btnTelaPrincipal.setBounds(195, 412, 112, 21);
 		contentPane.add(btnTelaPrincipal);
         
         JLabel lblNewLabel = new JLabel("");
-        lblNewLabel.setBounds(55, 53, 200, 101);
+        lblNewLabel.setBounds(42, 55, 230, 155);
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
         Image image2 = new ImageIcon(this.getClass().getResource("/imagem/doctor.png")).getImage();
-        lblNewLabel.setIcon(new ImageIcon(image2.getScaledInstance(101, 101, Image.SCALE_SMOOTH)));
+        lblNewLabel.setIcon(new ImageIcon(image2.getScaledInstance(148, 148, Image.SCALE_SMOOTH)));
         contentPane.add(lblNewLabel);
         
         JPanel panel = new JPanel();
