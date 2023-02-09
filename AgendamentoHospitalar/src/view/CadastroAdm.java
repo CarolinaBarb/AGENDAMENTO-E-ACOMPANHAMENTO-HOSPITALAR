@@ -46,61 +46,70 @@ public class CadastroAdm extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 390, 344);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Nome");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel.setBounds(10, 54, 45, 13);
+		JLabel lblNewLabel = new JLabel("Nome:");
+		lblNewLabel.setForeground(new Color(9, 61, 108));
+		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblNewLabel.setBounds(10, 67, 45, 13);
 		contentPane.add(lblNewLabel);
 		
 		textNome = new JTextField();
-		textNome.setBounds(65, 53, 304, 19);
+		textNome.setBounds(65, 66, 285, 14);
 		contentPane.add(textNome);
 		textNome.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("CPF");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1.setBounds(10, 77, 45, 13);
+		JLabel lblNewLabel_1 = new JLabel("CPF:");
+		lblNewLabel_1.setForeground(new Color(9, 61, 108));
+		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblNewLabel_1.setBounds(10, 90, 45, 13);
 		contentPane.add(lblNewLabel_1);
 		
 		textCPF = new JTextField();
-		textCPF.setBounds(65, 76, 96, 19);
+		textCPF.setBounds(65, 89, 285, 13);
 		contentPane.add(textCPF);
 		textCPF.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Data Nascimento");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_2.setBounds(10, 123, 121, 13);
+		JLabel lblNewLabel_2 = new JLabel("Data Nascimento:");
+		lblNewLabel_2.setForeground(new Color(9, 61, 108));
+		lblNewLabel_2.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblNewLabel_2.setBounds(10, 136, 121, 13);
 		contentPane.add(lblNewLabel_2);
 		
 		textDatanascimento = new JTextField();
-		textDatanascimento.setBounds(131, 122, 96, 19);
+		textDatanascimento.setBounds(129, 137, 221, 14);
 		contentPane.add(textDatanascimento);
 		textDatanascimento.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("Email");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_3.setBounds(10, 146, 70, 13);
+		JLabel lblNewLabel_3 = new JLabel("Email:");
+		lblNewLabel_3.setForeground(new Color(9, 61, 108));
+		lblNewLabel_3.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblNewLabel_3.setBounds(10, 159, 70, 13);
 		contentPane.add(lblNewLabel_3);
 		
 		textEmail = new JTextField();
-		textEmail.setBounds(65, 146, 195, 19);
+		textEmail.setBounds(65, 158, 285, 14);
 		contentPane.add(textEmail);
 		textEmail.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("Senha");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_4.setBounds(10, 169, 45, 13);
+		JLabel lblNewLabel_4 = new JLabel("Senha:");
+		lblNewLabel_4.setForeground(new Color(9, 61, 108));
+		lblNewLabel_4.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblNewLabel_4.setBounds(10, 188, 51, 13);
 		contentPane.add(lblNewLabel_4);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(65, 169, 121, 19);
+		passwordField.setBounds(64, 187, 286, 14);
 		contentPane.add(passwordField);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setBackground(new Color(9, 61, 108));
+		btnCadastrar.setForeground(new Color(255, 255, 255));
+		btnCadastrar.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String nome, cpf, data_nascimento, email, senha, sexo;
@@ -125,10 +134,13 @@ public class CadastroAdm extends JFrame {
 				
 			}
 		});
-		btnCadastrar.setBounds(142, 225, 85, 21);
+		btnCadastrar.setBounds(144, 234, 85, 21);
 		contentPane.add(btnCadastrar);
 		
 		JButton btnLogin = new JButton("login");
+		btnLogin.setForeground(new Color(255, 255, 255));
+		btnLogin.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnLogin.setBackground(new Color(9, 61, 108));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LoginAdmin la = new LoginAdmin();
@@ -139,14 +151,25 @@ public class CadastroAdm extends JFrame {
 		btnLogin.setBounds(281, 276, 85, 21);
 		contentPane.add(btnLogin);
 		
-		JLabel lblNewLabel_5 = new JLabel("Sexo");
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_5.setBounds(10, 100, 45, 13);
+		JLabel lblNewLabel_5 = new JLabel("Sexo:");
+		lblNewLabel_5.setForeground(new Color(9, 61, 108));
+		lblNewLabel_5.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblNewLabel_5.setBounds(10, 113, 45, 13);
 		contentPane.add(lblNewLabel_5);
 		
 		textSexo = new JTextField();
-		textSexo.setBounds(65, 99, 96, 19);
+		textSexo.setBounds(65, 113, 285, 13);
 		contentPane.add(textSexo);
 		textSexo.setColumns(10);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(9, 61, 108));
+		panel.setBounds(0, 0, 376, 39);
+		contentPane.add(panel);
+		
+		JLabel lblNewLabel_6 = new JLabel("Cadrastro");
+		panel.add(lblNewLabel_6);
+		lblNewLabel_6.setForeground(new Color(255, 255, 255));
+		lblNewLabel_6.setFont(new Font("Times New Roman", Font.PLAIN, 22));
 	}
 }

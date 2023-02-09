@@ -15,6 +15,7 @@ import model.Paciente;
 import model.Paciente;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 
 public class MostrarPacientes extends JFrame {
@@ -60,6 +61,7 @@ public class MostrarPacientes extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1005, 352);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -94,6 +96,9 @@ public class MostrarPacientes extends JFrame {
 		contentPane.add(panel);
 		
 		JButton btnNewButton = new JButton("Cadastrar");
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(9, 69, 108));
+		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String nome, email, senha, sexo, observacao, cpf, idade, dataNascimento;
@@ -136,6 +141,9 @@ public class MostrarPacientes extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("excluir");
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnNewButton_1.setBackground(new Color(9, 69, 108));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				excluir();
@@ -146,25 +154,34 @@ public class MostrarPacientes extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Carregar campos");
+		btnNewButton_2.setForeground(new Color(255, 255, 255));
+		btnNewButton_2.setBackground(new Color(9, 69, 108));
+		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CarregarCampos();
 			}
 		});
-		btnNewButton_2.setBounds(869, 45, 122, 21);
+		btnNewButton_2.setBounds(848, 51, 133, 21);
 		contentPane.add(btnNewButton_2);
 		
-		JLabel lblCodigo = new JLabel("codigo");
+		JLabel lblCodigo = new JLabel("Código:");
+		lblCodigo.setForeground(new Color(9, 69, 108));
+		lblCodigo.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblCodigo.setBounds(386, 59, 45, 13);
 		contentPane.add(lblCodigo);
 		
 		textCodigo = new JTextField();
+		textCodigo.setBackground(new Color(255, 255, 255));
 		textCodigo.setEnabled(false);
-		textCodigo.setBounds(428, 56, 51, 19);
+		textCodigo.setBounds(436, 59, 70, 13);
 		contentPane.add(textCodigo);
 		textCodigo.setColumns(10);
 		
 		JButton Editar = new JButton("Editar");
+		Editar.setForeground(new Color(255, 255, 255));
+		Editar.setBackground(new Color(9, 69, 108));
+		Editar.setFont(new Font("Verdana", Font.PLAIN, 10));
 		Editar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				editar();
@@ -176,6 +193,9 @@ public class MostrarPacientes extends JFrame {
 		contentPane.add(Editar);
 		
 		JButton btnNewButton_3 = new JButton("Voltar");
+		btnNewButton_3.setForeground(new Color(255, 255, 255));
+		btnNewButton_3.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnNewButton_3.setBackground(new Color(9, 69, 108));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaAdmin ta = new TelaAdmin();
@@ -183,105 +203,128 @@ public class MostrarPacientes extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_3.setBounds(906, 284, 85, 21);
+		btnNewButton_3.setBounds(896, 284, 85, 21);
 		contentPane.add(btnNewButton_3);
 		
-		JLabel lblNome = new JLabel("Nome");
+		JLabel lblNome = new JLabel("Nome:");
+		lblNome.setForeground(new Color(9, 69, 108));
+		lblNome.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblNome.setBounds(20, 65, 45, 13);
 		contentPane.add(lblNome);
 		
 		textNome = new JTextField();
-		textNome.setBounds(61, 62, 272, 19);
+		textNome.setBounds(61, 62, 272, 13);
 		contentPane.add(textNome);
 		textNome.setColumns(10);
 		
-		JLabel lblIdade = new JLabel("Idade");
+		JLabel lblIdade = new JLabel("Idade:");
+		lblIdade.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblIdade.setForeground(new Color(9, 69, 108));
 		lblIdade.setBounds(20, 88, 45, 13);
 		contentPane.add(lblIdade);
 		
 		textIdade = new JTextField();
-		textIdade.setBounds(61, 85, 61, 19);
+		textIdade.setBounds(61, 85, 61, 13);
 		contentPane.add(textIdade);
 		textIdade.setColumns(10);
 		
-		JLabel lblCpf = new JLabel("Cpf");
+		JLabel lblCpf = new JLabel("CPF:");
+		lblCpf.setForeground(new Color(9, 69, 108));
+		lblCpf.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblCpf.setBounds(150, 134, 45, 13);
 		contentPane.add(lblCpf);
 		
 		textCpf = new JTextField();
-		textCpf.setBounds(186, 131, 147, 19);
+		textCpf.setBounds(194, 131, 139, 16);
 		contentPane.add(textCpf);
 		textCpf.setColumns(10);
 		
-		JLabel lblAltura = new JLabel("Altura");
+		JLabel lblAltura = new JLabel("Altura:");
+		lblAltura.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblAltura.setForeground(new Color(9, 69, 108));
 		lblAltura.setBounds(20, 111, 45, 13);
 		contentPane.add(lblAltura);
 		
 		textAltura = new JTextField();
-		textAltura.setBounds(61, 108, 61, 19);
+		textAltura.setBounds(61, 108, 61, 13);
 		contentPane.add(textAltura);
 		textAltura.setColumns(10);
 		
-		JLabel lblPeso = new JLabel("Peso (kg)");
+		JLabel lblPeso = new JLabel("Peso (kg):");
+		lblPeso.setForeground(new Color(9, 69, 108));
+		lblPeso.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblPeso.setBounds(132, 111, 95, 13);
 		contentPane.add(lblPeso);
 		
 		textPeso = new JTextField();
-		textPeso.setBounds(237, 108, 96, 19);
+		textPeso.setBounds(194, 108, 139, 16);
 		contentPane.add(textPeso);
 		textPeso.setColumns(10);
 		
-		JLabel lblSexo = new JLabel("Sexo");
+		JLabel lblSexo = new JLabel("Sexo:");
+		lblSexo.setForeground(new Color(9, 69, 108));
+		lblSexo.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblSexo.setBounds(20, 134, 45, 13);
 		contentPane.add(lblSexo);
 		
 		textSexo = new JTextField();
-		textSexo.setBounds(61, 131, 79, 19);
+		textSexo.setBounds(61, 131, 79, 16);
 		contentPane.add(textSexo);
 		textSexo.setColumns(10);
 		
-		JLabel lblObservacao = new JLabel("Observaçào: ");
+		JLabel lblObservacao = new JLabel("Observação: ");
+		lblObservacao.setForeground(new Color(9, 69, 108));
+		lblObservacao.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblObservacao.setBounds(20, 157, 85, 13);
 		contentPane.add(lblObservacao);
 		
 		textObs = new JTextField();
-		textObs.setBounds(81, 154, 252, 61);
+		textObs.setBounds(93, 154, 240, 61);
 		contentPane.add(textObs);
 		textObs.setColumns(10);
 		
-		JLabel lblEmail = new JLabel("Email");
+		JLabel lblEmail = new JLabel("Email:");
+		lblEmail.setForeground(new Color(9, 69, 108));
+		lblEmail.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblEmail.setBounds(20, 229, 45, 13);
 		contentPane.add(lblEmail);
 		
 		textEmail = new JTextField();
-		textEmail.setBounds(61, 226, 272, 19);
+		textEmail.setBounds(61, 225, 272, 13);
 		contentPane.add(textEmail);
 		textEmail.setColumns(10);
 		
-		JLabel lblSenha = new JLabel("Senha");
+		JLabel lblSenha = new JLabel("Senha:");
+		lblSenha.setForeground(new Color(9, 69, 108));
+		lblSenha.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblSenha.setBounds(20, 252, 45, 13);
 		contentPane.add(lblSenha);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(61, 249, 96, 19);
+		passwordField.setBounds(61, 252, 272, 13);
 		contentPane.add(passwordField);
 		
-		JLabel lblDataNascimento = new JLabel("Data de Nascimento");
+		JLabel lblDataNascimento = new JLabel("Data de Nascimento:");
+		lblDataNascimento.setForeground(new Color(9, 69, 108));
+		lblDataNascimento.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblDataNascimento.setBounds(132, 89, 121, 13);
 		contentPane.add(lblDataNascimento);
 		
 		textDataNascimento = new JTextField();
-		textDataNascimento.setBounds(263, 86, 70, 19);
+		textDataNascimento.setBounds(263, 86, 70, 13);
 		contentPane.add(textDataNascimento);
 		textDataNascimento.setColumns(10);
 		
 		JButton btnLimpar = new JButton("Limpar");
+		btnLimpar.setForeground(new Color(255, 255, 255));
+		btnLimpar.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnLimpar.setBackground(new Color(9, 69, 108));
 		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				limpar();
 			}
 		});
-		btnLimpar.setBounds(774, 45, 85, 21);
+		btnLimpar.setBounds(753, 51, 85, 21);
 		contentPane.add(btnLimpar);
 		
 		

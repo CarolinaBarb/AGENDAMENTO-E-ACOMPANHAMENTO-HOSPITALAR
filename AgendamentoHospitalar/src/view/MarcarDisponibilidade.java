@@ -18,6 +18,9 @@ import model.Disponibilidade;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JLabel;
 
 public class MarcarDisponibilidade extends JFrame {
 
@@ -46,16 +49,21 @@ public class MarcarDisponibilidade extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 358, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JDateChooser DCdata = new JDateChooser();
-		DCdata.setBounds(64, 72, 186, 19);
+		DCdata.getCalendarButton().setBackground(new Color(9, 61, 108));
+		DCdata.setBounds(75, 99, 186, 19);
 		contentPane.add(DCdata);
 		
 		JButton btnAdd = new JButton("add");
+		btnAdd.setForeground(new Color(255, 255, 255));
+		btnAdd.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnAdd.setBackground(new Color(9, 61, 108));
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -70,10 +78,13 @@ public class MarcarDisponibilidade extends JFrame {
 				JOptionPane.showMessageDialog(null, "adicionado com sucesso");
 			}
 		});
-		btnAdd.setBounds(94, 126, 117, 25);
+		btnAdd.setBounds(102, 151, 117, 25);
 		contentPane.add(btnAdd);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setForeground(new Color(255, 255, 255));
+		btnVoltar.setBackground(new Color(9, 61, 108));
+		btnVoltar.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaSecretaria tl = new TelaSecretaria();
@@ -83,6 +94,16 @@ public class MarcarDisponibilidade extends JFrame {
 		});
 		btnVoltar.setBounds(249, 232, 85, 21);
 		contentPane.add(btnVoltar);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(9, 61, 108));
+		panel.setBounds(0, 0, 344, 46);
+		contentPane.add(panel);
+		
+		JLabel lblNewLabel = new JLabel("Disponibilidade");
+		panel.add(lblNewLabel);
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 	}
 	
 	

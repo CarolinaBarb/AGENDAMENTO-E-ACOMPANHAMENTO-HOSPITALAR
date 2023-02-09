@@ -56,20 +56,15 @@ public class Prontuario extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 773, 758);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Prontuário");
-		lblNewLabel.setBounds(10, 10, 739, 33);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("Informações do paciente");
-		lblNewLabel_1.setForeground(new Color(0, 64, 128));
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		JLabel lblNewLabel_1 = new JLabel("Informações do Paciente:");
+		lblNewLabel_1.setForeground(new Color(9, 69, 108));
+		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 15));
 		lblNewLabel_1.setBounds(16, 54, 240, 25);
 		contentPane.add(lblNewLabel_1);
 		
@@ -88,16 +83,20 @@ public class Prontuario extends JFrame {
 		table.getColumnModel().getColumn(2).setPreferredWidth(124);
 		scrollPane.setViewportView(table);
 		
-		JLabel lblNome = new JLabel("Nome");
+		JLabel lblNome = new JLabel("Nome:");
+		lblNome.setForeground(new Color(9, 69, 108));
+		lblNome.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblNome.setBounds(17, 141, 45, 13);
 		contentPane.add(lblNome);
 		
 		textField = new JTextField();
-		textField.setBounds(15, 159, 375, 19);
+		textField.setBounds(15, 159, 374, 19);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Email");
+		JLabel lblNewLabel_2 = new JLabel("Email:");
+		lblNewLabel_2.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_2.setForeground(new Color(9, 69, 108));
 		lblNewLabel_2.setBounds(17, 183, 45, 13);
 		contentPane.add(lblNewLabel_2);
 		
@@ -106,7 +105,9 @@ public class Prontuario extends JFrame {
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("Observação");
+		JLabel lblNewLabel_3 = new JLabel("Observação:");
+		lblNewLabel_3.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_3.setForeground(new Color(9, 69, 108));
 		lblNewLabel_3.setBounds(413, 143, 104, 13);
 		contentPane.add(lblNewLabel_3);
 		
@@ -115,9 +116,9 @@ public class Prontuario extends JFrame {
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("Exames");
-		lblNewLabel_4.setForeground(new Color(0, 64, 128));
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		JLabel lblNewLabel_4 = new JLabel("Exames:");
+		lblNewLabel_4.setForeground(new Color(9, 69, 108));
+		lblNewLabel_4.setFont(new Font("Verdana", Font.PLAIN, 15));
 		lblNewLabel_4.setBounds(19, 240, 128, 13);
 		contentPane.add(lblNewLabel_4);
 		
@@ -139,12 +140,18 @@ public class Prontuario extends JFrame {
 		table_1.getColumnModel().getColumn(3).setPreferredWidth(179);
 		scrollPane_1.setViewportView(table_1);
 		
-		JLabel lblNewLabel_5 = new JLabel("Tipo de exame");
+		JLabel lblNewLabel_5 = new JLabel("Tipo de exame:");
+		lblNewLabel_5.setForeground(new Color(9, 61, 108));
+		lblNewLabel_5.setBackground(new Color(9, 61, 108));
+		lblNewLabel_5.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblNewLabel_5.setBounds(17, 346, 91, 13);
 		contentPane.add(lblNewLabel_5);
 		
 		JButton btnNewButton = new JButton("Selecionar");
-		btnNewButton.setBounds(563, 266, 85, 21);
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnNewButton.setBackground(new Color(9, 69, 108));
+		btnNewButton.setBounds(563, 266, 98, 21);
 		contentPane.add(btnNewButton);
 		
 		textField_3 = new JTextField();
@@ -152,8 +159,10 @@ public class Prontuario extends JFrame {
 		contentPane.add(textField_3);
 		textField_3.setColumns(10);
 		
-		JLabel lblNewLabel_6 = new JLabel("Profissional Responsável");
-		lblNewLabel_6.setBounds(16, 388, 138, 13);
+		JLabel lblNewLabel_6 = new JLabel("Profissional Responsável:");
+		lblNewLabel_6.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_6.setForeground(new Color(9, 61, 108));
+		lblNewLabel_6.setBounds(16, 392, 145, 13);
 		contentPane.add(lblNewLabel_6);
 		
 		textField_4 = new JTextField();
@@ -161,18 +170,20 @@ public class Prontuario extends JFrame {
 		contentPane.add(textField_4);
 		textField_4.setColumns(10);
 		
-		JLabel lblNewLabel_7 = new JLabel("Motivo para o encaminhamento");
-		lblNewLabel_7.setBounds(256, 346, 220, 13);
+		JLabel lblNewLabel_7 = new JLabel("Motivo para o encaminhamento:");
+		lblNewLabel_7.setForeground(new Color(9, 61, 108));
+		lblNewLabel_7.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_7.setBounds(262, 346, 220, 13);
 		contentPane.add(lblNewLabel_7);
 		
 		textField_5 = new JTextField();
-		textField_5.setBounds(249, 366, 216, 64);
+		textField_5.setBounds(260, 367, 216, 64);
 		contentPane.add(textField_5);
 		textField_5.setColumns(10);
 		
-		JLabel lblNewLabel_8 = new JLabel("Consultas realizadas");
-		lblNewLabel_8.setForeground(new Color(0, 64, 128));
-		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		JLabel lblNewLabel_8 = new JLabel("Consultas realizadas:");
+		lblNewLabel_8.setForeground(new Color(9, 61, 108));
+		lblNewLabel_8.setFont(new Font("Verdana", Font.PLAIN, 15));
 		lblNewLabel_8.setBounds(16, 440, 193, 25);
 		contentPane.add(lblNewLabel_8);
 		
@@ -191,29 +202,38 @@ public class Prontuario extends JFrame {
 		scrollPane_2.setViewportView(table_2);
 		
 		JButton btnNewButton_1 = new JButton("Selecionar ");
-		btnNewButton_1.setBounds(646, 469, 85, 21);
+		btnNewButton_1.setBackground(new Color(9, 61, 108));
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnNewButton_1.setBounds(646, 469, 103, 21);
 		contentPane.add(btnNewButton_1);
 		
-		JLabel lblNewLabel_9 = new JLabel("Medico");
-		lblNewLabel_9.setBounds(21, 523, 45, 13);
+		JLabel lblNewLabel_9 = new JLabel("Médico:");
+		lblNewLabel_9.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_9.setForeground(new Color(9, 61, 108));
+		lblNewLabel_9.setBounds(29, 521, 45, 13);
 		contentPane.add(lblNewLabel_9);
 		
 		textField_6 = new JTextField();
-		textField_6.setBounds(19, 538, 352, 19);
+		textField_6.setBounds(24, 538, 347, 19);
 		contentPane.add(textField_6);
 		textField_6.setColumns(10);
 		
-		JLabel lblNewLabel_10 = new JLabel("Especialidade");
-		lblNewLabel_10.setBounds(19, 565, 81, 13);
+		JLabel lblNewLabel_10 = new JLabel("Especialidade:");
+		lblNewLabel_10.setForeground(new Color(9, 61, 108));
+		lblNewLabel_10.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_10.setBounds(27, 567, 81, 13);
 		contentPane.add(lblNewLabel_10);
 		
 		textField_7 = new JTextField();
-		textField_7.setBounds(20, 584, 352, 19);
+		textField_7.setBounds(25, 584, 347, 19);
 		contentPane.add(textField_7);
 		textField_7.setColumns(10);
 		
-		JLabel lblNewLabel_11 = new JLabel("Diagnóstico");
-		lblNewLabel_11.setBounds(384, 525, 76, 13);
+		JLabel lblNewLabel_11 = new JLabel("Diagnóstico:");
+		lblNewLabel_11.setForeground(new Color(9, 61, 108));
+		lblNewLabel_11.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_11.setBounds(388, 523, 76, 13);
 		contentPane.add(lblNewLabel_11);
 		
 		textField_8 = new JTextField();
@@ -221,17 +241,33 @@ public class Prontuario extends JFrame {
 		contentPane.add(textField_8);
 		textField_8.setColumns(10);
 		
-		JLabel lblNewLabel_12 = new JLabel("Observação");
+		JLabel lblNewLabel_12 = new JLabel("Observação:\r\n");
+		lblNewLabel_12.setForeground(new Color(9, 61, 108));
+		lblNewLabel_12.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblNewLabel_12.setBounds(389, 573, 93, 13);
 		contentPane.add(lblNewLabel_12);
 		
 		textField_9 = new JTextField();
-		textField_9.setBounds(390, 587, 341, 60);
+		textField_9.setBounds(390, 587, 341, 54);
 		contentPane.add(textField_9);
 		textField_9.setColumns(10);
 		
 		JButton btnNewButton_2 = new JButton("Voltar");
-		btnNewButton_2.setBounds(345, 683, 85, 21);
+		btnNewButton_2.setForeground(new Color(255, 255, 255));
+		btnNewButton_2.setBackground(new Color(9, 61, 108));
+		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnNewButton_2.setBounds(332, 679, 85, 21);
 		contentPane.add(btnNewButton_2);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(9, 69, 108));
+		panel.setBounds(0, 0, 759, 45);
+		contentPane.add(panel);
+		
+		JLabel lblNewLabel = new JLabel("Prontuário");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		panel.add(lblNewLabel);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 22));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 	}
 }

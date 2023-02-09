@@ -22,6 +22,8 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Font;
 
 public class MostrarConsulta extends JFrame {
 
@@ -58,76 +60,91 @@ public class MostrarConsulta extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 893, 277);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Paciente");
-		lblNewLabel.setBounds(10, 51, 45, 13);
+		JLabel lblNewLabel = new JLabel("Paciente:");
+		lblNewLabel.setForeground(new Color(9, 61, 108));
+		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel.setBounds(10, 51, 58, 13);
 		contentPane.add(lblNewLabel);
 		
 		textNome = new JTextField();
-		textNome.setBounds(65, 48, 309, 19);
+		textNome.setBounds(78, 48, 296, 16);
 		contentPane.add(textNome);
 		textNome.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("Médico");
+		JLabel lblNewLabel_1 = new JLabel("Médico:");
+		lblNewLabel_1.setForeground(new Color(9, 61, 108));
+		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblNewLabel_1.setBounds(10, 74, 45, 13);
 		contentPane.add(lblNewLabel_1);
 		
 		textNomeMedico = new JTextField();
-		textNomeMedico.setBounds(65, 71, 309, 19);
+		textNomeMedico.setBounds(78, 71, 296, 16);
 		contentPane.add(textNomeMedico);
 		textNomeMedico.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Especialidade");
+		JLabel lblNewLabel_2 = new JLabel("Especialidade:");
+		lblNewLabel_2.setForeground(new Color(9, 61, 108));
+		lblNewLabel_2.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblNewLabel_2.setBounds(10, 97, 86, 13);
 		contentPane.add(lblNewLabel_2);
 		
 		textEspecialidade = new JTextField();
-		textEspecialidade.setBounds(106, 94, 268, 19);
+		textEspecialidade.setBounds(99, 94, 275, 16);
 		contentPane.add(textEspecialidade);
 		textEspecialidade.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("Data");
+		JLabel lblNewLabel_3 = new JLabel("Data:");
+		lblNewLabel_3.setForeground(new Color(9, 61, 108));
+		lblNewLabel_3.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblNewLabel_3.setBounds(10, 120, 45, 13);
 		contentPane.add(lblNewLabel_3);
 		
 		textData = new JTextField();
-		textData.setBounds(65, 117, 96, 19);
+		textData.setBounds(65, 117, 96, 16);
 		contentPane.add(textData);
 		textData.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("Horário");
+		JLabel lblNewLabel_4 = new JLabel("Horário:");
+		lblNewLabel_4.setForeground(new Color(9, 61, 108));
+		lblNewLabel_4.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblNewLabel_4.setBounds(10, 143, 45, 13);
 		contentPane.add(lblNewLabel_4);
 		
 		textHorario = new JTextField();
-		textHorario.setBounds(65, 140, 96, 19);
+		textHorario.setBounds(65, 140, 96, 16);
 		contentPane.add(textHorario);
 		textHorario.setColumns(10);
 		
-		JLabel lblNewLabel_5 = new JLabel("Valor");
+		JLabel lblNewLabel_5 = new JLabel("Valor:");
+		lblNewLabel_5.setForeground(new Color(9, 61, 108));
+		lblNewLabel_5.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblNewLabel_5.setBounds(10, 166, 45, 13);
 		contentPane.add(lblNewLabel_5);
 		
 		textValor = new JTextField();
-		textValor.setBounds(65, 163, 96, 19);
+		textValor.setBounds(65, 163, 96, 16);
 		contentPane.add(textValor);
 		textValor.setColumns(10);
 		
-		JLabel lblNewLabel_6 = new JLabel("Código");
-		lblNewLabel_6.setBounds(400, 31, 45, 13);
+		JLabel lblNewLabel_6 = new JLabel("Código:");
+		lblNewLabel_6.setForeground(new Color(9, 61, 108));
+		lblNewLabel_6.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_6.setBounds(400, 48, 45, 13);
 		contentPane.add(lblNewLabel_6);
 		
 		textCodigo = new JTextField();
-		textCodigo.setBounds(455, 28, 50, 19);
+		textCodigo.setBounds(448, 48, 66, 16);
 		contentPane.add(textCodigo);
 		textCodigo.setColumns(10);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(400, 51, 467, 128);
+		scrollPane.setBounds(400, 67, 467, 128);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -141,25 +158,34 @@ public class MostrarConsulta extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JButton btnSelecionar = new JButton("Selecionar");
+		btnSelecionar.setBackground(new Color(9, 61, 108));
+		btnSelecionar.setForeground(new Color(255, 255, 255));
+		btnSelecionar.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnSelecionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CarregarCampos();
 	
 			}
 		});
-		btnSelecionar.setBounds(782, 27, 85, 21);
+		btnSelecionar.setBounds(763, 40, 104, 21);
 		contentPane.add(btnSelecionar);
 		
 		JButton btnLimpar = new JButton("limpar");
+		btnLimpar.setForeground(new Color(255, 255, 255));
+		btnLimpar.setBackground(new Color(9, 61, 108));
+		btnLimpar.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				limpar();
 			}
 		});
-		btnLimpar.setBounds(693, 27, 85, 21);
+		btnLimpar.setBounds(668, 40, 85, 21);
 		contentPane.add(btnLimpar);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBackground(new Color(9, 61, 108));
+		btnVoltar.setForeground(new Color(255, 255, 255));
+		btnVoltar.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaAdmin ta = new TelaAdmin();
@@ -171,6 +197,9 @@ public class MostrarConsulta extends JFrame {
 		contentPane.add(btnVoltar);
 		
 		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setForeground(new Color(255, 255, 255));
+		btnExcluir.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnExcluir.setBackground(new Color(9, 61, 108));
 		btnExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				excluir();
@@ -180,6 +209,9 @@ public class MostrarConsulta extends JFrame {
 		contentPane.add(btnExcluir);
 		
 		JButton btnEditar = new JButton("Editar");
+		btnEditar.setBackground(new Color(9, 61, 108));
+		btnEditar.setForeground(new Color(255, 255, 255));
+		btnEditar.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				editar();
@@ -188,6 +220,11 @@ public class MostrarConsulta extends JFrame {
 		});
 		btnEditar.setBounds(110, 204, 85, 21);
 		contentPane.add(btnEditar);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(9, 61, 108));
+		panel.setBounds(0, 0, 879, 26);
+		contentPane.add(panel);
 	}
 	
 	public void listarValores() {
