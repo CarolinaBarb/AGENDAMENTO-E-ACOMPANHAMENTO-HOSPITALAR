@@ -13,8 +13,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
@@ -58,29 +61,29 @@ public class LoginSecretaria extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Usuário");
-		lblNewLabel.setBounds(0, 93, 410, 35);
+		lblNewLabel.setBounds(0, 172, 410, 35);
 		lblNewLabel.setForeground(new Color(9, 69, 108));
 		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 15));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblNewLabel);
 		
 		textUsuario = new JTextField();
-		textUsuario.setBounds(93, 138, 259, 19);
+		textUsuario.setBounds(93, 212, 259, 19);
 		contentPane.add(textUsuario);
 		textUsuario.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Senha");
-		lblNewLabel_1.setBounds(184, 200, 63, 13);
+		lblNewLabel_1.setBounds(181, 256, 63, 13);
 		lblNewLabel_1.setForeground(new Color(9, 69, 108));
 		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 15));
 		contentPane.add(lblNewLabel_1);
 		
 		passwordSenha = new JPasswordField();
-		passwordSenha.setBounds(93, 236, 259, 19);
+		passwordSenha.setBounds(93, 284, 259, 19);
 		contentPane.add(passwordSenha);
 		
 		JButton btnEntrar = new JButton("Entrar");
-		btnEntrar.setBounds(174, 288, 85, 21);
+		btnEntrar.setBounds(170, 326, 85, 21);
 		btnEntrar.setForeground(new Color(255, 255, 255));
 		btnEntrar.setBackground(new Color(9, 69, 108));
 		btnEntrar.addActionListener(new ActionListener() {
@@ -137,8 +140,19 @@ public class LoginSecretaria extends JFrame {
 		panel.setBounds(0, 0, 430, 67);
 		panel.setBackground(new Color(9, 69, 108));
 		contentPane.add(panel);
-	}
-	
+		
+		JLabel lblNewLabel_3 = new JLabel("Login Secretária");
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
+		lblNewLabel_3.setFont(new Font("Times New Roman", Font.PLAIN, 22));
+		panel.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+        lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+        Image image2 = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
+        lblNewLabel_2.setIcon(new ImageIcon(image2.getScaledInstance(90, 90, Image.SCALE_SMOOTH)));
+		lblNewLabel_2.setBounds(124, 77, 164, 96);
+		contentPane.add(lblNewLabel_2);
 		
 	
+	}
 }

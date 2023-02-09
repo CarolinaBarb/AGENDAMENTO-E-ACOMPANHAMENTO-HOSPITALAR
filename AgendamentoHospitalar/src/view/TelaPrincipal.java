@@ -89,7 +89,7 @@ public class TelaPrincipal extends JFrame {
 		panel.setBounds(0, 0, 612, 54);
 		contentPane.add(panel);
 		
-		JLabel lblClinic = new JLabel("Leticia Linda");
+		JLabel lblClinic = new JLabel("Clínica");
 		panel.add(lblClinic);
 		lblClinic.setForeground(Color.WHITE);
 		lblClinic.setHorizontalAlignment(SwingConstants.CENTER);
@@ -99,23 +99,30 @@ public class TelaPrincipal extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		Image img = new ImageIcon(this.getClass().getResource("/imagem/doctor.png")).getImage();
 		lblNewLabel.setIcon(new ImageIcon(img.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
-		lblNewLabel.setBounds(10, 81, 111, 63);
+		lblNewLabel.setBounds(26, 81, 111, 63);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		Image imag = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
 		lblNewLabel_1.setIcon(new ImageIcon(imag.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
-		lblNewLabel_1.setBounds(155, 81, 111, 63);
+		lblNewLabel_1.setBounds(165, 81, 111, 63);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("");
 		Image image = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
 		lblNewLabel_1_1.setIcon(new ImageIcon(image.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1.setBounds(313, 81, 111, 63);
+		lblNewLabel_1_1.setBounds(321, 81, 111, 63);
 		contentPane.add(lblNewLabel_1_1);
 		
+		JLabel lblNewLabel_2 = new JLabel("");
+        lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+        Image image2 = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
+        lblNewLabel_2.setIcon(new ImageIcon(image2.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
+        lblNewLabel_2.setBounds(479, 81, 96, 63);
+        contentPane.add(lblNewLabel_2);
+        
 		JButton btnNewButton_2 = new JButton("Login Administrador");
 		btnNewButton_2.setForeground(new Color(255, 255, 255));
 		btnNewButton_2.setBackground(new Color(9, 69, 108));
@@ -130,12 +137,6 @@ public class TelaPrincipal extends JFrame {
 		btnNewButton_2.setBounds(301, 165, 143, 21);
 		contentPane.add(btnNewButton_2);
 		
-		JLabel lblNewLabel_1_1_1 = new JLabel("");
-		lblNewLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		Image image2 = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
-		lblNewLabel_1_1.setIcon(new ImageIcon(image.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
-		lblNewLabel_1_1_1.setBounds(479, 81, 111, 63);
-		contentPane.add(lblNewLabel_1_1_1);
 		
 		JButton btnNewButton_3 = new JButton("Login Secretária(o)");
 		btnNewButton_3.setForeground(new Color(255, 255, 255));
@@ -151,9 +152,7 @@ public class TelaPrincipal extends JFrame {
 		btnNewButton_3.setBounds(464, 165, 138, 21);
 		contentPane.add(btnNewButton_3);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(479, 81, 96, 63);
-		contentPane.add(lblNewLabel_2);
+		
 	
 	
 		
