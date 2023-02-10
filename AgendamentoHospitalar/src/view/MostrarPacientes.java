@@ -59,7 +59,7 @@ public class MostrarPacientes extends JFrame {
 	 */
 	public MostrarPacientes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1005, 352);
+		setBounds(100, 100, 1034, 352);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -69,7 +69,7 @@ public class MostrarPacientes extends JFrame {
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(386, 82, 605, 183);
+		scrollPane.setBounds(386, 82, 636, 183);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -91,7 +91,7 @@ public class MostrarPacientes extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, -18, 991, 53);
+		panel.setBounds(0, -18, 1022, 53);
 		panel.setBackground(new Color(9, 69, 108));
 		contentPane.add(panel);
 		
@@ -162,7 +162,7 @@ public class MostrarPacientes extends JFrame {
 				CarregarCampos();
 			}
 		});
-		btnNewButton_2.setBounds(848, 51, 133, 21);
+		btnNewButton_2.setBounds(889, 49, 133, 21);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblCodigo = new JLabel("Código:");
@@ -203,7 +203,7 @@ public class MostrarPacientes extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_3.setBounds(896, 284, 85, 21);
+		btnNewButton_3.setBounds(937, 284, 85, 21);
 		contentPane.add(btnNewButton_3);
 		
 		JLabel lblNome = new JLabel("Nome:");
@@ -324,7 +324,7 @@ public class MostrarPacientes extends JFrame {
 				limpar();
 			}
 		});
-		btnLimpar.setBounds(753, 51, 85, 21);
+		btnLimpar.setBounds(785, 49, 85, 21);
 		contentPane.add(btnLimpar);
 		
 		

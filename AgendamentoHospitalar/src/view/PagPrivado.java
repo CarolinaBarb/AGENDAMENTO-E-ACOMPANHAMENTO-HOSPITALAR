@@ -103,7 +103,7 @@ public class PagPrivado extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(232, 246, 173, 29);
+		btnNewButton.setBounds(246, 246, 173, 29);
 		contentPane.add(btnNewButton);
 		
 		JPanel panel = new JPanel();
@@ -163,7 +163,7 @@ public class PagPrivado extends JFrame {
 		});
 		btnNewButton_1.setBackground(new Color(45, 84, 123));
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
-		btnNewButton_1.setBounds(10, 246, 173, 29);
+		btnNewButton_1.setBounds(10, 246, 210, 29);
 		contentPane.add(btnNewButton_1);
 		
 		textValor = new JTextField();

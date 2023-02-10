@@ -65,12 +65,12 @@ public class Pagamentos extends JFrame {
 		lblNewLabel_1.setForeground(new Color(9, 69, 108));
 		lblNewLabel_1.setBackground(new Color(9, 69, 108));
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		lblNewLabel_1.setBounds(21, 76, 144, 19);
+		lblNewLabel_1.setBounds(21, 76, 181, 19);
 		contentPane.add(lblNewLabel_1);
 		
 		textValor = new JTextField();
 		textValor.setEnabled(false);
-		textValor.setBounds(159, 78, 96, 19);
+		textValor.setBounds(183, 77, 96, 19);
 		contentPane.add(textValor);
 		textValor.setColumns(10);
 		
@@ -122,12 +122,12 @@ public class Pagamentos extends JFrame {
 		JLabel lblNewLabel_4 = new JLabel("Data: ");
 		lblNewLabel_4.setForeground(new Color(9, 69, 108));
 		lblNewLabel_4.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		lblNewLabel_4.setBounds(21, 109, 45, 13);
+		lblNewLabel_4.setBounds(21, 109, 74, 17);
 		contentPane.add(lblNewLabel_4);
 		
 		textData = new JTextField();
 		textData.setEnabled(false);
-		textData.setBounds(69, 108, 96, 19);
+		textData.setBounds(69, 109, 96, 19);
 		contentPane.add(textData);
 		textData.setColumns(10);
 		
@@ -191,7 +191,7 @@ public class Pagamentos extends JFrame {
 		
 		textCodigo = new JTextField();
 		textCodigo.setEnabled(false);
-		textCodigo.setBounds(79, 137, 45, 19);
+		textCodigo.setBounds(93, 134, 45, 19);
 		contentPane.add(textCodigo);
 		textCodigo.setColumns(10);
 	}

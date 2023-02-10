@@ -79,7 +79,7 @@ public class Recibos extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JButton btnNewButton = new JButton("Selecionar");
-		btnNewButton.setBounds(316, 56, 85, 21);
+		btnNewButton.setBounds(281, 56, 120, 21);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nome");

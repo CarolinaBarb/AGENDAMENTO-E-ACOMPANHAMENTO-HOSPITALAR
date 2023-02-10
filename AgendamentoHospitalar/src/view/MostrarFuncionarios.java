@@ -59,7 +59,7 @@ public class MostrarFuncionarios extends JFrame {
 
 	public MostrarFuncionarios() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1023, 373);
+		setBounds(100, 100, 1060, 373);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -112,7 +112,7 @@ public class MostrarFuncionarios extends JFrame {
 		textDataadmissao.setColumns(10);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(259, 53, 740, 225);
+		scrollPane.setBounds(259, 53, 789, 225);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -174,7 +174,7 @@ public class MostrarFuncionarios extends JFrame {
 			}
 			
 		});
-		btnCarregarCampos.setBounds(853, 16, 152, 21);
+		btnCarregarCampos.setBounds(896, 20, 152, 21);
 		contentPane.add(btnCarregarCampos);
 		
 		JButton btnCadastar = new JButton("Cadastrar");
@@ -257,7 +257,7 @@ public class MostrarFuncionarios extends JFrame {
 				dispose();
 			}
 		});
-		btnVoltar.setBounds(920, 301, 85, 21);
+		btnVoltar.setBounds(963, 305, 85, 21);
 		contentPane.add(btnVoltar);
 		
 		JLabel lblSexo = new JLabel("Sexo:");
@@ -306,7 +306,7 @@ public class MostrarFuncionarios extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(9, 69, 108));
-		panel.setBounds(0, 0, 1009, 13);
+		panel.setBounds(0, 0, 1060, 13);
 		contentPane.add(panel);
 	}
 	

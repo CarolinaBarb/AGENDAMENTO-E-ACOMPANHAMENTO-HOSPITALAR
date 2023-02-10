@@ -67,13 +67,13 @@ public class TelaSecretaria extends JFrame {
 				dispose(); 
 			}
 		});
-		btnConsulta.setBounds(10, 88, 173, 30);
+		btnConsulta.setBounds(10, 88, 223, 30);
 		contentPane.add(btnConsulta);
 		
 		JButton btnDisponibilidade = new JButton("Adicionar disponibilidades");
 		btnDisponibilidade.setForeground(new Color(255, 255, 255));
 		btnDisponibilidade.setBackground(new Color(9, 69, 108));
-		btnDisponibilidade.setBounds(10, 245, 173, 30);
+		btnDisponibilidade.setBounds(10, 245, 229, 30);
 		btnDisponibilidade.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MarcarDisponibilidade md = new MarcarDisponibilidade();
@@ -86,7 +86,7 @@ public class TelaSecretaria extends JFrame {
 		JButton btnPagamento = new JButton("Adicionar Pagamento");
 		btnPagamento.setForeground(new Color(255, 255, 255));
 		btnPagamento.setBackground(new Color(9, 69, 108));
-		btnPagamento.setBounds(10, 166, 173, 30);
+		btnPagamento.setBounds(10, 166, 229, 30);
 		btnPagamento.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Pagamentos pg = new Pagamentos();
@@ -164,7 +164,7 @@ public class TelaSecretaria extends JFrame {
 		});
 		btnSelecionar.setForeground(new Color(255, 255, 255));
 		btnSelecionar.setBackground(new Color(45, 84, 123));
-		btnSelecionar.setBounds(592, 309, 85, 21);
+		btnSelecionar.setBounds(554, 309, 123, 21);
 		contentPane.add(btnSelecionar);
 	}
 	public void listarValores() {

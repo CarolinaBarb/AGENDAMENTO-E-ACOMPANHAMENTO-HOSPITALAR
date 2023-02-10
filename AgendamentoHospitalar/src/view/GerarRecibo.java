@@ -80,7 +80,7 @@ public class GerarRecibo extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		textNome = new JTextField();
-		textNome.setBounds(19, 71, 340, 19);
+		textNome.setBounds(11, 71, 348, 19);
 		contentPane.add(textNome);
 		textNome.setColumns(10);
 		
@@ -126,7 +126,7 @@ public class GerarRecibo extends JFrame {
 		});
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(0, 64, 128));
-		btnNewButton.setBounds(142, 292, 101, 21);
+		btnNewButton.setBounds(125, 293, 149, 21);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_5 = new JLabel("Email Paciente");
@@ -136,7 +136,7 @@ public class GerarRecibo extends JFrame {
 		contentPane.add(lblNewLabel_5);
 		
 		textEmail = new JTextField();
-		textEmail.setBounds(18, 112, 342, 19);
+		textEmail.setBounds(11, 112, 349, 19);
 		contentPane.add(textEmail);
 		textEmail.setColumns(10);
 		
@@ -150,7 +150,7 @@ public class GerarRecibo extends JFrame {
 		});
 		btnNewButton_1.setBackground(new Color(0, 64, 128));
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
-		btnNewButton_1.setBounds(274, 316, 85, 21);
+		btnNewButton_1.setBounds(292, 314, 85, 21);
 		contentPane.add(btnNewButton_1);
 	}
 	

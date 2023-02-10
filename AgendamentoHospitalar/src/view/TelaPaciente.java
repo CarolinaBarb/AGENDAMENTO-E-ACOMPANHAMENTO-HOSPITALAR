@@ -201,7 +201,7 @@ public class TelaPaciente extends JFrame {
 				}
 			
 		}});
-		btnNewButton.setBounds(628, 93, 153, 21);
+		btnNewButton.setBounds(629, 108, 153, 21);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Conferir Prontuário");
@@ -240,7 +240,7 @@ public class TelaPaciente extends JFrame {
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
-		btnNewButton_1.setBounds(628, 142, 152, 21);
+		btnNewButton_1.setBounds(629, 159, 152, 21);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Voltar");
@@ -266,7 +266,7 @@ public class TelaPaciente extends JFrame {
 				CarregarCampos();
 			}
 		});
-		btnNewButton_3.setBounds(679, 48, 102, 21);
+		btnNewButton_3.setBounds(680, 63, 102, 21);
 		contentPane.add(btnNewButton_3);
 		
 		JLabel lbltextEmail = new JLabel("Email:");
@@ -282,9 +282,13 @@ public class TelaPaciente extends JFrame {
 		textEmail.setColumns(10);
 		
 		JButton btnNewButton_4 = new JButton("Recibos de Pagamentos");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_4.setForeground(new Color(255, 255, 255));
-		btnNewButton_4.setBackground(new Color(0, 64, 128));
-		btnNewButton_4.setBounds(629, 188, 152, 21);
+		btnNewButton_4.setBackground(new Color(9, 68, 108));
+		btnNewButton_4.setBounds(550, 205, 231, 21);
 		contentPane.add(btnNewButton_4);
 		
 	}

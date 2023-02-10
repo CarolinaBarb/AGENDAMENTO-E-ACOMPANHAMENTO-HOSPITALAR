@@ -61,7 +61,7 @@ public class LoginSecretaria extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Usuário");
-		lblNewLabel.setBounds(0, 238, 410, 35);
+		lblNewLabel.setBounds(110, 238, 207, 37);
 		lblNewLabel.setForeground(new Color(9, 69, 108));
 		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 15));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -73,7 +73,7 @@ public class LoginSecretaria extends JFrame {
 		textUsuario.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Senha");
-		lblNewLabel_1.setBounds(181, 319, 63, 13);
+		lblNewLabel_1.setBounds(191, 318, 63, 12);
 		lblNewLabel_1.setForeground(new Color(9, 69, 108));
 		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 15));
 		contentPane.add(lblNewLabel_1);
@@ -83,7 +83,7 @@ public class LoginSecretaria extends JFrame {
 		contentPane.add(passwordSenha);
 		
 		JButton btnEntrar = new JButton("Entrar");
-		btnEntrar.setBounds(159, 393, 85, 21);
+		btnEntrar.setBounds(176, 393, 85, 21);
 		btnEntrar.setForeground(new Color(255, 255, 255));
 		btnEntrar.setBackground(new Color(9, 69, 108));
 		btnEntrar.addActionListener(new ActionListener() {
@@ -150,7 +150,7 @@ public class LoginSecretaria extends JFrame {
         lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
         Image image2 = new ImageIcon(this.getClass().getResource("/imagem/user.png")).getImage();
         lblNewLabel_2.setIcon(new ImageIcon(image2.getScaledInstance(148, 148, Image.SCALE_SMOOTH)));
-		lblNewLabel_2.setBounds(124, 77, 164, 151);
+		lblNewLabel_2.setBounds(135, 75, 164, 151);
 		contentPane.add(lblNewLabel_2);
 		
 	

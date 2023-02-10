@@ -89,7 +89,7 @@ public class ReceitaPaciente extends JFrame {
 		JButton btnSelecionar = new JButton("selecionar");
 		btnSelecionar.setBackground(new Color(0, 64, 128));
 		btnSelecionar.setForeground(new Color(255, 255, 255));
-		btnSelecionar.setBounds(451, 40, 85, 15);
+		btnSelecionar.setBounds(428, 40, 108, 15);
 		contentPane.add(btnSelecionar);
 		
 		JLabel lblNewLabel_1 = new JLabel("Informações da receita");
