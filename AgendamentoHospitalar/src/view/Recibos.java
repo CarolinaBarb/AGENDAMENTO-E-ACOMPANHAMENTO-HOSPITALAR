@@ -7,13 +7,23 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.util.ArrayList;
+
 import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import control.ControlFuncionario;
+import model.Recibo;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Recibos extends JFrame {
 
@@ -47,6 +57,7 @@ public class Recibos extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 430, 442);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -79,6 +90,14 @@ public class Recibos extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JButton btnNewButton = new JButton("Selecionar");
+		btnNewButton.setBackground(new Color(0, 64, 128));
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 12));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CarregarCampos();
+			}
+		});
 		btnNewButton.setBounds(316, 56, 85, 21);
 		contentPane.add(btnNewButton);
 		
@@ -123,8 +142,38 @@ public class Recibos extends JFrame {
 		textDescricao.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("Voltar");
-		btnNewButton_1.setForeground(new Color(0, 64, 128));
+		btnNewButton_1.setBackground(new Color(0, 64, 128));
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setBounds(145, 346, 135, 21);
 		contentPane.add(btnNewButton_1);
 	}
+	public void listarValores(String email) {
+		try {
+		ControlFuncionario objcontrolFuncionario = new ControlFuncionario();
+		DefaultTableModel model = (DefaultTableModel)table.getModel();
+		model.setNumRows(0);
+		
+		ArrayList<Recibo> Lista1 = objcontrolFuncionario.PacienteRecibo(email);
+		
+		for(int num = 0; num < Lista1.size(); num++) {
+			model.addRow(new Object[] {
+					Lista1.get(num).getNome(),
+					Lista1.get(num).getValorTotal(),
+					Lista1.get(num).getData(),
+					Lista1.get(num).getDescricao(),
+			});
+		}
+		}catch(Exception erro) {
+			JOptionPane.showMessageDialog(null, "listar valores recibos" + erro);
+		}
+	}
+	public void CarregarCampos() {
+		int setar = table.getSelectedRow();
+		
+		textNome.setText(table.getModel().getValueAt(setar, 0).toString());
+		textValor.setText(table.getModel().getValueAt(setar, 1).toString());
+		textData.setText(table.getModel().getValueAt(setar, 2).toString());
+		textDescricao.setText(table.getModel().getValueAt(setar, 3).toString());
+	}
 }
+

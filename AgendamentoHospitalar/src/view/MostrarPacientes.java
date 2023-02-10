@@ -101,39 +101,7 @@ public class MostrarPacientes extends JFrame {
 		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String nome, email, senha, sexo, observacao, cpf, idade, dataNascimento;
-				String  altura, peso;
-				
-				nome = textNome.getText();
-				email = textEmail.getText();
-				senha = passwordField.getText();
-				sexo = textSexo.getText();
-				altura =textAltura.getText();
-				peso = textPeso.getText();
-				observacao = textObs.getText();
-				cpf = textCpf.getText();
-				dataNascimento = textDataNascimento.getText();
-				idade = textIdade.getText();
-				
-				
-				Paciente pacientes = new Paciente();
-				pacientes.setNome(nome);
-				pacientes.setEmail(email);
-				pacientes.setSenha(senha);
-				pacientes.setSexo(sexo);
-				pacientes.setDataNascimento(dataNascimento);
-				pacientes.setAltura(altura);
-				pacientes.setPeso(peso);
-				pacientes.setObservacao(observacao);
-				pacientes.setCpf(cpf);
-				pacientes.setIdade(idade);
-				
-			
-				ControlAdministrador pacientecontrol = new ControlAdministrador();
-				pacientecontrol.cadastrarPaciente(pacientes);
-				
-				listarValores();
-				limpar();
+				cadastrar();
 			}
 			
 		});
@@ -429,5 +397,40 @@ public class MostrarPacientes extends JFrame {
 		
 		ControlAdministrador objcontrolPaciente = new ControlAdministrador();
 		objcontrolPaciente.editarPaciente(objeditarPaciente);
+	}
+	private void cadastrar() {
+		String nome, email, senha, sexo, observacao, cpf, idade, dataNascimento;
+		String  altura, peso;
+		
+		nome = textNome.getText();
+		email = textEmail.getText();
+		senha = passwordField.getText();
+		sexo = textSexo.getText();
+		altura =textAltura.getText();
+		peso = textPeso.getText();
+		observacao = textObs.getText();
+		cpf = textCpf.getText();
+		dataNascimento = textDataNascimento.getText();
+		idade = textIdade.getText();
+		
+		
+		Paciente pacientes = new Paciente();
+		pacientes.setNome(nome);
+		pacientes.setEmail(email);
+		pacientes.setSenha(senha);
+		pacientes.setSexo(sexo);
+		pacientes.setDataNascimento(dataNascimento);
+		pacientes.setAltura(altura);
+		pacientes.setPeso(peso);
+		pacientes.setObservacao(observacao);
+		pacientes.setCpf(cpf);
+		pacientes.setIdade(idade);
+		
+	
+		ControlAdministrador pacientecontrol = new ControlAdministrador();
+		pacientecontrol.cadastrarPaciente(pacientes);
+		
+		listarValores();
+		limpar();
 	}
 }

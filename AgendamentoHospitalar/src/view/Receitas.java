@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-
+import control.ControlMedico;
 import control.ControlReceitas;
 import model.Medico;
 import model.Receita;
@@ -136,7 +136,7 @@ public class Receitas extends JFrame {
 				objreceita.setFrequencia(frequencia);
 				objreceita.setDias(dias);
 				
-				ControlReceitas objcontrolReceita = new ControlReceitas();
+				ControlMedico objcontrolReceita = new ControlMedico();
 				objcontrolReceita.cadastrarReceita(objreceita);
 				
 			}

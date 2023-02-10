@@ -6,9 +6,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import control.ControlFuncionario;
+import control.ControlPaciente;
+import model.Consulta;
+import model.Paciente;
 
 import java.awt.Color;
 import javax.swing.SwingConstants;
@@ -20,6 +26,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 
@@ -29,6 +36,8 @@ public class TelaMedico extends JFrame {
 	private JTable table;
 	private JTextField textDiagnostico;
 	private JLabel lblObservacao;
+	private JTextField textPaciente;
+	private JTextField textObs;
 
 	/**
 	 * Launch the application.
@@ -86,21 +95,26 @@ public class TelaMedico extends JFrame {
 		lblDiagnostico.setForeground(new Color(9, 69, 108));
 		lblDiagnostico.setFont(new Font("Verdana", Font.PLAIN, 12));
 		lblDiagnostico.setHorizontalAlignment(SwingConstants.LEFT);
-		lblDiagnostico.setBounds(10, 174, 130, 13);
+		lblDiagnostico.setBounds(10, 208, 130, 13);
 		contentPane.add(lblDiagnostico);
 		
 		textDiagnostico = new JTextField();
-		textDiagnostico.setBounds(10, 197, 280, 25);
+		textDiagnostico.setBounds(10, 231, 280, 25);
 		contentPane.add(textDiagnostico);
 		textDiagnostico.setColumns(10);
 		
 		lblObservacao = new JLabel("Observações:");
 		lblObservacao.setForeground(new Color(9, 69, 108));
 		lblObservacao.setFont(new Font("Verdana", Font.PLAIN, 12));
-		lblObservacao.setBounds(10, 240, 98, 13);
+		lblObservacao.setBounds(10, 266, 98, 13);
 		contentPane.add(lblObservacao);
 		
 		JButton btnNewButton_1 = new JButton("Registrar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cadastrar();
+			}
+		});
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton_1.setBackground(new Color(9, 69, 108));
@@ -141,18 +155,13 @@ public class TelaMedico extends JFrame {
 		btnAtestado.setBackground(new Color(9, 69, 108));
 		btnAtestado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Atestado at = new Atestado();
+				GeraAtestado at = new GeraAtestado();
 				at.setVisible(true);
 				dispose();
 			}
 		});
 		btnAtestado.setBounds(365, 193, 171, 32);
 		contentPane.add(btnAtestado);
-		
-		JTextArea textObservações = new JTextArea();
-		textObservações.setBackground(new Color(205, 225, 216));
-		textObservações.setBounds(5, 265, 285, 93);
-		contentPane.add(textObservações);
 		
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setForeground(new Color(255, 255, 255));
@@ -178,5 +187,75 @@ public class TelaMedico extends JFrame {
 		panel.add(lblNewLabel);
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 23));
+		
+		JButton btnNewButton_2 = new JButton("Selecionar");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CarregarCampos();
+			}
+		});
+		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnNewButton_2.setForeground(new Color(255, 255, 255));
+		btnNewButton_2.setBackground(new Color(55, 72, 121));
+		btnNewButton_2.setBounds(205, 57, 85, 21);
+		contentPane.add(btnNewButton_2);
+		
+		JLabel lblNewLabel_1 = new JLabel("Paciente:");
+		lblNewLabel_1.setForeground(new Color(55, 72, 121));
+		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblNewLabel_1.setBounds(10, 158, 98, 13);
+		contentPane.add(lblNewLabel_1);
+		
+		textPaciente = new JTextField();
+		textPaciente.setEnabled(false);
+		textPaciente.setBounds(10, 173, 280, 25);
+		contentPane.add(textPaciente);
+		textPaciente.setColumns(10);
+		
+		textObs = new JTextField();
+		textObs.setBackground(new Color(174, 196, 210));
+		textObs.setBounds(10, 285, 280, 60);
+		contentPane.add(textObs);
+		textObs.setColumns(10);
 	}
+	public void ListarValoresMedico() {
+		try {
+			ControlPaciente objcontrolpaciente = new ControlPaciente();
+			DefaultTableModel model = (DefaultTableModel) table.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Paciente> lista = objcontrolpaciente.PesquisarPaciente();
+			
+			for(int num = 0; num < lista.size(); num++) {
+				model.addRow(new Object[] {
+						lista.get(num).getNome(),
+						lista.get(num).getIdade(),
+				});
+			}
+			
+		}catch(Exception erro) {
+			JOptionPane.showMessageDialog(null, "Listar Valores View:" + erro);
+		}
+	}
+	public void CarregarCampos() {
+		int setar = table.getSelectedRow();
+		textPaciente.setText(table.getModel().getValueAt(setar, 0).toString());
+	}
+	private void cadastrar() {
+		String nome, diagnostico, observacao;
+		
+		nome = textPaciente.getText();
+		diagnostico = textDiagnostico.getText();
+		observacao = textObs.getText();
+		
+		Consulta objconsulta = new Consulta();
+		objconsulta.setIdPaciente(observacao);
+		objconsulta.setDiagnostico(diagnostico);
+		objconsulta.setObs(observacao);
+		
+		ControlFuncionario funcionarioControl = new ControlFuncionario();
+		funcionarioControl.cadastrarConsulta(objconsulta);
+		
+		ListarValoresMedico();
+}
 }

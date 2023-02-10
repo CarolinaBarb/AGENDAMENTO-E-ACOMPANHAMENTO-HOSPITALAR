@@ -23,6 +23,8 @@ import model.Paciente;
 
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Prontuario extends JFrame {
 
@@ -262,6 +264,13 @@ public class Prontuario extends JFrame {
 		textField_9.setColumns(10);
 		
 		JButton btnNewButton_2 = new JButton("Voltar");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LoginPaciente lg = new LoginPaciente();
+				lg.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton_2.setForeground(new Color(255, 255, 255));
 		btnNewButton_2.setBackground(new Color(9, 61, 108));
 		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 10));

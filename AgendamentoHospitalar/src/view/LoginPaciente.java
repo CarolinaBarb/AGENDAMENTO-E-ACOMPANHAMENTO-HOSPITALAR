@@ -24,12 +24,13 @@ import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
 
 public class LoginPaciente extends JFrame {
 
 	private JPanel contentPane;
 	public static JTextField inserirEmail;
-	private JTextField inserirSenha;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -93,11 +94,6 @@ public class LoginPaciente extends JFrame {
 		lblNewLabel_2.setBounds(0, 303, 436, 13);
 		contentPane.add(lblNewLabel_2);
 		
-		inserirSenha = new JTextField();
-		inserirSenha.setBounds(56, 326, 316, 19);
-		contentPane.add(inserirSenha);
-		inserirSenha.setColumns(10);
-		
 		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.setForeground(new Color(255, 255, 255));
 		btnEntrar.setFont(new Font("Verdana", Font.PLAIN, 10));
@@ -130,6 +126,10 @@ public class LoginPaciente extends JFrame {
 		lblNewLabel_3.setIcon(new ImageIcon(image.getScaledInstance(148, 148, Image.SCALE_SMOOTH)));
 		lblNewLabel_3.setBounds(10, 68, 416, 145);
 		contentPane.add(lblNewLabel_3);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(56, 326, 316, 19);
+		contentPane.add(passwordField);
 	}
 	private void Logar() {
 		
@@ -137,7 +137,7 @@ public class LoginPaciente extends JFrame {
 			String nome_usuario, senha_usuario;
 		
 		    nome_usuario = inserirEmail.getText();
-		    senha_usuario = inserirSenha.getText();
+		    senha_usuario = passwordField.getText();
 		
 		    Paciente objpacientemodel = new Paciente();
 		    objpacientemodel.setEmail(nome_usuario);

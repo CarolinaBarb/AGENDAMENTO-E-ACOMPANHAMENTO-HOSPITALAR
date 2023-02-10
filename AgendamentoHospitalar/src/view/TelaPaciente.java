@@ -14,11 +14,13 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import control.ControlConsulta;
+import control.ControlFuncionario;
 import control.ControlPaciente;
 import control.ControlReceitas;
 import model.Consulta;
 import model.Paciente;
 import model.Receita;
+import model.Recibo;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -282,8 +284,36 @@ public class TelaPaciente extends JFrame {
 		textEmail.setColumns(10);
 		
 		JButton btnNewButton_4 = new JButton("Recibos de Pagamentos");
+		btnNewButton_4.setFont(new Font("Verdana", Font.PLAIN, 10));
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			try {	
+				String usuario;
+				usuario = LoginPaciente.inserirEmail.getText();
+				
+				Recibo objrecibo = new Recibo();
+				objrecibo.setEmail_Paciente(usuario);
+				
+				ControlFuncionario objcontrolrecibo = new ControlFuncionario();
+				ResultSet rs = objcontrolrecibo.autenticacaoRecibo(objrecibo);
+			if(rs.next()) {
+				   Recibos rp = new Recibos();
+				   rp.listarValores(usuario);;
+				   rp.setVisible(true);
+			       dispose();}
+				   
+			   else {
+				   //enviar msg dizendo incorreto
+				   JOptionPane.showMessageDialog(null, "email invalido");
+			   }
+		} catch(SQLException erro) {
+			JOptionPane.showMessageDialog(null,"FRMTelaPacienteView" +erro);
+		}
+	
+			}});
 		btnNewButton_4.setForeground(new Color(255, 255, 255));
-		btnNewButton_4.setBackground(new Color(0, 64, 128));
+		btnNewButton_4.setBackground(new Color(55, 72, 121));
 		btnNewButton_4.setBounds(629, 188, 152, 21);
 		contentPane.add(btnNewButton_4);
 		

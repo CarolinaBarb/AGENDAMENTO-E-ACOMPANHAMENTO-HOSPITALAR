@@ -17,28 +17,7 @@ public class ControlReceitas {
 	PreparedStatement pstm;
 	public static ArrayList<Receita> lista = new ArrayList<>();
 	
-	public void cadastrarReceita(Receita objreceita) {
-		conn = new ConexaoDAO().conectaBD();
-		
-		String sql = "insert into receita (nome_paciente, medicamento, dosagem, frequencia, dias, email, nome_medico) values (?,?,?,?,?,?,?)";
-		
-		try {
-			pstm = conn.prepareStatement(sql);
-			pstm.setString(1, objreceita.getNomePaciente());
-			pstm.setString(2, objreceita.getMedicamento());
-			pstm.setString(3, objreceita.getDosagemReceitada());
-			pstm.setString(4, objreceita.getFrequencia());
-			pstm.setString(5, objreceita.getDias());
-			pstm.setString(6, objreceita.getEmail());
-			pstm.setString(7, objreceita.getMedicoResp());
-			
-			pstm.execute();
-			JOptionPane.showMessageDialog(null, "Receita Cadastrada com sucesso!");
-			pstm.close();
-		}catch(Exception erro){
-			JOptionPane.showMessageDialog(null,"Receitas cadastro"+ erro);
-		}
-	}
+	
 	public ArrayList<Receita> PesquisarReceita(){
 		String sql = "select * from receitas";
 		conn = new ConexaoDAO().conectaBD();

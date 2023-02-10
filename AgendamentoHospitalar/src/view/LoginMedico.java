@@ -104,6 +104,7 @@ public class LoginMedico extends JFrame {
 					if(rsmed.next()) {
 						TelaMedico ta = new TelaMedico();
 						ta.setVisible(true);
+						ta.ListarValoresMedico();
 						dispose();
 					}
 				} catch (SQLException erro) {

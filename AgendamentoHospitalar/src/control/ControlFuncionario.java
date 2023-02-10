@@ -20,6 +20,7 @@ public class ControlFuncionario {
 	PreparedStatement pstm;
 	ResultSet rs;
 	ArrayList<Funcionario> Lista = new ArrayList<>();
+	ArrayList<Recibo>Lista1 = new ArrayList<>(); 
 	
 	public ResultSet autenticacaoSecretaria(Funcionario objsecretaria) {
 		conn = new ConexaoDAO().conectaBD();
@@ -141,4 +142,46 @@ public class ControlFuncionario {
 		}
 
 }
+	public ArrayList <Recibo> PacienteRecibo(String email){
+		String sql = "Select * from recibos where email = ? ";
+		conn = new ConexaoDAO().conectaBD();
+		
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, email);
+			
+			ResultSet rs = pstm.executeQuery();
+			
+			while(rs.next()) {
+				Recibo objrecibo = new Recibo();
+				objrecibo.setNome(rs.getString("nome"));
+				objrecibo.setValorTotal(rs.getString("valor"));
+				objrecibo.setData(rs.getString("data"));
+				objrecibo.setDescricao(rs.getString("descricao"));
+				
+				Lista1.add(objrecibo);
+			}
+			
+		}catch(SQLException erro) {
+			JOptionPane.showMessageDialog(null, erro);
+		}
+		return Lista1;
+	}
+	
+	public ResultSet autenticacaoRecibo(Recibo objrecibo) {
+		conn = new ConexaoDAO().conectaBD();
+		try {
+			String sql = "select * from recibos where email = ?"; // mesmo q ta no banco
+
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, objrecibo.getEmail_Paciente()); 
+
+			ResultSet rs = pstm.executeQuery();
+			return rs;
+
+		} catch (SQLException erro) {
+			JOptionPane.showMessageDialog(null, "Recibo Control: " + erro);
+			return null;
+		}
+	}
 }
