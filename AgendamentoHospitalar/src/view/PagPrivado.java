@@ -24,8 +24,9 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import control.ControlConsulta;
+import control.ControlFuncionario;
 import control.ControlMedico;
-import control.ControlPagamento;
+
 import model.Consulta;
 import model.Medico;
 import model.Privado;
@@ -40,6 +41,8 @@ public class PagPrivado extends JFrame {
 	private JTextField textCodigo;
 	private JTextField textValor;
 	private JTextField textData;
+	private JTextField textParcelamento;
+	private JTextField textTipo;
 
 	/**
 	 * Launch the application.
@@ -48,7 +51,7 @@ public class PagPrivado extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Privado frame = new Privado();
+					PagPrivado frame = new PagPrivado();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -188,16 +191,15 @@ public class PagPrivado extends JFrame {
 		contentPane.add(textData);
 		textData.setColumns(10);
 		
-	
-		JComboBox comboBoxPag = new JComboBox();
-		comboBoxPag.setModel(new DefaultComboBoxModel(new String[] {"1x", "2x", "3x", "4x", "5x", "6x", "7x", "8x", "9x", "10x"}));
-		comboBoxPag.setBounds(292, 84, 113, 21);
-		contentPane.add(comboBoxPag);
+		textParcelamento = new JTextField();
+		textParcelamento.setBounds(292, 85, 96, 19);
+		contentPane.add(textParcelamento);
+		textParcelamento.setColumns(10);
 		
-		JComboBox comboBoxTipo = new JComboBox();
-		comboBoxTipo.setModel(new DefaultComboBoxModel(new String[] {"Cartao", "Dinheiro"}));
-		comboBoxTipo.setBounds(292, 163, 113, 21);
-		contentPane.add(comboBoxTipo);
+		textTipo = new JTextField();
+		textTipo.setBounds(292, 163, 96, 19);
+		contentPane.add(textTipo);
+		textTipo.setColumns(10);
 	}
 
 	public void listarValoresPagamento(String id) {
@@ -237,8 +239,8 @@ public class PagPrivado extends JFrame {
 		String nome = textNome.getText();
 		String data = textData.getText();
 		String valor = textValor.getText();
-		String tipo = comboBoxTipo.getSelectedItem().toString();
-		String parcelas = comboBoxPag.getSelectedItem().toString();
+		String tipo = textTipo.getText();
+		String parcelas = textParcelamento.getText();
 		
 		Privado privado = new Privado(0, "", "", "");
 		privado.setNome(nome);
@@ -247,7 +249,7 @@ public class PagPrivado extends JFrame {
 		privado.setTipo(tipo);
 		privado.setParcelas(parcelas);
 		
-		ControlPagamento objcontrolPag = new ControlPagamento();
+		ControlFuncionario objcontrolPag = new ControlFuncionario();
 		objcontrolPag.RegistrarPagamentoPriv(privado);
 		
 	}

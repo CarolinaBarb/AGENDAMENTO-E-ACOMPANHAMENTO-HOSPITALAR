@@ -12,6 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import control.ControlAdministrador;
 import control.ControlConsulta;
 import control.ControlConsulta;
 import model.Consulta;
@@ -291,7 +292,7 @@ public class MostrarConsulta extends JFrame {
 		objeditarconsulta.setValor(valor);
 		objeditarconsulta.setData(data);
 		
-		ControlConsulta objControlConsulta = new ControlConsulta();
+		ControlAdministrador objControlConsulta = new ControlAdministrador();
 		objControlConsulta.editarConsulta(objeditarconsulta);
 	}
 	private void excluir() {
@@ -302,7 +303,7 @@ public class MostrarConsulta extends JFrame {
 		Consulta objconsulta = new Consulta();
 		objconsulta.setID(idConsulta);
 		
-		ControlConsulta objcontrolConsulta = new ControlConsulta();
+		ControlAdministrador objcontrolConsulta = new ControlAdministrador();
 		objcontrolConsulta.excluirconsultas(objconsulta);;
 		
 		

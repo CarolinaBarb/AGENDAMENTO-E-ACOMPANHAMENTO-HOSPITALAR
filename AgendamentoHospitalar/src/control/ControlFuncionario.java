@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import model.Paciente;
+import model.Privado;
+import model.Consulta;
+import model.Convenio;
 import model.Funcionario;
 
 public class ControlFuncionario {
@@ -36,33 +39,7 @@ public class ControlFuncionario {
 		}
 	}
 	
-	public void CadastrarFuncionario (Funcionario objfuncionario) {
-		conn = new ConexaoDAO().conectaBD();
-		
-		String sql = "insert into funcionario (nome, cpf, data_nascimento, email, senha, data_admissao, funcao, sexo, contato) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		try {
-			pstm = conn.prepareStatement(sql);
-			pstm.setString(1, objfuncionario.getNome());
-			pstm.setString(2, objfuncionario.getCpf());
-			pstm.setString(3, objfuncionario.getDataNascimento());
-			pstm.setString(4, objfuncionario.getEmail());
-			pstm.setString(5, objfuncionario.getSenha());
-			pstm.setString(6, objfuncionario.getData_admissao());
-			pstm.setString(7, objfuncionario.getFuncao());
-			pstm.setString(8, objfuncionario.getSexo());
-			pstm.setString(9, objfuncionario.getContato());
-			
-			pstm.execute();
-			JOptionPane.showMessageDialog(null, "Cadastro Concluido");
-			pstm.close();
-
-		}catch(Exception erro) {
-			JOptionPane.showMessageDialog(null, "Secretaria cadastro aaa Control: " + erro);
-		}
-		
-		
-		
-	}
+	
 	
 	public ArrayList<Funcionario> PesquisarFuncionario() {
 		String sql = "select * from funcionario ";
@@ -94,51 +71,53 @@ public class ControlFuncionario {
 		
 	}
 	
-	public void excluirFuncionario (Funcionario objSecretaria) {
-		String sql = "delete from funcionario where idfuncionario = ? ";
-		
+	public void cadastrarConsulta(Consulta consultas) {
+		String sql = "insert into consultas (paciente,medico, especialidade, data, horario, valor,email) " + "values (?,?, ?, ?, ?, ?,?)";
+
 		conn = new ConexaoDAO().conectaBD();
-		
+
 		try {
-			 pstm = conn.prepareStatement(sql);
-			 pstm.setInt(1, objSecretaria.getIdfuncionario() );
-			 
-			 pstm.execute();
-			 pstm.close();
 			
-			 
-		 }catch(SQLException erro) {
-		    JOptionPane.showMessageDialog(null, "Secretaria Excluir:" + erro);
-	 
-		 }
-	}
-	public void editar (Funcionario objfuncionario) {
-		String sql = "update funcionario set nome = ?,cpf = ?, data_nascimento = ?, "
-				+ "data_admissao = ?, funcao = ?, email = ?, sexo = ?, contato = ?, senha = ? where idfuncionario = ? ";
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, consultas.getIdPaciente());
+			pstm.setString(2, consultas.getIdMedico());
+			pstm.setString(3, consultas.getEspecialidade());
+			pstm.setString(4, consultas.getData());	
+			pstm.setString(5, consultas.getHorario());	
+			pstm.setString(6, consultas.getValor());
+			pstm.setString(7, consultas.getEmail());
+			pstm.execute();
+			pstm.close();
+			
+		} catch (Exception erro) {
+			JOptionPane.showMessageDialog(null, "ControlConsulta" + erro);
+		}
+
+	}	
+	public void RegistrarPagamentoPriv(Privado objPrivado) {
+		String sql = "insert into pagamentopriv (nome, data, valor, tipo, parcelas) values (?,?,?,?,?)" ;
 		
 		conn = new ConexaoDAO().conectaBD();
 		
 		try {
 			pstm = conn.prepareStatement(sql);
-			pstm.setString(1, objfuncionario.getNome());
-			pstm.setString(2, objfuncionario.getCpf());
-			pstm.setString(3, objfuncionario.getDataNascimento());
-			pstm.setString(5, objfuncionario.getData_admissao());	
-			pstm.setString(4, objfuncionario.getFuncao());	
-			pstm.setString(6, objfuncionario.getEmail());
-			pstm.setString(7, objfuncionario.getSexo());
-			pstm.setString(8, objfuncionario.getContato());
-			pstm.setString(9, objfuncionario.getSenha());
-			pstm.setInt(10, objfuncionario.getIdfuncionario());
-
+			pstm.setString(1, objPrivado.getNome());
+			pstm.setString(2, objPrivado.getDataPagamento());
+			pstm.setString(3, objPrivado.getValor());
+			pstm.setString(4, objPrivado.getTipo());
+			pstm.setString(5, objPrivado.getParcelas());
+			
 			pstm.execute();
-			JOptionPane.showMessageDialog(null, "editado");
+			JOptionPane.showMessageDialog(null, "Pagamento Registrado");
 			pstm.close();
 			
-		} catch (Exception erro) {
-			JOptionPane.showMessageDialog(null, "Control Editar" + erro);
+		}catch(Exception erro) {
+			JOptionPane.showMessageDialog(null, "Pagameto priv" + erro);
 		}
-
 	}
+	public void RegistrarPagamentoConv(Convenio objConvenio) {
+		
+	}
+
 
 }

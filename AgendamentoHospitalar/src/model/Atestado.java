@@ -4,35 +4,35 @@ import java.util.*;
 
 public class Atestado {
 	private String motivo;
-	private Date validade;
-	private Date autenticacao;
-	
+	private String validade;
+	private int idatestado;
 
-	public Atestado(String motivo, Date validade, Date autenticacao) {
+	
+	public Atestado(String motivo, String validade, int idatestado) {
 		super();
 		this.motivo = motivo;
 		this.validade = validade;
-		this.autenticacao = autenticacao;
+		this.idatestado = idatestado;
 	}
-	
 	public String getMotivo() {
 		return motivo;
 	}
 	public void setMotivo(String motivo) {
 		this.motivo = motivo;
 	}
-	public Date getValidade() {
+	public String getValidade() {
 		return validade;
 	}
-	public void setValidade(Date validade) {
+	public void setValidade(String validade) {
 		this.validade = validade;
 	}
-	public Date getAutenticacao() {
-		return autenticacao;
+	public int getIdatestado() {
+		return idatestado;
 	}
-	public void setAutenticacao(Date autenticacao) {
-		this.autenticacao = autenticacao;
+	public void setIdatestado(int idatestado) {
+		this.idatestado = idatestado;
 	}
+
 	
 	
 

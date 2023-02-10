@@ -15,7 +15,7 @@ public class ControlDisponibilidade {
 	PreparedStatement pstm;
 	
 
-	public void cadastrar(Disponibilidade indisponiveis) {
+	public void MarcarDisponibilidade(Disponibilidade indisponiveis) {
 		String sql = "insert into indisponiveis(data) " + "values (?)";
 
 		conn = new ConexaoDAO().conectaBD();

@@ -92,7 +92,7 @@ public class Pagamentos extends JFrame {
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Privado priv = new Privado();
+				PagPrivado priv = new PagPrivado();
 				priv.setVisible(true);
 				priv.listarValoresPagamento(textCodigo.getText());
 				priv.CarregarCampos();
@@ -109,7 +109,7 @@ public class Pagamentos extends JFrame {
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Convenio conv = new Convenio();
+				PagConvenio conv = new PagConvenio();
 				conv.setVisible(true);
 				conv.listarValoresPagamento(textCodigo.getText());
 				conv.CarregarCampos();

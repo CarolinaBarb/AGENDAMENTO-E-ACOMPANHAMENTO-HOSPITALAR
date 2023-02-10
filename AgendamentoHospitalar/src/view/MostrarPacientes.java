@@ -129,8 +129,8 @@ public class MostrarPacientes extends JFrame {
 				pacientes.setIdade(idade);
 				
 			
-				ControlPaciente pacientecontrol = new ControlPaciente();
-				pacientecontrol.cadastrar(pacientes);
+				ControlAdministrador pacientecontrol = new ControlAdministrador();
+				pacientecontrol.cadastrarPaciente(pacientes);
 				
 				listarValores();
 				limpar();
@@ -380,7 +380,7 @@ public class MostrarPacientes extends JFrame {
 		Paciente objpaciente = new Paciente();
 		objpaciente.setIdpaciente(id_paciente);
 		
-		ControlPaciente objcontrolpaciente = new ControlPaciente();
+		ControlAdministrador objcontrolpaciente = new ControlAdministrador();
 		objcontrolpaciente.excluirPaciente(objpaciente);
 	}
 	private void limpar() {
@@ -427,7 +427,7 @@ public class MostrarPacientes extends JFrame {
 		objeditarPaciente.setIdade(idade);
 		
 		
-		ControlPaciente objcontrolPaciente = new ControlPaciente();
-		objcontrolPaciente.editar(objeditarPaciente);
+		ControlAdministrador objcontrolPaciente = new ControlAdministrador();
+		objcontrolPaciente.editarPaciente(objeditarPaciente);
 	}
 }

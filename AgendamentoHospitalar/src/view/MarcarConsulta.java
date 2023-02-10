@@ -147,8 +147,8 @@ public class MarcarConsulta extends JFrame {
 						consultas.setValor(valor);
 						
 			            
-						ControlConsulta consultacontrol = new ControlConsulta();
-						consultacontrol.cadastrar(consultas);
+						ControlFuncionario consultacontrol = new ControlFuncionario();
+						consultacontrol.cadastrarConsulta(consultas);
 				   }
 				
 				} catch (SQLException erro) {

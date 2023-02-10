@@ -10,6 +10,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import control.ControlAdministrador;
 import control.ControlConsulta;
 import control.ControlMedico;
 import control.ControlPaciente;
@@ -105,8 +106,8 @@ public class MostrarMedicos extends JFrame {
 				objMedico.setEspecialidade(especialidade);
 				objMedico.setSenha(senha);
 				
-				ControlMedico objcontrolMedico = new ControlMedico();
-				objcontrolMedico.cadastrar(objMedico);
+				ControlAdministrador objcontrolMedico = new ControlAdministrador();
+				objcontrolMedico.cadastrarMedico(objMedico);
 				
 				listarValoresM();
 				limpar();
@@ -306,7 +307,7 @@ public class MostrarMedicos extends JFrame {
 		Medico objmedico = new Medico();
 		objmedico.setIdmedico(id_medico);
 		
-		ControlMedico objcontrolmedico = new ControlMedico();
+		ControlAdministrador objcontrolmedico = new ControlAdministrador();
 		objcontrolmedico.excluirMedico(objmedico);
 		
 		
@@ -331,7 +332,7 @@ public class MostrarMedicos extends JFrame {
 		objeditarMedico.setEspecialidade(especialidade);
 		objeditarMedico.setSenha(senha);
 		
-		ControlMedico objcontrolMedico = new ControlMedico();
+		ControlAdministrador objcontrolMedico = new ControlAdministrador();
 		objcontrolMedico.editar(objeditarMedico);
 	}
 }

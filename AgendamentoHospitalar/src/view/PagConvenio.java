@@ -26,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
 import control.ControlConsulta;
 import model.Consulta;
 
-public class Convenio extends JFrame {
+public class PagConvenio extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -42,7 +42,7 @@ public class Convenio extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Convenio frame = new Convenio();
+					PagConvenio frame = new PagConvenio();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -54,7 +54,7 @@ public class Convenio extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Convenio() {
+	public PagConvenio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 416, 399);
 		contentPane = new JPanel();

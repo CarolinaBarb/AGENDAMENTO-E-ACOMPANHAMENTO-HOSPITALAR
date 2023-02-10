@@ -15,6 +15,7 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 
+import control.ControlAdministrador;
 import control.ControlConsulta;
 import control.ControlFuncionario;
 import model.Consulta;
@@ -206,7 +207,7 @@ public class MostrarFuncionarios extends JFrame {
 				objFuncionario.setSenha(senha);
 				objFuncionario.setSexo(sexo);
 				
-				ControlFuncionario objcontrolfun = new ControlFuncionario();
+				ControlAdministrador objcontrolfun = new ControlAdministrador();
 				objcontrolfun.CadastrarFuncionario(objFuncionario);
 				
 				listarValores();
@@ -363,7 +364,7 @@ public class MostrarFuncionarios extends JFrame {
 		Funcionario objsecretaria = new Funcionario();
 		objsecretaria.setIdfuncionario(id_funcionario);
 		
-		ControlFuncionario objcontrolsecretaria = new ControlFuncionario();
+		ControlAdministrador objcontrolsecretaria = new ControlAdministrador();
 		objcontrolsecretaria.excluirFuncionario(objsecretaria);
 	}
 	
@@ -407,8 +408,8 @@ public class MostrarFuncionarios extends JFrame {
 		objeditarfuncionario.setSenha(senha);
 		objeditarfuncionario.setEmail(email);;
 		
-		ControlFuncionario objcontrolfuncionario = new ControlFuncionario();
-		objcontrolfuncionario.editar(objeditarfuncionario);
+		ControlAdministrador objcontrolfuncionario = new ControlAdministrador();
+		objcontrolfuncionario.editarFuncionario(objeditarfuncionario);
 		
 	}
 }

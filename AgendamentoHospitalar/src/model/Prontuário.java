@@ -3,25 +3,20 @@ package model;
 import java.util.*;
 
 public class Prontuário extends Paciente {
-	private Date dtconsulta;
-	private String descricao;
-	
-	public Prontuário(String email, String senha, Date dtconsulta, String descricao) {
-		super(email, senha);
-		this.dtconsulta = dtconsulta;
-		this.descricao = descricao;
-	}
-	public Date getDtconsulta() {
+	private String dtconsulta;
+
+	public String getDtconsulta() {
 		return dtconsulta;
 	}
-	public void setDtconsulta(Date dtconsulta) {
+
+	public void setDtconsulta(String dtconsulta) {
 		this.dtconsulta = dtconsulta;
 	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
 
+	public Prontuário(String email, String senha, String dtconsulta) {
+		super(email, senha);
+		this.dtconsulta = dtconsulta;
+	}
+	
+	
 }

@@ -73,7 +73,7 @@ public class MarcarDisponibilidade extends JFrame {
 				indisponiveis.setData(data);
 				
 				ControlDisponibilidade disponibilidadecontrol = new ControlDisponibilidade();
-				disponibilidadecontrol.cadastrar(indisponiveis);
+				disponibilidadecontrol.MarcarDisponibilidade(indisponiveis);
 				
 				JOptionPane.showMessageDialog(null, "adicionado com sucesso");
 			}
