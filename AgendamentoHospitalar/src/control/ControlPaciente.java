@@ -9,6 +9,7 @@ import java.util.Date;
 
 import model.Consulta;
 import model.Paciente;
+import model.Prontuário;
 import model.Paciente;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -19,7 +20,7 @@ public class ControlPaciente {
 
 	Connection conn;
 	PreparedStatement pstm;
-	ArrayList<Paciente> lista = new ArrayList<>();
+	public static ArrayList<Paciente> lista = new ArrayList<>();
 	
 
 	public void cadastrar(Paciente pacientes) {
@@ -151,5 +152,57 @@ public class ControlPaciente {
 			JOptionPane.showMessageDialog(null, "ControlPaciente editar" + erro);
 		}
 	
-}
+  }
+	
+	public ArrayList<Paciente> PacienteProntuario(String email){
+		String sql = "select * from paciente where email = ?";
+		conn = new ConexaoDAO().conectaBD();
+		
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, email);
+			
+			ResultSet rs = pstm.executeQuery();
+			
+			while(rs.next()) {
+				 Paciente objpaciente = new Paciente();
+				 objpaciente.setNome(rs.getString("nome_usuario"));
+				 objpaciente.setIdade(rs.getString("idade"));
+				 objpaciente.setDataNascimento(rs.getString("DataNascimento"));
+				 objpaciente.setCpf(rs.getString("cpf"));
+				 objpaciente.setAltura(rs.getString("altura"));
+				 objpaciente.setPeso(rs.getString("peso"));
+				 objpaciente.setSexo(rs.getString("sexo_usuario"));
+				 objpaciente.setEmail(rs.getString("email"));
+				 objpaciente.setObservacao(rs.getString("observacao"));
+				
+				 
+				 lista.add(objpaciente);
+			}
+		}catch(SQLException erro) {
+			JOptionPane.showMessageDialog(null,"Paciente receita" + erro);
+		}
+		return lista;
+		
+	}
+	
+	public ResultSet autenticacaoAcessoProntuario(Paciente objpacientecontrol) {
+		conn = new ConexaoDAO().conectaBD();
+
+		try {
+			String sql = "select * from paciente where email = ? "; // mesmo q ta no banco
+
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, objpacientecontrol.getEmail()); // primeira ? e o email
+
+			ResultSet rs = pstm.executeQuery();
+			return rs;
+
+		} catch (SQLException erro) {
+			JOptionPane.showMessageDialog(null, "PacienteControl: " + erro);
+			return null;
+		}
+	}
+
+	
 }

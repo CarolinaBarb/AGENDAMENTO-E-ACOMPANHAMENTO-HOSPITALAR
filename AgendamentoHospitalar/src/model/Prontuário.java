@@ -11,6 +11,9 @@ public class Prontuário extends Paciente {
 		this.dtconsulta = dtconsulta;
 		this.descricao = descricao;
 	}
+	public Prontuário() {
+		// TODO Auto-generated constructor stub
+	}
 	public Date getDtconsulta() {
 		return dtconsulta;
 	}

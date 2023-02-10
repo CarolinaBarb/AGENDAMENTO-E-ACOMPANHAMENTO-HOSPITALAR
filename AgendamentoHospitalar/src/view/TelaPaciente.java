@@ -14,8 +14,10 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import control.ControlConsulta;
+import control.ControlPaciente;
 import control.ControlReceitas;
 import model.Consulta;
+import model.Paciente;
 import model.Receita;
 
 import javax.swing.JButton;
@@ -61,15 +63,6 @@ public class TelaPaciente extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaPaciente() {
-	
-		listarValoresPaciente(LoginPaciente.inserirEmail.getText());
-		if(ControlConsulta.lista.isEmpty()){
-	        
-        }else{
-        	textNome.setText(ControlConsulta.lista.get(0).getEmail());
-            //System.out.println("vazio");
-        }
-
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 805, 357);
 		contentPane = new JPanel();
@@ -214,8 +207,36 @@ public class TelaPaciente extends JFrame {
 		JButton btnNewButton_1 = new JButton("Conferir Prontuário");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			}
-		});
+				try {
+					 String usuario;
+						
+						usuario = LoginPaciente.inserirEmail.getText();
+						
+						Paciente objpaciente = new Paciente();
+						objpaciente.setEmail(usuario);
+						
+						Consulta objconsulta = new Consulta();
+						objconsulta.setEmail(usuario);
+						
+						ControlPaciente objcontrolpaciente = new ControlPaciente();
+						ControlConsulta objcontrolconsulta = new ControlConsulta();
+						ResultSet rs = objcontrolpaciente.autenticacaoAcessoProntuario(objpaciente);objcontrolconsulta.autenticacaoAcessoProntuarioC(objconsulta);
+					if(rs.next()) {
+						Prontuario pt = new Prontuario();
+						pt.listarValoresProntuarioPaciente(usuario);
+						pt.listarValoresProntuarioConsulta(usuario);
+						pt.setVisible(true);
+						dispose();
+						   
+					   }
+					   else {
+						   //enviar msg dizendo incorreto
+						   JOptionPane.showMessageDialog(null, "email invalido");
+					   }
+				} catch (SQLException erro) {
+					JOptionPane.showMessageDialog(null,"FRMTelaPacienteView" +erro);
+				}
+		}});
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton_1.setBackground(new Color(9, 69, 108));

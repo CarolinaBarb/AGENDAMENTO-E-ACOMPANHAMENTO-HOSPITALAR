@@ -6,13 +6,21 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.util.ArrayList;
+
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JTextArea;
+
+import control.ControlConsulta;
+import control.ControlPaciente;
+import model.Consulta;
+import model.Paciente;
+
 import javax.swing.JButton;
 import java.awt.Color;
 
@@ -52,9 +60,10 @@ public class Prontuario extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
 	public Prontuario() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 773, 758);
+		setBounds(100, 100, 839, 758);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -69,7 +78,7 @@ public class Prontuario extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(15, 80, 704, 54);
+		scrollPane.setBounds(12, 80, 807, 54);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -77,7 +86,7 @@ public class Prontuario extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"Nome", "Idade", "Data de nascimento", "CPF", "Altura", "Peso", "Sexo", "email", "Observa\u00E7\u00E3o"
+				"Nome", "Idade", "Data de nascimento", "CPF", "Altura", "Peso", "Sexo", "email", "Observacao"
 			}
 		));
 		table.getColumnModel().getColumn(2).setPreferredWidth(124);
@@ -112,7 +121,7 @@ public class Prontuario extends JFrame {
 		contentPane.add(lblNewLabel_3);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(414, 158, 307, 64);
+		textField_2.setBounds(414, 158, 405, 64);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
@@ -123,7 +132,7 @@ public class Prontuario extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(16, 263, 537, 73);
+		scrollPane_1.setBounds(16, 263, 679, 73);
 		contentPane.add(scrollPane_1);
 		
 		table_1 = new JTable();
@@ -151,11 +160,11 @@ public class Prontuario extends JFrame {
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnNewButton.setBackground(new Color(9, 69, 108));
-		btnNewButton.setBounds(563, 266, 98, 21);
+		btnNewButton.setBounds(721, 262, 98, 21);
 		contentPane.add(btnNewButton);
 		
 		textField_3 = new JTextField();
-		textField_3.setBounds(16, 363, 223, 19);
+		textField_3.setBounds(16, 363, 374, 19);
 		contentPane.add(textField_3);
 		textField_3.setColumns(10);
 		
@@ -166,18 +175,18 @@ public class Prontuario extends JFrame {
 		contentPane.add(lblNewLabel_6);
 		
 		textField_4 = new JTextField();
-		textField_4.setBounds(16, 411, 223, 19);
+		textField_4.setBounds(16, 411, 373, 19);
 		contentPane.add(textField_4);
 		textField_4.setColumns(10);
 		
 		JLabel lblNewLabel_7 = new JLabel("Motivo para o encaminhamento:");
 		lblNewLabel_7.setForeground(new Color(9, 61, 108));
 		lblNewLabel_7.setFont(new Font("Verdana", Font.PLAIN, 10));
-		lblNewLabel_7.setBounds(262, 346, 220, 13);
+		lblNewLabel_7.setBounds(413, 348, 220, 13);
 		contentPane.add(lblNewLabel_7);
 		
 		textField_5 = new JTextField();
-		textField_5.setBounds(260, 367, 216, 64);
+		textField_5.setBounds(413, 363, 406, 64);
 		contentPane.add(textField_5);
 		textField_5.setColumns(10);
 		
@@ -188,7 +197,7 @@ public class Prontuario extends JFrame {
 		contentPane.add(lblNewLabel_8);
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(19, 466, 619, 45);
+		scrollPane_2.setBounds(19, 466, 679, 45);
 		contentPane.add(scrollPane_2);
 		
 		table_2 = new JTable();
@@ -205,7 +214,7 @@ public class Prontuario extends JFrame {
 		btnNewButton_1.setBackground(new Color(9, 61, 108));
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Verdana", Font.PLAIN, 10));
-		btnNewButton_1.setBounds(646, 469, 103, 21);
+		btnNewButton_1.setBounds(721, 465, 103, 21);
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_9 = new JLabel("Médico:");
@@ -215,7 +224,7 @@ public class Prontuario extends JFrame {
 		contentPane.add(lblNewLabel_9);
 		
 		textField_6 = new JTextField();
-		textField_6.setBounds(24, 538, 347, 19);
+		textField_6.setBounds(24, 538, 365, 19);
 		contentPane.add(textField_6);
 		textField_6.setColumns(10);
 		
@@ -226,29 +235,29 @@ public class Prontuario extends JFrame {
 		contentPane.add(lblNewLabel_10);
 		
 		textField_7 = new JTextField();
-		textField_7.setBounds(25, 584, 347, 19);
+		textField_7.setBounds(25, 584, 364, 19);
 		contentPane.add(textField_7);
 		textField_7.setColumns(10);
 		
 		JLabel lblNewLabel_11 = new JLabel("Diagnóstico:");
 		lblNewLabel_11.setForeground(new Color(9, 61, 108));
 		lblNewLabel_11.setFont(new Font("Verdana", Font.PLAIN, 10));
-		lblNewLabel_11.setBounds(388, 523, 76, 13);
+		lblNewLabel_11.setBounds(427, 521, 76, 13);
 		contentPane.add(lblNewLabel_11);
 		
 		textField_8 = new JTextField();
-		textField_8.setBounds(385, 538, 347, 19);
+		textField_8.setBounds(424, 538, 395, 19);
 		contentPane.add(textField_8);
 		textField_8.setColumns(10);
 		
 		JLabel lblNewLabel_12 = new JLabel("Observação:\r\n");
 		lblNewLabel_12.setForeground(new Color(9, 61, 108));
 		lblNewLabel_12.setFont(new Font("Verdana", Font.PLAIN, 10));
-		lblNewLabel_12.setBounds(389, 573, 93, 13);
+		lblNewLabel_12.setBounds(424, 567, 93, 13);
 		contentPane.add(lblNewLabel_12);
 		
 		textField_9 = new JTextField();
-		textField_9.setBounds(390, 587, 341, 54);
+		textField_9.setBounds(424, 580, 395, 54);
 		contentPane.add(textField_9);
 		textField_9.setColumns(10);
 		
@@ -256,12 +265,12 @@ public class Prontuario extends JFrame {
 		btnNewButton_2.setForeground(new Color(255, 255, 255));
 		btnNewButton_2.setBackground(new Color(9, 61, 108));
 		btnNewButton_2.setFont(new Font("Verdana", Font.PLAIN, 10));
-		btnNewButton_2.setBounds(332, 679, 85, 21);
+		btnNewButton_2.setBounds(372, 671, 85, 21);
 		contentPane.add(btnNewButton_2);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(9, 69, 108));
-		panel.setBounds(0, 0, 759, 45);
+		panel.setBounds(0, 0, 852, 45);
 		contentPane.add(panel);
 		
 		JLabel lblNewLabel = new JLabel("Prontuário");
@@ -270,4 +279,57 @@ public class Prontuario extends JFrame {
 		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 22));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 	}
+	
+	public void listarValoresProntuarioPaciente(String email) {
+		try {
+			ControlPaciente objcontrolpaciente = new ControlPaciente();
+			DefaultTableModel model = (DefaultTableModel) table.getModel();
+			model.setNumRows(0);
+			
+			ArrayList<Paciente> lista = objcontrolpaciente.PacienteProntuario(email);
+			
+			for(int num = 0; num < lista.size(); num++) {
+				model.addRow(new Object[] {
+						lista.get(num).getNome(),
+						lista.get(num).getIdade(),
+						lista.get(num).getDataNascimento(),
+						lista.get(num).getCpf(),
+						lista.get(num).getAltura(),
+						lista.get(num).getPeso(),
+						lista.get(num).getSexo(),
+						lista.get(num).getEmail(),
+						lista.get(num).getObservacao()
+						
+				});
+			}
+			
+		}catch(Exception erro) {
+			JOptionPane.showMessageDialog(null, "Listar Valores View:" + erro);
+		}
+	}
+	public void listarValoresProntuarioConsulta(String email) {
+		try {
+			ControlConsulta objcontrolconsulta = new ControlConsulta();
+			DefaultTableModel model = (DefaultTableModel) table_2.getModel();
+			model.setNumRows(0);
+
+			ArrayList<Consulta> lista = objcontrolconsulta.ProntuarioConsulta(email);
+			for(int num = 0; num < lista.size(); num++) {
+				model.addRow(new Object[] {
+						lista.get(num).getIdMedico(),
+						lista.get(num).getEspecialidade(),
+						lista.get(num).getHorario(),
+						lista.get(num).getData(),
+						lista.get(num).getValor(),
+						lista.get(num).getDiagnostico(),
+						lista.get(num).getObs(),
+	
+				});
+			}
+			
+		}catch(Exception erro) {
+			JOptionPane.showMessageDialog(null, "Listar Valores View:" + erro);
+		}
+	}
+	
 }
