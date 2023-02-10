@@ -281,6 +281,12 @@ public class TelaPaciente extends JFrame {
 		contentPane.add(textEmail);
 		textEmail.setColumns(10);
 		
+		JButton btnNewButton_4 = new JButton("Recibos de Pagamentos");
+		btnNewButton_4.setForeground(new Color(255, 255, 255));
+		btnNewButton_4.setBackground(new Color(0, 64, 128));
+		btnNewButton_4.setBounds(629, 188, 152, 21);
+		contentPane.add(btnNewButton_4);
+		
 	}
 	
 	

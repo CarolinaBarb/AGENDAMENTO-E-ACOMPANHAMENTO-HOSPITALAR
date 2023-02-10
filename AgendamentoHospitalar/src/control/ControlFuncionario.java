@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import model.Paciente;
 import model.Privado;
+import model.Recibo;
 import model.Consulta;
 import model.Convenio;
 import model.Funcionario;
@@ -116,7 +117,28 @@ public class ControlFuncionario {
 		}
 	}
 	public void RegistrarPagamentoConv(Convenio objConvenio) {
+	
 		
 	}
+	public void GerarRecibo(Recibo objrecibo) {
+		String sql = "insert into recibos (nome,email, valor, data, descricao) values (?,?,?,?,?)";
+		conn = new ConexaoDAO().conectaBD();
+		
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, objrecibo.getNome());
+			pstm.setString(2, objrecibo.getEmail_Paciente());
+			pstm.setString(3, objrecibo.getValorTotal());
+			pstm.setString(4, objrecibo.getData());
+			pstm.setString(5, objrecibo.getDescricao());
+			
+			pstm.execute();
+			JOptionPane.showMessageDialog(null, "Recibo gerado, \n por favor checar na pagina de acompanhamento do paciente");
+			pstm.close();
+			
+		}catch(Exception erro) {
+			JOptionPane.showMessageDialog(null, "Pagameto recibo" + erro);
+		}
 
+}
 }

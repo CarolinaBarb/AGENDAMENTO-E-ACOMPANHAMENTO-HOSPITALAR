@@ -5,12 +5,19 @@ public class Recibo {
 	private String ValorTotal;
 	private String data;
 	private String Descricao;
-	public Recibo(String nome, String valorTotal, String data, String descricao) {
+	private String Email_Paciente;
+
+	
+	public Recibo(String nome, String valorTotal, String data, String descricao, String email_Paciente) {
 		super();
 		this.nome = nome;
 		ValorTotal = valorTotal;
 		this.data = data;
 		Descricao = descricao;
+		Email_Paciente = email_Paciente;
+	}
+	public Recibo() {
+		
 	}
 	public String getNome() {
 		return nome;
@@ -37,6 +44,11 @@ public class Recibo {
 		Descricao = descricao;
 	}
 	
-	
+	public String getEmail_Paciente() {
+		return Email_Paciente;
+	}
+	public void setEmail_Paciente(String email_Paciente) {
+		Email_Paciente = email_Paciente;
+	}
 
 }

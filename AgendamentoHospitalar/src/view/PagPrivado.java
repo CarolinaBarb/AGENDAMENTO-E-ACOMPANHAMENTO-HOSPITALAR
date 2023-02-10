@@ -98,6 +98,9 @@ public class PagPrivado extends JFrame {
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				GerarRecibo gr = new GerarRecibo();
+				gr.setVisible(true);
+				dispose();
 			}
 		});
 		btnNewButton.setBounds(232, 246, 173, 29);

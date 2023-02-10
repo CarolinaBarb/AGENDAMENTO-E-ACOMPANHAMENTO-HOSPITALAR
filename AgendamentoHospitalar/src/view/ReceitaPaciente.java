@@ -21,6 +21,8 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Color;
 
 public class ReceitaPaciente extends JFrame {
 
@@ -30,8 +32,6 @@ public class ReceitaPaciente extends JFrame {
 	private JTextField textNomePaciente;
 	private JTextField textMedicamento;
 	private JTextField textDosagem;
-	private JTextField textVezes;
-	private JTextField textHorario;
 	private JTextField textDias;
 
 	/**
@@ -57,8 +57,9 @@ public class ReceitaPaciente extends JFrame {
 		ListarValoresReceita(LoginPaciente.inserirEmail.getText());
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 560, 496);
+		setBounds(100, 100, 560, 498);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -80,14 +81,20 @@ public class ReceitaPaciente extends JFrame {
 		scrollPane.setViewportView(table_1);
 		
 		JLabel lblNewLabel = new JLabel("Selecionar Receita");
+		lblNewLabel.setForeground(new Color(0, 64, 128));
+		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 15));
 		lblNewLabel.setBounds(10, 42, 163, 13);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnSelecionar = new JButton("selecionar");
-		btnSelecionar.setBounds(451, 34, 85, 21);
+		btnSelecionar.setBackground(new Color(0, 64, 128));
+		btnSelecionar.setForeground(new Color(255, 255, 255));
+		btnSelecionar.setBounds(451, 40, 85, 15);
 		contentPane.add(btnSelecionar);
 		
 		JLabel lblNewLabel_1 = new JLabel("Informações da receita");
+		lblNewLabel_1.setForeground(new Color(0, 64, 128));
+		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 13));
 		lblNewLabel_1.setBounds(10, 214, 191, 13);
 		contentPane.add(lblNewLabel_1);
 		
@@ -98,11 +105,15 @@ public class ReceitaPaciente extends JFrame {
 		textMedico.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Medico");
+		lblNewLabel_2.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_2.setForeground(new Color(0, 64, 128));
 		lblNewLabel_2.setBounds(10, 237, 45, 13);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Nome do Paciente");
-		lblNewLabel_3.setBounds(10, 281, 93, 13);
+		lblNewLabel_3.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_3.setForeground(new Color(0, 64, 128));
+		lblNewLabel_3.setBounds(10, 281, 174, 13);
 		contentPane.add(lblNewLabel_3);
 		
 		textNomePaciente = new JTextField();
@@ -112,6 +123,8 @@ public class ReceitaPaciente extends JFrame {
 		textNomePaciente.setColumns(10);
 		
 		JLabel lblNewLabel_4 = new JLabel("Medicamento");
+		lblNewLabel_4.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_4.setForeground(new Color(0, 64, 128));
 		lblNewLabel_4.setBounds(272, 237, 77, 13);
 		contentPane.add(lblNewLabel_4);
 		
@@ -122,6 +135,8 @@ public class ReceitaPaciente extends JFrame {
 		textMedicamento.setColumns(10);
 		
 		JLabel lblNewLabel_5 = new JLabel("Dosagem receitada");
+		lblNewLabel_5.setForeground(new Color(0, 64, 128));
+		lblNewLabel_5.setFont(new Font("Verdana", Font.PLAIN, 10));
 		lblNewLabel_5.setBounds(272, 281, 133, 13);
 		contentPane.add(lblNewLabel_5);
 		
@@ -131,41 +146,21 @@ public class ReceitaPaciente extends JFrame {
 		contentPane.add(textDosagem);
 		textDosagem.setColumns(10);
 		
-		JLabel lblNewLabel_6 = new JLabel("Tomar");
-		lblNewLabel_6.setBounds(373, 307, 45, 13);
-		contentPane.add(lblNewLabel_6);
-		
-		textVezes = new JTextField();
-		textVezes.setEnabled(false);
-		textVezes.setBounds(409, 304, 37, 19);
-		contentPane.add(textVezes);
-		textVezes.setColumns(10);
-		
-		JLabel lblNewLabel_7 = new JLabel("ao dia");
-		lblNewLabel_7.setBounds(456, 307, 45, 13);
-		contentPane.add(lblNewLabel_7);
-		
-		JLabel lblNewLabel_8 = new JLabel("Horario");
-		lblNewLabel_8.setBounds(272, 333, 45, 13);
+		JLabel lblNewLabel_8 = new JLabel("Frequência");
+		lblNewLabel_8.setForeground(new Color(0, 64, 128));
+		lblNewLabel_8.setFont(new Font("Verdana", Font.PLAIN, 10));
+		lblNewLabel_8.setBounds(274, 335, 86, 13);
 		contentPane.add(lblNewLabel_8);
-		
-		textHorario = new JTextField();
-		textHorario.setEnabled(false);
-		textHorario.setBounds(272, 356, 45, 19);
-		contentPane.add(textHorario);
-		textHorario.setColumns(10);
-		
-		JLabel lblNewLabel_9 = new JLabel("Dias");
-		lblNewLabel_9.setBounds(342, 333, 45, 13);
-		contentPane.add(lblNewLabel_9);
 		
 		textDias = new JTextField();
 		textDias.setEnabled(false);
-		textDias.setBounds(342, 356, 157, 19);
+		textDias.setBounds(271, 353, 157, 19);
 		contentPane.add(textDias);
 		textDias.setColumns(10);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBackground(new Color(0, 64, 128));
+		btnVoltar.setForeground(new Color(255, 255, 255));
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -174,8 +169,13 @@ public class ReceitaPaciente extends JFrame {
 				dispose();
 			}
 		});
-		btnVoltar.setBounds(201, 428, 148, 21);
+		btnVoltar.setBounds(205, 412, 148, 21);
 		contentPane.add(btnVoltar);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 64, 128));
+		panel.setBounds(0, 0, 546, 32);
+		contentPane.add(panel);
 	}
 	public void ListarValoresReceita(String email){
 		try {
@@ -194,7 +194,6 @@ public class ReceitaPaciente extends JFrame {
 						lista.get(num).getMedicamento(),
 						lista.get(num).getDosagemReceitada(),
 						lista.get(num).getFrequencia(),
-						lista.get(num).getDias(),
 				});
 			}
 			

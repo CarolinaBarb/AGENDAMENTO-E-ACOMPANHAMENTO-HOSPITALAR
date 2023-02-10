@@ -211,7 +211,7 @@ public class MostrarFuncionarios extends JFrame {
 				objcontrolfun.CadastrarFuncionario(objFuncionario);
 				
 				listarValores();
-				limpar();
+				limpar(); 
 				
 			}
 		});
