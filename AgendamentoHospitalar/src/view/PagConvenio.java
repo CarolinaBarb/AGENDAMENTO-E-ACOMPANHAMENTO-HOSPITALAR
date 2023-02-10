@@ -83,12 +83,12 @@ public class PagConvenio extends JFrame {
 		contentPane.add(lblNewLabel_3);
 		
 		textField = new JTextField();
-		textField.setBounds(143, 180, 188, 20);
+		textField.setBounds(174, 180, 188, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(66, 213, 96, 19);
+		textField_1.setBounds(74, 213, 96, 19);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -100,7 +100,7 @@ public class PagConvenio extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		btnNewButton.setBounds(52, 302, 123, 37);
+		btnNewButton.setBounds(52, 302, 148, 37);
 		contentPane.add(btnNewButton);
 		
 		JPanel panel = new JPanel();
@@ -118,7 +118,7 @@ public class PagConvenio extends JFrame {
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Titular", "Dependente"}));
 		comboBox_1.setBackground(new Color(45, 84, 123));
-		comboBox_1.setBounds(99, 240, 101, 21);
+		comboBox_1.setBounds(116, 240, 101, 21);
 		contentPane.add(comboBox_1);
 		
 		JScrollPane scrollPane = new JScrollPane();

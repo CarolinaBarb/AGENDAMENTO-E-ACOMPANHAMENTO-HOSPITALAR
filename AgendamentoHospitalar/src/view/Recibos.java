@@ -99,6 +99,7 @@ public class Recibos extends JFrame {
 			}
 		});
 		btnNewButton.setBounds(316, 56, 85, 21);
+		btnNewButton.setBounds(281, 56, 120, 21);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nome");

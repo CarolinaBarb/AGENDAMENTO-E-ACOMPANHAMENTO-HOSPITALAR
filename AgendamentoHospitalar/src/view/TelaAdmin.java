@@ -94,7 +94,7 @@ public class TelaAdmin extends JFrame {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Doctor ");
+		JLabel lblNewLabel = new JLabel("Admin");
 		lblNewLabel.setBounds(483, 35, 260, 39);
 		panel_1.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 33));

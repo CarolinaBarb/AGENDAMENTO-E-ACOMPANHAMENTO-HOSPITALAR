@@ -60,7 +60,7 @@ public class MarcarDisponibilidade extends JFrame {
 		DCdata.setBounds(80, 127, 186, 19);
 		contentPane.add(DCdata);
 		
-		JButton btnAdd = new JButton("add");
+		JButton btnAdd = new JButton("Selecionar");
 		btnAdd.setForeground(new Color(255, 255, 255));
 		btnAdd.setFont(new Font("Verdana", Font.PLAIN, 10));
 		btnAdd.setBackground(new Color(9, 61, 108));

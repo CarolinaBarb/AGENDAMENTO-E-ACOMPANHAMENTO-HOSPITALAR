@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
 import control.ControlPaciente;
@@ -63,7 +64,7 @@ public class LoginPaciente extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(9, 69, 108));
-		panel.setBounds(0, 0, 436, 58);
+		panel.setBounds(0, 0, 461, 58);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -72,7 +73,7 @@ public class LoginPaciente extends JFrame {
 		lblNewLabel.setBackground(new Color(255, 255, 255));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 21));
-		lblNewLabel.setBounds(10, 10, 416, 23);
+		lblNewLabel.setBounds(10, 10, 442, 23);
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Email:");
@@ -94,6 +95,10 @@ public class LoginPaciente extends JFrame {
 		lblNewLabel_2.setBounds(0, 303, 436, 13);
 		contentPane.add(lblNewLabel_2);
 		
+
+
+		
+
 		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.setForeground(new Color(255, 255, 255));
 		btnEntrar.setFont(new Font("Verdana", Font.PLAIN, 10));
