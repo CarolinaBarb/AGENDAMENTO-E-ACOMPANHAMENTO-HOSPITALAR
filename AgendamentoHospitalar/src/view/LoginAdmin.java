@@ -97,6 +97,8 @@ public class LoginAdmin extends JFrame {
 								TelaAdmin ta = new TelaAdmin();
 								ta.setVisible(true);
 								dispose();
+							}else {
+								JOptionPane.showMessageDialog(null,"Email ou senha incorretos!");
 							}
 						} catch (SQLException erro) {
 							JOptionPane.showMessageDialog(null, "login adm" + erro);
@@ -117,6 +119,13 @@ public class LoginAdmin extends JFrame {
 				container.getContentPane().add(lblNewLabel_1);
 				
 				Cadastrar = new JButton("Cadastre-se");
+				Cadastrar.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						CadastroAdm ca = new CadastroAdm();
+						ca.setVisible(true);
+						dispose();
+					}
+				});
 				Cadastrar.setBackground(new Color(9, 69, 108));
 				Cadastrar.setForeground(new Color(255, 255, 255));
 				Cadastrar.setFont(new Font("Verdana", Font.PLAIN, 10));

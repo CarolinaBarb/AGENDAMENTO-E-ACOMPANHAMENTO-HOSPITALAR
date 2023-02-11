@@ -64,13 +64,7 @@ public class PagPrivado extends JFrame {
 	 * Create the frame.
 	 */
 	public PagPrivado() {
-		listarValoresPagamento(Pagamentos.textCodigo.getText());
-		if(ControlConsulta.lista.isEmpty()){
-	        
-        }else{
-        	textNome.setText(ControlConsulta.lista.get(0).getIdPaciente());
-            //System.out.println("vazio");
-        }
+	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 445, 371);
 		contentPane = new JPanel();
